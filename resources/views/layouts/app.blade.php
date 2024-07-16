@@ -37,9 +37,10 @@
                 <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
                     <div class="contact-info d-flex flex-column flex-md-row align-items-center">
                         <a href="tel:123-456-7890" style="text-decoration: none;" class="text-dark">
-                            <span>{{__('callToday')}} | <span class="text-danger">24/7</span> {{__('emergencyServices')}}</span>
+                            <span>{{ __('callToday') }} | <span class="text-danger">24/7</span>
+                                {{ __('emergencyServices') }}</span>
                         </a>
-                        <i class="bi bi-phone d-flex align-items-center mt-2 mt-md-0 ms-md-4">
+                        <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4">
                             <a href="tel:123-456-7890"><span>+1 777 760 6234</span></a>
                         </i>
                     </div>
@@ -76,7 +77,8 @@
                         <ul class="navbar-nav ms-auto">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('home2',['lang' => app()->getLocale()])}}">{{ __('Home') }}</a>
+                                <a class="nav-link"
+                                    href="{{ route('home2', ['lang' => app()->getLocale()]) }}">{{ __('Home') }}</a>
                             </li>
 
                             <!-- Services -->
@@ -85,28 +87,41 @@
                                     <button class="btn dropdown-toggle" type="button" id="services-nav"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <span>
-                                            <span>{{__('Services')}}</span>
+                                            <span>{{ __('Services') }}</span>
                                         </span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="services-nav">
                                         <li><a class="dropdown-item"
-                                                href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{__('waterDamage')}}</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">{{__('fireDamage')}}</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">{{__('moldRemediation')}}</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('stormDisaster', ['lang' => app()->getLocale()]) }}">{{__('stormDisaster')}}</a>
+                                                href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{ __('waterDamage') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
-                                                href="{{ route('construction', ['lang' => app()->getLocale()]) }}">{{__('construction')}}</a>
+                                                href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">{{ __('fireDamage') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
-                                                href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">{{__('commercialServices')}}</a></li>
+                                                href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">{{ __('moldRemediation') }}</a>
+                                        </li>
                                         <li><a class="dropdown-item"
-                                                href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}">{{__('SpecialtyCleaning')}}</a></li>
+                                                href="{{ route('stormDisaster', ['lang' => app()->getLocale()]) }}">{{ __('stormDisaster') }}</a>
+                                        </li>
                                         <li><a class="dropdown-item"
-                                                href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}">{{__('GeneralCleaning')}}</a></li>
+                                                href="{{ route('construction', ['lang' => app()->getLocale()]) }}">{{ __('construction') }}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">{{ __('commercialServices') }}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}">{{ __('SpecialtyCleaning') }}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}">{{ __('GeneralCleaning') }}</a>
+                                        </li>
+
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('roofTarpBoard', ['lang' => app()->getLocale()]) }}">{{ __('Roof Tarp/Board-up') }}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('industriesServiced', ['lang' => app()->getLocale()]) }}">{{ __('Industries Serviced-up') }}</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -114,7 +129,8 @@
 
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ route('blog', ['lang' => app()->getLocale()]) }}">{{ __('Blog') }} </a>
+                                    href="{{ route('blog', ['lang' => app()->getLocale()]) }}">{{ __('Blog') }}
+                                </a>
                             </li>
 
 
@@ -207,8 +223,10 @@
                                         </span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                                        <li><a class="dropdown-item {{ app()->getLocale() == 'en' ? 'active' : '' }}" href="#" onclick="switchLanguage('en')">English</a></li>
-                                        <li><a class="dropdown-item {{ app()->getLocale() == 'zh' ? 'active' : '' }}" href="#" onclick="switchLanguage('zh')">Chinese</a></li>
+                                        <li><a class="dropdown-item {{ app()->getLocale() == 'en' ? 'active' : '' }}"
+                                                href="#" onclick="switchLanguage('en')">English</a></li>
+                                        <li><a class="dropdown-item {{ app()->getLocale() == 'zh' ? 'active' : '' }}"
+                                                href="#" onclick="switchLanguage('zh')">Chinese</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -237,49 +255,49 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-sm-left">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold">{{__('Services')}}</h6>
+                            <h6 class="text-uppercase fw-bold">{{ __('Services') }}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
                             <p>
                                 <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('waterDamage')}}</a>
+                                    class="text-white">{{ __('waterDamage') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('fireDamage')}}</a>
+                                    class="text-white">{{ __('fireDamage') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('moldRemediation')}}</a>
+                                    class="text-white">{{ __('moldRemediation') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('stormDisaster', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('stormDisaster')}} </a>
+                                    class="text-white">{{ __('stormDisaster') }} </a>
                             </p>
                             <p>
                                 <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('construction')}}</a>
+                                    class="text-white">{{ __('construction') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('commercialServices')}}</a>
+                                    class="text-white">{{ __('commercialServices') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('SpecialtyCleaning')}}</a>
+                                    class="text-white">{{ __('SpecialtyCleaning') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('GeneralCleaning')}} </a>
+                                    class="text-white">{{ __('GeneralCleaning') }} </a>
                             </p>
-                            /////
+
                             <p>
                                 <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('Roof Tarp/Board-up')}} </a>
+                                    class="text-white">{{ __('Roof Tarp/Board-up') }} </a>
                             </p>
-                             <p>
+                            <p>
                                 <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('Industries Serviced')}} </a>
+                                    class="text-white">{{ __('Industries Serviced') }} </a>
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -287,20 +305,20 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-sm-left">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">{{__('About')}}</h6>
+                            <h6 class="text-uppercase fw-bold">{{ __('About') }}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
                             <p>
                                 <a href="{{ route('about', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('About Us')}}</a>
+                                    class="text-white">{{ __('About Us') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('careers', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('Careers')}}</a>
+                                    class="text-white">{{ __('Careers') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{__('Contact Us')}}</a>
+                                    class="text-white">{{ __('Contact Us') }}</a>
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -311,15 +329,15 @@
                             <h6 class="text-uppercase fw-bold">Resources</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
-                                ////
-                                <p>
-                                   <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                       class="text-white">{{__('Why RV Restoration')}} </a>
-                               </p>
-                               <p>
-                                  <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                      class="text-white">{{__('FAQ')}} </a>
-                              </p>
+                            ////
+                            <p>
+                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('Why RV Restoration') }} </a>
+                            </p>
+                            <p>
+                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('FAQ') }} </a>
+                            </p>
                         </div>
                         <!-- Grid column -->
 

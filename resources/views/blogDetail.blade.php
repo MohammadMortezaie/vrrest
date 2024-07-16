@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>{{$blog->title}}</title>
+    <title>{{ $blog->title }}</title>
 
 
     <script type="text/javascript">
@@ -18,20 +18,17 @@
             script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
             document.head.appendChild(script);
         })();
-        </script>
-         <style>
-            /* Hide the Google Translate logo */
-            .goog-te-gadget-icon {
-                display: none !important;
-            }
-
-        </style>
+    </script>
+    <style>
+        /* Hide the Google Translate logo */
+        .goog-te-gadget-icon {
+            display: none !important;
+        }
+    </style>
 @endsection
 
 
 @section('content')
-
-<div id="google_translate_element"></div>
     <div class="blog-single gray-bg">
         <div class="container">
             <div class="row align-items-start">
@@ -41,9 +38,9 @@
                             <img src="https://www.bootdey.com/image/800x350/87CEFA/000000" title="" alt="">
                         </div>
                         <div class="article-title">
-                            <h6><a href="#">{{$blog->category->name_en}}</a></h6>
-                            <h1 class="h2 fw-bold">{{$blog->title}}</h1>
-                            <span>Updated at: {{$blog->updated_at}}</span>
+                            <h6><a href="#">{{ $blog->category->name_en }}</a></h6>
+                            <h1 class="h2 fw-bold">{{ $blog->title }}</h1>
+                            <span>Updated at: {{ $blog->updated_at }}</span>
                             <hr>
                         </div>
                         <div class="article-content">
@@ -111,60 +108,69 @@
 
 
                         @foreach ($blog->comments as $cm)
-
-                        <div class="flex-shrink-1 bg-light rounded py-2 px-3 my-3">
-                            <div class="font-weight-bold mb-1">{{$cm->name}}</div>
-                            {{$cm->comment}}
-                        </div>
-
+                            <div class="flex-shrink-1 bg-light rounded py-2 px-3 my-3">
+                                <div class="font-weight-bold mb-1">{{ $cm->name }}</div>
+                                {{ $cm->comment }}
+                            </div>
                         @endforeach
                     </div>
                 </div>
                 <div class="col-lg-4 m-15px-tb blog-aside">
+                    <div class="widget widget-tags">
+                        <div class="widget-title">
+                            <h3>{{ __('Change Language') }}</h3>
+                        </div>
+                        <div class="widget-body">
 
+                            <div id="google_translate_element"></div>
+
+                        </div>
+                    </div>
                     <!-- Latest Post -->
                     <div class="widget widget-latest-post">
                         <div class="widget-title">
                             <h3>{{ __('Latest Post') }}</h3>
                         </div>
                         @foreach ($latestPost as $ltPost)
-
-                        <div class="widget-body">
-                            <div class="latest-post-aside media">
-                                <div class="lpa-left media-body">
-                                    <div class="lpa-title">
-                                        <h5><a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $ltPost->id,'slug'=> $ltPost->slug]) }}">{{$ltPost->title}}</a></h5>
-                                    </div>
-                                    <div class="lpa-meta">
-                                        <a class="date" href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $ltPost->id,'slug'=> $ltPost->slug]) }}">
-                                           {{$ltPost->updated_at}}
-                                        </a>
+                            <div class="widget-body">
+                                <div class="latest-post-aside media">
+                                    <div class="lpa-left media-body">
+                                        <div class="lpa-title">
+                                            <h5><a
+                                                    href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $ltPost->id, 'slug' => $ltPost->slug]) }}">{{ $ltPost->title }}</a>
+                                            </h5>
+                                        </div>
+                                        <div class="lpa-meta">
+                                            <a class="date"
+                                                href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $ltPost->id, 'slug' => $ltPost->slug]) }}">
+                                                {{ $ltPost->updated_at }}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
                         @endforeach
                     </div>
                     <!-- End Latest Post -->
                     <!-- widget Tags -->
                     <div class="widget widget-tags">
                         <div class="widget-title">
-                            <h3>{{ __('Latest Tags') }}</h3>
+                            <h3>{{ __('Keywords') }}</h3>
                         </div>
                         <div class="widget-body">
                             <div class="nav tag-cloud">
-                                <a href="#">Design</a>
-                                <a href="#">Development</a>
-                                <a href="#">Travel</a>
-                                <a href="#">Web Design</a>
-                                <a href="#">Marketing</a>
-                                <a href="#">Research</a>
-                                <a href="#">Managment</a>
+                                @php
+                                    $keywords = explode(',', $blog->keywords);
+                                @endphp
+
+                                @foreach ($keywords as $keyword)
+                                    <a href="#">{{ $keyword }}</a>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                     <!-- End widget Tags -->
+
                 </div>
             </div>
         </div>

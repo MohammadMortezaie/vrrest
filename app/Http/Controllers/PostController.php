@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -57,6 +58,7 @@ class PostController extends Controller
                 'title' => 'required|string|max:255',
                 'slug' => 'required|string|max:255',
                 'subtitle' => 'required|string|max:255',
+                'keywords' => 'required|string|max:255',
                 'post_category_id' => 'required|integer|exists:post_categories,id',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'content' => 'required|string',
@@ -66,8 +68,8 @@ class PostController extends Controller
             // Handle the image upload if necessary
             $imgUrl = null;
             if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('images', 'public');
-                $imgUrl = $imagePath;
+                $filePath = $request->file('image')->store('uploads', 'public');
+                $imgUrl = Storage::url($filePath);
             }
 
             $post = new Post();
@@ -76,6 +78,7 @@ class PostController extends Controller
             $post->title = $request->title;
             $post->slug = $request->slug;
             $post->subtitle = $request->subtitle;
+            $post->keywords = $request->keywords;
             $post->post_category_id = $request->post_category_id;
             $post->image = $imgUrl;
             $post->content = $request->content;
@@ -104,14 +107,15 @@ class PostController extends Controller
         if (Auth::user()->is_admin) {
             $imgUrl = $post->image;
             if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('images', 'public');
-                $imgUrl = $imagePath;
+                $filePath = $request->file('image')->store('uploads', 'public');
+                $imgUrl = Storage::url($filePath);
             }
 
             $post->language = $request->language;
             $post->title = $request->title;
             $post->slug = $request->slug;
             $post->subtitle = $request->subtitle;
+            $post->keywords = $request->keywords;
             $post->post_category_id = $request->post_category_id;
             $post->image = $imgUrl;
             $post->content = $request->content;

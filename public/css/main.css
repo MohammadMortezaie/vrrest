@@ -20,11 +20,18 @@ when they are hovered over. */
 .txt-vr {
     color: var(--accent-color) !important;
 }
+.txt-def {
+    font-size: 16px;
+    text-align: justify;
+}
 .bg-black {
     background-color: var(--alt-background-color);
 }
 .bg-vr-second {
     background-color: #f5f5f4;
+}
+.about-r-padding {
+    padding-right: 30px !important;
 }
 section,
 .section {
@@ -45,6 +52,10 @@ section,
     .section {
         scroll-margin-top: 100px;
     }
+
+    .about-r-padding {
+        padding-right: 12px !important;
+    }
 }
 
 .section-title {
@@ -57,9 +68,23 @@ section,
     font-weight: 700;
     margin-bottom: 15px;
 }
+.section-title-h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 1em;
+}
 
 .section-title p {
     margin-bottom: 0;
+}
+
+@media (min-width: 1000px) {
+    .card-vr-custom {
+        height: 10em;
+    }
 }
 
 /* header */
@@ -286,7 +311,7 @@ section,
     background: color-mix(
         in srgb,
         var(--alt-background-color),
-        transparent 20%
+        transparent 35%
     );
     position: absolute;
     inset: 0;
@@ -300,7 +325,7 @@ section,
 .hero .welcome h2 {
     color: var(--contrast-color);
     margin: 0;
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 700;
 }
 
@@ -457,7 +482,12 @@ section,
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-
+.services {
+    /* background-image: url('/img/hero-bg.jpeg') ;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #eee;
+}
 .icon-text {
     font-size: 1.5rem; /* Adjust size as needed */
 }
@@ -997,7 +1027,6 @@ img {
     transform: rotate(90deg);
 }
 
-
 .swiper-button-next-custom,
 .swiper-button-prev-custom {
     position: absolute;
@@ -1020,7 +1049,7 @@ img {
 /* Next button (right arrow) */
 .swiper-button-next-custom::before,
 .swiper-button-next-custom::after {
-    content: '';
+    content: "";
     display: inline-block;
     border-top: 2px solid var(--accent-color);
     border-right: 2px solid var(--accent-color);
@@ -1042,7 +1071,7 @@ img {
 /* Previous button (left arrow) */
 .swiper-button-prev-custom::before,
 .swiper-button-prev-custom::after {
-    content: '';
+    content: "";
     display: inline-block;
     border-top: 2px solid var(--accent-color);
     border-right: 2px solid var(--accent-color);
@@ -1061,11 +1090,11 @@ img {
 }
 
 .swiper-button-next-custom {
-    right: 10px;
+    right: 0px;
 }
 
 .swiper-button-prev-custom {
-    left: 10px;
+    left: 0px;
 }
 
 .swiper-button-next-custom:hover,
@@ -1075,10 +1104,10 @@ img {
 
 .swiper-wrapper {
     align-items: center; /* add this will all relevant prefixes */
-  }
+}
 
-
-  .next-text, .prev-text {
+.next-text,
+.prev-text {
     position: absolute;
     bottom: -30px; /* Adjust this value to position the text */
     left: 50%;

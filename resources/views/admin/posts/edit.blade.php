@@ -65,6 +65,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="subtitle">Keywords*</label>
+                                <input type="text" class="form-control" name="subtitle" id="keywords"
+                                    value="{{ $post->keywords }}"
+                                    placeholder="Enter Keywords">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="post_category_id">Category*</label>
                                 <select class="form-control" name="post_category_id" id="post_category_id">
                                     @foreach ($postCat as $cat)
@@ -78,11 +85,11 @@
 
                             <div class="form-group">
                                 <label for="image">Main Image 800*350</label>
+                                <input type="file" class="form-control" name="image" id="image"
+                                    placeholder="Upload Image 800*350" aria-describedby="fileHelpId">
                                 @if ($post->image)
                                     <img src="{{ $post->image }}" style="width: 300px" />
                                 @endif
-                                <input type="file" class="form-control" name="image" id="image"
-                                    placeholder="Upload Image 800*350" aria-describedby="fileHelpId">
                             </div>
 
                             <div class="form-group">

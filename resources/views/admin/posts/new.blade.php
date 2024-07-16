@@ -63,6 +63,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="subtitle">Keywords*</label>
+                                <input type="text" class="form-control" name="subtitle" id="keywords"
+                                    placeholder="Keywords (SEO) divid by ,">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="post_category_id">Category*</label>
                                 <select class="form-control" name="post_category_id" id="post_category_id">
                                     @foreach ($postCat as $cat)

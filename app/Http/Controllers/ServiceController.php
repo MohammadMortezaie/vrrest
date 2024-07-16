@@ -63,4 +63,12 @@ class ServiceController extends Controller
     {
         return view('services.stormDisaster');
     }
+    public function roofTarpBoard()
+    {
+        return view('services.roofTarpBoard');
+    }
+    public function industriesServiced()
+    {
+        return view('services.industriesServiced');
+    }
 }

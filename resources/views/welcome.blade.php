@@ -11,7 +11,7 @@
 @section('content')
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-        <img src="{{ asset('img/hero-bg.jpeg') }}" alt="RV Restoration Main Photo" data-aos="fade-in">
+        <img src="{{ asset('img/hero-bg3.jpeg') }}" alt="RV Restoration Main Photo" data-aos="fade-in">
         {{-- <img src="{{ asset('img/hero-bg.jpg') }}" alt="RV Restoration Main Photo" data-aos="fade-in"> --}}
         <div class="container position-relative">
             <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
@@ -25,10 +25,10 @@
 
 
     <!-- /Categories Section -->
-    <section id="clients" class="clients section my-3">
+    <section id="clients" class="clients section my-3 container">
 
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="" data-aos="fade-up" data-aos-delay="100">
             <div class="section-title mb-0 pb-0">
                 <h2>{{ __('Categories') }} </h2>
             </div>
@@ -36,7 +36,7 @@
         </div>
 
 
-        <div class="swiper py-2"
+        <div class="swiper py-2 px-4"
             data-swiper-config='
             {
               "loop": true,
@@ -79,13 +79,13 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template1.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template1.png') }}" alt="{{ __('SpecialtyCleaning') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Specialty Cleaning</h5>
-                                <div class="text-muted ">Restoration</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('SpecialtyCleaning') }}</h3>
+                                <div class="text-muted ">{{ __('Restoration') }}</div>
                             </div>
                         </div>
                     </a>
@@ -95,13 +95,13 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template2.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template2.png') }}" alt="{{ __('GeneralCleaning') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">General Cleaning</h5>
-                                <div class="text-muted ">Services</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('GeneralCleaning') }}</h3>
+                                <div class="text-muted ">{{ __('Services') }}</div>
                             </div>
                         </div>
                     </a>
@@ -111,13 +111,13 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template11.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template11.png') }}" alt="{{ __('waterDamage') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Water Damage</h5>
-                                <div class="text-muted ">Restoration</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('waterDamage') }}</h3>
+                                <div class="text-muted ">{{ __('Restoration') }}</div>
                             </div>
                         </div>
                     </a>
@@ -127,13 +127,13 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template10.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template10.png') }}" alt="{{ __('fireDamage') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Fire Damage</h5>
-                                <div class="text-muted ">Restoration</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('fireDamage') }}</h3>
+                                <div class="text-muted ">{{ __('Restoration') }}</div>
                             </div>
                         </div>
                     </a>
@@ -142,29 +142,13 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template9.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template9.png') }}" alt="{{ __('moldRemediation') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Mold Remediation</h5>
-                                <div class="text-muted ">Restoration</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-
-
-                <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
-                            <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template3.png') }}" alt="iasdas">
-                                </div>
-                                <h5 class="card-title mb-1 ">Commercial </h5>
-                                <div class="text-muted ">Services</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('moldRemediation') }}</h3>
+                                <div class="text-muted ">{{ __('Services') }}</div>
                             </div>
                         </div>
                     </a>
@@ -174,13 +158,29 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template5.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template3.png') }}" alt="{{ __('commercial') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Residential </h5>
-                                <div class="text-muted ">Services</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('commercial') }} </h3>
+                                <div class="text-muted ">{{ __('Services') }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="swiper-slide">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
+                            <div class="card-body">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template5.png') }}" alt="{{ __('Residential') }}">
+                                </div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('Residential') }}</h3>
+                                <div class="text-muted ">{{ __('Services') }}</div>
                             </div>
                         </div>
                     </a>
@@ -188,13 +188,13 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template6.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template6.png') }}" alt="{{ __('construction') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Construction</h5>
-                                <div class="text-muted ">Services</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('construction') }} </h3>
+                                <div class="text-muted ">{{ __('Services') }}</div>
                             </div>
                         </div>
                     </a>
@@ -202,21 +202,17 @@
 
                 <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
-                        <div class="card text-center border-0" style="width: 210px; margin: 0 auto">
+                        <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
-                                <div class="card-card-avatar mb-3 ">
-                                    <img src="{{ asset('img/template7.png') }}" alt="iasdas">
+                                <div class="card-card-avatar  ">
+                                    <img src="{{ asset('img/template7.png') }}" alt="{{ __('stormDisaster') }}">
                                 </div>
-                                <h5 class="card-title mb-1 ">Storm/Disaster</h5>
-                                <div class="text-muted ">Restoration</div>
+                                <h3 class="card-title h6 mb-1 ">{{ __('stormDisaster') }}</h3>
+                                <div class="text-muted ">{{ __('Restoration') }}</div>
                             </div>
                         </div>
                     </a>
                 </div>
-
-
-
-
 
 
             </div>
@@ -258,9 +254,10 @@
                         <li>
                             <i class="bi bi-clipboard-check-fill"></i>
                             <div>
-                                <p class="fs-5 pt-2">We work closely with <span class="txt-vr" style="font-weight: 900">
+                                <p class="fs-5 pt-2">We work closely with <strong class="txt-vr"
+                                        style="font-weight: 800">
                                         all
-                                        insurance </span> brokers, adjusters, risk managers and claim managers.</p>
+                                        insurance </strong> brokers, adjusters, risk managers and claim managers.</p>
                             </div>
                         </li>
                         <li>
@@ -268,7 +265,8 @@
                             <div>
                                 <p class="fs-5 pt-2">
                                     We have implemented lean strategies in our operation to reduce our overhead costs,
-                                    therefore our <strong> costs are much lower </strong> our competitors
+                                    therefore <strong class="txt-vr" style="font-weight: 800"> our costs are much lower
+                                    </strong> our competitors
                                 </p>
                             </div>
                         </li>
@@ -276,7 +274,8 @@
                             <i class="bi bi-award"></i>
                             <div>
                                 <p class="fs-5 pt-2">
-                                    Our team consists of highly trained and certified restoration professionals with IICRC
+                                    Our team consists of <strong class="txt-vr" style="font-weight: 800"> highly trained
+                                        and certified </strong> restoration professionals with IICRC
                                     certification, ready to serve you.
                                 </p>
                             </div>
@@ -285,7 +284,8 @@
                             <i class="bi bi-alarm-fill"></i>
                             <div>
                                 <p class="fs-5 pt-2">
-                                    Time is crucial when dealing with water damage. Our 24/7 emergency response team is
+                                    Time is crucial when dealing with water damage. Our <strong class="txt-vr"
+                                        style="font-weight: 800"> 24/7 emergency</strong> response team is
                                     ready to minimize damage and prevent complications, offering quick and reliable service
                                 </p>
                             </div>
@@ -361,11 +361,11 @@
 
 
     <!-- Services We Provide -->
-    <section id="services" class="services section bg-dark text-white">
+    <section id="services" class="services section ">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2 class="text-white">{{ __('Services We Provide') }}</h2>
+            <h2 class="">{{ __('Services We Provide') }}</h2>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -373,51 +373,75 @@
 
 
             <div class="row">
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3 ">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-house icon"></i>
-                            <span class="ms-2 text">Home</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template1.png') }}"
+                                alt="{{ __('SpecialtyCleaning') }}">
+                            <span class="ms-2 fs-6 text">{{ __('SpecialtyCleaning') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-info-circle icon"></i>
-                            <span class="ms-2 text">About</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template2.png') }}"
+                                alt="{{ __('GeneralCleaning') }}">
+                            <span class="ms-2 fs-6 text">{{ __('GeneralCleaning') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-telephone icon"></i>
-                            <span class="ms-2 text">Contact</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template11.png') }}"
+                                alt="{{ __('waterDamage') }}">
+                            <span class="ms-2 fs-6 text">{{ __('waterDamage') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-envelope icon"></i>
-                            <span class="ms-2 text">Email</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template10.png') }}"
+                                alt="{{ __('fireDamage') }}">
+                            <span class="ms-2 fs-6 text">{{ __('fireDamage') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-person icon"></i>
-                            <span class="ms-2 text">Profile</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template9.png') }}"
+                                alt="{{ __('moldRemediation') }}">
+                            <span class="ms-2 fs-6 text">{{ __('moldRemediation') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-gear icon"></i>
-                            <span class="ms-2 text">Settings</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template3.png') }}"
+                                alt="{{ __('commercial') }}">
+                            <span class="ms-2 fs-6 text">{{ __('commercial') }}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 mb-3">
+                    <div class="icon-text">
+                        <a href="#">
+                            <img style="max-width: 80px" src="{{ asset('img/template5.png') }}"
+                                alt="{{ __('Residential') }}">
+                            <span class="ms-2 fs-6 text">{{ __('Residential') }}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 mb-3">
+                    <div class="icon-text">
+                        <a href="#">
+                            <img style="max-width: 80px" src="{{ asset('img/template6.png') }}"
+                                alt="{{ __('construction') }}">
+                            <span class="ms-2 fs-6 text">{{ __('construction') }}</span>
                         </a>
                     </div>
                 </div>
@@ -445,24 +469,21 @@
 
                 <div class="col-lg-7  content " data-aos="fade-right" data-aos-delay="100">
 
-                    <p>
-                        At PLUSE, we provide comprehensive property damage emergency services and restoration 24/7, 365 days
-                        a year. Our qualified, licensed, and highly trained crews work efficiently to restore your
-                        residential or commercial property to its pre-loss condition, specializing in flood, fire, wind,
-                        mold, and asbestos restoration.
+                    <p class="txt-def">
+                        At VR Plus restoration, we provide comprehensive property damage emergency services and restoration
+                        24/7, 365 days a year. Our qualified, licensed, and highly trained crews work efficiently to restore
+                        your residential or commercial property to its pre-loss condition, specializing in flood, fire,
+                        wind, mold, and asbestos restoration.
+
                     </p>
                     <ul>
                         <li>
                             <div>
-                                <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                                <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                                <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi
-                                </p>
+                                <h5>
+                                    Below are just a few of the reasons why you should call VR Plus restoration Restoration:
+                                </h5>
+                                <p class=" mb-1">VR Plus restoration technicians are ready to respond to your property damage, 24/7. </p>
+                                <p>Our fully equipped team will be onsite within half and hour. </p>
                             </div>
                         </li>
                     </ul>
@@ -472,8 +493,8 @@
                 </div>
 
                 <div class="col-lg-5 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-                    <img src="{{ asset('img/about.jpeg') }}"
-                        class="img-fluid" style="max-height: 400px" alt="">
+                    <img src="{{ asset('img/about.jpeg') }}" class="img-fluid" style="max-height: 400px"
+                        alt="">
                 </div>
 
 

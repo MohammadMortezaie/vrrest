@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedinteger('post_category_id');
             $table->string('title');
             $table->string('subtitle');
+            $table->string('keywords');
             $table->text('content');
             $table->unsignedinteger('user_id');
             $table->string("image")->nullable();

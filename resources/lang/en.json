@@ -10,6 +10,7 @@
     "stormDisaster": "Storm/Disaster",
     "construction": "Construction",
     "commercialServices": "Commercial Services",
+    "commercial": "Commercial",
     "SpecialtyCleaning": "Specialty Cleaning",
     "GeneralCleaning": "General Cleaning",
     "Blog": "Blog",
@@ -38,5 +39,9 @@
     "FAQ": "FAQ",
     "Why RV Restoration": "Why RV Restoration",
     "Industries Serviced": "Industries Serviced",
-    "Roof Tarp/Board-up": "Roof Tarp/Board-up"
+    "Roof Tarp/Board-up": "Roof Tarp/Board-up",
+    "Residential" : "Residential",
+    "Restoration" : "Restoration",
+    "Keywords" : "Keywords"
+
 }
