@@ -167,7 +167,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -181,7 +182,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -195,7 +197,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -209,7 +212,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -223,7 +227,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -237,7 +242,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -270,58 +276,81 @@
 
                         <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                            <h3>What are roof tarp and board-up services? </h3>
                             <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.</p>
+                                <p>
+                                    Roof tarp and board-up services involve the temporary covering of damaged roofs and
+                                    openings in your property to prevent further damage from weather elements and
+                                    unauthorized access. Tarps are used to cover roof damage, while boards are applied to
+                                    secure windows and doors.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                            <h3> When should I call for roof tarp and board-up services? </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>
+                                    You should call for roof tarp and board-up services immediately after experiencing storm
+                                    damage, fire, or any situation that compromises the integrity of your roof or structure.
+                                    Quick action helps prevent additional water damage, vandalism, and further
+                                    deterioration.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                            <h3>How long will roof tarp and board-up services last?</h3>
                             <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                                <p>
+                                    Roof tarps and board-up services are temporary measures designed to protect your
+                                    property until permanent repairs can be made. They are typically effective for a few
+                                    weeks to several months, depending on weather conditions and the extent of the damage.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                            <h3>Will insurance cover the cost of roof tarp and board-up services? </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>
+                                    Insurance coverage for roof tarp and board-up services varies depending on your policy
+                                    and the nature of the damage. It's important to check with your insurance provider to
+                                    determine if these costs are covered and to what extent.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                            <h3>Can roof tarp and board-up services be done as a DIY project? </h3>
                             <div class="faq-content">
-                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                                <p>
+                                    While it is possible to perform temporary tarp and board-up tasks yourself, it is
+                                    generally recommended to hire professionals. Experts ensure proper installation and
+                                    coverage, minimizing risks and ensuring effective protection against the elements.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Will I have to be home all the time? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    No, you do not need to be present while we work to repair your home. We will communicate
+                                    regularly with you about the timeline and current stage of the project, so you are aware
+                                    of the activities occurring on any given day.
+
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->

@@ -9,19 +9,19 @@
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy"
-                        src="https://images.contentstack.io/v3/assets/blt0a0cb058815d4d96/blt6b92a531a3226230/644045dfe8703713abca51a2/Water_Damage_Wall_Repair_-_SMALL_VERSION_-_shutterstock_151150160.jpg?width=3840&auto=webp"
-                        alt="About 1">
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/specialtyCleaning.jpeg') }}"
+                        alt="Specialty Cleaning Services">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
-                            <h2 class="fs-1 fw-bolder">Specialty Cleaning Cleanup & Repair</h2>
+                            <h1 class="fs-1 fw-bolder">Specialty Cleaning Services</h1>
                             <hr>
-                            <p class="lead mb-5">
-                                We are a fast-growing company, but we have never lost sight of our core
-                                values. We believe in collaboration, innovation, and customer satisfaction. We are always
-                                looking for new ways to improve our products and services.
+                            <p class="lead mb-5 txt-def">
+                                Mold appears as soon as water or high humidity cause harm to your property, whether it is
+                                commercial or residential. Mold can enter your home through a va
+
+
                             </p>
                         </div>
                     </div>
@@ -29,6 +29,7 @@
             </div>
         </div>
     </section>
+
 
 
 
@@ -42,7 +43,8 @@
 
                     <p class="lead">
                         Specialty Cleaning can strike at any time. Our SERVPRO team is always ready for your call with water
-                        extraction services nearby because we understand time is of the essence when Specialty Cleanings your
+                        extraction services nearby because we understand time is of the essence when Specialty Cleanings
+                        your
                         property. Whether a water leak, pipe burst, sewage backup or you experience a basement flood, we are
                         dedicated to responding quickly with our top-tier equipment to clean up and restore your home or
                         business property.
@@ -74,7 +76,8 @@
                             Assess your property's Specialty Cleaning.
                         </li>
                         <li>
-                            Explain the extent of the Specialty Cleaning and the restoration process so you're able to make an
+                            Explain the extent of the Specialty Cleaning and the restoration process so you're able to make
+                            an
                             informed decision on how to proceed.
                         </li>
                         <li>
@@ -116,7 +119,8 @@
                     </h2>
 
                     <p class="lead">
-                        When Specialty Cleaning occurs in your commercial property, be it a small business, warehouse, high-rise
+                        When Specialty Cleaning occurs in your commercial property, be it a small business, warehouse,
+                        high-rise
                         building, or other industrial space, the destruction can be devastating. Not only is your business
                         damaged, but operations may stop, causing a disruption in production and revenue, as well as
                         inconveniencing or causing possible safety concerns for your customers and employees. No matter the
@@ -167,7 +171,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Specialty Cleaning restoration, with training focused
+                                Our professionals specialize in residential Specialty Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -181,7 +186,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Specialty Cleaning restoration, with training focused
+                                Our professionals specialize in residential Specialty Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -195,7 +201,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Specialty Cleaning restoration, with training focused
+                                Our professionals specialize in residential Specialty Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -209,7 +216,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Specialty Cleaning restoration, with training focused
+                                Our professionals specialize in residential Specialty Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -223,7 +231,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Specialty Cleaning restoration, with training focused
+                                Our professionals specialize in residential Specialty Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -237,7 +246,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Specialty Cleaning restoration, with training focused
+                                Our professionals specialize in residential Specialty Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -270,58 +280,128 @@
 
                         <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                            <h3>
+                                What Are Specialty Cleaning Services?
+                            </h3>
                             <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.</p>
+                                <p>
+                                    Specialty cleaning services are designed to address unique and complex cleaning needs
+                                    that go beyond standard cleaning routines. These services may include biohazard cleanup,
+                                    hoarding cleanup, graffiti removal, and deep cleaning for commercial properties.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                            <h3>
+                                What Types of Situations Require Specialty Cleaning?
+                            </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>
+                                    Specialty cleaning is required in situations involving hazardous materials, crime scene
+                                    cleanup, mold remediation, smoke and soot removal, and extreme cases of dirt or clutter.
+                                    These services are crucial for ensuring safety and thorough cleanliness.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                            <h3>Are Your Specialty Cleaning Services Safe? </h3>
                             <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                                <p>
+                                    Yes, our specialty cleaning services are conducted by trained professionals using
+                                    industry-standard safety protocols and equipment. We prioritize the health and safety of
+                                    our clients and our team, adhering to all regulatory guidelines.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                            <h3>How Long Does Specialty Cleaning Take? </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>
+                                    The duration of specialty cleaning varies based on the complexity and extent of the
+                                    situation. Some cases may be resolved in a few hours, while others might take several
+                                    days. An initial assessment will provide a more accurate timeline.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                            <h3>Do You Provide Specialty Cleaning for Commercial Properties? </h3>
                             <div class="faq-content">
-                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                                <p>
+                                    Yes, we offer specialty cleaning services for commercial properties, including offices,
+                                    retail spaces, and industrial facilities. Whether it's routine deep cleaning or
+                                    addressing specific issues like mold or graffiti, we tailor our services to meet your
+                                    business's needs.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>How Do I Schedule Specialty Cleaning Services? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    Scheduling specialty cleaning services is easy. Contact VR PLUS Restoration through our
+                                    website or call our customer service line. We'll discuss your needs, provide an
+                                    estimate, and arrange a convenient time for our team to perform the cleaning.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>What Measures Do You Take to Ensure Quality and Safety? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    We follow strict protocols and use advanced cleaning techniques to ensure the highest
+                                    standards of quality and safety. Our team undergoes regular training and certification
+                                    to stay updated with the latest industry practices and safety regulations.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Are Your Specialty Cleaning Services Environmentally Friendly? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    We prioritize environmentally friendly practices whenever possible. Our cleaning
+                                    products are selected for their effectiveness and eco-friendliness, and we aim to
+                                    minimize our environmental impact while delivering exceptional cleaning results.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>How Much Do Specialty Cleaning Services Cost? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    The cost of specialty cleaning services varies depending on the nature and extent of the
+                                    job. We provide detailed estimates after an initial assessment, ensuring transparency
+                                    and no hidden costs. Contact us for a personalized quote tailored to your specific
+                                    needs.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->

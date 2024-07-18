@@ -167,7 +167,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -181,7 +182,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -195,7 +197,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -209,7 +212,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -223,7 +227,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -237,7 +242,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential Storm/Disaster restoration, with training focused
+                                Our professionals specialize in residential Storm/Disaster restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -270,58 +276,124 @@
 
                         <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                            <h3>What Should I Do Immediately After Storm Damage? </h3>
                             <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.</p>
+                                <p>
+                                    After a storm, ensure your safety first. Once safe, document the damage with photos and
+                                    videos, then contact your insurance company to start the claims process. Reach out to a
+                                    professional storm damage restoration company like VR PLUS for a thorough assessment and
+                                    immediate repairs.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                            <h3>How Quickly Should Storm Damage Be Addressed? </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>
+                                    Storm damage should be addressed as soon as possible. Prompt repairs prevent further
+                                    damage, such as water intrusion and mold growth. Quick action also helps secure your
+                                    property and protect it from potential safety hazards.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                            <h3>Can I Stay in My Home During Storm Damage Repairs?
+                            </h3>
                             <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                                <p>
+                                    It depends on the extent of the damage. Minor repairs may not require you to leave your
+                                    home, but significant structural damage or water intrusion might make it unsafe to stay.
+                                    Professionals can provide guidance based on the severity of the situation.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                            <h3>What Does the Storm Damage Restoration Process Involve?</h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>
+                                    The process includes a comprehensive assessment, emergency repairs to prevent further
+                                    damage, water removal and drying if needed, debris removal, and full restoration of
+                                    damaged areas. VR PLUS Restoration ensures your property is returned to its pre-storm
+                                    condition.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                            <h3>Will My Insurance Cover Storm Damage Repairs? </h3>
                             <div class="faq-content">
-                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                                <p>
+                                    Most homeowners' insurance policies cover storm damage, but coverage details can vary.
+                                    It's important to review your policy and work with your insurance company to understand
+                                    your coverage. VR PLUS Restoration can assist with the claims process to ensure a smooth
+                                    experience.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>How Can I Prevent Future Storm Damage? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    Preventative measures include regular roof inspections, maintaining gutters and
+                                    downspouts, reinforcing windows and doors, and trimming trees near your property.
+                                    Installing storm shutters and securing outdoor furniture can also help minimize damage
+                                    during a storm.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>How Long Does It Take to Fix Flood Damage? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    The time to fix flood damage varies based on the extent of the damage. Minor repairs can
+                                    take a few days, while more extensive damage may require several weeks. A professional
+                                    assessment will provide a more accurate timeline for your specific situation.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Is Storm Damage Covered by Insurance? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    Yes, most homeowners' insurance policies cover storm damage, but the extent of coverage
+                                    can vary. Review your policy and contact your insurance provider to understand your
+                                    specific coverage. VR PLUS Restoration can help navigate the claims process.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Who Should I Call After a Storm? </h3>
+                            <div class="faq-content">
+                                <p>
+                                    After ensuring your safety, contact your insurance company to report the damage. Then,
+                                    reach out to a professional storm damage restoration company like VR PLUS to start the
+                                    repair and restoration process. Our experts are available 24/7 to assist you.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->

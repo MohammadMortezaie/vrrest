@@ -361,7 +361,7 @@
 
 
     <!-- Services We Provide -->
-    <section id="services" class="services section ">
+    <section id="services" class="services section bg-vr-second">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">

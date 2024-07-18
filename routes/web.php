@@ -71,7 +71,7 @@ Route::group([
     Route::get('/construction', [ServiceController::class, 'construction'])->name('construction');
     Route::get('/fire-damage', [ServiceController::class, 'fireDamage'])->name('fireDamage');
     Route::get('/general-cleaning', [ServiceController::class, 'generalCleaning'])->name('generalCleaning');
-    Route::get('/mold=remediation', [ServiceController::class, 'moldRemediation'])->name('moldRemediation');
+    Route::get('/mold-remediation', [ServiceController::class, 'moldRemediation'])->name('moldRemediation');
     Route::get('/specialty-cleaning', [ServiceController::class, 'specialtyCleaning'])->name('specialtyCleaning');
     Route::get('/storm-disaster', [ServiceController::class, 'stormDisaster'])->name('stormDisaster');
     Route::get('/roof-tarp-board-up', [ServiceController::class, 'roofTarpBoard'])->name('roofTarpBoard');

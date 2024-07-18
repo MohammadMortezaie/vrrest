@@ -116,7 +116,8 @@
                     </h2>
 
                     <p class="lead">
-                        When General Cleaning occurs in your commercial property, be it a small business, warehouse, high-rise
+                        When General Cleaning occurs in your commercial property, be it a small business, warehouse,
+                        high-rise
                         building, or other industrial space, the destruction can be devastating. Not only is your business
                         damaged, but operations may stop, causing a disruption in production and revenue, as well as
                         inconveniencing or causing possible safety concerns for your customers and employees. No matter the
@@ -167,7 +168,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential General Cleaning restoration, with training focused
+                                Our professionals specialize in residential General Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -181,7 +183,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential General Cleaning restoration, with training focused
+                                Our professionals specialize in residential General Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -195,7 +198,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential General Cleaning restoration, with training focused
+                                Our professionals specialize in residential General Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -209,7 +213,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential General Cleaning restoration, with training focused
+                                Our professionals specialize in residential General Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -223,7 +228,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential General Cleaning restoration, with training focused
+                                Our professionals specialize in residential General Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -237,7 +243,8 @@
                             Highly Trained Restoration Specialists</div>
                         <div class="card-body">
                             <p class="card-text">
-                                Our professionals specialize in residential General Cleaning restoration, with training focused
+                                Our professionals specialize in residential General Cleaning restoration, with training
+                                focused
                                 on restoring salvageable items, accelerating drying time while documenting the entire
                                 restoration process.
                             </p>
@@ -270,58 +277,94 @@
 
                         <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                            <h3>What Is General Cleaning Cleanup? </h3>
                             <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.</p>
+                                <p>General cleaning cleanup involves routine cleaning tasks designed to maintain cleanliness
+                                    and hygiene in homes and businesses. These tasks include dusting, vacuuming, mopping,
+                                    surface cleaning, and sanitizing high-touch areas.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                            <h3>How Often Should General Cleaning Be Done?
+                            </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>The frequency of general cleaning depends on the environment and usage. For most homes,
+                                    weekly cleaning is sufficient, while high-traffic commercial spaces may require daily or
+                                    multiple cleanings per week to maintain a clean and healthy environment.
+
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                            <h3>Do You Offer Customized Cleaning Plans?
+                            </h3>
                             <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                                <p>Yes, we offer customized cleaning plans tailored to meet the specific needs of each
+                                    client. Whether you need a one-time deep cleaning or regular maintenance, we can create
+                                    a plan that fits your schedule and cleaning requirements.
+
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                            <h3>What Cleaning Products Do You Use?
+                            </h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>We use high-quality, eco-friendly cleaning products that are effective and safe for your
+                                    family, pets, and the environment. Our products are selected to provide the best results
+                                    without harsh chemicals.
+
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                            <h3>Are Your Cleaning Services Safe for Pets and Children?
+                            </h3>
                             <div class="faq-content">
-                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                                <p>Yes, our cleaning services are safe for pets and children. We use non-toxic, eco-friendly
+                                    cleaning products and methods to ensure the safety of all household members, including
+                                    your furry friends. </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Can You Handle Large Commercial Spaces?
+
+                            </h3>
+                            <div class="faq-content">
+                                <p>Yes, we have the expertise and resources to clean large commercial spaces. Our team is
+                                    equipped to handle the cleaning needs of offices, retail stores, warehouses, and other
+                                    commercial properties, ensuring a clean and professional environment.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Do You Provide Cleaning Supplies, or Do I Need to Supply Them?
+                            </h3>
+                            <div class="faq-content">
+                                <p>We provide all necessary cleaning supplies and equipment. Our team arrives fully equipped
+                                    with everything needed to perform a thorough and effective cleaning service, saving you
+                                    the hassle and expense of purchasing supplies.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->

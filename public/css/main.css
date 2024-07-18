@@ -28,7 +28,7 @@ when they are hovered over. */
     background-color: var(--alt-background-color);
 }
 .bg-vr-second {
-    background-color: #f5f5f4;
+    background-color: #f5f5f4 !important;
 }
 .about-r-padding {
     padding-right: 30px !important;
@@ -482,12 +482,7 @@ section,
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services {
-    /* background-image: url('/img/hero-bg.jpeg') ;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background-color: #eee;
-}
+
 .icon-text {
     font-size: 1.5rem; /* Adjust size as needed */
 }
