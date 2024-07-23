@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>VR Restoration</title>
+{!! seo($SEOData) !!}
     <link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendors/glightbox/css/glightbox.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
@@ -218,11 +218,11 @@
             </div>
 
             <div class="swiper-button-next-custom">
-                <span class="next-text">Next</span>
+                <span class="next-text">{{ __('Next') }}</span>
             </div>
             <div class="swiper-button-prev-custom">
 
-                <span class="prev-text">Previous</span>
+                <span class="prev-text">{{ __('Previous') }}</span>
             </div>
 
 
@@ -244,39 +244,35 @@
                         <h2 class="text-white">{{ __('Restoration and Cleaning Services') }}</h2>
                     </div>
                     <p class="fs-5 pb-3 mb-4">
-                        When your property is impacted by water, fire, or mold damage, it's crucial to act quickly to avoid
-                        additional damage. <br>
-                        Opting for the services of a restoration company is the most reliable means to
-                        ensure a swift and thorough restoration of your property.
+                        {{ __('welcome 1-1') }}
+                        <br>
+                        {{ __('welcome 1-2') }}
+
                     </p>
-                    <p class="fs-4 fw-bold">WHY WE ARE PLUSE RESTORATION:</p>
+                    <p class="fs-4 fw-bold">{{ __('welcome 1-3') }}</p>
                     <ul>
                         <li>
                             <i class="bi bi-clipboard-check-fill"></i>
                             <div>
-                                <p class="fs-5 pt-2">We work closely with <strong class="txt-vr"
+                                <p class="fs-5 pt-2">{{ __('welcome 1-4') }} <strong class="txt-vr"
                                         style="font-weight: 800">
-                                        all
-                                        insurance </strong> brokers, adjusters, risk managers and claim managers.</p>
+                                        {{ __('welcome 1-5') }} </strong> {{ __('welcome 1-6') }}</p>
                             </div>
                         </li>
                         <li>
                             <i class="bi bi-coin"></i>
                             <div>
-                                <p class="fs-5 pt-2">
-                                    We have implemented lean strategies in our operation to reduce our overhead costs,
-                                    therefore <strong class="txt-vr" style="font-weight: 800"> our costs are much lower
-                                    </strong> our competitors
+                                <p class="fs-5 pt-2">   {{ __('welcome 1-7') }}
+                                    <strong class="txt-vr" style="font-weight: 800">  {{ __('welcome 1-8') }}
+                                    </strong> {{ __('welcome 1-9') }}
                                 </p>
                             </div>
                         </li>
                         <li>
                             <i class="bi bi-award"></i>
                             <div>
-                                <p class="fs-5 pt-2">
-                                    Our team consists of <strong class="txt-vr" style="font-weight: 800"> highly trained
-                                        and certified </strong> restoration professionals with IICRC
-                                    certification, ready to serve you.
+                                <p class="fs-5 pt-2">{{ __('welcome 1-10') }}
+                                     <strong class="txt-vr" style="font-weight: 800"> {{ __('welcome 1-11') }}</strong> {{ __('welcome 1-12') }}
                                 </p>
                             </div>
                         </li>
@@ -284,9 +280,8 @@
                             <i class="bi bi-alarm-fill"></i>
                             <div>
                                 <p class="fs-5 pt-2">
-                                    Time is crucial when dealing with water damage. Our <strong class="txt-vr"
-                                        style="font-weight: 800"> 24/7 emergency</strong> response team is
-                                    ready to minimize damage and prevent complications, offering quick and reliable service
+                                    {{ __('welcome 1-13') }}<strong class="txt-vr" style="font-weight: 800">
+                                        {{ __('welcome 1-14') }}</strong> {{ __('welcome 1-15') }}
                                 </p>
                             </div>
                         </li>
@@ -469,21 +464,17 @@
 
                 <div class="col-lg-7  content " data-aos="fade-right" data-aos-delay="100">
 
-                    <p class="txt-def">
-                        At VR Plus restoration, we provide comprehensive property damage emergency services and restoration
-                        24/7, 365 days a year. Our qualified, licensed, and highly trained crews work efficiently to restore
-                        your residential or commercial property to its pre-loss condition, specializing in flood, fire,
-                        wind, mold, and asbestos restoration.
+                    <p class="txt-def">{{ __('welcome 1-16') }}
 
                     </p>
                     <ul>
                         <li>
                             <div>
-                                <h5>
-                                    Below are just a few of the reasons why you should call VR Plus restoration Restoration:
+                                <h5>{{ __('welcome 1-17') }}
+
                                 </h5>
-                                <p class=" mb-1">VR Plus restoration technicians are ready to respond to your property damage, 24/7. </p>
-                                <p>Our fully equipped team will be onsite within half and hour. </p>
+                                <p class=" mb-1">{{ __('welcome 1-18') }}</p>
+                                <p>{{ __('welcome 1-19') }} </p>
                             </div>
                         </li>
                     </ul>

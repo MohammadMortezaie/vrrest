@@ -3,12 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RalphJSmit\Laravel\SEO\SchemaCollection;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('welcome', [
+            'SEOData' => new SEOData(
+                title: 'We Are Restoration - All Restoration Services',
+                description: 'We Give You All ...',
+                schema: SchemaCollection::make()
+                    ->add(fn(SEOData $SEOData) => [
+                        // You could use the `$SEOData` to dynamically
+                        // fetch any data about the current page.
+                        '@context' => 'https://schema.org',
+                        '@type' => 'FAQPage',
+                        'mainEntity' => [
+                            '@type' => 'Question',
+                            'name' => 'Your question goes here',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Your answer goes here',
+                            ],
+                        ],
+                    ]),
+            ),
+        ]);
     }
 
     public function about()
