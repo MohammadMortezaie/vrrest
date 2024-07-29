@@ -9,21 +9,22 @@
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy"
-                        src="https://www.servprocentralvancouver.com/FranchiseContent/OwnerPhotos/50028-5975f1ce-a5bb-4a47-943b-5a5423606d40.jpg"
-                        alt="About 1">
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/career.jpeg') }}"
+                    alt="Career">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
-                            <h2 class="fs-1 fw-bolder">Careers at VRrestoration</h2>
+                            <h2 class="fs-1 fw-bolder">{{ __('careersheading') }}</h2>
+                            <strong>
+                                {{ __('careerssubheading') }}
+                            </strong>
                             <hr>
-                            <p class="lead mb-5">
-                                We are a fast-growing company, but we have never lost sight of our core
-                                values. We believe in collaboration, innovation, and customer satisfaction. We are always
-                                looking for new ways to improve our products and services.
+                            <p class="lead txt-def mb-5">
+                                {{ __('careersdescription') }}
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -32,80 +33,113 @@
 
 
 
-    <section class="py-3 py-md-5 ">
+    <!-- Services We Provide -->
+    <section id="services" class="services section ">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2 class="">{{ __('Services We Provide') }}</h2>
+        </div><!-- End Section Title -->
+
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-12 mb-3">
-                    <h2 class="fs-2 fw-bolder">
-                        Why consider a career with VR Restoration of Central Vancouver?
-                    </h2>
 
-                    <p class="lead">
-                        At SERVPRO of Central Vancouver, you have the opportunity to make a positive difference in the lives
-                        of people around you each and every day. We are seeking individuals who are self-motivated,
-                        proactive, responsible, and service-oriented. Please join us in our mission to help our customers in
-                        their greatest moment of need.
-                    </p>
-                </div>
-                <div class="col-6 col-lg-3 mb-3">
+
+
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-3 ">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-check-circle icon"></i>
-                            <span class="ms-2 text">Home</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template1.png') }}"
+                                alt="{{ __('SpecialtyCleaning') }}">
+                            <span class="ms-2 fs-6 text">{{ __('SpecialtyCleaning') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-check-circle icon"></i>
-                            <span class="ms-2 text">About</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template2.png') }}"
+                                alt="{{ __('GeneralCleaning') }}">
+                            <span class="ms-2 fs-6 text">{{ __('GeneralCleaning') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-check-circle icon"></i>
-                            <span class="ms-2 text">Contact</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template11.png') }}"
+                                alt="{{ __('waterDamage') }}">
+                            <span class="ms-2 fs-6 text">{{ __('waterDamage') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-check-circle icon"></i>
-                            <span class="ms-2 text">Email</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template10.png') }}"
+                                alt="{{ __('fireDamage') }}">
+                            <span class="ms-2 fs-6 text">{{ __('fireDamage') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-check-circle icon"></i>
-                            <span class="ms-2 text">Profile</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template9.png') }}"
+                                alt="{{ __('moldRemediation') }}">
+                            <span class="ms-2 fs-6 text">{{ __('moldRemediation') }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
+                <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
                         <a href="#">
-                            <i class="bi bi-check-circle icon"></i>
-                            <span class="ms-2 text">Settings</span>
+                            <img style="max-width: 80px" src="{{ asset('img/template3.png') }}"
+                                alt="{{ __('commercial') }}">
+                            <span class="ms-2 fs-6 text">{{ __('commercial') }}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 mb-3">
+                    <div class="icon-text">
+                        <a href="#">
+                            <img style="max-width: 80px" src="{{ asset('img/template5.png') }}"
+                                alt="{{ __('Residential') }}">
+                            <span class="ms-2 fs-6 text">{{ __('Residential') }}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 mb-3">
+                    <div class="icon-text">
+                        <a href="#">
+                            <img style="max-width: 80px" src="{{ asset('img/template6.png') }}"
+                                alt="{{ __('construction') }}">
+                            <span class="ms-2 fs-6 text">{{ __('construction') }}</span>
                         </a>
                     </div>
                 </div>
             </div>
+
+
+
+
         </div>
-    </section>
+
+    </section><!-- /Services We Provide -->
+
 
 
     <section class="py-3 py-md-5 bg-vr-second">
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-12">
-                    <h1 class="fs-1 fw-bolder">Career List</h1>
+                    <h1 class="fs-1 fw-bolder">{{ __('career_listheading') }}</h1>
+                    <hr>
 
+                    <p class="txt-def">
+                        {{ __('career_listdescription') }}
+                        <strong>{{ __('career_listemail') }}</strong>
+                    </p>
                     <ul class="list-group ">
                         <a href="#" class="text-decoration-none">
                             <li class="list-group-item fs-4 rounded">
@@ -115,6 +149,7 @@
                     </ul>
 
                 </div>
+
             </div>
         </div>
     </section>

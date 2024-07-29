@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>Water Damage Restoration</title>
+    {!! seo($SEOData) !!}
 @endsection
 
 @section('content')

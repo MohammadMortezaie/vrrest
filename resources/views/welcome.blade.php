@@ -200,7 +200,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                {{-- <div class="swiper-slide">
                     <a href="#" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
@@ -212,7 +212,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
 
 
             </div>
@@ -333,21 +333,14 @@
               }'>
                 <div class="swiper-wrapper align-items-center">
                     <div class="swiper-slide"><img src="{{ asset('img/clients/client-1.png') }}" class="img-fluid"
-                            alt=""></div>
+                            alt="The Home Depot"></div>
                     <div class="swiper-slide"><img src="{{ asset('img/clients/client-2.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-3.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-4.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-5.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-6.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-7.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-8.png') }}" class="img-fluid"
-                            alt=""></div>
+                            alt="BC housing"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-3.jpg') }}" class="img-fluid"
+                            alt="iicrc"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-4.jpg') }}" class="img-fluid"
+                            alt="Canada"></div>
+
                 </div>
             </div>
 
@@ -359,7 +352,7 @@
     <section id="services" class="services section bg-vr-second">
 
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title">
             <h2 class="">{{ __('Services We Provide') }}</h2>
         </div><!-- End Section Title -->
 
@@ -545,23 +538,23 @@
                         }
                       }'>
                         <div class="swiper-wrapper ">
-                            @for ($i = 0; $i < 8; $i++)
+                            @foreach ($blog as $b)
+
                                 <div class="swiper-slide my-3 ">
                                     <div class="card border-0 shadow-sm">
                                         <div class="card-body">
-                                            <h5 class="card-title txt-vr">What to do when your basement floods?</h5>
+                                            <h5 class="card-title txt-vr">{{$b->title}}</h5>
                                             <hr>
-                                            <p class="card-text">Start with these steps:Shut off electricity and gas in the
-                                                area.
-                                                If
-                                                you’re not sure ...</p>
-                                            <a href="#" class="text-decoration-none text-black">Read More
+                                            <p class="card-text">
+                                                {{$b->subtitle}}
+                                            </p>
+                                            <a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $b->id,'slug'=> $b->slug]) }}" class="text-decoration-none text-black">{{__("Read More")}}
                                                 <i class="bi bi-chevron-double-right"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            @endfor
+                            @endforeach
                         </div>
                     </div>
 

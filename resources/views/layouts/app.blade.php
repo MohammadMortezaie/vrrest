@@ -99,14 +99,17 @@
                                         <li><a class="dropdown-item"
                                                 href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">{{ __('moldRemediation') }}</a>
                                         </li>
-                                        <li><a class="dropdown-item"
+                                        {{-- <li><a class="dropdown-item"
                                                 href="{{ route('stormDisaster', ['lang' => app()->getLocale()]) }}">{{ __('stormDisaster') }}</a>
-                                        </li>
+                                        </li> --}}
                                         <li><a class="dropdown-item"
                                                 href="{{ route('construction', ['lang' => app()->getLocale()]) }}">{{ __('construction') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
                                                 href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">{{ __('commercialServices') }}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                            href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}">{{ __('residentialServices') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
                                                 href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}">{{ __('SpecialtyCleaning') }}</a>
@@ -115,12 +118,12 @@
                                                 href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}">{{ __('GeneralCleaning') }}</a>
                                         </li>
 
-                                        <li><a class="dropdown-item"
+                                        {{-- <li><a class="dropdown-item"
                                                 href="{{ route('roofTarpBoard', ['lang' => app()->getLocale()]) }}">{{ __('Roof Tarp/Board-up') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
                                                 href="{{ route('industriesServiced', ['lang' => app()->getLocale()]) }}">{{ __('Industries Serviced-up') }}</a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </li>
@@ -269,10 +272,10 @@
                                 <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('moldRemediation') }}</a>
                             </p>
-                            <p>
+                            {{-- <p>
                                 <a href="{{ route('stormDisaster', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('stormDisaster') }} </a>
-                            </p>
+                            </p> --}}
                             <p>
                                 <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('construction') }}</a>
@@ -290,14 +293,14 @@
                                     class="text-white">{{ __('GeneralCleaning') }} </a>
                             </p>
 
-                            <p>
+                            {{-- <p>
                                 <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('Roof Tarp/Board-up') }} </a>
                             </p>
                             <p>
                                 <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('Industries Serviced') }} </a>
-                            </p>
+                            </p> --}}
                         </div>
                         <!-- Grid column -->
 
@@ -328,14 +331,10 @@
                             <h6 class="text-uppercase fw-bold">Resources</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
-                            ////
+
                             <p>
-                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
+                                <a href="{{  route('contact', ['lang' => app()->getLocale()]) }}#whyvr"
                                     class="text-white">{{ __('Why RV Restoration') }} </a>
-                            </p>
-                            <p>
-                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('FAQ') }} </a>
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -343,11 +342,11 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-sm-left">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">Contact</h6>
+                            <h6 class="text-uppercase fw-bold">{{__("Contact Us")}}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
-                            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                            <p><i class="fas fa-home mr-3"></i> 3030 Lincoln Ave #211, Coquitlam, BC V3B 6B4</p>
+                            <p><i class="fas fa-envelope mr-3"></i> info@@vrrestoration.ca</p>
                             <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                             <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
                         </div>

@@ -29,10 +29,10 @@ function getLanguageFromPath() {
     return segments[1];
 }
 
-let defaultStrings = ["General Cleaning!", "Water Damage!", "Fire Mold Cleanup!"];
+let defaultStrings = [ "Water Damage","Specialty Cleaning","General Cleaning", "Mold Remediation", "Storm/Disaster", "Construction"];
 let languageStrings = {
-    'en': ["General Cleaning!", "Water Damage!", "Fire Mold Cleanup!"],
-    'zh': ["普通清洁!", "水灾!", "火灾霉菌清理!"]
+    'en': [ "Water Damage","Specialty Cleaning","General Cleaning", "Mold Remediation", "Storm/Disaster", "Construction"],
+    'zh': ["水灾","专业清洁","般清洁","霉菌修复","风暴/灾难","建筑"]
 };
 
 let language = getLanguageFromPath();

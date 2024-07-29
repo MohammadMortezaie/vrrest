@@ -34,15 +34,19 @@
             <div class="row align-items-start">
                 <div class="col-lg-8 m-15px-tb">
                     <article class="article">
-                        <div class="article-img">
-                            <img src="https://www.bootdey.com/image/800x350/87CEFA/000000" title="" alt="">
-                        </div>
                         <div class="article-title">
                             <h6><a href="#">{{ $blog->category->name_en }}</a></h6>
                             <h1 class="h2 fw-bold">{{ $blog->title }}</h1>
                             <span>Updated at: {{ $blog->updated_at }}</span>
                             <hr>
                         </div>
+                        @if ($blog->image)
+
+                        <div class="article-img">
+                            <img src="{{ asset($blog->image) }}" class="card-img-top w-100" style="max-height: 600px"
+                            alt="{{ $blog->title }}">
+                        </div>
+                        @endif
                         <div class="article-content">
 
                             {!! $blog->content !!}

@@ -65,8 +65,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="subtitle">Keywords*</label>
-                                <input type="text" class="form-control" name="subtitle" id="keywords"
+                                <label for="keywords">Keywords*</label>
+                                <input type="text" class="form-control" name="keywords" id="keywords"
                                     value="{{ $post->keywords }}"
                                     placeholder="Enter Keywords">
                             </div>

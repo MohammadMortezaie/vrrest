@@ -63,8 +63,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="subtitle">Keywords*</label>
-                                <input type="text" class="form-control" name="subtitle" id="keywords"
+                                <label for="keywords">Keywords*</label>
+                                <input type="text" class="form-control" name="keywords" id="keywords"
                                     placeholder="Keywords (SEO) divid by ,">
                             </div>
 

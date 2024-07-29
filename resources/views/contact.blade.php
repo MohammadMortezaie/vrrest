@@ -10,8 +10,8 @@
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
                     <img class="img-fluid rounded" loading="lazy"
-                        src="https://www.servprocentralvancouver.com/FranchiseContent/OwnerPhotos/50028-5975f1ce-a5bb-4a47-943b-5a5423606d40.jpg"
-                        alt="About 1">
+                        src="{{asset('img/contactus.jpeg')}}"
+                        alt="Conatct Us">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
@@ -30,9 +30,7 @@
                                         <div>
                                             <h2 class="h4 mb-3">Address</h2>
                                             <p class="text-secondary mb-0">
-                                                8385 Saint George Street
-                                                #1
-                                                Vancouver, BC V5X 4P3
+                                                3030 Lincoln Ave #211, Coquitlam, BC V3B 6B4
                                             </p>
                                         </div>
                                     </div>
@@ -44,14 +42,8 @@
                                         </div>
                                         <div>
                                             <h2 class="h4 mb-3">Call Us</h2>
-                                            <a href="#" class="text-secondary mb-2">
-                                                <span>English: </span>
-                                                +12321 23213
-                                            </a>
-                                            <br>
-                                            <a href="#" class="text-secondary ">
-                                                <span>Chinese: </span>
-                                                +12321 23213
+                                            <a href="#" class="text-secondary h4 mb-2">
+                                                (777) 683-2345
                                             </a>
                                         </div>
                                     </div>
@@ -65,7 +57,7 @@
     </section>
 
 
-    <section class="py-3 py-md-5 bg-vr-second">
+    <section class="py-3 py-md-5 bg-vr-second" id="whyvr" >
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-12 col-lg-7">
@@ -94,8 +86,8 @@
                 <div class="col-12 col-lg-5">
 
                     <img class="img-fluid rounded" loading="lazy"
-                        src="https://www.servprocentralvancouver.com/FranchiseContent/OwnerPhotos/50028-5975f1ce-a5bb-4a47-943b-5a5423606d40.jpg"
-                        alt="About 1">
+                    src="{{asset('img/contactus2.jpeg')}}"
+                    alt="Conatct Us">
 
                 </div>
             </div>
