@@ -46,7 +46,7 @@
     "Keywords": "Keywords",
     "welcome 1-1": "When your property is impacted by water, fire, or mold damage, it's crucial to act quickly to avoid additional damage.",
     "welcome 1-2": " Opting for the services of a restoration company is the most reliable means to ensure a swift and thorough restoration of your property.",
-    "welcome 1-3": "WHY WE ARE PLUSE RESTORATION:",
+    "welcome 1-3": "WHY WE ARE PLUS RESTORATION:",
     "welcome 1-4": "We work closely with",
     "welcome 1-5": "all insurance",
     "welcome 1-6": "brokers, adjusters, risk managers and claim managers.",
@@ -335,13 +335,21 @@
     "careersheading": "Careers at VRrestoration",
     "careerssubheading": "Welcome to VR PLUS Restoration, where dedication meets restoration expertise",
     "careersdescription": "We have a strong desire to improve people's lives during challenging and emergency times. Joining our team means becoming a vital part of a community that thrives on restoring properties after emergencies. At VR PLUS, we understand the importance of teamwork and compassion in every restoration and repairing project. Regardless of your role—skilled mechanic, project manager, or administrative specialist, we offer a supportive work environment that values expertise, dedication, and empathy.",
-
     "career_listheading": "Career List",
     "career_listdescription": "We’d love to hear from you. Send your resume and please fill the form. And if you think you’ve got special skills that we need? You can also send a resume to ",
-    "career_listemail": "careers@vrrestoration.ca"
-
-
-
-
-
+    "career_listemail": "careers@vrrestoration.ca",
+    "why_chooseheading": "WHY CHOOSE VR Restoration?",
+    "why_choosedescription1": "A group of entrepreneurs from Greater Vancouver area With a 100% Canadian brand called VR PLUS Restoration.",
+    "why_choosedescription2": "Providing 24/7 emergency property restoration services as a trusted industry-leading company with more than two decades of experience.",
+    "why_choosedescription3": "We work closely with all insurance professionals: brokers, adjusters, risk managers and claim managers.",
+    "why_choosedescription4": "We have implemented lean strategies in our operation to reduce our overhead costs, therefore our costs are much lower than our competitors’.",
+    "why_choosedescription5": "We are a brand and we do not pay any franchise fees, therefore our costs are even lower.",
+    "why_choosedescription6": "We have project managers who are PMI-PMP (Project Management Professional) certified with multi-million dollars construction projects experience.",
+    "why_choosedescription7": "Our technicians are highly trained and IICRC-certified. We provide safe and ideal restoration services and will be there for you with our expertise, experience, equipment, and techniques following an emergency.",
+    "contactheading": "Contact Us",
+    "contactdescription": "We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our products and services.",
+    "contactaddress_heading": "Address",
+    "contactaddress": "3030 Lincoln Ave #211, Coquitlam, BC V3B 6B4",
+    "contactcall_heading": "Call Us",
+    "contactphone": "(777) 683-2345"
 }

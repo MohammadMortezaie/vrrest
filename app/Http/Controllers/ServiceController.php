@@ -18,7 +18,7 @@ class ServiceController extends Controller
         $blog = Post::activePosts(false, 5);
         return view('welcome', [
             'SEOData' => new SEOData(
-                title: 'We Are Restoration - All Restoration Services',
+                title: 'We Are Restoration Company - All Restoration Services',
                 description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold  and more. CALL 604-444-9991. Our Vancouver branch can help you',
                 schema: SchemaCollection::make()->add(
                     fn(SEOData $SEOData) => [

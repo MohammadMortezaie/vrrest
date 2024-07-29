@@ -455,7 +455,7 @@
                     <h2>{{ __('About Us') }} </h2>
                 </div>
 
-                <div class="col-lg-7  content " data-aos="fade-right" data-aos-delay="100">
+                <div class="col-lg-7  content " >
 
                     <p class="txt-def">{{ __('welcome 1-16') }}
 
@@ -476,7 +476,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-5 position-relative align-self-start" >
                     <img src="{{ asset('img/about.jpeg') }}" class="img-fluid" style="max-height: 400px"
                         alt="">
                 </div>
