@@ -19,7 +19,7 @@ class ServiceController extends Controller
         return view('welcome', [
             'SEOData' => new SEOData(
                 title: 'We Are Restoration Company - All Restoration Services',
-                description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold  and more. CALL 604-444-9991. Our Vancouver branch can help you',
+                description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold  and more. CALL 778-318-6796. Our Vancouver branch can help you',
                 schema: SchemaCollection::make()->add(
                     fn(SEOData $SEOData) => [
                         // You could use the `$SEOData` to dynamically
@@ -31,7 +31,7 @@ class ServiceController extends Controller
                             'name' => 'What number should I call for restoration services?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Call 1-888-551-0514 for immediate restoration services, including water damage, fire damage, and mold remediation. Our Vancouver branch is ready to assist you 24/7.',
+                                'text' => 'Call 778-318-6796 for immediate restoration services, including water damage, fire damage, and mold remediation. Our Vancouver branch is ready to assist you 24/7.',
                             ],
                         ],
                     ],
@@ -64,7 +64,7 @@ class ServiceController extends Controller
         return view('services.waterdamage', [
             'SEOData' => new SEOData(
                 title: 'Water Damage Restoration Services',
-                description: '24/7 Water Damage Restoration Services: Emergency response for water damage, flooded basements, and more. Call 1-888-551-0514 for immediate assistance in Vancouver',
+                description: '24/7 Water Damage Restoration Services: Emergency response for water damage, flooded basements, and more. Call 778-318-6796 for immediate assistance in Vancouver',
                 schema: SchemaCollection::make()->add(
                     fn(SEOData $SEOData) => [
                         // You could use the `$SEOData` to dynamically
@@ -101,7 +101,7 @@ class ServiceController extends Controller
         return view('services.fireDamage', [
             'SEOData' => new SEOData(
                 title: 'Fire Damage Restoration Services ',
-                description: '24/7 Fire Damage Restoration Services Expert clean-up, repair, and restoration. Call 1-888-551-0514 for emergency assistance in Vancouver.',
+                description: '24/7 Fire Damage Restoration Services Expert clean-up, repair, and restoration. Call 778-318-6796 for emergency assistance in Vancouver.',
                 schema: SchemaCollection::make()->add(
                     fn(SEOData $SEOData) => [
                         '@context' => 'https://schema.org',
@@ -111,7 +111,7 @@ class ServiceController extends Controller
                             'name' => 'Your question goes here',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Call 1-888-551-0514 for emergency fire damage restoration services. Our Vancouver team provides expert clean-up, repair, and restoration to help you recover quickly. We are available 24/7 to assist with all your fire damage restoration needs.',
+                                'text' => 'Call 778-318-6796 for emergency fire damage restoration services. Our Vancouver team provides expert clean-up, repair, and restoration to help you recover quickly. We are available 24/7 to assist with all your fire damage restoration needs.',
                             ],
                         ],
                     ],

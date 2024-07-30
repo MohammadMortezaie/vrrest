@@ -16,7 +16,7 @@
         <div class="container position-relative">
             <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
                 <h2>{{ __('WE ARE PLUS RESTORATION') }}</h2>
-                <p style="font-size: 40px">{{ __('Focused on') }}
+                <p>{{ __('Focused on') }}
                     <span id="ityped"></span>
                 </p>
             </div><!-- End Welcome -->
@@ -78,7 +78,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -94,7 +94,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -110,7 +110,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -126,7 +126,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -141,7 +141,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -157,7 +157,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -173,7 +173,7 @@
 
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -187,7 +187,7 @@
                 </div>
 
                 <div class="swiper-slide">
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -243,7 +243,7 @@
                     <div class="section-title">
                         <h2 class="text-white">{{ __('Restoration and Cleaning Services') }}</h2>
                     </div>
-                    <p class="fs-5 pb-3 mb-4">
+                    <p class=" pb-3 mb-4 txt-def">
                         {{ __('welcome 1-1') }}
                         <br>
                         {{ __('welcome 1-2') }}
@@ -254,7 +254,7 @@
                         <li>
                             <i class="bi bi-clipboard-check-fill"></i>
                             <div>
-                                <p class="fs-5 pt-2">{{ __('welcome 1-4') }} <strong class="txt-vr"
+                                <p class=" pt-2 txt-def">{{ __('welcome 1-4') }} <strong class="txt-vr"
                                         style="font-weight: 800">
                                         {{ __('welcome 1-5') }} </strong> {{ __('welcome 1-6') }}</p>
                             </div>
@@ -262,7 +262,7 @@
                         <li>
                             <i class="bi bi-coin"></i>
                             <div>
-                                <p class="fs-5 pt-2">   {{ __('welcome 1-7') }}
+                                <p class="txt-def pt-2">   {{ __('welcome 1-7') }}
                                     <strong class="txt-vr" style="font-weight: 800">  {{ __('welcome 1-8') }}
                                     </strong> {{ __('welcome 1-9') }}
                                 </p>
@@ -271,7 +271,7 @@
                         <li>
                             <i class="bi bi-award"></i>
                             <div>
-                                <p class="fs-5 pt-2">{{ __('welcome 1-10') }}
+                                <p class="txt-def pt-2">{{ __('welcome 1-10') }}
                                      <strong class="txt-vr" style="font-weight: 800"> {{ __('welcome 1-11') }}</strong> {{ __('welcome 1-12') }}
                                 </p>
                             </div>
@@ -279,7 +279,7 @@
                         <li>
                             <i class="bi bi-alarm-fill"></i>
                             <div>
-                                <p class="fs-5 pt-2">
+                                <p class="txt-def pt-2">
                                     {{ __('welcome 1-13') }}<strong class="txt-vr" style="font-weight: 800">
                                         {{ __('welcome 1-14') }}</strong> {{ __('welcome 1-15') }}
                                 </p>
@@ -363,7 +363,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 mb-3 ">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template1.png') }}"
                                 alt="{{ __('SpecialtyCleaning') }}">
                             <span class="ms-2 fs-6 text">{{ __('SpecialtyCleaning') }}</span>
@@ -372,7 +372,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template2.png') }}"
                                 alt="{{ __('GeneralCleaning') }}">
                             <span class="ms-2 fs-6 text">{{ __('GeneralCleaning') }}</span>
@@ -381,7 +381,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template11.png') }}"
                                 alt="{{ __('waterDamage') }}">
                             <span class="ms-2 fs-6 text">{{ __('waterDamage') }}</span>
@@ -390,7 +390,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template10.png') }}"
                                 alt="{{ __('fireDamage') }}">
                             <span class="ms-2 fs-6 text">{{ __('fireDamage') }}</span>
@@ -399,7 +399,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template9.png') }}"
                                 alt="{{ __('moldRemediation') }}">
                             <span class="ms-2 fs-6 text">{{ __('moldRemediation') }}</span>
@@ -408,7 +408,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template3.png') }}"
                                 alt="{{ __('commercial') }}">
                             <span class="ms-2 fs-6 text">{{ __('commercial') }}</span>
@@ -417,7 +417,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template5.png') }}"
                                 alt="{{ __('Residential') }}">
                             <span class="ms-2 fs-6 text">{{ __('Residential') }}</span>
@@ -426,7 +426,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template6.png') }}"
                                 alt="{{ __('construction') }}">
                             <span class="ms-2 fs-6 text">{{ __('construction') }}</span>
@@ -457,22 +457,22 @@
 
                 <div class="col-lg-7  content " >
 
-                    <p class="txt-def">{{ __('welcome 1-16') }}
+                    <p class="fs-6 txt-def">{{ __('welcome 1-16') }}
 
                     </p>
                     <ul>
                         <li>
                             <div>
-                                <h5>{{ __('welcome 1-17') }}
+                                <h5 class="">{{ __('welcome 1-17') }}
 
                                 </h5>
-                                <p class=" mb-1">{{ __('welcome 1-18') }}</p>
-                                <p>{{ __('welcome 1-19') }} </p>
+                                <p class="txt-def mb-1">{{ __('welcome 1-18') }}</p>
+                                <p class="txt-def">{{ __('welcome 1-19') }} </p>
                             </div>
                         </li>
                     </ul>
                     <div class="send">
-                        <button class="px-btn theme"><span>{{ __('Read More') }}</span> <i class="arrow"></i></button>
+                        <a href="{{ route('about', ['lang' => app()->getLocale()]) }}" class="px-btn theme"><span>{{ __('Read More') }}</span> <i class="arrow"></i></a href="{{ route('about', ['lang' => app()->getLocale()]) }}">
                     </div>
                 </div>
 
@@ -562,6 +562,9 @@
 
 
     </section><!-- /Recommended For You -->
+
+
+
 @endsection
 
 
@@ -573,6 +576,7 @@
     <script src="https://unpkg.com/ityped@1.0.3/dist/index.min.js"></script>
     <script src="{{ asset('js/front.js') }}"></script>
 
+    @if(app()->getLocale() == 'zh')
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
@@ -588,4 +592,5 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
+    @endif
 @endsection

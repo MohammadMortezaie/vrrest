@@ -33,6 +33,13 @@ when they are hovered over. */
 .about-r-padding {
     padding-right: 30px !important;
 }
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 25px !important;
+    }
+}
+
 section,
 .section {
     color: var(--default-color);
@@ -95,8 +102,7 @@ section,
     z-index: 1020;
 }
 .logo {
-    max-height: 110px !important;
-    margin-top: -30px;
+    max-height: 90px !important;
 }
 .header .topbar {
     background-color: var(--accent-color);
@@ -397,8 +403,19 @@ section,
 }
 
 .hero .content .icon-box p {
-    font-size: 15px;
+    font-size: 40px;
     color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+@media (max-width: 768px) {
+
+    .hero .welcome p {
+        font-size: 17px ;
+    }
+    .hero img {
+        object-position: 35% 0; /* Show the left part of the image on mobile */
+    }
+
 }
 
 /*--------------------------------------------------------------
@@ -1109,4 +1126,28 @@ img {
     transform: translateX(-50%);
     font-size: 16px; /* Adjust the font size if needed */
     color: var(--accent-color); /* Text color */
+}
+
+
+
+.call-button {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 60px; /* Diameter of the circle */
+    height: 60px; /* Diameter of the circle */
+    background-color: #4CAF50; /* Background color of the button */
+    border-radius: 50%; /* Makes the button circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    z-index: 1000; /* Ensure it appears above other content */
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Icon color */
+    font-size: 24px; /* Size of the icon */
+}
+
+.call-button:hover {
+    background-color: #45a049; /* Darken color on hover */
 }

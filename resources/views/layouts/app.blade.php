@@ -35,12 +35,12 @@
             <div class="topbar d-flex align-items-center">
                 <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
                     <div class="contact-info d-flex flex-column flex-md-row align-items-center">
-                        <a href="tel:123-456-7890" style="text-decoration: none;" class="text-dark">
+                        <a href="tel:7783186796" style="text-decoration: none;" class="text-dark">
                             <span>{{ __('callToday') }} | <span class="text-danger">24/7</span>
                                 {{ __('emergencyServices') }}</span>
                         </a>
                         <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4">
-                            <a href="tel:123-456-7890"><span>+1 777 760 6234</span></a>
+                            <a href="tel:7783186796"><span>+1 7783186796</span></a>
                         </i>
                     </div>
                     <div class="social-links d-none d-md-flex align-items-center">
@@ -346,9 +346,8 @@
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
                             <p><i class="fas fa-home mr-3"></i> 3030 Lincoln Ave #211, Coquitlam, BC V3B 6B4</p>
-                            <p><i class="fas fa-envelope mr-3"></i> info@@vrrestoration.ca</p>
-                            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                            <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
+                            <p><a href="tel:7783186796" class="text-white"><i class="fas fa-phone mr-3"></i> +1 7783186796</a></p>
                         </div>
                         <!-- Grid column -->
                     </div>
@@ -374,6 +373,13 @@
     @yield('scripts')
 
     <script src="{{ asset('js/main.js') }}"></script>
+
+    @if(app()->getLocale() == 'en')
+    <a href="tel:7783186796" class="call-button">
+        <i class="bi bi-telephone-fill"></i>
+    </a>
+    @endif
+    
 </body>
 
 </html>
