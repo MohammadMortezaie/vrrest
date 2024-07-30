@@ -455,7 +455,7 @@
                     <h2>{{ __('About Us') }} </h2>
                 </div>
 
-                <div class="col-lg-7  content " >
+                <div class="col-lg-7 mt-0 content " >
 
                     <p class="fs-6 txt-def">{{ __('welcome 1-16') }}
 

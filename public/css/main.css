@@ -65,11 +65,6 @@ section,
     }
 }
 
-.section-title {
-    padding-bottom: 60px;
-    position: relative;
-}
-
 .section-title h2 {
     font-size: 32px;
     font-weight: 700;
@@ -409,6 +404,9 @@ section,
 
 @media (max-width: 768px) {
 
+    .hero .welcome  {
+        margin-top: -10em !important;
+    }
     .hero .welcome p {
         font-size: 17px ;
     }
@@ -873,7 +871,7 @@ img {
     padding-left: 15px;
 }
 .section-title {
-    padding-bottom: 45px;
+    padding-bottom: 10px;
 }
 .contact-form .send {
     margin-top: 20px;
