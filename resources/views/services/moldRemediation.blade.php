@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>Mold Remediation Restoration</title>
+{!! seo($SEOData) !!}
 @endsection
 
 @section('content')
@@ -141,7 +141,7 @@
                         </li>
                         <li>
                             {{ __('Mold 1-61') }}
-                            
+
 
                         </li>
                         </ul>

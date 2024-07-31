@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>General Cleaning </title>
+    {!! seo($SEOData) !!}
 @endsection
 
 @section('content')

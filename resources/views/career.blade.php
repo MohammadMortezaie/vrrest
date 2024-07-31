@@ -44,11 +44,10 @@
         <div class="container">
 
 
-
             <div class="row">
                 <div class="col-12 col-lg-3 mb-3 ">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template1.png') }}"
                                 alt="{{ __('SpecialtyCleaning') }}">
                             <span class="ms-2 fs-6 text">{{ __('SpecialtyCleaning') }}</span>
@@ -57,7 +56,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template2.png') }}"
                                 alt="{{ __('GeneralCleaning') }}">
                             <span class="ms-2 fs-6 text">{{ __('GeneralCleaning') }}</span>
@@ -66,7 +65,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template11.png') }}"
                                 alt="{{ __('waterDamage') }}">
                             <span class="ms-2 fs-6 text">{{ __('waterDamage') }}</span>
@@ -75,7 +74,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template10.png') }}"
                                 alt="{{ __('fireDamage') }}">
                             <span class="ms-2 fs-6 text">{{ __('fireDamage') }}</span>
@@ -84,7 +83,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template9.png') }}"
                                 alt="{{ __('moldRemediation') }}">
                             <span class="ms-2 fs-6 text">{{ __('moldRemediation') }}</span>
@@ -93,7 +92,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template3.png') }}"
                                 alt="{{ __('commercial') }}">
                             <span class="ms-2 fs-6 text">{{ __('commercial') }}</span>
@@ -102,7 +101,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template5.png') }}"
                                 alt="{{ __('Residential') }}">
                             <span class="ms-2 fs-6 text">{{ __('Residential') }}</span>
@@ -111,7 +110,7 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
-                        <a href="#">
+                        <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template6.png') }}"
                                 alt="{{ __('construction') }}">
                             <span class="ms-2 fs-6 text">{{ __('construction') }}</span>
@@ -119,7 +118,6 @@
                     </div>
                 </div>
             </div>
-
 
 
 

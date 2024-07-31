@@ -40,7 +40,7 @@
                                 {{ __('emergencyServices') }}</span>
                         </a>
                         <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4">
-                            <a href="tel:7783186796"><span>+1 7783186796</span></a>
+                            <a href="tel:7783186796"><span>+1 778-318-6796</span></a>
                         </i>
                     </div>
                     <div class="social-links d-none d-md-flex align-items-center">
