@@ -20,7 +20,7 @@ class ServiceController extends Controller
         $seoDataEn = new SEOData(
             title: 'We Are Restoration Company - All Restoration Services',
             description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold Remediation and more. CALL 778-318-6796. Our Vancouver branch is ready to assist you.',
-            image: asset('img/about.jpeg'), // Example image path
+            image: asset('img/hero-bg3.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
@@ -52,7 +52,7 @@ class ServiceController extends Controller
         $seoDataZh = new SEOData(
             title: '我们是恢复公司 - 所有恢复服务',
             description: '紧急服务和恢复。24/7水损恢复、火灾修复、霉菌治理等。请拨打778-318-6796。我们的温哥华分部随时为您提供帮助。',
-            image: asset('img/about.jpeg'), // Example image path
+            image: asset('img/hero-bg3.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
