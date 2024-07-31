@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>{{ $blog->title }}</title>
+{!! seo($SEOData) !!}
 
 
     <script type="text/javascript">

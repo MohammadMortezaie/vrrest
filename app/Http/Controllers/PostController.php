@@ -8,6 +8,8 @@ use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use RalphJSmit\Laravel\SEO\SchemaCollection;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class PostController extends Controller
 {
@@ -24,7 +26,47 @@ class PostController extends Controller
 
         $latest = Post::activePosts(true, 3);
 
-        return view('blogDetail', ['blog' => $blog, 'latestPost' => $latest]);
+        // Generate SEO Data
+        $SEOData = new SEOData(
+            title: $blog->title,
+            description: $blog->excerpt, // Assuming there's an excerpt or summary field
+            image: asset($blog->image), // Assuming image path is stored in the 'image' field
+            url: url()->current(),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'BlogPosting',
+                    'mainEntityOfPage' => [
+                        '@type' => 'WebPage',
+                        '@id' => url()->current()
+                    ],
+                    'headline' => $blog->title,
+                    'image' => asset($blog->image),
+                    'author' => [
+                        '@type' => 'Person',
+                        'name' => 'Sasan Ghanbari', // Assuming there's an author relationship
+                    ],
+                    'publisher' => [
+                        '@type' => 'Organization',
+                        'name' => 'VR Restoration',
+                        'logo' => [
+                            '@type' => 'ImageObject',
+                            'url' => asset('/android-chrome-192x192.png'),
+                        ],
+                    ],
+                    'datePublished' => $blog->created_at->toIso8601String(),
+                    'dateModified' => $blog->updated_at->toIso8601String(),
+                    'description' => $blog->subtitle,
+                ]
+            ),
+            tags: explode(',', $blog->tags) // Assuming tags are stored as a comma-separated string
+        );
+
+        return view('blogDetail', [
+            'blog' => $blog,
+            'latestPost' => $latest,
+            'SEOData' => $SEOData,
+        ]);
     }
 
     // ----------------------------------------------------------------
