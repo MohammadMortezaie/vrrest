@@ -315,7 +315,7 @@ class ServiceController extends Controller
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        return view('services.firedamage', compact('SEOData'));
+        return view('services.fireDamage', compact('SEOData'));
     }
 
     public function generalCleaning()
@@ -447,7 +447,7 @@ class ServiceController extends Controller
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        return view('services.moldremediation', compact('SEOData'));
+        return view('services.moldRemediation', compact('SEOData'));
     }
     public function specialtyCleaning()
     {
@@ -593,7 +593,7 @@ class ServiceController extends Controller
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        return view('services.stormdisaster', compact('SEOData'));
+        return view('services.stormDisaster', compact('SEOData'));
     }
     public function roofTarpBoard()
     {
