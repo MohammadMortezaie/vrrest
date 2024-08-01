@@ -345,7 +345,19 @@
                             <h6 class="text-uppercase fw-bold">{{__("Contact Us")}}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
-                            <p><i class="fas fa-home mr-3"></i> 3030 Lincoln Ave #211, Coquitlam, BC V3B 6B4</p>
+                            <p class=" mb-0">
+                                #7 636 Clyde AveWest Vancouver BC
+                            </p><hr>
+                            <p class=" mb-0">
+                                #112 828 Harbourside Dr North Vancouver
+                            </p><hr>
+                            <p class=" mb-0">
+                                4720 lougheed hwy Burnaby BC
+                            </p><hr>
+                            <p class=" mb-0">
+                                #211 3030 Lincoln Ave Coquitlam, BC
+                            </p><hr>
+
                             <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
                             <p><a href="tel:7783186796" class="text-white"><i class="fas fa-phone mr-3"></i> +1 7783186796</a></p>
                         </div>

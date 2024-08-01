@@ -27,9 +27,19 @@
                                         </div>
                                         <div>
                                             <h2 class="h4 mb-3">{{ __('contactaddress_heading') }}</h2>
-                                            <p class="text-secondary h5 mb-0">
-                                                {{ __('contactaddress') }}
+                                            <p class="text-secondary  mb-0">
+                                                #7 636 Clyde AveWest Vancouver BC
+                                            </p><hr>
+                                            <p class="text-secondary  mb-0">
+                                                #112 828 Harbourside Dr North Vancouver
+                                            </p><hr>
+                                            <p class="text-secondary  mb-0">
+                                                4720 lougheed hwy Burnaby BC
+                                            </p><hr>
+                                            <p class="text-secondary  mb-0">
+                                                #211 3030 Lincoln Ave Coquitlam, BC
                                             </p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -40,8 +50,8 @@
                                         </div>
                                         <div>
                                             <h2 class="h4 mb-3">{{ __('contactcall_heading') }}</h2>
-                                            <a href="tel:+17776832345" class="text-secondary h4 mb-2">
-                                                {{ __('contactphone') }}
+                                            <a href="tel:+17783186796" class="text-secondary h4 mb-2">
+                                                778-318-6796
                                             </a>
                                         </div>
                                     </div>
