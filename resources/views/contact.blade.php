@@ -104,4 +104,7 @@
             </div>
         </div>
     </section>
+    <div class="container d-flex align-items-center justify-content-center">
+        <iframe style="width: 100%" src="https://www.google.com/maps/d/u/0/embed?mid=1ZlFqpnfeNxRjioLAHd27DXnR2tVpFD4&ehbc=2E312F"  height="480"></iframe>
+    </div>
 @endsection
