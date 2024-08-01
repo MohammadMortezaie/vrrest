@@ -346,16 +346,16 @@
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
                             <p class=" mb-0">
-                                #7 636 Clyde AveWest Vancouver BC
+                                #7, 636 Clyde AveWest, Vancouver, BC
                             </p><hr>
                             <p class=" mb-0">
-                                #112 828 Harbourside Dr North Vancouver
+                                #112, 828 Harbourside, Dr North Vancouver, BC
                             </p><hr>
                             <p class=" mb-0">
-                                4720 lougheed hwy Burnaby BC
+                                4720 lougheed hwy, Burnaby, BC
                             </p><hr>
                             <p class=" mb-0">
-                                #211 3030 Lincoln Ave Coquitlam, BC
+                                #211, 3030 Lincoln Ave, Coquitlam, BC
                             </p><hr>
 
                             <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
