@@ -242,7 +242,7 @@ class ServiceController extends Controller
 
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'VR Plus Restoration - Expert Restoration Services',
+            title: 'VR Plus Restoration - Expert Residential Services',
             description: 'VR Plus Restoration offers top-notch Residential Services, including flood, fire, wind, mold, and asbestos restoration. Our skilled team provides 24/7 emergency response. Call 778-318-6796 for immediate assistance.',
             image: asset('img/residential.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
@@ -266,7 +266,7 @@ class ServiceController extends Controller
 
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
-            title: 'VR Plus Restoration - 专业修复服务',
+            title: 'VR Plus Restoration - 专业住宅服务',
             description: 'VR Plus Restoration 提供一流的住宅服务，包括洪水、火灾、风害、霉菌和石棉修复。我们的专业团队提供 24/7 紧急响应服务。请拨打 778-318-6796 获取即时帮助。',
             image: asset('img/residential.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
