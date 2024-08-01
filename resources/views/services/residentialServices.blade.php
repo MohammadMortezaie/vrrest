@@ -14,7 +14,7 @@
             <div class="col-12 col-lg-6 col-xl-7">
                 <div class="row justify-content-xl-center">
                     <div class="col-12 col-xl-11">
-                        <h2 class="fs-1 fw-bolder">{{ __('residentialheading') }}</h2>
+                        <h1 class="fs-1 fw-bolder">{{ __('residentialheading') }}</h1>
                         <hr>
                         <p class="lead mb-5">
                             {{ __('residentialdescription') }}
