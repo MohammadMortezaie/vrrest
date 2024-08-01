@@ -238,12 +238,13 @@ class ServiceController extends Controller
     }
     public function residentialServices()
     {
-        $locale = app()->getLocale();
+        $locale = app()->getLocale(); // Get the current locale
+
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'Professional Restoration Services by VR Plus Restoration',
-            description: 'VR Plus Restoration provides 24/7 expert repair and restoration services. Call 778-318-6796 for project management and insurance claims support.',
-            image: asset('/img/residential.jpeg'), // Example image path
+            title: 'VR Plus Restoration - Expert Restoration Services',
+            description: 'VR Plus Restoration offers top-notch Residential Services, including flood, fire, wind, mold, and asbestos restoration. Our skilled team provides 24/7 emergency response. Call 778-318-6796 for immediate assistance.',
+            image: asset('img/residential.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
@@ -251,39 +252,23 @@ class ServiceController extends Controller
                     'mainEntity' => [
                         [
                             '@type' => 'Question',
-                            'name' => 'What types of restoration services do you offer?',
+                            'name' => 'What types of residential restoration services do you offer?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'We offer restoration services for flood, fire, wind, mold, and asbestos damage. Our team is available 24/7 to address any property damage issues.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How can I contact VR Plus Restoration?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'You can contact us by calling 778-318-6796. We provide 24-hour emergency restoration services and are ready to assist you.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What is the starting price for your restoration services?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Our restoration services start from $300. For a detailed quote, please contact us directly at 778-318-6796.',
+                                'text' => 'We offer a variety of residential restoration services, including flood damage repair, fire damage restoration, mold remediation, and asbestos removal. Our services are available 24/7 to ensure you get the help you need when you need it.',
                             ],
                         ],
                     ],
                 ]
             ),
-            tags: ['property damage restoration', '24/7 restoration services', 'flood restoration', 'fire restoration', 'mold remediation', 'asbestos removal']
+            tags: ['residential services', 'restoration services', '24/7 emergency response', 'flood damage repair', 'fire damage restoration', 'mold remediation', 'asbestos removal']
         );
 
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
-            title: '专业恢复服务 - VR Plus Restoration',
-            description: 'VR Plus 恢复 提供全天候专家维修和恢复服务。请拨打 778-318-6796 获取项目管理和保险理赔支持',
-            image: asset('/img/residential.jpeg'), // Example image path
+            title: 'VR Plus Restoration - 专业修复服务',
+            description: 'VR Plus Restoration 提供一流的住宅服务，包括洪水、火灾、风害、霉菌和石棉修复。我们的专业团队提供 24/7 紧急响应服务。请拨打 778-318-6796 获取即时帮助。',
+            image: asset('img/residential.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
@@ -291,32 +276,16 @@ class ServiceController extends Controller
                     'mainEntity' => [
                         [
                             '@type' => 'Question',
-                            'name' => '你们提供哪些类型的恢复服务？',
+                            'name' => '你们提供哪些类型的住宅修复服务？',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => '我们提供洪水、火灾、风暴、霉菌和石棉损坏的恢复服务。我们的团队24小时随时准备解决任何财产损坏问题。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '如何联系VR Plus Restoration？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '您可以拨打778-318-6796与我们联系。我们提供24小时紧急恢复服务，随时为您提供帮助。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们的恢复服务起价是多少？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们的恢复服务价格从300加元起。有关详细报价，请直接拨打778-318-6796与我们联系。',
+                                'text' => '我们提供各种住宅修复服务，包括洪水损害修复、火灾损害修复、霉菌去除和石棉清除。我们的服务全天候提供，确保您在需要时能得到帮助。',
                             ],
                         ],
                     ],
                 ]
             ),
-            tags: ['财产损坏恢复', '24/7恢复服务', '洪水恢复', '火灾恢复', '霉菌去除', '石棉去除']
+            tags: ['住宅服务', '修复服务', '24/7 紧急响应', '洪水损害修复', '火灾损害修复', '霉菌去除', '石棉清除']
         );
 
         // Choose SEO data based on locale
