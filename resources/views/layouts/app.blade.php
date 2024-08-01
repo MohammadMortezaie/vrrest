@@ -109,7 +109,7 @@
                                                 href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">{{ __('commercialServices') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
-                                            href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}">{{ __('residentialServices') }}</a>
+                                                href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}">{{ __('residentialServices') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
                                                 href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}">{{ __('SpecialtyCleaning') }}</a>
@@ -310,6 +310,11 @@
                             <h6 class="text-uppercase fw-bold">{{ __('About') }}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
+
+                            <p>
+                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}#whyvr"
+                                    class="text-white">{{ __('Why RV Restoration') }} </a>
+                            </p>
                             <p>
                                 <a href="{{ route('about', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('About Us') }}</a>
@@ -322,44 +327,39 @@
                                 <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('Contact Us') }}</a>
                             </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-sm-left">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">Resources</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #f9b500; height: 2px" />
-
                             <p>
-                                <a href="{{  route('contact', ['lang' => app()->getLocale()]) }}#whyvr"
-                                    class="text-white">{{ __('Why RV Restoration') }} </a>
+                                <a href="{{ route('blog', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('Blog') }}</a>
                             </p>
                         </div>
                         <!-- Grid column -->
 
                         <!-- Grid column -->
-                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-sm-left">
+                        <div class="col-md-6 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4 text-sm-left">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">{{__("Contact Us")}}</h6>
+                            <h6 class="text-uppercase fw-bold">{{ __('Contact Us') }}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
-                            <p class=" mb-0">
-                                #7, 636 Clyde AveWest, Vancouver, BC
-                            </p><hr>
-                            <p class=" mb-0">
-                                #112, 828 Harbourside, Dr North Vancouver, BC
-                            </p><hr>
-                            <p class=" mb-0">
-                                4720 lougheed hwy, Burnaby, BC
-                            </p><hr>
-                            <p class=" mb-0">
-                                #211, 3030 Lincoln Ave, Coquitlam, BC
-                            </p><hr>
 
                             <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
-                            <p><a href="tel:7783186796" class="text-white"><i class="fas fa-phone mr-3"></i> +1 7783186796</a></p>
+                            <p><a href="tel:7783186796" class="text-white"><i class="fas fa-phone mr-3"></i> +1
+                                    7783186796</a></p>
+                            <hr>
+                            <p class=" mb-0">
+                                #7, 636 Clyde AveWest, Vancouver, BC
+                            </p>
+                            <hr>
+                            <p class=" mb-0">
+                                #112, 828 Harbourside, Dr North Vancouver, BC
+                            </p>
+                            <hr>
+                            <p class=" mb-0">
+                                4720 lougheed hwy, Burnaby, BC
+                            </p>
+                            <hr>
+                            <p class=" mb-0">
+                                #211, 3030 Lincoln Ave, Coquitlam, BC
+                            </p>
                         </div>
                         <!-- Grid column -->
                     </div>
@@ -386,10 +386,10 @@
 
     <script src="{{ asset('js/main.js') }}"></script>
 
-    @if(app()->getLocale() == 'en')
-    <a href="tel:7783186796" class="call-button">
-        <i class="bi bi-telephone-fill"></i>
-    </a>
+    @if (app()->getLocale() == 'en')
+        <a href="tel:7783186796" class="call-button">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
     @endif
 
 </body>
