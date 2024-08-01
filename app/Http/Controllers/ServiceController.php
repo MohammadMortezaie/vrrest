@@ -181,7 +181,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Water Damage Restoration Services',
-            description: '24/7 Water Damage Restoration Services: Emergency response for water damage, flooded basements, and more. Call 778-318-6796 for immediate assistance in Vancouver.',
+            description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 778-318-6796 for immediate assistance in Vancouver',
             image: asset('/img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -304,7 +304,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Fire Damage Restoration Services',
-            description: 'Professional fire damage restoration services: Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 778-318-6796 for fast and effective restoration in Vancouver.',
+            description: 'Professional fire damage restoration services Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 778-318-6796.',
             image: asset('img/fire-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -436,7 +436,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Mold Remediation Services',
-            description: 'Professional mold remediation services: Address mold issues caused by water damage or high humidity. We handle both residential and commercial properties. Call 778-318-6796 for immediate assistance in Vancouver.',
+            description: 'Professional mold remediation services: We address mold issues in both residential and commercial properties. Call 778-318-6796.',
             image: asset('img/mold.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -509,7 +509,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Specialty Cleaning Services',
-            description: 'Comprehensive specialty cleaning services including residential, commercial, post-construction, and move-in/move-out cleaning. Contact us at 778-318-6796 for tailored cleaning solutions in Vancouver.',
+            description: 'Comprehensive specialty cleaning services including residential, commercial, post-construction, and move-in/move-out cleaning. Contact us at 778-318-6796.',
             image: asset('img/specialCleaning2.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -582,7 +582,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Storm and Disaster Cleanup Services',
-            description: 'Expert storm and disaster cleanup services: Rapid response to storm damage, flooding, and other disaster scenarios. Contact us at 778-318-6796 for immediate assistance in Vancouver.',
+            description: 'Expert storm and disaster cleanup services. Rapid response to storm damage, flooding, and more. Call 778-318-6796 for immediate Vancouver assistance.',
             // image: asset('images/storm-disaster-cleanup.jpg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
