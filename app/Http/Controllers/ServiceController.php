@@ -182,7 +182,7 @@ class ServiceController extends Controller
         $seoDataEn = new SEOData(
             title: 'Water Damage Restoration Services',
             description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 778-318-6796 for immediate assistance in Vancouver',
-            image: asset('/img/water-damage.jpeg'), // Example image path
+            image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
@@ -206,7 +206,7 @@ class ServiceController extends Controller
         $seoDataZh = new SEOData(
             title: '水损恢复服务',
             description: '24/7水损恢复服务：紧急响应水损、地下室积水等问题。请拨打778-318-6796以获取在温哥华的即时帮助。',
-            image: asset('/img/water-damage.jpeg'), // Example image path
+            image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
@@ -234,7 +234,125 @@ class ServiceController extends Controller
     }
     public function commercialServices()
     {
-        return view('services.commercialServices');
+        $locale = app()->getLocale(); // Get the current locale
+
+        // Define SEO data for English
+        $seoDataEn = new SEOData(
+            title: 'Commercial Restoration Services | VR Plus Restoration',
+            description: 'We offers expert commercial restoration services including fire, flood, and mold damage repairs. Call 778-318-6796 for 24/7 assistance.',
+            image: asset('img/commercial.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What types of commercial properties do you handle for restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We handle a wide range of commercial properties, including small businesses, industrial complexes, and office buildings. Our team is equipped to manage projects of any size or complexity.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How quickly can you respond to a commercial restoration emergency?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Our team operates 24/7, including day and night shifts, and even on holidays. We prioritize rapid response to ensure that your business can resume normal operations as quickly as possible.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What techniques do you use for commercial restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We utilize advanced technology and industry-leading techniques to tackle even the most challenging restoration tasks. Our goal is to minimize downtime and reduce the overall impact on your business.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Do you offer services to prevent future damage to commercial properties?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes, in addition to our restoration services, we provide proactive solutions such as risk assessments, preventative maintenance, and emergency response planning to help safeguard your property against future damage.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How do you ensure minimal disruption to my business during restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We implement continuous work shifts and employ efficient restoration practices to minimize downtime. Our team works diligently to restore your property while reducing the impact on your business operations.',
+                            ],
+                        ],
+                    ],
+                ]
+            ),
+            tags: ['commercial restoration', 'fire damage repair', 'flood damage restoration', 'mold remediation', 'Vancouver commercial services']
+        );
+
+        // Define SEO data for Chinese
+        $seoDataZh = new SEOData(
+            title: '商业恢复服务 | VR Plus Restoration',
+            description: '我们提供专业的商业恢复服务，包括火灾、洪水和霉菌损害修复。我们的经验丰富的团队确保尽量减少对您业务运营的干扰。请拨打 778-318-6796 获取温哥华的 24/7 支持',
+            image: asset('img/commercial.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们处理哪些类型的商业物业恢复？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们处理各种商业物业，包括小型企业、工业综合体和办公楼。我们的团队能够管理任何规模或复杂性的项目。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们可以多快响应商业恢复紧急情况？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们的团队全天候运行，包括日夜班，甚至在假期也能工作。我们优先考虑快速响应，以确保您的业务能够尽快恢复正常运营。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们使用什么技术进行商业恢复？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们利用先进的技术和行业领先的技术来处理即使是最具挑战性的恢复任务。我们的目标是尽量减少停机时间，减少对您业务的整体影响。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们是否提供预防未来商业物业损害的服务？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '是的，除了我们的恢复服务，我们还提供前瞻性解决方案，如风险评估、预防性维护和应急响应规划，以帮助保护您的物业免受未来损害。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们如何确保在恢复过程中对我的业务造成最小干扰？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们实施持续工作班次，并采用高效的恢复实践以尽量减少停机时间。我们的团队努力恢复您的物业，同时减少对您业务运营的影响。',
+                            ],
+                        ],
+                    ],
+                ]
+            ),
+            tags: ['商业恢复', '火灾修复', '洪水恢复', '霉菌修复', '温哥华商业服务']
+        );
+
+        // Choose SEO data based on locale
+        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+
+        return view('services.commercialServices', compact('SEOData'));
+
     }
     public function residentialServices()
     {
