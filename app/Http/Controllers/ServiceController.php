@@ -238,7 +238,91 @@ class ServiceController extends Controller
     }
     public function residentialServices()
     {
-        return view('services.residentialServices');
+        $locale = app()->getLocale();
+        // Define SEO data for English
+        $seoDataEn = new SEOData(
+            title: 'Professional Restoration Services by VR Plus Restoration',
+            description: 'VR Plus Restoration provides 24/7 expert repair and restoration services. Call 778-318-6796 for project management and insurance claims support.',
+            image: asset('/img/residential.jpeg'), // Example image path
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What types of restoration services do you offer?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We offer restoration services for flood, fire, wind, mold, and asbestos damage. Our team is available 24/7 to address any property damage issues.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How can I contact VR Plus Restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'You can contact us by calling 778-318-6796. We provide 24-hour emergency restoration services and are ready to assist you.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What is the starting price for your restoration services?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Our restoration services start from $300. For a detailed quote, please contact us directly at 778-318-6796.',
+                            ],
+                        ],
+                    ],
+                ]
+            ),
+            tags: ['property damage restoration', '24/7 restoration services', 'flood restoration', 'fire restoration', 'mold remediation', 'asbestos removal']
+        );
+
+        // Define SEO data for Chinese
+        $seoDataZh = new SEOData(
+            title: '专业恢复服务 - VR Plus Restoration',
+            description: 'VR Plus 恢复 提供全天候专家维修和恢复服务。请拨打 778-318-6796 获取项目管理和保险理赔支持',
+            image: asset('/img/residential.jpeg'), // Example image path
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们提供哪些类型的恢复服务？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们提供洪水、火灾、风暴、霉菌和石棉损坏的恢复服务。我们的团队24小时随时准备解决任何财产损坏问题。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '如何联系VR Plus Restoration？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '您可以拨打778-318-6796与我们联系。我们提供24小时紧急恢复服务，随时为您提供帮助。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们的恢复服务起价是多少？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们的恢复服务价格从300加元起。有关详细报价，请直接拨打778-318-6796与我们联系。',
+                            ],
+                        ],
+                    ],
+                ]
+            ),
+            tags: ['财产损坏恢复', '24/7恢复服务', '洪水恢复', '火灾恢复', '霉菌去除', '石棉去除']
+        );
+
+        // Choose SEO data based on locale
+        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+
+        return view('services.residentialServices', compact('SEOData'));
     }
     public function construction()
     {
