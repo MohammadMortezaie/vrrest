@@ -413,7 +413,78 @@ class ServiceController extends Controller
     }
     public function construction()
     {
-        return view('services.construction');
+
+        $locale = app()->getLocale(); // Get the current locale
+
+        $seoDataEn = new SEOData(
+            title: 'Expert Construction Restoration Services | VR Restoration',
+            description: 'Expert Construction Restoration Services. Our team provides thorough and efficient restoration using advanced techniques. Call us at 778-318-6796.',
+            image: asset('img/construction2.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What construction restoration services do you provide?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We provide comprehensive construction restoration services including damage assessment, emergency repairs, and full reconstruction for water, fire, mold, and storm damage.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How quickly can you start the restoration process?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We offer prompt and efficient construction restoration services with 24/7 availability. Contact us to begin the restoration process as soon as possible.',
+                            ],
+                        ],
+                    ],
+                ]
+            ),
+            tags: ['construction restoration', 'property damage repair', 'reconstruction services', 'Vancouver construction restoration']
+        );
+
+
+        $seoDataZh = new SEOData(
+            title: '专业建筑恢复服务 | VR Restoration',
+            description: '专业建筑恢复服务。我们的团队使用先进的技术进行全面高效的恢复。请致电 778-318-6796。',
+            image: asset('img/construction2.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们提供哪些建筑恢复服务？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们提供全面的建筑恢复服务，包括损害评估、紧急修复和全面重建，适用于水灾、火灾、霉菌和风暴损害。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们能多快开始恢复过程？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们提供24/7的建筑恢复服务，能够迅速高效地开始恢复过程。请联系我们以尽快开始恢复工作。',
+                            ],
+                        ],
+                    ],
+                ]
+            ),
+            tags: ['建筑恢复', '财产损害修复', '重建服务', '温哥华建筑恢复']
+        );
+
+
+        // Choose SEO data based on locale
+        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+
+        return view('services.construction', compact('SEOData'));
+
     }
     public function fireDamage()
     {

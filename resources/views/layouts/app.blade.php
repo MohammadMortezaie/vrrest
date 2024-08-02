@@ -26,6 +26,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <meta name="google-site-verification" content="R1EKGLUcLxU0eX64P-8djuk-usXpwADojr2egg0iCeo" />
 </head>
 
 <body>
