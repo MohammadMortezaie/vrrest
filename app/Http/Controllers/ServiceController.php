@@ -849,7 +849,7 @@ class ServiceController extends Controller
     {
         $sitemap = Sitemap::create()
             ->add(Url::create('/en')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en//blog')->setLastModificationDate(Carbon::yesterday()))
+            ->add(Url::create('/en/blog')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/about')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/contact-us')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/our-team')->setLastModificationDate(Carbon::yesterday()))
@@ -864,7 +864,7 @@ class ServiceController extends Controller
             ->add(Url::create('/en/specialty-cleaning')->setLastModificationDate(Carbon::yesterday()))
 
             ->add(Url::create('/zh')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh//blog')->setLastModificationDate(Carbon::yesterday()))
+            ->add(Url::create('/zh/blog')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/about')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/contact-us')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/our-team')->setLastModificationDate(Carbon::yesterday()))
