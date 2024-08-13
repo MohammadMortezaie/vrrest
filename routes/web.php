@@ -18,6 +18,10 @@ Route::get('/', function () {
     return redirect('/' . config('app.fallback_locale'), 301);
 });
 
+Route::get('/contact-us', function () {
+    return redirect('/' . config('app.fallback_locale').'/contact-us', 301);
+});
+
 Route::group(['prefix' => 'vr'], function () {
 
     Auth::routes();
@@ -59,7 +63,6 @@ Route::group([
     Route::get('/', [ServiceController::class, 'index'])->name('home2');
     Route::get('/blog', [PostController::class, 'blog'])->name('blog');
     Route::get('/blog/{blog}/{slug}', [PostController::class, 'post'])->name('blog.post');
-
 
     Route::get('/about', [ServiceController::class, 'about'])->name('about');
     Route::get('/contact-us', [ServiceController::class, 'contact'])->name('contact');
