@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>Career</title>
+{!! seo($SEOData) !!}
 @endsection
 
 @section('content')

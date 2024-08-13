@@ -44,19 +44,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['restoration services', 'water damage', 'fire damage', 'mold remediation', 'Vancouver restoration'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh')],
         );
 
         // Define SEO data for Chinese
@@ -86,19 +77,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['恢复服务', '水损', '火灾损害', '霉菌治理', '温哥华恢复'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh')],
         );
 
         // Choose SEO data based on locale
@@ -108,7 +90,7 @@ class ServiceController extends Controller
 
         return view('welcome', [
             'SEOData' => $SEOData,
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 
@@ -119,7 +101,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'About VR Plus Restoration',
-            description: 'At VR Plus Restoration, we provide 24/7 emergency property damage services and restoration. Our licensed and trained technicians specialize in flood, fire, wind, mold, and asbestos restoration. We offer prompt and efficient service in Greater Vancouver.',
+            description: 'At VR Plus Restoration, we provide 24/7 emergency property damage services and restoration. Our licensed and trained technicians handle all aspects of restoration.',
             image: asset('images/about-us-banner.jpg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -127,32 +109,19 @@ class ServiceController extends Controller
                     '@type' => 'Organization',
                     'name' => 'VR Plus Restoration',
                     'url' => url('/'),
-                    'logo' => asset('img/about.jpeg'),
+                    'logo' => asset('android-chrome-192x192.png'),
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => 'Customer Service',
                         'telephone' => '+1-778-318-6796',
                         'areaServed' => 'CA',
-                        'availableLanguage' => 'English'
+                        'availableLanguage' => 'English',
                     ],
-                    'sameAs' => [
-                        'https://www.facebook.com/VRPlusRestoration',
-                        'https://twitter.com/VRPlusRestoration',
-                        'https://www.linkedin.com/company/vrplusrestoration'
-                    ]
-                ]
+                    'sameAs' => ['https://www.facebook.com/VRPlusRestoration', 'https://twitter.com/VRPlusRestoration', 'https://www.linkedin.com/company/vrplusrestoration'],
+                ],
             ),
             tags: ['property damage restoration', 'emergency services', 'flood restoration', 'fire damage repair', 'mold remediation', 'asbestos removal', 'Vancouver restoration'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/about",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/about",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/about'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/about')],
         );
 
         // Define SEO data for Chinese
@@ -166,52 +135,187 @@ class ServiceController extends Controller
                     '@type' => 'Organization',
                     'name' => 'VR+恢复',
                     'url' => url('/'),
-                    'logo' => asset('img/about.jpeg'),
+                    'logo' => asset('android-chrome-192x192.png'),
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => '客户服务',
                         'telephone' => '+1-778-318-6796',
                         'areaServed' => 'CA',
-                        'availableLanguage' => '中文'
+                        'availableLanguage' => '中文',
                     ],
-                    'sameAs' => [
-                        'https://www.facebook.com/VRPlusRestoration',
-                        'https://twitter.com/VRPlusRestoration',
-                        'https://www.linkedin.com/company/vrplusrestoration'
-                    ]
-                ]
+                    'sameAs' => ['https://www.facebook.com/VRPlusRestoration', 'https://twitter.com/VRPlusRestoration', 'https://www.linkedin.com/company/vrplusrestoration'],
+                ],
             ),
             tags: ['财产损害恢复', '紧急服务', '水灾恢复', '火灾修复', '霉菌治理', '石棉去除', '温哥华恢复'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/about",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/about",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/about'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/about')],
         );
 
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('about', [
-            'SEOData' => $SEOData
+            'SEOData' => $SEOData,
         ]);
     }
     public function contact()
     {
-        return view('contact');
+        $locale = app()->getLocale();
+
+        $seoDataEn = new SEOData(
+            title: 'Contact VR Plus Restoration',
+            description: 'Reach out to VR Plus Restoration for 24/7 emergency services. Call us now at +1-778-318-6796 for immediate assistance with water, fire, mold, and asbestos restoration.',
+            image: asset('img/contactus.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Organization',
+                    'name' => 'VR Plus Restoration',
+                    'url' => url('/contact'),
+                    'contactPoint' => [
+                        '@type' => 'ContactPoint',
+                        'contactType' => 'Customer Service',
+                        'telephone' => '+1-778-318-6796',
+                        'areaServed' => 'CA',
+                        'availableLanguage' => 'English',
+                    ],
+                ],
+            ),
+            tags: ['contact VR Plus Restoration', 'emergency services contact', 'restoration services contact'],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/contact'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/contact')],
+        );
+
+        $seoDataZh = new SEOData(
+            title: '联系VR+恢复',
+            description: '联系VR+恢复，获得24/7紧急服务。立即致电+1-778-318-6796，获取水灾、火灾、霉菌和石棉恢复的紧急帮助。',
+            image: asset('img/contactus.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Organization',
+                    'name' => 'VR+恢复',
+                    'url' => url('/contact'),
+                    'contactPoint' => [
+                        '@type' => 'ContactPoint',
+                        'contactType' => '客户服务',
+                        'telephone' => '+1-778-318-6796',
+                        'areaServed' => 'CA',
+                        'availableLanguage' => '中文',
+                    ],
+                ],
+            ),
+            tags: ['联系VR+恢复', '紧急服务联系', '恢复服务联系'],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/contact'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/contact')],
+        );
+
+        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+
+        return view('contact', compact('SEOData'));
     }
     public function team()
     {
-        return view('team');
+        $locale = app()->getLocale();
+
+        $seoDataEn = new SEOData(
+            title: 'Meet the VR Plus Restoration Team',
+            description: 'Our expert team at VR Plus Restoration is dedicated to providing top-notch restoration services. Meet our specialists who are ready to help you 24/7.',
+            image: asset('img/team.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Organization',
+                    'name' => 'VR Plus Restoration',
+                    'url' => url('/team'),
+                    'logo' => asset('android-chrome-192x192.png'),
+                ],
+            ),
+            tags: ['VR Plus Restoration team', 'restoration specialists', 'emergency restoration team'],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/team'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/team')],
+        );
+
+        $seoDataZh = new SEOData(
+            title: '认识VR+恢复团队',
+            description: 'VR+恢复的专家团队致力于提供一流的恢复服务。认识我们的专家，他们随时准备帮助您解决水灾、火灾、霉菌和石棉问题。',
+            image: asset('img/team.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Organization',
+                    'name' => 'VR+恢复',
+                    'url' => url('/team'),
+                    'logo' => asset('android-chrome-192x192.png'),
+                ],
+            ),
+            tags: ['VR+恢复团队', '恢复专家', '紧急恢复团队'],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/team'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/team')],
+        );
+
+        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+
+        return view('team', [
+            'SEOData' => $SEOData,
+        ]);
     }
     public function career()
     {
-        return view('career');
+        $locale = app()->getLocale();
+
+        $seoDataEn = new SEOData(
+            title: 'Careers at VR Plus Restoration',
+            description: 'Join the VR Plus Restoration team! We are always looking for skilled professionals to help us deliver exceptional restoration services.',
+            image: asset('img/career.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Organization',
+                    'name' => 'VR Plus Restoration',
+                    'url' => url('/career'),
+                    'logo' => asset('android-chrome-192x192.png'),
+                ]
+            ),
+            tags: ['VR Plus Restoration careers', 'restoration jobs', 'employment opportunities'],
+            alternates: [
+                new AlternateTag(
+                    hreflang: 'en',
+                    href: "https://vrrestoration.ca/en/career",
+                ),
+                new AlternateTag(
+                    hreflang: 'zh',
+                    href: "https://vrrestoration.ca/zh/career",
+                ),
+            ],
+        );
+
+        $seoDataZh = new SEOData(
+            title: '加入VR+恢复',
+            description: '加入VR+恢复团队！我们始终在寻找有才能的专业人员，帮助我们提供卓越的恢复服务。探索我们的职业机会并立即申请。',
+            image: asset('img/career.jpeg'),
+            schema: SchemaCollection::make()->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Organization',
+                    'name' => 'VR+恢复',
+                    'url' => url('/career'),
+                    'logo' => asset('android-chrome-192x192.png'),
+                ]
+            ),
+            tags: ['VR+恢复职业', '恢复工作', '就业机会'],
+            alternates: [
+                new AlternateTag(
+                    hreflang: 'en',
+                    href: "https://vrrestoration.ca/en/career",
+                ),
+                new AlternateTag(
+                    hreflang: 'zh',
+                    href: "https://vrrestoration.ca/zh/career",
+                ),
+            ],
+        );
+
+        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+
+        return view('career', [
+            'SEOData' => $SEOData
+        ]);
     }
 
     // services
@@ -238,19 +342,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['water damage restoration', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/water-damage",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/water-damage",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage')],
         );
 
         // Define SEO data for Chinese
@@ -272,26 +367,16 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['水损恢复', '紧急水提取', '地下室修复', '温哥华水损服务'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/water-damage",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/water-damage",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage')],
         );
 
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('services.waterdamage', compact('SEOData'));
-
     }
     public function commercialServices()
     {
@@ -348,19 +433,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['commercial restoration', 'fire damage repair', 'flood damage restoration', 'mold remediation', 'Vancouver commercial services'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/commercial-services",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/commercial-services",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/commercial-services'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/commercial-services')],
         );
 
         // Define SEO data for Chinese
@@ -414,26 +490,16 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['商业恢复', '火灾修复', '洪水恢复', '霉菌修复', '温哥华商业服务'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/commercial-services",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/commercial-services",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/commercial-services'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/commercial-services')],
         );
 
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('services.commercialServices', compact('SEOData'));
-
     }
     public function residentialServices()
     {
@@ -458,19 +524,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['residential services', 'restoration services', '24/7 emergency response', 'flood damage repair', 'fire damage restoration', 'mold remediation', 'asbestos removal'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/residential-services",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/residential-services",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/residential-services'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/residential-services')],
         );
 
         // Define SEO data for Chinese
@@ -492,19 +549,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['住宅服务', '修复服务', '24/7 紧急响应', '洪水损害修复', '火灾损害修复', '霉菌去除', '石棉清除'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/residential-services",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/residential-services",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/residential-services'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/residential-services')],
         );
 
         // Choose SEO data based on locale
@@ -514,7 +562,6 @@ class ServiceController extends Controller
     }
     public function construction()
     {
-
         $locale = app()->getLocale(); // Get the current locale
 
         $seoDataEn = new SEOData(
@@ -543,21 +590,11 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['construction restoration', 'property damage repair', 'reconstruction services', 'Vancouver construction restoration'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/construction",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/construction",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/construction'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/construction')],
         );
-
 
         $seoDataZh = new SEOData(
             title: '专业建筑恢复服务 | VR Restoration',
@@ -585,27 +622,16 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['建筑恢复', '财产损害修复', '重建服务', '温哥华建筑恢复'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/construction",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/construction",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/construction'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/construction')],
         );
-
 
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('services.construction', compact('SEOData'));
-
     }
     public function fireDamage()
     {
@@ -638,19 +664,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['fire damage restoration', 'smoke damage repair', 'structural repair', 'odor removal', 'Vancouver fire damage services'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/fire-damage",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/fire-damage",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/fire-damage'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/fire-damage')],
         );
 
         // Define SEO data for Chinese
@@ -680,19 +697,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['火灾损害恢复', '烟雾损害修复', '结构修复', '气味去除', '温哥华火灾服务'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/fire-damage",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/fire-damage",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/fire-damage'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/fire-damage')],
         );
 
         // Choose SEO data based on locale
@@ -703,7 +711,6 @@ class ServiceController extends Controller
 
     public function generalCleaning()
     {
-
         $locale = app()->getLocale(); // Get the current locale
 
         // Define SEO data for English
@@ -725,19 +732,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['general cleaning', 'residential cleaning', 'commercial cleaning', 'deep cleaning', 'Vancouver cleaning services'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/general-cleaning",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/general-cleaning",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/general-cleaning'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/general-cleaning')],
         );
 
         // Define SEO data for Chinese
@@ -759,19 +757,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['一般清洁', '住宅清洁', '商业清洁', '深度清洁', '温哥华清洁服务'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/general-cleaning",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/general-cleaning",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/general-cleaning'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/general-cleaning')],
         );
 
         // Choose SEO data based on locale
@@ -810,19 +799,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['mold remediation', 'mold removal', 'water damage', 'humidity control', 'Vancouver mold services'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/mold-remediation",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/mold-remediation",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation')],
         );
 
         // Define SEO data for Chinese
@@ -852,19 +832,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['霉菌修复', '霉菌去除', '水损', '湿度控制', '温哥华霉菌服务'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/mold-remediation",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/mold-remediation",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation')],
         );
 
         // Choose SEO data based on locale
@@ -903,19 +874,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['specialty cleaning', 'residential cleaning', 'commercial cleaning', 'post-construction cleaning', 'move-in cleaning', 'move-out cleaning', 'Vancouver cleaning services'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/specialty-cleaning",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/specialty-cleaning",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/specialty-cleaning'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/specialty-cleaning')],
         );
 
         // Define SEO data for Chinese
@@ -945,19 +907,10 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['专业清洁', '住宅清洁', '商业清洁', '装修后清洁', '搬入清洁', '搬出清洁', '温哥华清洁服务'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/specialty-cleaning",
-                ),
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/specialty-cleaning",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/specialty-cleaning'), new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/specialty-cleaning')],
         );
 
         // Choose SEO data based on locale
@@ -996,10 +949,9 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
             tags: ['storm cleanup', 'disaster cleanup', 'flood restoration', 'debris removal', 'Vancouver disaster services'],
-
         );
 
         // Define SEO data for Chinese
@@ -1029,9 +981,9 @@ class ServiceController extends Controller
                             ],
                         ],
                     ],
-                ]
+                ],
             ),
-            tags: ['风暴清理', '灾难清理', '洪水恢复', '废料清除', '温哥华灾难服务']
+            tags: ['风暴清理', '灾难清理', '洪水恢复', '废料清除', '温哥华灾难服务'],
         );
 
         // Choose SEO data based on locale
@@ -1080,11 +1032,9 @@ class ServiceController extends Controller
             ->add(Url::create('/zh/mold-remediation')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/specialty-cleaning')->setLastModificationDate(Carbon::yesterday()));
 
-
         Post::all()->each(function (Post $post) use ($sitemap) {
             $sitemap->add(Url::create('/en/blog/' . $post->id . '/' . $post->slug)->setLastModificationDate($post->updated_at));
         });
         $sitemap->writeToFile(public_path('sitemap.xml'));
-
     }
 }

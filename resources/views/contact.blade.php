@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>Contact Us</title>
+{!! seo($SEOData) !!}
 @endsection
 
 @section('content')
