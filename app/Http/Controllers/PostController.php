@@ -29,7 +29,7 @@ class PostController extends Controller
         // Generate SEO Data
         $SEOData = new SEOData(
             title: $blog->title,
-            description: $blog->excerpt, // Assuming there's an excerpt or summary field
+            description: $blog->subtitle, // Assuming there's an excerpt or summary field
             image: asset($blog->image), // Assuming image path is stored in the 'image' field
             url: url()->current(),
             schema: SchemaCollection::make()->add(
