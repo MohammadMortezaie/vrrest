@@ -39,7 +39,7 @@
                             alt="{{ $blog->title }}">
                         </div>
                         @endif
-                        <div class="article-content">
+                        <div class="article-content pt-2">
 
                             {!! $blog->content !!}
                         </div>
