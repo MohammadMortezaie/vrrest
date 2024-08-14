@@ -18,7 +18,7 @@
                             <hr>
                             <p class="lead mb-5 txt-def">{{ __('Water Damage 1-2') }}
 
-                                <a class="txt-vr fw-bold " href="#">{{ __('Water Damage 1-3') }}</a>
+                                <a class="txt-vr fw-bold " href="https://vrrestoration.ca/en/blog/3/why-rapid-response-is-essential-in-water-damage-situations">{{ __('Water Damage 1-3') }}</a>
 
                             </p>
                         </div>
