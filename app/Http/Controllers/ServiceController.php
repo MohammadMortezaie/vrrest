@@ -351,7 +351,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '水损恢复服务',
-            description: '24/7水损恢复服务：紧急响应水损、地下室积水等问题。请拨打778-318-6796以获取在温哥华的即时帮助。',
+            description: '24/7水损恢复服务 - 水灾修复：紧急响应水损、地下室积水等问题。请拨打778-318-6796以获取在温哥华的即时帮助。',
             image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
