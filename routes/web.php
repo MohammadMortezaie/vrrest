@@ -26,6 +26,10 @@ Route::get('/water-damage', function () {
     return redirect('/' . config('app.fallback_locale').'/water-damage', 301);
 });
 
+Route::get('/specialty-cleaning', function () {
+    return redirect('/' . config('app.fallback_locale').'/specialty-cleaning', 301);
+});
+
 Route::group(['prefix' => 'vr'], function () {
 
     Auth::routes();
