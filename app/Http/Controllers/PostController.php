@@ -51,12 +51,17 @@ class PostController extends Controller
                         'name' => 'VR Restoration',
                         'logo' => [
                             '@type' => 'ImageObject',
-                            'url' => asset('/android-chrome-192x192.png'),
+                            'url' => asset('/an droid-chrome-192x192.png'),
                         ],
                     ],
                     'datePublished' => $blog->created_at->toIso8601String(),
                     'dateModified' => $blog->updated_at->toIso8601String(),
                     'description' => $blog->subtitle,
+                    'contactPoint' => [
+                        '@type' => 'ContactPoint',
+                        'telephone' => '+6048003900',
+                        'contactType' => 'Customer Service'
+                    ]
                 ]
             ),
             tags: explode(',', $blog->tags) // Assuming tags are stored as a comma-separated string

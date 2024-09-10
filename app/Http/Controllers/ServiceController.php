@@ -20,7 +20,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'We Are Restoration Company - All Restoration Services',
-            description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold Remediation and more. CALL 778-318-6796. Our Vancouver branch is ready to assist you.',
+            description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold Remediation and more. CALL 604-800-3900. Our Vancouver branch is ready to assist you.',
             image: asset('img/hero-bg3.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -32,7 +32,7 @@ class ServiceController extends Controller
                             'name' => 'What number should I call for restoration services?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Call 778-318-6796 for immediate restoration services, including water damage, fire damage, and mold remediation. Our Vancouver branch is ready to assist you 24/7.',
+                                'text' => 'Call 604-800-3900 for immediate restoration services, including water damage, fire damage, and mold remediation. Our Vancouver branch is ready to assist you 24/7.',
                             ],
                         ],
                         [
@@ -53,7 +53,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '我们是恢复公司 - 所有恢复服务',
-            description: '紧急服务和恢复。24/7水损恢复、火灾修复、霉菌治理等。请拨打778-318-6796。我们的温哥华分部随时为您提供帮助。',
+            description: '紧急服务和恢复。24/7水损恢复、火灾修复、霉菌治理等。请拨打604-800-3900。我们的温哥华分部随时为您提供帮助。',
             image: asset('img/hero-bg3.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -65,7 +65,7 @@ class ServiceController extends Controller
                             'name' => '我应该拨打哪个号码以获得恢复服务？',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => '请拨打778-318-6796，以获取水损恢复、火灾修复和霉菌治理等紧急恢复服务。我们的温哥华分部随时准备为您提供帮助。',
+                                'text' => '请拨打604-800-3900，以获取水损恢复、火灾修复和霉菌治理等紧急恢复服务。我们的温哥华分部随时准备为您提供帮助。',
                             ],
                         ],
                         [
@@ -113,7 +113,7 @@ class ServiceController extends Controller
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => 'Customer Service',
-                        'telephone' => '+1-778-318-6796',
+                        'telephone' => '+1-604-800-3900',
                         'areaServed' => 'CA',
                         'availableLanguage' => 'English',
                     ],
@@ -139,7 +139,7 @@ class ServiceController extends Controller
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => '客户服务',
-                        'telephone' => '+1-778-318-6796',
+                        'telephone' => '+1-604-800-3900',
                         'areaServed' => 'CA',
                         'availableLanguage' => '中文',
                     ],
@@ -163,7 +163,7 @@ class ServiceController extends Controller
 
         $seoDataEn = new SEOData(
             title: 'Contact VR Plus Restoration',
-            description: 'Reach out to VR Plus Restoration for 24/7 emergency services. Call us now at +1-778-318-6796 for immediate assistance with water, fire, mold, and asbestos restoration.',
+            description: 'Reach out to VR Plus Restoration for 24/7 emergency services. Call us now at +1-604-800-3900 for immediate assistance with water, fire, mold, and asbestos restoration.',
             image: asset('img/contactus.jpeg'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -174,7 +174,7 @@ class ServiceController extends Controller
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => 'Customer Service',
-                        'telephone' => '+1-778-318-6796',
+                        'telephone' => '+1-604-800-3900',
                         'areaServed' => 'CA',
                         'availableLanguage' => 'English',
                     ],
@@ -186,7 +186,7 @@ class ServiceController extends Controller
 
         $seoDataZh = new SEOData(
             title: '联系VR+恢复',
-            description: '联系VR+恢复，获得24/7紧急服务。立即致电+1-778-318-6796，获取水灾、火灾、霉菌和石棉恢复的紧急帮助。',
+            description: '联系VR+恢复，获得24/7紧急服务。立即致电+1-604-800-3900，获取水灾、火灾、霉菌和石棉恢复的紧急帮助。',
             image: asset('img/contactus.jpeg'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -197,7 +197,7 @@ class ServiceController extends Controller
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => '客户服务',
-                        'telephone' => '+1-778-318-6796',
+                        'telephone' => '+1-604-800-3900',
                         'areaServed' => 'CA',
                         'availableLanguage' => '中文',
                     ],
@@ -318,7 +318,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Water Damage Restoration Services',
-            description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 778-318-6796 for immediate assistance in Vancouver',
+            description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 604-800-3900 for immediate assistance in Vancouver',
             image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -343,7 +343,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '水损恢复服务',
-            description: '24/7水损恢复服务 - 水灾修复：紧急响应水损、地下室积水等问题。请拨打778-318-6796以获取在温哥华的即时帮助。',
+            description: '24/7水损恢复服务 - 水灾修复：紧急响应水损、地下室积水等问题。请拨打604-800-3900以获取在温哥华的即时帮助。',
             image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -377,7 +377,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Commercial Restoration Services | VR Plus Restoration',
-            description: 'We offers expert commercial restoration services including fire, flood, and mold damage repairs. Call 778-318-6796 for 24/7 assistance.',
+            description: 'We offers expert commercial restoration services including fire, flood, and mold damage repairs. Call 604-800-3900 for 24/7 assistance.',
             image: asset('img/commercial.jpeg'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -434,7 +434,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '商业恢复服务 | VR Plus Restoration',
-            description: '我们提供专业的商业恢复服务，包括火灾、洪水和霉菌损害修复。我们的经验丰富的团队确保尽量减少对您业务运营的干扰。请拨打 778-318-6796 获取温哥华的 24/7 支持',
+            description: '我们提供专业的商业恢复服务，包括火灾、洪水和霉菌损害修复。我们的经验丰富的团队确保尽量减少对您业务运营的干扰。请拨打 604-800-3900 获取温哥华的 24/7 支持',
             image: asset('img/commercial.jpeg'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -500,7 +500,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'VR Plus Restoration - Expert Residential Services',
-            description: 'We provide top-notch residential restoration services. Our skilled team offers 24/7 emergency response. Call 778-318-6796 for immediate assistance',
+            description: 'We provide top-notch residential restoration services. Our skilled team offers 24/7 emergency response. Call 604-800-3900 for immediate assistance',
             image: asset('img/residential.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -525,7 +525,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: 'VR Plus Restoration - 专业住宅服务',
-            description: '我们提供一流的住宅修复服务。我们的专业团队提供全天候紧急响应服务。如需即时帮助，请拨打778-318-6796',
+            description: '我们提供一流的住宅修复服务。我们的专业团队提供全天候紧急响应服务。如需即时帮助，请拨打604-800-3900',
             image: asset('img/residential.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -558,7 +558,7 @@ class ServiceController extends Controller
 
         $seoDataEn = new SEOData(
             title: 'Expert Construction Restoration Services | VR Restoration',
-            description: 'Expert Construction Restoration Services. Our team provides thorough and efficient restoration using advanced techniques. Call us at 778-318-6796.',
+            description: 'Expert Construction Restoration Services. Our team provides thorough and efficient restoration using advanced techniques. Call us at 604-800-3900.',
             image: asset('img/construction2.jpeg'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -590,7 +590,7 @@ class ServiceController extends Controller
 
         $seoDataZh = new SEOData(
             title: '专业建筑恢复服务 | VR Restoration',
-            description: '专业建筑恢复服务。我们的团队使用先进的技术进行全面高效的恢复。请致电 778-318-6796。',
+            description: '专业建筑恢复服务。我们的团队使用先进的技术进行全面高效的恢复。请致电 604-800-3900。',
             image: asset('img/construction2.jpeg'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -632,7 +632,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Fire Damage Restoration Services',
-            description: 'Professional fire damage restoration services Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 778-318-6796.',
+            description: 'Professional fire damage restoration services Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 604-800-3900.',
             image: asset('img/fire-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -665,7 +665,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '火灾损害恢复服务',
-            description: '专业火灾损害恢复服务：立即响应火灾和烟雾损害、结构修复和清理。请拨打778-318-6796，以获取温哥华快速有效的恢复服务。',
+            description: '专业火灾损害恢复服务：立即响应火灾和烟雾损害、结构修复和清理。请拨打604-800-3900，以获取温哥华快速有效的恢复服务。',
             image: asset('img/fire-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -708,7 +708,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'General Cleaning Services',
-            description: 'Professional general cleaning services: Residential and commercial cleaning, deep cleaning, and more. Call 778-318-6796 to schedule your cleaning in Vancouver.',
+            description: 'Professional general cleaning services: Residential and commercial cleaning, deep cleaning, and more. Call 604-800-3900 to schedule your cleaning in Vancouver.',
             image: asset('img/generalClenaing.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -733,7 +733,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '一般清洁服务',
-            description: '专业的一般清洁服务：住宅和商业清洁，深度清洁等。请拨打778-318-6796预约您的温哥华清洁服务。',
+            description: '专业的一般清洁服务：住宅和商业清洁，深度清洁等。请拨打604-800-3900预约您的温哥华清洁服务。',
             image: asset('img/generalClenaing.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -767,7 +767,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Mold Remediation Services',
-            description: 'Professional mold remediation services: We address mold issues in both residential and commercial properties. Call 778-318-6796.',
+            description: 'Professional mold remediation services: We address mold issues in both residential and commercial properties. Call 604-800-3900.',
             image: asset('img/mold.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -800,7 +800,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '霉菌修复服务',
-            description: '专业霉菌修复服务：处理因水损或高湿度引起的霉菌问题。我们处理住宅和商业物业。请拨打778-318-6796以获取在温哥华的即时帮助。',
+            description: '专业霉菌修复服务：处理因水损或高湿度引起的霉菌问题。我们处理住宅和商业物业。请拨打604-800-3900以获取在温哥华的即时帮助。',
             image: asset('img/mold.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -842,7 +842,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Specialty Cleaning Services',
-            description: 'Comprehensive specialty cleaning services including residential, commercial, post-construction, and move-in/move-out cleaning. Contact us at 778-318-6796.',
+            description: 'Comprehensive specialty cleaning services including residential, commercial, post-construction, and move-in/move-out cleaning. Contact us at 604-800-3900.',
             image: asset('img/specialCleaning2.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -875,7 +875,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '专业清洁服务',
-            description: '提供全面的专业清洁服务，包括住宅清洁、商业清洁、装修后清洁和搬入/搬出清洁。请拨打778-318-6796联系我们，获取温哥华量身定制的清洁解决方案。',
+            description: '提供全面的专业清洁服务，包括住宅清洁、商业清洁、装修后清洁和搬入/搬出清洁。请拨打604-800-3900联系我们，获取温哥华量身定制的清洁解决方案。',
             image: asset('img/specialCleaning2.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -917,7 +917,7 @@ class ServiceController extends Controller
         // Define SEO data for English
         $seoDataEn = new SEOData(
             title: 'Storm and Disaster Cleanup Services',
-            description: 'Expert storm and disaster cleanup services. Rapid response to storm damage, flooding, and more. Call 778-318-6796 for immediate Vancouver assistance.',
+            description: 'Expert storm and disaster cleanup services. Rapid response to storm damage, flooding, and more. Call 604-800-3900 for immediate Vancouver assistance.',
             // image: asset('images/storm-disaster-cleanup.jpg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
@@ -949,7 +949,7 @@ class ServiceController extends Controller
         // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '风暴和灾难清理服务',
-            description: '专业风暴和灾难清理服务：快速响应风暴损害、洪水和其他灾难情况。请拨打778-318-6796以获取温哥华的即时帮助。',
+            description: '专业风暴和灾难清理服务：快速响应风暴损害、洪水和其他灾难情况。请拨打604-800-3900以获取温哥华的即时帮助。',
             // image: asset('images/storm-disaster-cleanup.jpg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [

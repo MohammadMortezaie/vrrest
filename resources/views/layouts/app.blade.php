@@ -48,12 +48,12 @@
             <div class="topbar d-flex align-items-center">
                 <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
                     <div class="contact-info d-flex flex-column flex-md-row align-items-center">
-                        <a href="tel:7783186796" style="text-decoration: none;" class="text-dark">
+                        <a href="tel:6048003900" style="text-decoration: none;" class="text-dark">
                             <span>{{ __('callToday') }} | <span class="text-danger">24/7</span>
                                 {{ __('emergencyServices') }}</span>
                         </a>
                         <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4">
-                            <a href="tel:7783186796"><span>+1 778-318-6796</span></a>
+                            <a href="tel:6048003900"><span>+1 604-800-3900</span></a>
                         </i>
                     </div>
                     <div class="social-links d-none d-md-flex align-items-center">
@@ -355,8 +355,10 @@
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
 
                             <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
+                            <p><a href="tel:6048003900" class="text-white"><i class="fas fa-phone mr-3"></i> +1
+                                604-800-3900</a></p>
                             <p><a href="tel:7783186796" class="text-white"><i class="fas fa-phone mr-3"></i> +1
-                                    7783186796</a></p>
+                                778-318-6796</a></p>
                             <hr>
                             <p class=" mb-0">
                                 #7, 636 Clyde AveWest, Vancouver, BC
@@ -400,7 +402,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
     @if (app()->getLocale() == 'en')
-        <a href="tel:7783186796" class="call-button">
+        <a href="tel:6048003900" class="call-button">
             <i class="bi bi-telephone-fill"></i>
         </a>
     @endif

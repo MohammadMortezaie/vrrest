@@ -50,8 +50,12 @@
                                         </div>
                                         <div>
                                             <h2 class="h4 mb-3">{{ __('contactcall_heading') }}</h2>
+                                            <a href="tel:+16048003900" class="text-secondary h4 mb-2">
+                                                +1 604-800-3900
+                                            </a>
+                                            <br><br>
                                             <a href="tel:+17783186796" class="text-secondary h4 mb-2">
-                                                778-318-6796
+                                                +1 778-318-6796
                                             </a>
                                         </div>
                                     </div>
