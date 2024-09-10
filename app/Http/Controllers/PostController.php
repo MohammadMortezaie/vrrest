@@ -59,7 +59,7 @@ class PostController extends Controller
                     'description' => $blog->subtitle,
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
-                        'telephone' => '+6048003900',
+                        'telephone' => '+16048003900',
                         'contactType' => 'Customer Service'
                     ]
                 ]
