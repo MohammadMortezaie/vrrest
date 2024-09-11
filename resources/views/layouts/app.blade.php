@@ -71,7 +71,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-0 navmenu" id="navmenu">
                 <div class="container">
                     <a class="navbar-brand p-0" href="{{ url('/') }}">
-                        <img class="navbar-brand logo" src="{{ asset('img/logo.png') }}" />
+                        <img class="navbar-brand logo" alt="VR Restoration" src="{{ asset('img/logo.png') }}" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
