@@ -30,6 +30,7 @@
                             <h6><a href="#">{{ $blog->category->name_en }}</a></h6>
                             <h1 class="h2 fw-bold">{{ $blog->title }}</h1>
                             <span>Updated at: {{ $blog->updated_at }}</span>
+                            <span>Published at: {{ $blog->created_at }}</span>
                             <hr>
                         </div>
                         @if ($blog->image)
@@ -44,6 +45,7 @@
                             {!! $blog->content !!}
                         </div>
 
+                        <p class="mt-2 mb-0">Author by: Rozbeh Rouzbehani</p>
                         <div class="nav tag-cloud">
                             <!-- Facebook Share Button -->
                             <a href="#" class="btn btn-primary me-2 border-3 rounded" onclick="shareOnFacebook()">
@@ -57,6 +59,7 @@
                             <a href="#" class="btn btn-info text-white border-3 rounded" onclick="shareOnTwitter()">
                                 <i class="bi bi-twitter"></i> {{ __('Share on Twitter') }}
                             </a>
+
                         </div>
 
 
