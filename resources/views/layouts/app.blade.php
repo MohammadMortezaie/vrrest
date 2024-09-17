@@ -384,7 +384,9 @@
             <!-- Copyright -->
             <div class="p-3 text-center">
                 © 2020 Copyright:
-                <a class="txt-vr" href="https://webpulse.ca/">VR Restoration</a>
+                <span class="txt-bold">VR Restoration.</span>
+                Develop and Design by
+                <a class="txt-vr" href="https://webpulse.ca/">WebPulse</a>
             </div>
             <!-- Copyright -->
         </footer>
