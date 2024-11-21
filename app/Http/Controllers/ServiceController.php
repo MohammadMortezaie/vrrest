@@ -181,7 +181,7 @@ class ServiceController extends Controller
                 ],
             ),
             tags: ['contact VR Plus Restoration', 'emergency services contact', 'restoration services contact'],
-            alternates: [ new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/contact')],
+            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/contact')],
         );
 
         $seoDataZh = new SEOData(
@@ -229,7 +229,7 @@ class ServiceController extends Controller
                 ],
             ),
             tags: ['VR Plus Restoration team', 'restoration specialists', 'emergency restoration team'],
-            alternates: [ new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/team')],
+            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/team')],
         );
 
         $seoDataZh = new SEOData(
@@ -270,15 +270,10 @@ class ServiceController extends Controller
                     'name' => 'VR Plus Restoration',
                     'url' => url('/career'),
                     'logo' => asset('android-chrome-192x192.png'),
-                ]
+                ],
             ),
             tags: ['VR Plus Restoration careers', 'restoration jobs', 'employment opportunities'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'zh',
-                    href: "https://vrrestoration.ca/zh/career",
-                ),
-            ],
+            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/career')],
         );
 
         $seoDataZh = new SEOData(
@@ -292,21 +287,16 @@ class ServiceController extends Controller
                     'name' => 'VR+恢复',
                     'url' => url('/career'),
                     'logo' => asset('android-chrome-192x192.png'),
-                ]
+                ],
             ),
             tags: ['VR+恢复职业', '恢复工作', '就业机会'],
-            alternates: [
-                new AlternateTag(
-                    hreflang: 'en',
-                    href: "https://vrrestoration.ca/en/career",
-                )
-            ],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/career')],
         );
 
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('career', [
-            'SEOData' => $SEOData
+            'SEOData' => $SEOData,
         ]);
     }
 
@@ -331,6 +321,30 @@ class ServiceController extends Controller
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
                                 'text' => 'Water damage should be addressed within 24-48 hours to prevent further damage and mold growth. Quick action helps to minimize the extent of the damage and reduce restoration costs.',
+                            ],
+                        ],
+
+                        'telephone' => '+1 604-800-3900',
+                        'address' => [
+                            '@type' => 'PostalAddress',
+                            'streetAddress' => '636 Clyde Ave Suite 7',
+                            'addressLocality' => 'West Vancouver',
+                            'addressRegion' => 'BC',
+                            'postalCode' => 'V7T 1E1',
+                            'addressCountry' => 'CA',
+                        ],
+                        'geo' => [
+                            '@type' => 'GeoCoordinates',
+                            'latitude' => 49.3252,
+                            'longitude' => -123.1595,
+                        ],
+                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
+                        'openingHoursSpecification' => [
+                            [
+                                '@type' => 'OpeningHoursSpecification',
+                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                                'opens' => '00:00',
+                                'closes' => '23:59',
                             ],
                         ],
                     ],
@@ -519,7 +533,7 @@ class ServiceController extends Controller
                 ],
             ),
             tags: ['residential services', 'restoration services', '24/7 emergency response', 'flood damage repair', 'fire damage restoration', 'mold remediation', 'asbestos removal'],
-            alternates: [ new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/residential-services')],
+            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/residential-services')],
         );
 
         // Define SEO data for Chinese
