@@ -453,7 +453,13 @@ class ServiceController extends Controller
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        return view('services.waterdamage', compact('SEOData'));
+        $blog = Post::activePosts(false, 5); // Fetch recent blog posts
+        return view('services.waterdamage', [
+            'SEOData' => $SEOData,
+            'blog' => $blog,
+        ]);
+
+
     }
     public function commercialServices()
     {

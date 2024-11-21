@@ -2,6 +2,9 @@
 
 @section('header')
     {!! seo($SEOData) !!}
+
+
+    <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -400,6 +403,80 @@
         </div>
 
     </section><!-- /Faq Section -->
+
+        <!-- Recommended For You -->
+        <section id="about" class="about section">
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="section-title">
+                        <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Recommended For You') }} </h2>
+                    </div>
+
+
+                    <div class="container">
+
+                        <div class="swiper"
+                            data-swiper-config=' {
+                            "loop": true,
+                            "speed": 600,
+                            "autoplay": {
+                              "delay": 4000
+                            },
+                            "slidesPerView": "auto",
+                            "pagination": {
+                              "el": ".swiper-pagination",
+                              "type": "bullets",
+                              "clickable": true
+                            },
+                            "breakpoints": {
+                              "320": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 30
+                              },
+                              "480": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 30
+                              },
+                              "640": {
+                                "slidesPerView": 2,
+                                "spaceBetween": 30
+                              },
+                              "992": {
+                                "slidesPerView": 3,
+                                "spaceBetween": 30
+                              }
+                            }
+                          }'>
+                            <div class="swiper-wrapper ">
+                                @foreach ($blog as $b)
+
+                                    <div class="swiper-slide my-3 ">
+                                        <div class="card border-0 shadow-sm">
+                                            <div class="card-body">
+                                                <h2 class="card-title txt-vr h5">{{$b->title}}</h2>
+                                                <hr>
+                                                <p class="card-text">
+                                                    {{$b->subtitle}}
+                                                </p>
+                                                <a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $b->id,'slug'=> $b->slug]) }}" class="text-decoration-none text-black">{{__("Read More")}}
+                                                    <i class="bi bi-chevron-double-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                    </div>
+
+
+        </section><!-- /Recommended For You -->
+
+
 @endsection
 
 @section('scripts')
@@ -412,5 +489,18 @@
             textToScrollTo.scrollIntoView({ behavior: 'smooth' });
         });
         }
+    </script>
+    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
+    <script>
+
+
+function initSwiper() {
+    document.querySelectorAll('.swiper').forEach(function(swiper) {
+        let config = JSON.parse(swiper.getAttribute('data-swiper-config'));
+        new Swiper(swiper, config);
+    });
+  }
+window.addEventListener('load', initSwiper);
+
     </script>
 @endsection
