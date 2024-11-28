@@ -91,6 +91,22 @@
 
 
                             <div class="form-group">
+                                <label for="latitude">latitude*</label>
+                                <input type="text" class="form-control" name="latitude" id="latitude"
+                                    value="{{ $localService->latitude }}" >
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="longitude">longitude*</label>
+                                <input type="text" class="form-control" name="longitude" id="longitude"
+                                    value="{{ $localService->longitude }}" >
+                            </div>
+
+
+
+                            <div class="form-group">
                                 <label for="slug">Slug*</label>
                                 <input type="text" class="form-control" name="slug" id="slug"
                                     value="{{ $localService->slug }}" aria-describedby="helpId" placeholder="slug">
