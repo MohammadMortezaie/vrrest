@@ -140,6 +140,9 @@
                                         <li><a class="dropdown-item"
                                                 href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}">{{ __('GeneralCleaning') }}</a>
                                         </li>
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('localServices', ['lang' => app()->getLocale()]) }}">{{ __('localServices') }}</a>
+                                        </li>
 
                                         {{-- <li><a class="dropdown-item"
                                                 href="{{ route('roofTarpBoard', ['lang' => app()->getLocale()]) }}">{{ __('Roof Tarp/Board-up') }}</a>
@@ -214,6 +217,10 @@
                                             </a>
                                             <a class="dropdown-item" href="{{ route('post.index') }}">
                                                 {{ __('Blog') }}
+                                            </a>
+
+                                            <a class="dropdown-item" href="{{ route('localservice.index') }}">
+                                                {{ __('Local Service') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('comment.index') }}">
                                                 {{ __('Comments') }}
@@ -314,6 +321,10 @@
                             <p>
                                 <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('GeneralCleaning') }} </a>
+                            </p>
+                            <p>
+                                <a href="{{ route('localServices', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('localServices') }}</a>
                             </p>
 
                             {{-- <p>

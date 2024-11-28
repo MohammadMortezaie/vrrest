@@ -2,142 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
         <loc>http://127.0.0.1:8000/en</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/en//blog</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/en/blog</loc>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/about</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/contact-us</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/our-team</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/career</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/water-damage</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/commercial-services</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/residential-services</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/construction</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/fire-damage</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/general-cleaning</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/mold-remediation</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/en/specialty-cleaning</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/zh//blog</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/zh/blog</loc>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/about</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/contact-us</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/our-team</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/career</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/water-damage</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/commercial-services</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/residential-services</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/construction</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/fire-damage</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/general-cleaning</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/mold-remediation</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/specialty-cleaning</loc>
-        <lastmod>2024-07-28T00:00:00+00:00</lastmod>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/en/vancouver/asdasdasdasd-update</loc>
+        <lastmod>2024-11-26T21:31:48+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/zh/vancouver/asdasdasdasd-update</loc>
+        <lastmod>2024-11-26T21:31:48+00:00</lastmod>
 
             </url>
     <url>

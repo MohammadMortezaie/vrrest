@@ -50,6 +50,15 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-3 mt-3">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Local Service</h5>
+                            <a href="{{ route('localservice.index') }}" class="btn btn-dark">View</a>
+                        </div>
+                    </div>
+                </div>
             @endif
         </div>
     </div>

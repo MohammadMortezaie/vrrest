@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => secure_url('/favicon.ico'),
+    'favicon' => false,
 
     'title' => [
         /**

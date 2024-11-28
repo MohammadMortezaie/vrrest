@@ -5,6 +5,7 @@ import BlogList from './components/BlogList.vue';
 import CommentList from './components/CommentList.vue';
 import CareerList from './components/CareerList.vue';
 import UserList from './components/UserList.vue';
+import LocalserviceList from './components/LocalserviceList.vue';
 
 createApp({})
   .component('BlogCategory', BlogCategory)
@@ -12,4 +13,5 @@ createApp({})
   .component('CommentList', CommentList)
   .component('CareerList', CareerList)
   .component('UserList', UserList)
+  .component('LocalserviceList', LocalserviceList)
   .mount('#app')

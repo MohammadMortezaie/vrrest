@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocalServiceController;
 use App\Http\Controllers\PostCategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
@@ -43,6 +44,9 @@ Route::group(['prefix' => 'vr'], function () {
 
         Route::post('/post/all', [PostController::class, 'all']);
         Route::resource('post', PostController::class)->except('show');
+
+        Route::post('/localservice/all', [LocalServiceController::class, 'all']);
+        Route::resource('localservice', LocalServiceController::class)->except('show');
 
         Route::post('/comment/all', [CommentController::class, 'all']);
         Route::resource('comment', CommentController::class);
@@ -88,6 +92,8 @@ Route::group([
     Route::get('/general-cleaning', [ServiceController::class, 'generalCleaning'])->name('generalCleaning');
     Route::get('/mold-remediation', [ServiceController::class, 'moldRemediation'])->name('moldRemediation');
     Route::get('/specialty-cleaning', [ServiceController::class, 'specialtyCleaning'])->name('specialtyCleaning');
+    Route::get('/local-services', [ServiceController::class, 'localServices'])->name('localServices');
+    Route::get('/{city}/{slug}', [ServiceController::class, 'localServicesDetail'])->name('localservicesDetail');
     // Route::get('/storm-disaster', [ServiceController::class, 'stormDisaster'])->name('stormDisaster');
     // Route::get('/roof-tarp-board-up', [ServiceController::class, 'roofTarpBoard'])->name('roofTarpBoard');
     // Route::get('/industries-serviced-up', [ServiceController::class, 'industriesServiced'])->name('industriesServiced');
