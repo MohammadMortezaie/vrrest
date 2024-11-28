@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/migrate', function () {
-    Artisan::call('migrate');
-    return "Migration has been run!";
-});
 
 
 Route::get('/', function () {
