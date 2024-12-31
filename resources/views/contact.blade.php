@@ -28,7 +28,7 @@
                                         <div>
                                             <h2 class="h4 mb-3">{{ __('contactaddress_heading') }}</h2>
                                             <p class="text-secondary  mb-0">
-                                                #7, 636 Clyde AveWest, Vancouver, BC
+                                                636 Clyde Ave, West Vancouver, BC
                                             </p><hr>
                                             <p class="text-secondary  mb-0">
                                                 #112, 828 Harbourside, Dr North Vancouver, BC

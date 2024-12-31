@@ -382,7 +382,7 @@
                                 778-318-6796</a></p>
                             <hr>
                             <p class=" mb-0">
-                                #7, 636 Clyde AveWest, Vancouver, BC
+                                636 Clyde Ave, West Vancouver, BC
                             </p>
                             <hr>
                             <p class=" mb-0">
