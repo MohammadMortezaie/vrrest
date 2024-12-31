@@ -1229,126 +1229,126 @@ $seoDataZh = new SEOData(
         return view('services.moldRemediation', compact('SEOData'));
     }
     public function specialtyCleaning()
-    {
-        $locale = app()->getLocale(); // Get the current locale
+{
+    $locale = app()->getLocale(); // Get the current locale
 
-        // Define SEO data for English
-        $seoDataEn = new SEOData(
-            title: 'Specialty Cleaning Services',
-            description: 'Comprehensive specialty cleaning services including residential, commercial, post-construction, and move-in/move-out cleaning. Contact us at 604-800-3900.',
-            image: asset('img/specialCleaning2.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What types of specialty cleaning services do you offer?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We offer a range of specialty cleaning services including residential cleaning, commercial cleaning, post-construction cleaning, and move-in/move-out cleaning. Each service is tailored to meet the specific needs of our clients.',
-                            ],
+    // Define SEO data for English
+    $seoDataEn = new SEOData(
+        title: 'Specialty Cleaning Services',
+        description: 'Comprehensive specialty cleaning services including residential, commercial, post-construction, and move-in/move-out cleaning. Contact us at 604-800-3900.',
+        image: asset('img/specialCleaning2.jpeg'), // Example image path
+        schema: SchemaCollection::make()->add(
+            fn(SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => [
+                    [
+                        '@type' => 'Question',
+                        'name' => 'What types of specialty cleaning services do you offer?',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => 'We offer a range of specialty cleaning services including residential cleaning, commercial cleaning, post-construction cleaning, and move-in/move-out cleaning. Each service is tailored to meet the specific needs of our clients.',
                         ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'Are your cleaning products eco-friendly?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Yes, we use eco-friendly cleaning products for residential cleaning to ensure a safe and healthy environment for our clients and their families.',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+                    ],
+                    [
+                        '@type' => 'Question',
+                        'name' => 'Are your cleaning products eco-friendly?',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => 'Yes, we use eco-friendly cleaning products for residential cleaning to ensure a safe and healthy environment for our clients and their families.',
                         ],
                     ],
                 ],
-            ),
-            tags: ['specialty cleaning', 'residential cleaning', 'commercial cleaning', 'post-construction cleaning', 'move-in cleaning', 'move-out cleaning', 'Vancouver cleaning services'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/specialty-cleaning')],
-        );
+                'telephone' => '+1 604-800-3900',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => '636 Clyde Ave Suite 7',
+                    'addressLocality' => 'West Vancouver',
+                    'addressRegion' => 'BC',
+                    'postalCode' => 'V7T 1E1',
+                    'addressCountry' => 'CA',
+                ],
+                'geo' => [
+                    '@type' => 'GeoCoordinates',
+                    'latitude' => 49.3252,
+                    'longitude' => -123.1595,
+                ],
+                'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
+                'openingHoursSpecification' => [
+                    [
+                        '@type' => 'OpeningHoursSpecification',
+                        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                        'opens' => '00:00',
+                        'closes' => '23:59',
+                    ],
+                ],
+            ]
+        ),
+        tags: ['specialty cleaning', 'residential cleaning', 'commercial cleaning', 'post-construction cleaning', 'move-in cleaning', 'move-out cleaning', 'Vancouver cleaning services'],
+        alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/specialty-cleaning')],
+    );
 
-        // Define SEO data for Chinese
-        $seoDataZh = new SEOData(
-            title: '专业清洁服务',
-            description: '提供全面的专业清洁服务，包括住宅清洁、商业清洁、装修后清洁和搬入/搬出清洁。请拨打604-800-3900联系我们，获取温哥华量身定制的清洁解决方案。',
-            image: asset('img/specialCleaning2.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们提供哪些专业清洁服务？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们提供多种专业清洁服务，包括住宅清洁、商业清洁、装修后清洁和搬入/搬出清洁。每项服务都针对客户的具体需求进行量身定制。',
-                            ],
+    // Define SEO data for Chinese
+    $seoDataZh = new SEOData(
+        title: '专业清洁服务',
+        description: '提供全面的专业清洁服务，包括住宅清洁、商业清洁、装修后清洁和搬入/搬出清洁。请拨打604-800-3900联系我们，获取温哥华量身定制的清洁解决方案。',
+        image: asset('img/specialCleaning2.jpeg'), // Example image path
+        schema: SchemaCollection::make()->add(
+            fn(SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => [
+                    [
+                        '@type' => 'Question',
+                        'name' => '你们提供哪些专业清洁服务？',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => '我们提供多种专业清洁服务，包括住宅清洁、商业清洁、装修后清洁和搬入/搬出清洁。每项服务都针对客户的具体需求进行量身定制。',
                         ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们的清洁产品是否环保？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '是的，我们在住宅清洁中使用环保清洁产品，以确保客户及其家人的安全和健康。',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+                    ],
+                    [
+                        '@type' => 'Question',
+                        'name' => '你们的清洁产品是否环保？',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => '是的，我们在住宅清洁中使用环保清洁产品，以确保客户及其家人的安全和健康。',
                         ],
                     ],
                 ],
-            ),
-            tags: ['专业清洁', '住宅清洁', '商业清洁', '装修后清洁', '搬入清洁', '搬出清洁', '温哥华清洁服务'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/specialty-cleaning')],
-        );
+                'telephone' => '+1 604-800-3900',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => '636 Clyde Ave Suite 7',
+                    'addressLocality' => 'West Vancouver',
+                    'addressRegion' => 'BC',
+                    'postalCode' => 'V7T 1E1',
+                    'addressCountry' => 'CA',
+                ],
+                'geo' => [
+                    '@type' => 'GeoCoordinates',
+                    'latitude' => 49.3252,
+                    'longitude' => -123.1595,
+                ],
+                'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
+                'openingHoursSpecification' => [
+                    [
+                        '@type' => 'OpeningHoursSpecification',
+                        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                        'opens' => '00:00',
+                        'closes' => '23:59',
+                    ],
+                ],
+            ]
+        ),
+        tags: ['专业清洁', '住宅清洁', '商业清洁', '装修后清洁', '搬入清洁', '搬出清洁', '温哥华清洁服务'],
+        alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/specialty-cleaning')],
+    );
 
-        // Choose SEO data based on locale
-        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+    // Choose SEO data based on locale
+    $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        return view('services.specialtyCleaning', compact('SEOData'));
-    }
+    return view('services.specialtyCleaning', compact('SEOData'));
+}
     public function stormDisaster()
     {
         $locale = app()->getLocale(); // Get the current locale
