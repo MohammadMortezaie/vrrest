@@ -41,12 +41,7 @@
                         @if ($localService->image)
                             <div class="article-img">
                                 <img src="{{ asset($localService->image) }}" class="card-img-top w-100"
-                                    style="max-height: 600px"
-                                    @if (app()->getLocale() == 'en')
-                                    alt="{{ $localService->title_en }}"
-                                    @else
-                                    alt="{{ $localService->title_zh }}"
-                                    @endif
+                                    style="max-height: 600px" @if (app()->getLocale() == 'en') alt="{{ $localService->title_en }}" @else alt="{{ $localService->title_zh }}" @endif
                                 >
                             </div>
                         @endif
