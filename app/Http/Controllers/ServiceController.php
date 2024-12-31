@@ -393,32 +393,32 @@ class ServiceController extends Controller
                                 'text' => 'Water damage should be addressed within 24-48 hours to prevent further damage and mold growth. Quick action helps to minimize the extent of the damage and reduce restoration costs.',
                             ],
                         ],
-
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
-                        ],
                     ],
-                ],
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => [
+                        'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley',
+                        'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
+                    ],
+                    'openingHoursSpecification' => [
+                        '@type' => 'OpeningHoursSpecification',
+                        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                        'opens' => '00:00',
+                        'closes' => '23:59',
+                    ],
+                ]
             ),
             tags: ['water damage restoration', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
             alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage')],
@@ -457,16 +457,17 @@ class ServiceController extends Controller
                         'latitude' => 49.3252,
                         'longitude' => -123.1595,
                     ],
-                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                    'openingHoursSpecification' => [
-                        [
-                            '@type' => 'OpeningHoursSpecification',
-                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                            'opens' => '00:00',
-                            'closes' => '23:59',
-                        ],
+                    'areaServed' => [
+                        'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley',
+                        'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
                     ],
-                ],
+                    'openingHoursSpecification' => [
+                        '@type' => 'OpeningHoursSpecification',
+                        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                        'opens' => '00:00',
+                        'closes' => '23:59',
+                    ],
+                ]
             ),
             tags: ['水损恢复', '紧急水提取', '地下室修复', '温哥华水损服务'],
             alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage')],
@@ -883,91 +884,105 @@ class ServiceController extends Controller
                                 'text' => 'We provide 24/7 emergency response for fire damage situations. Our team is ready to deploy immediately to begin the restoration process and mitigate further damage.',
                             ],
                         ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
-                        ],
                     ],
                 ],
+            )->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => [
+                        'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
+                    ],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ]
             ),
             tags: ['fire damage restoration', 'smoke damage repair', 'structural repair', 'odor removal', 'Vancouver fire damage services'],
             alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/fire-damage')],
         );
 
-        // Define SEO data for Chinese
-        $seoDataZh = new SEOData(
-            title: '火灾损害恢复服务',
-            description: '专业火灾损害恢复服务：立即响应火灾和烟雾损害、结构修复和清理。请拨打604-800-3900，以获取温哥华快速有效的恢复服务。',
-            image: asset('img/fire-damage.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们的火灾损害恢复服务包括哪些内容？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们的火灾损害恢复服务包括对火灾和烟雾损害的紧急响应、结构修复、气味去除和全面清理。我们致力于尽快有效地恢复您的财产到受损前的状态。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们可以多快响应火灾损害情况？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们提供24/7的紧急响应服务，以应对火灾损害情况。我们的团队随时准备部署，开始恢复过程并减少进一步的损害。',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
-                        ],
+       // Define SEO data for Chinese
+$seoDataZh = new SEOData(
+    title: '火灾损害恢复服务',
+    description: '专业火灾损害恢复服务：立即响应火灾和烟雾损害、结构修复和清理。请拨打604-800-3900，以获取温哥华快速有效的恢复服务。',
+    image: asset('img/fire-damage.jpeg'), // Example image path
+    schema: SchemaCollection::make()->add(
+        fn(SEOData $SEOData) => [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name' => '你们的火灾损害恢复服务包括哪些内容？',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => '我们的火灾损害恢复服务包括对火灾和烟雾损害的紧急响应、结构修复、气味去除和全面清理。我们致力于尽快有效地恢复您的财产到受损前的状态。',
                     ],
                 ],
-            ),
-            tags: ['火灾损害恢复', '烟雾损害修复', '结构修复', '气味去除', '温哥华火灾服务'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/fire-damage')],
-        );
+                [
+                    '@type' => 'Question',
+                    'name' => '你们可以多快响应火灾损害情况？',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => '我们提供24/7的紧急响应服务，以应对火灾损害情况。我们的团队随时准备部署，开始恢复过程并减少进一步的损害。',
+                    ],
+                ],
+            ],
+        ],
+    )->add(
+        fn(SEOData $SEOData) => [
+            '@context' => 'https://schema.org',
+            '@type' => 'LocalBusiness',
+            'telephone' => '+1 604-800-3900',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => '636 Clyde Ave Suite 7',
+                'addressLocality' => 'West Vancouver',
+                'addressRegion' => 'BC',
+                'postalCode' => 'V7T 1E1',
+                'addressCountry' => 'CA',
+            ],
+            'geo' => [
+                '@type' => 'GeoCoordinates',
+                'latitude' => 49.3252,
+                'longitude' => -123.1595,
+            ],
+            'areaServed' => [
+                'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
+            ],
+            'openingHoursSpecification' => [
+                [
+                    '@type' => 'OpeningHoursSpecification',
+                    'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    'opens' => '00:00',
+                    'closes' => '23:59',
+                ],
+            ],
+        ]
+    ),
+    tags: ['火灾损害恢复', '烟雾损害修复', '结构修复', '气味去除', '温哥华火灾服务'],
+    alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/fire-damage')],
+);
 
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
@@ -980,100 +995,113 @@ class ServiceController extends Controller
         $locale = app()->getLocale(); // Get the current locale
 
         // Define SEO data for English
-        $seoDataEn = new SEOData(
-            title: 'General Cleaning Services',
-            description: 'Professional general cleaning services: Residential and commercial cleaning, deep cleaning, and more. Call 604-800-3900 to schedule your cleaning in Vancouver.',
-            image: asset('img/generalClenaing.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What does general cleaning include?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'General cleaning includes dusting, vacuuming, mopping floors, cleaning bathrooms and kitchens, and other basic cleaning tasks to maintain a clean and tidy environment.',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+      // Define SEO data for English
+      $seoDataEn = new SEOData(
+        title: 'General Cleaning Services',
+        description: 'Professional general cleaning services: Residential and commercial cleaning, deep cleaning, and more. Call 604-800-3900 to schedule your cleaning in Vancouver.',
+        image: asset('img/generalCleaning.jpeg'), // Corrected image path
+        schema: SchemaCollection::make()->add(
+            fn(SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => [
+                    [
+                        '@type' => 'Question',
+                        'name' => 'What does general cleaning include?',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => 'General cleaning includes dusting, vacuuming, mopping floors, cleaning bathrooms and kitchens, and other basic cleaning tasks to maintain a clean and tidy environment.',
                         ],
                     ],
                 ],
-            ),
-            tags: ['general cleaning', 'residential cleaning', 'commercial cleaning', 'deep cleaning', 'Vancouver cleaning services'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/general-cleaning')],
-        );
+            ],
+        )->add(
+            fn(SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'LocalBusiness',
+                'telephone' => '+1 604-800-3900',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => '636 Clyde Ave Suite 7',
+                    'addressLocality' => 'West Vancouver',
+                    'addressRegion' => 'BC',
+                    'postalCode' => 'V7T 1E1',
+                    'addressCountry' => 'CA',
+                ],
+                'geo' => [
+                    '@type' => 'GeoCoordinates',
+                    'latitude' => 49.3252,
+                    'longitude' => -123.1595,
+                ],
+                'areaServed' => [
+                    'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley',
+                    'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
+                ],
+                'openingHoursSpecification' => [
+                    '@type' => 'OpeningHoursSpecification',
+                    'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    'opens' => '00:00',
+                    'closes' => '23:59',
+                ],
+            ]
+        ),
+        tags: ['general cleaning', 'residential cleaning', 'commercial cleaning', 'deep cleaning', 'Vancouver cleaning services'],
+        alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/general-cleaning')],
+    );
 
-        // Define SEO data for Chinese
-        $seoDataZh = new SEOData(
-            title: '一般清洁服务',
-            description: '专业的一般清洁服务：住宅和商业清洁，深度清洁等。请拨打604-800-3900预约您的温哥华清洁服务。',
-            image: asset('img/generalClenaing.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '一般清洁包括什么？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '一般清洁包括除尘、吸尘、拖地、清洁浴室和厨房，以及其他基本的清洁任务，以保持环境的清洁和整洁。',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+    // Define SEO data for Chinese
+    $seoDataZh = new SEOData(
+        title: '一般清洁服务',
+        description: '专业的一般清洁服务：住宅和商业清洁，深度清洁等。请拨打604-800-3900预约您的温哥华清洁服务。',
+        image: asset('img/generalCleaning.jpeg'), // Corrected image path
+        schema: SchemaCollection::make()->add(
+            fn(SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => [
+                    [
+                        '@type' => 'Question',
+                        'name' => '一般清洁包括什么？',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => '一般清洁包括除尘、吸尘、拖地、清洁浴室和厨房，以及其他基本的清洁任务，以保持环境的清洁和整洁。',
                         ],
                     ],
                 ],
-            ),
-            tags: ['一般清洁', '住宅清洁', '商业清洁', '深度清洁', '温哥华清洁服务'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/general-cleaning')],
-        );
+            ],
+        )->add(
+            fn(SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'LocalBusiness',
+                'telephone' => '+1 604-800-3900',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => '636 Clyde Ave Suite 7',
+                    'addressLocality' => 'West Vancouver',
+                    'addressRegion' => 'BC',
+                    'postalCode' => 'V7T 1E1',
+                    'addressCountry' => 'CA',
+                ],
+                'geo' => [
+                    '@type' => 'GeoCoordinates',
+                    'latitude' => 49.3252,
+                    'longitude' => -123.1595,
+                ],
+                'areaServed' => [
+                    'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley',
+                    'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
+                ],
+                'openingHoursSpecification' => [
+                    '@type' => 'OpeningHoursSpecification',
+                    'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    'opens' => '00:00',
+                    'closes' => '23:59',
+                ],
+            ]
+        ),
+        tags: ['一般清洁', '住宅清洁', '商业清洁', '深度清洁', '温哥华清洁服务'],
+        alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/general-cleaning')],
+    );
 
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
@@ -1110,31 +1138,31 @@ class ServiceController extends Controller
                                 'text' => 'To prevent mold growth, maintain relative humidity levels in your home, fix any leaks or water damage promptly, and ensure proper ventilation. Regular inspections can help identify potential issues before they become serious.',
                             ],
                         ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+                    ],
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
                         ],
                     ],
-                ],
+                ]
             ),
             tags: ['mold remediation', 'mold removal', 'water damage', 'humidity control', 'Vancouver mold services'],
             alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation')],
@@ -1166,36 +1194,35 @@ class ServiceController extends Controller
                                 'text' => '要防止霉菌生长，保持家庭中的相对湿度，及时修复任何泄漏或水损，并确保良好的通风。定期检查可以帮助及早发现潜在问题。',
                             ],
                         ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+                    ],
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
                         ],
                     ],
-                ],
+                ]
             ),
             tags: ['霉菌修复', '霉菌去除', '水损', '湿度控制', '温哥华霉菌服务'],
             alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation')],
         );
-
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
