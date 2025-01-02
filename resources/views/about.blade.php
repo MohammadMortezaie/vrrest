@@ -51,7 +51,7 @@
                             <ul class="txt-vr">
                                 <li class="fs-5">Home Inspector Certified</li>
                                 <li class="fs-5">IICRC Certified</li>
-                                <li class="fs-5">ASBESTOS Certified</li>
+                                <li class="fs-5">Asbestos Abatement Licence</li>
                                 <li class="fs-5">General Safety Certified</li>
                             </ul>
                             <hr class="my-4">
