@@ -12,17 +12,28 @@
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage.jpeg') }}" alt="{{ __('Water Damage 1-1') }}">
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage.jpeg') }}"
+                        alt="{{ __('Water Damage 1-1') }}">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
                             <h1 class="fs-1 fw-bolder">{{ __('Water Damage 1-1') }} </h1>
                             <hr>
-                            <p class="lead mb-5 txt-def">{{ __('Water Damage 1-2') }}
+                            <p class="lead  ">
+                                {{ __('Water Damage 1-2') }}
 
-                                <a class="txt-vr fw-bold " href="https://vrrestoration.ca/en/blog/3/why-rapid-response-is-essential-in-water-damage-situations">{{ __('Water Damage 1-3') }}</a>
+                            </p>
+                            <p class="lead  ">
 
+                                {{ __('Water Damage 1-2-1') }}
+
+                                <a href="/why-rapid-response-is-essential">{{ __('Water Damage 1-3') }} </a>
+                            </p>
+                            <p class="lead mb-5 ">
+                                {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
+                                {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
+                                        class="btn btn-warning  fw-bolder">+1 604-800-3900</a></strong>
                             </p>
                         </div>
                     </div>
@@ -91,20 +102,20 @@
                             <strong>{{ __('Water Damage 1-14') }}
 
                             </strong>
-                         {{ __('Water Damage 1-15') }}
+                            {{ __('Water Damage 1-15') }}
                         </li>
 
                         <li>
-                            <strong>  {{ __('Water Damage 1-16') }}
+                            <strong> {{ __('Water Damage 1-16') }}
 
                             </strong>
-                             {{ __('Water Damage 1-17') }}
+                            {{ __('Water Damage 1-17') }}
                         </li>
                     </ul>
 
                 </div>
                 <div class="col-md-6 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">   {{ __('What Not To DO') }}
+                    <h2 class="fs-2 fw-bolder section-title-h1"> {{ __('What Not To DO') }}
 
                     </h2>
 
@@ -154,11 +165,11 @@
 
                     </h2>
 
-                    <p class="lead">       {{ __('Water Damage 1-25') }}
+                    <p class="lead"> {{ __('Water Damage 1-25') }}
 
                         <button class="btn btn-link txt-vr" type="button" data-bs-toggle="collapse"
                             onclick="scrollToText()" data-bs-target="#collapseVrRestoration" aria-expanded="false"
-                            aria-controls="collapseVrRestoration">   {{ __('Read More') }} >>
+                            aria-controls="collapseVrRestoration"> {{ __('Read More') }} >>
                         </button>
                     </p>
 
@@ -166,7 +177,7 @@
                 <div class="col-md-5 mb-3">
 
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage2.jpeg') }}"
-                        alt="Water Damage">
+                        alt="Water damage restoration in Vancouver services">
                 </div>
 
                 <div class="collapse" id="collapseVrRestoration">
@@ -307,6 +318,40 @@
                     </div>
                 </div>
 
+
+
+                <div class="col-md-12 my-3">
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        {{ __('About 1-9') }}
+                    </h2>
+                    <hr>
+
+                    <h3 class="fs-4 fw-bold">
+                         {{ __('Water Damage 1-46-1') }}
+                    </h3>
+                    <p>
+                        {{ __('Water Damage 1-46-2') }}
+                    </p>
+
+
+                    <div class="d-flex flex-wrap gap-2 pb-3">
+                        <a href="https://vrrestoration.ca/en/blog/9/what-number-to-call-for-water-damage-in-vancouver" class="btn btn-warning btn-sm">
+
+                        {{ __('Water Damage 1-46-3') }}
+                        </a>
+                    </div>
+                    <ul class="txt-vr d-flex flex-wrap gap-3">
+                        <li class="lead px-2">Greater Vancouver</li>
+                        <li class="lead px-2">Metro Vancouver</li>
+                        <li class="lead px-2">North Shore</li>
+                        <li class="lead px-2">Downtown</li>
+                        <li class="lead px-2">Sea to Sky</li>
+                        <li class="lead px-2">Tri-Cities</li>
+                        <li class="lead px-2">Fraser Valley</li>
+                        <li class="lead px-2">Howe Sound</li>
+                    </ul>
+
+                </div>
             </div>
         </div>
     </section>
@@ -355,7 +400,8 @@
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>
-                                <p>{{ __('Water Damage 1-52') }} </h3>
+                                <p>{{ __('Water Damage 1-52') }}
+                            </h3>
                             <div class="faq-content">
                                 <p>{{ __('Water Damage 1-53') }}
                                 </p>
@@ -365,10 +411,10 @@
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Water Damage 1-54') }}  </h3>
+                            <h3>{{ __('Water Damage 1-54') }} </h3>
                             <div class="faq-content">
                                 <p>{{ __('Water Damage 1-55') }}
-                                     </p>
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
@@ -404,22 +450,22 @@
 
     </section><!-- /Faq Section -->
 
-        <!-- Recommended For You -->
-        <section id="about" class="about section">
+    <!-- Recommended For You -->
+    <section id="about" class="about section">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="row gy-4">
+            <div class="row gy-4">
 
-                    <div class="section-title">
-                        <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Recommended For You') }} </h2>
-                    </div>
+                <div class="section-title">
+                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Recommended For You') }} </h2>
+                </div>
 
 
-                    <div class="container">
+                <div class="container">
 
-                        <div class="swiper"
-                            data-swiper-config=' {
+                    <div class="swiper"
+                        data-swiper-config=' {
                             "loop": true,
                             "speed": 600,
                             "autoplay": {
@@ -450,33 +496,31 @@
                               }
                             }
                           }'>
-                            <div class="swiper-wrapper ">
-                                @foreach ($blog as $b)
-
-                                    <div class="swiper-slide my-3 ">
-                                        <div class="card border-0 shadow-sm">
-                                            <div class="card-body">
-                                                <h2 class="card-title txt-vr h5">{{$b->title}}</h2>
-                                                <hr>
-                                                <p class="card-text">
-                                                    {{$b->subtitle}}
-                                                </p>
-                                                <a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $b->id,'slug'=> $b->slug]) }}" class="text-decoration-none text-black">{{__("Read More")}}
-                                                    <i class="bi bi-chevron-double-right"></i>
-                                                </a>
-                                            </div>
+                        <div class="swiper-wrapper ">
+                            @foreach ($blog as $b)
+                                <div class="swiper-slide my-3 ">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h2 class="card-title txt-vr h5">{{ $b->title }}</h2>
+                                            <hr>
+                                            <p class="card-text">
+                                                {{ $b->subtitle }}
+                                            </p>
+                                            <a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $b->id, 'slug' => $b->slug]) }}"
+                                                class="text-decoration-none text-black">{{ __('Read More') }}
+                                                <i class="bi bi-chevron-double-right"></i>
+                                            </a>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
-
                     </div>
 
+                </div>
 
-        </section><!-- /Recommended For You -->
 
-
+    </section><!-- /Recommended For You -->
 @endsection
 
 @section('scripts')
@@ -484,23 +528,22 @@
         function scrollToText() {
             const collapseElement = document.getElementById('collapseVrRestoration');
 
-        collapseElement.addEventListener('shown.bs.collapse', function () {
-            const textToScrollTo = document.getElementById('textToScrollTo');
-            textToScrollTo.scrollIntoView({ behavior: 'smooth' });
-        });
+            collapseElement.addEventListener('shown.bs.collapse', function() {
+                const textToScrollTo = document.getElementById('textToScrollTo');
+                textToScrollTo.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         }
     </script>
     <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
     <script>
-
-
-function initSwiper() {
-    document.querySelectorAll('.swiper').forEach(function(swiper) {
-        let config = JSON.parse(swiper.getAttribute('data-swiper-config'));
-        new Swiper(swiper, config);
-    });
-  }
-window.addEventListener('load', initSwiper);
-
+        function initSwiper() {
+            document.querySelectorAll('.swiper').forEach(function(swiper) {
+                let config = JSON.parse(swiper.getAttribute('data-swiper-config'));
+                new Swiper(swiper, config);
+            });
+        }
+        window.addEventListener('load', initSwiper);
     </script>
 @endsection
