@@ -421,7 +421,10 @@ class ServiceController extends Controller
                 ]
             ),
             tags: ['water damage restoration', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage')],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage'),
+            ],
         );
 
         // Define SEO data for Chinese
@@ -470,7 +473,10 @@ class ServiceController extends Controller
                 ]
             ),
             tags: ['水损恢复', '紧急水提取', '地下室修复', '温哥华水损服务'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage')],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage'),
+            ],
         );
 
         // Choose SEO data based on locale
