@@ -1120,8 +1120,8 @@ $seoDataZh = new SEOData(
 
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'Mold Remediation Services',
-            description: 'Professional mold remediation services: We address mold issues in both residential and commercial properties. Call 604-800-3900.',
+            title: 'Mold Remediation in Vancouver | VR PLUS Restoration',
+            description: '24/7 Mold Remediation Services Prompt removal and prevention of mold in residential and commercial properties. Call 604-800-3900 for immediate assistance in Vancouver.',
             image: asset('img/mold.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
