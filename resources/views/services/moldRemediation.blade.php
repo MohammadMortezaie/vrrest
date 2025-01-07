@@ -10,16 +10,22 @@
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold.jpeg') }}"
-                        alt="Mold Remediation Restoration">
+                        alt="Mold Remediation Restoration in vancouver">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
                             <h1 class="fs-1 fw-bolder">{{ __('Mold 1-1') }} </h1>
                             <hr>
-                            <p class="lead mb-5 txt-def">
-                                {{ __('Mold 1-2') }}
 
+                            <p class="lead ">
+
+                                {{ __('Mold 1-2') }}
+                            </p>
+                            <p class="lead mb-5 ">
+                                {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
+                                {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
+                                        class="btn btn-warning  fw-bolder">+1 604-800-3900</a></strong>
                             </p>
                         </div>
                     </div>
@@ -43,7 +49,37 @@
                        {{ __('Mold 1-5') }}
                     </p>
                 </div>
+                <div class="col-md-12 my-3">
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        {{ __('About 1-9') }}
+                    </h2>
+                    <hr>
 
+                    <h3 class="fs-4 fw-bold">
+                         {{ __('Mold 1-46-1') }}
+                    </h3>
+                    <p>
+                        {{ __('Mold 1-46-2') }}
+                    </p>
+
+
+                    <div class="d-flex flex-wrap gap-2 pb-3">
+                        <a href="https://vrrestoration.ca/en/vancouver/mold-remediation-in-vancouver" class="btn btn-warning btn-sm">
+                        {{ __('Mold 1-46-3') }}
+                        </a>
+                    </div>
+                    <ul class="txt-vr d-flex flex-wrap gap-3">
+                        <li class="lead px-2">Greater Vancouver</li>
+                        <li class="lead px-2">Metro Vancouver</li>
+                        <li class="lead px-2">North Shore</li>
+                        <li class="lead px-2">Downtown</li>
+                        <li class="lead px-2">Sea to Sky</li>
+                        <li class="lead px-2">Tri-Cities</li>
+                        <li class="lead px-2">Fraser Valley</li>
+                        <li class="lead px-2">Howe Sound</li>
+                    </ul>
+
+                </div>
             </div>
         </div>
     </section>
@@ -54,7 +90,7 @@
                 <div class="col-md-5">
 
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/moldtype.jpeg') }}"
-                        alt="Mold Remediation Restoration">
+                        alt="Mold Remediation Restoration in BC">
                 </div>
                 <div class="col-md-7">
 
@@ -107,7 +143,7 @@
                         <div class="col-md-5 pb-3">
 
                             <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/Fogging.jpeg') }}"
-                                alt="fogging Restoration">
+                                alt="fogging Restoration in vancouver">
 
                         </div>
 
@@ -160,7 +196,7 @@
                 <div class="col-md-5">
 
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold3.jpeg') }}"
-                        alt="Mold Remediation Restoration">
+                        alt="Mold Remediation Restoration In Vancouver">
                 </div>
                 <div class="col-md-7">
 
