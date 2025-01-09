@@ -48,9 +48,22 @@
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-12 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Water Damage 1-4') }}
+                    <h2 class="fs-2 fw-bolder section-title-h1"> {{ __('Water Damage 1-3-1') }}</h2>
+                    <p class="lead ">
+                       {{ __('Water Damage 1-3-2') }}
+                    </p>
+                    <div class="text-center mt-3">
+                        <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="font-size: 1.25rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            📞 Call Now: +1 604-800-3900
+                        </a>
+                        <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }}  </p>
+                    </div>
+
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        {{ __('Water Damage 1-4') }}
                     </h2>
-                    <p class="lead txt-def">{{ __('Water Damage 1-5') }}
+                    <p class="lead ">{{ __('Water Damage 1-5') }}
                     </p>
                 </div>
 
