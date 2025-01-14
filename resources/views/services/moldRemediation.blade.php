@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-{!! seo($SEOData) !!}
+    {!! seo($SEOData) !!}
 @endsection
 
 @section('content')
@@ -41,38 +41,64 @@
                 <div class="col-12 mb-3">
 
                     <h2 class="fs-2 fw-bolder section-title-h1">
-                          {{ __('Mold 1-3-1') }}
+                        {{ __('Mold 1-3-1') }}
                     </h2>
                     <p class="lead">
-                          {{ __('Mold 1-3-2') }}
+                        {{ __('Mold 1-3-2') }}
                     </p>
 
 
-                    <p>
-                        {{ __('Mold 1-3-5') }}  <strong> {{ __('Mold 1-3-1') }} </strong> {{ __('Mold 1-3-6') }}
-                    </p>
-                    <div class="text-center mt-3">
-                        <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="font-size: 1.25rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                            📞 Call Now: +1 604-800-3900
-                        </a>
-                        <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }}  </p>
+
+
+
+                    <div class="row mb-3 pb-3">
+                        <div class="col-12 col-lg-6 col-xl-5">
+
+                            <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold-refrigerator.jpg') }}"
+                                alt="Mold In Refrigerator Vancouver">
+
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-7">
+                            <div class="justify-content-xl-center">
+
+
+                                <div class="text-center mt-3">
+
+                                    <p>
+                                        {{ __('Mold 1-3-5') }} <strong> {{ __('Mold 1-3-1') }} </strong>
+                                        {{ __('Mold 1-3-6') }}
+                                    </p>
+                                    <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }}
+                                    </strong>
+                                    <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                                        style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                                        📞 Call Now: +1 604-800-3900
+                                    </a>
+                                    <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }} </p>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
                     </div>
+
 
 
                     <h3 class="fs-3 fw-bolder section-title-h1">{{ __('Mold 1-3-3') }}</h3>
                     <p class="lead">
-                          {{ __('Mold 1-3-4') }}
+                        {{ __('Mold 1-3-4') }}
                     </p>
 
                     <h2 class="fs-2 fw-bolder section-title-h1">
-                          {{ __('Mold 1-3') }}
+                        {{ __('Mold 1-3') }}
                     </h2>
 
-                    <p class="lead">   {{ __('Mold 1-4') }}
+                    <p class="lead"> {{ __('Mold 1-4') }}
 
                         <br><br>
-                       {{ __('Mold 1-5') }}
+                        {{ __('Mold 1-5') }}
                     </p>
                 </div>
                 <div class="col-md-12 my-3">
@@ -82,7 +108,7 @@
                     <hr>
 
                     <h3 class="fs-4 fw-bold">
-                         {{ __('Mold 1-46-1') }}
+                        {{ __('Mold 1-46-1') }}
                     </h3>
                     <p>
                         {{ __('Mold 1-46-2') }}
@@ -90,8 +116,9 @@
 
 
                     <div class="d-flex flex-wrap gap-2 pb-3">
-                        <a href="https://vrrestoration.ca/en/vancouver/mold-remediation-in-vancouver" class="btn btn-warning btn-sm">
-                        {{ __('Mold 1-46-3') }}
+                        <a href="https://vrrestoration.ca/en/vancouver/mold-remediation-in-vancouver"
+                            class="btn btn-warning btn-sm">
+                            {{ __('Mold 1-46-3') }}
                         </a>
                     </div>
                     <ul class="txt-vr d-flex flex-wrap gap-3">
@@ -125,13 +152,13 @@
                         {{ __('Mold 1-6') }}
                     </h2>
 
-                    <p class="lead txt-def">  {{ __('Mold 1-7') }}
+                    <p class="lead txt-def"> {{ __('Mold 1-7') }}
 
                     </p>
                 </div>
                 <div class="col-md-12 pt-5">
 
-                    <p class="lead txt-def">  {{ __('Mold 1-8') }}
+                    <p class="lead txt-def"> {{ __('Mold 1-8') }}
                     </p>
 
                     <p class="lead txt-def"> {{ __('Mold 1-9') }}
@@ -153,13 +180,13 @@
                         {{ __('Mold 1-50') }}
                     </h2>
 
-                    <p class="lead txt-def">    {{ __('Mold 1-51') }}
+                    <p class="lead txt-def"> {{ __('Mold 1-51') }}
 
                     </p>
                     <div class="row py-3">
 
                         <div class="col-md-7 ">
-                            <h3 class="h4 section-title-h1">  {{ __('Mold 1-52') }} </h3>
+                            <h3 class="h4 section-title-h1"> {{ __('Mold 1-52') }} </h3>
                             <hr>
                             <p class="lead txt-def ">{{ __('Mold 1-53') }}
 
@@ -307,10 +334,10 @@
                 <div class="col-md-6 mb-3">
                     <div class="card  border-2  mb-3 rounded">
                         <div class="card-header bg-vr text-white fw-bold fs-5">
-                            4)    {{ __('Mold 1-23') }}
+                            4) {{ __('Mold 1-23') }}
                         </div>
                         <div class="card-body card-vr-custom">
-                            <p class="card-text">   {{ __('Mold 1-24') }}
+                            <p class="card-text"> {{ __('Mold 1-24') }}
 
                             </p>
                         </div>
@@ -383,7 +410,7 @@
 
                         <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-30') }}  </h3>
+                            <h3>{{ __('Mold 1-30') }} </h3>
                             <div class="faq-content">
                                 <p>{{ __('Mold 1-31') }}
 
@@ -394,7 +421,7 @@
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-32') }}   </h3>
+                            <h3>{{ __('Mold 1-32') }} </h3>
                             <div class="faq-content">
                                 <p>{{ __('Mold 1-33') }}
 
@@ -405,7 +432,7 @@
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-34') }}   </h3>
+                            <h3>{{ __('Mold 1-34') }} </h3>
                             <div class="faq-content">
                                 <p>{{ __('Mold 1-35') }}
 
@@ -416,7 +443,7 @@
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-36') }}   </h3>
+                            <h3>{{ __('Mold 1-36') }} </h3>
                             <div class="faq-content">
                                 <p>{{ __('Mold 1-37') }}
 
@@ -441,7 +468,7 @@
                             <h3>{{ __('Mold 1-40') }}
                             </h3>
                             <div class="faq-content">
-                                <p>{{ __('Mold 1-41') }}    </p>
+                                <p>{{ __('Mold 1-41') }} </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
