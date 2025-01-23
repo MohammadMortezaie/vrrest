@@ -19,6 +19,13 @@
                             <hr>
                             <p class="lead mb-5 txt-def">{{ __('Fire Damage 1-2') }}
                             </p>
+
+                            <p class="lead mb-5 ">
+                                {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
+                                {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
+                                        class="btn btn-warning  fw-bolder">+1 604-800-3900</a></strong>
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -32,12 +39,41 @@
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-12 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Fire Damage 1-3') }}
 
+
+                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Fire Damage 1-3-1') }}
+                    </h2>
+
+                    <ul>
+                        <li>
+                            {{ __('Fire Damage 1-3-2') }}
+                        </li>
+
+                        <li>
+                            {{ __('Fire Damage 1-3-3') }}
+                        </li>
+
+                        <li>
+                            {{ __('Fire Damage 1-3-4') }}
+                        </li>
+
+                        <li>
+                            {{ __('Fire Damage 1-3-5') }}
+                        </li>
+                    </ul>
+                    <div class="text-center mt-3">
+                        <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            📞 Call Now: +1 604-800-3900
+                        </a>
+                        <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }}  </p>
+                    </div>
+
+
+                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Fire Damage 1-3') }}
                     </h2>
 
                     <p class="lead">{{ __('Fire Damage 1-4') }}
-
                         <br>
                         <br>{{ __('Fire Damage 1-5') }}
 
@@ -266,6 +302,34 @@
                             </p>
                         </div>
                     </div>
+                </div>
+
+
+                <div class="col-md-12 my-3">
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        {{ __('About 1-9') }}
+                    </h2>
+                    <hr>
+
+                    <h3 class="fs-4 fw-bold">
+                         {{ __('Fire Damage 1-3-6') }}
+                    </h3>
+                    <p>
+                        {{ __('Fire Damage 1-3-7') }}
+                    </p>
+
+                    <ul class="txt-vr d-flex flex-wrap gap-3">
+                        <li class="lead px-2">Vancouver</li>
+                        <li class="lead px-2">Greater Vancouver</li>
+                        <li class="lead px-2">Metro Vancouver</li>
+                        <li class="lead px-2">North Shore</li>
+                        <li class="lead px-2">Downtown</li>
+                        <li class="lead px-2">Sea to Sky</li>
+                        <li class="lead px-2">Tri-Cities</li>
+                        <li class="lead px-2">Fraser Valley</li>
+                        <li class="lead px-2">Howe Sound</li>
+                    </ul>
+
                 </div>
 
             </div>
