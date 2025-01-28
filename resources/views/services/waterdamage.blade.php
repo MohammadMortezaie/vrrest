@@ -514,7 +514,7 @@
                                 <div class="swiper-slide my-3 ">
                                     <div class="card border-0 shadow-sm">
                                         <div class="card-body">
-                                            <h2 class="card-title txt-vr h5">{{ $b->title }}</h2>
+                                            <h3 class="card-title txt-vr h5">{{ $b->title }}</h3>
                                             <hr>
                                             <p class="card-text">
                                                 {{ $b->subtitle }}
