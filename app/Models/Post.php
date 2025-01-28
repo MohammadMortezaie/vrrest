@@ -16,7 +16,7 @@ class Post extends Model
         $query = self::where('is_active', 1)
                      ->orderBy('created_at', 'desc');
 
-        return $paginate ? $query->paginate($perPage) : $query->get();
+        return $paginate ? $query->paginate($perPage) : $query->take($perPage)->get();
     }
 
     public function category()
