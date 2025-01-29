@@ -17,7 +17,7 @@
                         <div class="col-12 col-xl-11">
                             <h1 class="fs-1 fw-bolder">{{ __('Fire Damage 1-1') }}</h1>
                             <hr>
-                            <p class="lead mb-5 txt-def">{{ __('Fire Damage 1-2') }}
+                            <p class="lead mb-5 ">{{ __('Fire Damage 1-2') }}
                             </p>
 
                             <p class="lead mb-5 ">
