@@ -24,12 +24,6 @@
                                 {{ __('Water Damage 1-2') }}
 
                             </p>
-                            <p class="lead  ">
-
-                                {{ __('Water Damage 1-2-1') }}
-
-                                <a href="/why-rapid-response-is-essential">{{ __('Water Damage 1-3') }} </a>
-                            </p>
                             <p class="lead mb-5 ">
                                 {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
                                 {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
