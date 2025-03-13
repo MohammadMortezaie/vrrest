@@ -68,12 +68,12 @@
                 <p class="lead ">{{ __('Water Damage 1-5') }}
                 </p>
 
-                <div class="col-6">
+                <div class="col-md-6">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/waterdamage-van.jpeg') }}"
                         alt="Water Damage Restoration Vancouver - VR Plus Restoration">
                 </div>
 
-                <div class="col-6">
+                <div class="col-md-6">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/waterdamage-van-front.jpeg') }}"
                         alt="Water Damage Restoration Vancouver - VR Plus Restoration">
 
