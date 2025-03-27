@@ -62,21 +62,30 @@
 
 
                 </div>
-                <h2 class="mt-5 fs-2 fw-bolder section-title-h1">
-                    {{ __('Water Damage 1-4') }}
-                </h2>
-                <p class="lead ">{{ __('Water Damage 1-5') }}
-                </p>
 
                 <div class="col-md-6">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/waterdamage-van.jpeg') }}"
-                        alt="Water Damage Restoration Vancouver - VR Plus Restoration">
+                    <h2 class="mt-5 fs-2 fw-bolder section-title-h1">
+                        {{ __('Water Damage 1-4') }}
+                    </h2>
+                    <p class="lead ">{{ __('Water Damage 1-5') }}
+                    </p>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mt-5">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/waterdamage-van-front.jpeg') }}"
-                        alt="Water Damage Restoration Vancouver - VR Plus Restoration">
+                        alt="Water Damage Restoration Vancouver Fix issue immediately after flood in bc">
 
+                </div>
+
+                <div class="col-md-12">
+                    <div class="text-center mt-3">
+                        <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                            style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            📞 Call Now: +1 604-800-3900
+                        </a>
+                        <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }} </p>
+                    </div>
                 </div>
 
             </div>
@@ -87,7 +96,45 @@
     <section class="py-3 py-md-5  ">
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-5 mb-3">
+
+                    <img class="img-fluid rounded vh-100" loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}" alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
+
+                </div>
+                <div class="col-md-7 mb-3">
+                    <h2 class="fs-2 fw-bolder section-title-h1"> {{ __('What Not To DO') }}
+
+                    </h2>
+
+
+                    <ul class="txt-def">
+                        <li>
+                            <strong>{{ __('Water Damage 1-18') }}
+
+                            </strong>{{ __('Water Damage 1-19') }}
+
+
+                        </li>
+
+
+                        <li>
+                            <strong>{{ __('Water Damage 1-20') }}
+
+                            </strong>{{ __('Water Damage 1-21') }}
+
+
+                        </li>
+
+                        <li>
+                            <strong>{{ __('Water Damage 1-22') }}
+
+                            </strong>{{ __('Water Damage 1-23') }}
+
+                        </li>
+
+
+                    </ul>
+
                     <h2 class="fs-2 fw-bolder section-title-h1">
                         {{ __('What To DO') }}
                     </h2>
@@ -137,44 +184,7 @@
                             {{ __('Water Damage 1-17') }}
                         </li>
                     </ul>
-
                 </div>
-                <div class="col-md-6 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1"> {{ __('What Not To DO') }}
-
-                    </h2>
-
-
-                    <ul class="txt-def">
-                        <li>
-                            <strong>{{ __('Water Damage 1-18') }}
-
-                            </strong>{{ __('Water Damage 1-19') }}
-
-
-                        </li>
-
-
-                        <li>
-                            <strong>{{ __('Water Damage 1-20') }}
-
-                            </strong>{{ __('Water Damage 1-21') }}
-
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Water Damage 1-22') }}
-
-                            </strong>{{ __('Water Damage 1-23') }}
-
-                        </li>
-
-
-                    </ul>
-
-                </div>
-
 
             </div>
         </div>
