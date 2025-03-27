@@ -98,7 +98,7 @@
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded vh-100" loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}" alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
+                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}" alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
 
                 </div>
                 <div class="col-md-7 mb-3">
