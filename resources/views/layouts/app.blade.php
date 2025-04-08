@@ -52,7 +52,7 @@
                             <span>{{ __('callToday') }} | <span class="text-danger">24/7</span>
                                 {{ __('emergencyServices') }}</span>
                         </a>
-                        <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4">
+                        <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4 ">
                             <a href="tel:6048003900"><span>+1 604-800-3900</span></a>
                         </i>
                     </div>
@@ -276,7 +276,42 @@
                     <div class="row mt-3">
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-sm-left">
+
+                            <img src="{{ asset('img/proudly-cdn.png') }}" alt="Proudly Canadian Business Vancouver BC">
+
                             <!-- Content -->
+
+                            <h6 class="text-uppercase fw-bold mt-4">{{ __('About') }}</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #f9b500; height: 2px" />
+
+                            <p>
+                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}#whyvr"
+                                    class="text-white">{{ __('Why RV Restoration') }} </a>
+                            </p>
+                            <p>
+                                <a href="{{ route('about', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('About Us') }}</a>
+                            </p>
+                            <p>
+                                <a href="{{ route('careers', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('Careers') }}</a>
+                            </p>
+                            <p>
+                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('Contact Us') }}</a>
+                            </p>
+                            <p>
+                                <a href="{{ route('blog', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('Blog') }}</a>
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-sm-left">
+                            <!-- Links -->
                             <h6 class="text-uppercase fw-bold">{{ __('Services') }}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
@@ -317,44 +352,6 @@
                                     class="text-white">{{ __('localServices') }}</a>
                             </p>
 
-                            {{-- <p>
-                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Roof Tarp/Board-up') }} </a>
-                            </p>
-                            <p>
-                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Industries Serviced') }} </a>
-                            </p> --}}
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-sm-left">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">{{ __('About') }}</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #f9b500; height: 2px" />
-
-                            <p>
-                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}#whyvr"
-                                    class="text-white">{{ __('Why RV Restoration') }} </a>
-                            </p>
-                            <p>
-                                <a href="{{ route('about', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('About Us') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('careers', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Careers') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Contact Us') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('blog', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Blog') }}</a>
-                            </p>
                         </div>
                         <!-- Grid column -->
 
@@ -364,7 +361,6 @@
                             <h6 class="text-uppercase fw-bold">{{ __('Contact Us') }}</h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #f9b500; height: 2px" />
-
                             <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
                             <p><a href="tel:6048003900" class="text-white"><i class="fas fa-phone mr-3"></i> +1
                                 604-800-3900</a></p>

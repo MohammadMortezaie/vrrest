@@ -331,16 +331,17 @@
                   }
                 }
               }'>
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="{{ asset('img/clients/client-1.png') }}" class="img-fluid"
-                            alt="The Home Depot"></div>
+                <div class="swiper-wrapper justify-content-center align-items-center">
                     <div class="swiper-slide"><img src="{{ asset('img/clients/client-2.png') }}" class="img-fluid"
                             alt="BC housing"></div>
                     <div class="swiper-slide"><img src="{{ asset('img/clients/client-3.jpg') }}" class="img-fluid"
                             alt="iicrc"></div>
                     <div class="swiper-slide"><img src="{{ asset('img/clients/client-4.jpg') }}" class="img-fluid"
                             alt="Canada"></div>
-
+                    <div class="swiper-slide"><img src="{{ asset('img/IICRCLogo.avif') }}" class="img-fluid"
+                            alt="Canada"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/VRCALogo.png') }}" class="img-fluid"
+                            alt="Canada"></div>
                 </div>
             </div>
 

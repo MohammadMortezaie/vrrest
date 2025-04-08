@@ -41,8 +41,8 @@
                         @if ($localService->image)
                             <div class="article-img">
                                 <img src="{{ asset($localService->image) }}" class="card-img-top w-100"
-                                    style="max-height: 600px" @if (app()->getLocale() == 'en') alt="{{ $localService->title_en }}" @else alt="{{ $localService->title_zh }}" @endif
-                                >
+                                    style="max-height: 600px"
+                                    @if (app()->getLocale() == 'en') alt="{{ $localService->title_en }}" @else alt="{{ $localService->title_zh }}" @endif>
                             </div>
                         @endif
                         <div class="article-content pt-2">
@@ -99,9 +99,9 @@
                                                     href="{{ route('localservicesDetail', ['lang' => app()->getLocale(), 'city' => $ltPost->city, 'slug' => $ltPost->slug]) }}">
 
                                                     @if (app()->getLocale() == 'en')
-                                                     {{ $ltPost->title_en }}
+                                                        {{ $ltPost->title_en }}
                                                     @else
-                                                     {{ $ltPost->title_zh }}
+                                                        {{ $ltPost->title_zh }}
                                                     @endif
                                                 </a>
                                             </h5>
@@ -118,6 +118,21 @@
                         @endforeach
                     </div>
                     <!-- End Latest Post -->
+                    <div class="widget widget-tags pb-3">
+
+                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                            <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo"
+                                style="height: 80px; object-fit: contain;">
+                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo"
+                                style="height: 90px; object-fit: contain;">
+                        </div>
+                    </div>
+
+
+
+
+
+
 
                 </div>
             </div>

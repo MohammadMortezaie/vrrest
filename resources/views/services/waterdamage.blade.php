@@ -14,6 +14,10 @@
                 <div class="col-12 col-lg-6 col-xl-5">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage.jpeg') }}"
                         alt="{{ __('Water Damage 1-1') }}">
+                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                            <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
+                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
+                        </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
