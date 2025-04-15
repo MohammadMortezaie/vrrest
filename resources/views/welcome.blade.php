@@ -342,6 +342,8 @@
                             alt="Canada"></div>
                     <div class="swiper-slide"><img src="{{ asset('img/VRCALogo.png') }}" class="img-fluid"
                             alt="Canada"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/googleg.png') }}" class="img-fluid"
+                            alt="google garanted"></div>
                 </div>
             </div>
 

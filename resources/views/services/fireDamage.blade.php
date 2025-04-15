@@ -73,6 +73,9 @@
                         <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }}  </p>
                     </div>
 
+                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                        <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted" >
+                    </div>
 
                     <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Fire Damage 1-3') }}
                     </h2>

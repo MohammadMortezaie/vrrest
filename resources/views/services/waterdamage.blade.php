@@ -16,7 +16,9 @@
                         alt="{{ __('Water Damage 1-1') }}">
                         <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
                             <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
-                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
+                        </div>
+                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 80px; object-fit: contain;">
                         </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
@@ -55,6 +57,7 @@
                     <p class="lead ">
                         {{ __('Water Damage 1-3-2') }}
                     </p>
+
                     <div class="text-center mt-3">
                         <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
                         <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
@@ -65,6 +68,9 @@
                     </div>
 
 
+                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                        <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted" >
+                    </div>
                 </div>
 
                 <div class="col-md-6">

@@ -85,7 +85,6 @@
 
                             </div>
                         </div>
-
                     </div>
 
 
@@ -95,19 +94,45 @@
                         {{ __('Mold 1-3-4') }}
                     </p>
 
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('Mold 1-3') }}
-                    </h2>
 
-                    <p class="lead"> {{ __('Mold 1-4') }}
 
-                        <br><br>
-                        {{ __('Mold 1-5') }}
-                    </p>
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <h2 class="fs-2 fw-bolder section-title-h1">
+                                {{ __('Mold 1-3') }}
+                            </h2>
+
+                            <p class="lead"> {{ __('Mold 1-4') }}
+
+                                <br>
+                                {{ __('Mold 1-5') }}
+                            </p>
+
+                        </div>
+
+
+                        <div class="col-md-6  d-flex flex-column gap-3   align-items-center ">
+
+                            <img  src="{{ asset('img/googleg.png') }}" alt="Google garanted certification">
+
+
+                                    <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                                        style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                                        📞 Call Now: +1 604-800-3900
+                                    </a>
+
+
+                        </div>
+
+                    </div>
+
+
                 </div>
                 <div class="col-md-12 my-3">
                     <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('About 1-9') }}
+                        {{ __('About 1-9-1') }}
                     </h2>
                     <hr>
 
