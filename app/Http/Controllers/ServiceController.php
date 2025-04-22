@@ -753,32 +753,30 @@ class ServiceController extends Controller
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
                         ],
                     ],
-                ],
+                ]
             ),
             tags: ['construction restoration', 'property damage repair', 'reconstruction services', 'Vancouver construction restoration'],
             alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/construction')],
