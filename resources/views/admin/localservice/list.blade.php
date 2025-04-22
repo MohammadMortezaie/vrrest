@@ -15,7 +15,6 @@
         <div class="row">
             <div class="article mt-4 col-md-12">
 
-                <h1>sdasda</h1>
                 <div id="app">
                     <Localservice-list />
                 </div>

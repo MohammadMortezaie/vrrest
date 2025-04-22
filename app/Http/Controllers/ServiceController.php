@@ -754,22 +754,6 @@ class ServiceController extends Controller
                     '@context' => 'https://schema.org',
                     '@type' => 'FAQPage',
                     'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What construction restoration services do you provide?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We provide comprehensive construction restoration services including damage assessment, emergency repairs, and full reconstruction for water, fire, mold, and storm damage.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How quickly can you start the restoration process?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We offer prompt and efficient construction restoration services with 24/7 availability. Contact us to begin the restoration process as soon as possible.',
-                            ],
-                        ],
                         'telephone' => '+1 604-800-3900',
                         'address' => [
                             '@type' => 'PostalAddress',
@@ -809,22 +793,6 @@ class ServiceController extends Controller
                     '@context' => 'https://schema.org',
                     '@type' => 'FAQPage',
                     'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们提供哪些建筑恢复服务？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们提供全面的建筑恢复服务，包括损害评估、紧急修复和全面重建，适用于水灾、火灾、霉菌和风暴损害。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们能多快开始恢复过程？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们提供24/7的建筑恢复服务，能够迅速高效地开始恢复过程。请联系我们以尽快开始恢复工作。',
-                            ],
-                        ],
                         'telephone' => '+1 604-800-3900',
                         'address' => [
                             '@type' => 'PostalAddress',
@@ -870,29 +838,6 @@ class ServiceController extends Controller
             description: 'Professional fire damage restoration services Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 604-800-3900.',
             image: asset('img/fire-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What does your fire damage restoration service include?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Our fire damage restoration service includes emergency response to fire and smoke damage, structural repairs, odor removal, and complete cleanup. We work to restore your property to its pre-damage condition as quickly and efficiently as possible.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How soon can you respond to a fire damage situation?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We provide 24/7 emergency response for fire damage situations. Our team is ready to deploy immediately to begin the restoration process and mitigate further damage.',
-                            ],
-                        ],
-                    ],
-                ],
-            )->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'LocalBusiness',
