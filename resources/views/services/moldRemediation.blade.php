@@ -10,7 +10,7 @@
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold.jpeg') }}"
-                        alt="Mold Remediation Restoration in vancouver">
+                        alt="Professional mold remediation and restoration service in Vancouver BC home">
                         <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
                             <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
                             <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
@@ -59,7 +59,7 @@
                         <div class="col-12 col-lg-6 col-xl-5">
 
                             <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold-refrigerator.jpg') }}"
-                                alt="Mold In Refrigerator Vancouver">
+                                alt="Mold growth inside a refrigerator in a Vancouver BC home requiring professional removal">
 
                         </div>
                         <div class="col-12 col-lg-6 col-xl-7">
@@ -127,9 +127,27 @@
                         </div>
 
                     </div>
-
-
                 </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 my-3">
+                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/X725gdW8nm48gtp2Ko5uKh4IV4FxBhakF5jLT4w7.jpg" alt="Before and after professional mold removal service in a Vancouver BC home basement">
+                    </div>
+
+                    <div class="col-md-6 my-3">
+                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/0edMscVZ1fslkgJKQ0U2lIaqiCB4sf22kNPyaQuC.jpg" alt="Severe black mold infestation on interior wall in Burnaby BC requiring expert remediation">
+                    </div>
+
+                    <div class="col-md-6 my-3">
+                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/jVRdp1R67F6HFk6oaXP7lyuWQxhdT3hAgAfJDRzl.jpg" alt="Certified mold removal and cleanup in a Surrey BC residential bathroom">
+                    </div>
+
+                    <div class="col-md-6 my-3">
+                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/O1xy2uqf9wcYNCfJzTxSVYFjVKxqcBmF7RBxK6tq.jpg" alt="Professional mold remediation team working in a Vancouver BC home">
+                    </div>
+                </div>
+
                 <div class="col-md-12 my-3">
                     <h2 class="fs-2 fw-bolder section-title-h1">
                         {{ __('About 1-9-1') }}
