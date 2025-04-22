@@ -753,6 +753,16 @@ class ServiceController extends Controller
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What construction restoration services do you provide?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We provide comprehensive construction restoration services including damage assessment, emergency repairs, and full reconstruction for water, fire, mold, and storm damage.',
+                            ],
+                        ],
+                    ],
                     'telephone' => '+1 604-800-3900',
                     'address' => [
                         '@type' => 'PostalAddress',
