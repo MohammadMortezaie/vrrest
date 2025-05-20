@@ -44,7 +44,7 @@ class PostController extends Controller
                     'image' => asset($blog->image),
                     'author' => [
                         '@type' => 'Person',
-                        'name' => 'Rozbeh Rouzbehani', // Assuming there's an author relationship
+                        'name' => 'Sasan Ghanbari', // Assuming there's an author relationship
                     ],
                     'publisher' => [
                         '@type' => 'Organization',

@@ -45,7 +45,7 @@
                             {!! $blog->content !!}
                         </div>
 
-                        <p class="mt-2 mb-0">Author by: Rozbeh Rouzbehani</p>
+                        <p class="mt-2 mb-0">Author by: Sasan Ghanbari</p>
                         <div class="nav tag-cloud">
                             <!-- Facebook Share Button -->
                             <a href="#" class="btn btn-primary me-2 border-3 rounded" onclick="shareOnFacebook()">
