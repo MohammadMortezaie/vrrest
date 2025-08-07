@@ -411,6 +411,10 @@ section,
     .hero .welcome  {
         margin-top: -10em !important;
     }
+
+    .hero .welcome h1 {
+        font-size: 25px !important;
+    }
     .hero .welcome p {
         font-size: 17px ;
     }
