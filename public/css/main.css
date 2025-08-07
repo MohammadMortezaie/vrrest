@@ -327,7 +327,7 @@ section,
     margin-top: -14em !important;
 }
 
-.hero .welcome h2 {
+.hero .welcome h1 {
     color: var(--contrast-color);
     margin: 0;
     font-size: 52px;
