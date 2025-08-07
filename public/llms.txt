@@ -1,0 +1,52 @@
+# VR Plus Restoration llms.txt
+
+> Master list of primary service pages and supporting blog topics for VR Plus Restoration, organized into SEO-driven topic clusters with internal linking.
+> Serving all of British Columbia, Canada.
+
+## Primary Service Pages
+- [Home](https://vrrestoration.ca/en): brand overview
+- [Water Damage Restoration](https://vrrestoration.ca/en/water-damage): “water damage restoration”
+- [Mold Remediation](https://vrrestoration.ca/en/mold-remediation): “mold remediation Vancouver”
+- [Fire Damage Restoration](https://vrrestoration.ca/en/fire-damage): “fire damage restoration”
+- [Construction & Reconstruction](https://vrrestoration.ca/en/construction): “post-damage reconstruction”
+- [Commercial Services](https://vrrestoration.ca/en/commercial-services): “commercial restoration services”
+- [Residential Services](https://vrrestoration.ca/en/residential-services): “residential restoration services”
+- [Specialty Cleaning](https://vrrestoration.ca/en/specialty-cleaning): “specialty cleaning services”
+- [General Cleaning](https://vrrestoration.ca/en/general-cleaning): “general cleaning services”
+
+## Mold Remediation Cluster
+- [5 Early Warning Signs You Need Mold Remediation in Vancouver](https://vrrestoration.ca/en/blog/82/5-early-warning-mold-vancouver): “early warning signs mold Vancouver”
+- [How to Treat Mold From Water Damage](https://vrrestoration.ca/en/blog/6/how-to-treat-mold-from-water-damage): “mold treatment after water damage”
+- [Why Mold Remediation Is Essential for a Healthy Home](https://vrrestoration.ca/en/blog/24/why-mold-remediation-is-essential-for-a-healthy-home-environment): “importance of mold remediation”
+- [How to Remove Black Mold](https://vrrestoration.ca/en/blog/25/how-to-remove-black-mold): “black mold removal guide”
+- [Mold Inspection Checklist for North Vancouver Homes](https://vrrestoration.ca/en/blog/74/mold-inspection-checklist): “mold inspection checklist North Vancouver”
+- [Black Mold Dangers: Health Risks Every BC Homeowner Should Know](https://vrrestoration.ca/en/blog/76/black-mold-dangers-health-risks-bc): “black mold health risks BC”
+- [Who Pays for Mold Remediation? Coverage & Responsibilities](https://vrrestoration.ca/en/blog/41/who-pays-for-mold-remediation-coverage-and-responsibilities): “mold remediation insurance coverage”
+
+## Water Damage Restoration Cluster
+- [Vancouver Water Damage Emergency Call 24/7: Immediate Response](https://vrrestoration.ca/en/blog/2/vancouver-water-damage-emergency-call-247-immediate-response): “emergency water damage Vancouver”
+- [How to Stop Water Damage in My Apartment](https://vrrestoration.ca/en/blog/4/how-to-stop-water-damage-in-my-apartment): “stop apartment water damage”
+- [Comprehensive Guide to Water Damage Repair by VR Restoration](https://vrrestoration.ca/en/blog/5/comprehensive-guide-to-water-damage-repair-by-vr-restoration): “water damage repair guide BC”
+- [Flooded Basement Solutions: What to Do & Who to Call](https://vrrestoration.ca/en/blog/15/flooded-basement-solutions-what-to-do-and-who-to-call): “basement flood solution guide”
+- [Water Damage vs Water Restoration: Key Differences](https://vrrestoration.ca/en/blog/13/water-damage-vs-water-restoration-key-differences-and-why-they-matter): “water damage vs restoration”
+- [Preventing & Handling Water Damage in British Columbia](https://vrrestoration.ca/en/blog/46/preventing-and-handling-water-damage-in-british-columbia): “prevent water damage BC”
+
+## Fire Damage & Cleaning Cluster
+- [Step-by-Step Recovery After a House Fire in British Columbia](https://vrrestoration.ca/en/blog/10/step-by-step-recovery-after-a-house-fire-in-british-columbia): “house fire recovery BC”
+- [Essential Steps Before, During & After a House Fire](https://vrrestoration.ca/en/blog/11/essential-steps-to-take-before-during-and-after-a-house-fire): “house fire safety plan”
+- [Expert Water Damage Restoration: Fast & Reliable](https://vrrestoration.ca/en/blog/12/expert-water-damage-restoration-fast-and-reliable): cross-promotes fire & water services
+
+## Location-Specific Pages
+- [Vancouver Water Damage Restoration](https://vrrestoration.ca/en/vancouver/water-damage-restoration)
+- [Burnaby Water Damage Restoration](https://vrrestoration.ca/en/burnaby/water-damage-restoration)
+- [North Vancouver Water Damage Restoration](https://vrrestoration.ca/en/north-vancouver/water-damage-restoration-services)
+- [Abbotsford Water Damage Restoration](https://vrrestoration.ca/en/abbotsford/water-damage-restoration)
+- [Surrey Water Damage Restoration](https://vrrestoration.ca/en/surrey/water-damage-restoration-surrey)
+- [New Westminster Water Damage Restoration](https://vrrestoration.ca/en/new-westminster/new-westminster-water-damage-restoration)
+- [Vancouver Mold Remediation](https://vrrestoration.ca/en/vancouver/mold-remediation-in-vancouver)
+- [North Vancouver Mold Removal & Remediation](https://vrrestoration.ca/en/north-vancouver/mold-removal-mold-remediation-services-north-vancouver)
+
+## Related Service Pages
+- [Basement Flood Cleanup Vancouver](https://vrrestoration.ca/en/basement-flood)
+- [Earthquake Restoration Vancouver](https://vrrestoration.ca/en/vancouver/vancouver-earthquake-restoration)
+- [Asbestos Removal Vancouver](https://vrrestoration.ca/en/vancouver/certified-asbestos-removal-services-in-vancouver)
