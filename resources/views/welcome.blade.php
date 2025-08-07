@@ -15,7 +15,7 @@
         {{-- <img src="{{ asset('img/hero-bg.jpg') }}" alt="RV Restoration Main Photo" data-aos="fade-in"> --}}
         <div class="container position-relative">
             <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-                <h2>{{ __('WE ARE PLUS RESTORATION') }}</h2>
+                <h1>{{ __('WE ARE PLUS RESTORATION') }}</h1>
                 <p>{{ __('Focused on') }}
                     <span id="ityped"></span>
                 </p>
