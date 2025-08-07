@@ -6,7 +6,7 @@
 ## Primary Service Pages
 - [Home](https://vrrestoration.ca/en): brand overview
 - [Water Damage Restoration](https://vrrestoration.ca/en/water-damage): “water damage restoration”
-- [Mold Remediation](https://vrrestoration.ca/en/mold-remediation): “mold remediation Vancouver”
+- [Mold Remediation](https://vrrestoration.ca/en/mold-remediation): “mold remediation service”
 - [Fire Damage Restoration](https://vrrestoration.ca/en/fire-damage): “fire damage restoration”
 - [Construction & Reconstruction](https://vrrestoration.ca/en/construction): “post-damage reconstruction”
 - [Commercial Services](https://vrrestoration.ca/en/commercial-services): “commercial restoration services”
