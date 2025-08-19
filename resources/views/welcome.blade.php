@@ -481,7 +481,7 @@
 
                 <div class="col-lg-5 position-relative align-self-start" >
                     <img src="{{ asset('img/about.jpeg') }}" class="img-fluid" style="max-height: 400px"
-                        alt="">
+                        alt="Team of VR Restoration In Vancouver Canada Expert in Restoration and Cleaning Services">
                 </div>
 
 
