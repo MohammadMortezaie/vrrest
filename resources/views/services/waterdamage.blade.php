@@ -54,8 +54,42 @@
                 </div>
                 <div class="col-md-8 mb-3">
                     <h2 class="mt-3 fs-2 fw-bolder section-title-h1"> {{ __('Water Damage 1-3-1') }}</h2>
-                    <p class="lead ">
+                    <p>
                         {{ __('Water Damage 1-3-2') }}
+                    </p>
+
+                    <ul class="lead ">
+                        <li>{{ __('Water Damage 1-63') }}</li>
+                        <li> {{ __('Water Damage 1-64') }}</li>
+                        <li> {{ __('Water Damage 1-65') }}</li>
+                        <li> {{ __('Water Damage 1-66') }}</li>
+                        <li> {{ __('Water Damage 1-67') }}</li>
+                    </ul>
+
+                    <div class="text-center mt-3">
+                        <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                            style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            📞 Call Now: +1 604-800-3900
+                        </a>
+                        <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }} </p>
+                    </div>
+
+                </div>
+
+
+
+
+                 <div class="col-md-4 mb-3">
+
+
+                    <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted" >
+
+                </div>
+                <div class="col-md-8 mb-3">
+                    <h2 class="mt-3 fs-2 fw-bolder section-title-h1"> {{ __('Water Damage 1-60') }}</h2>
+                    <p class="lead ">
+                     {{ __('Water Damage 1-61') }}
                     </p>
 
                     <div class="text-center mt-3">
@@ -67,11 +101,9 @@
                         <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }} </p>
                     </div>
 
-
-                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                        <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted" >
-                    </div>
                 </div>
+
+
 
                 <div class="col-md-6">
                     <h2 class="mt-5 fs-2 fw-bolder section-title-h1">
@@ -387,10 +419,13 @@
                         </a>
                     </div>
                     <ul class="txt-vr d-flex flex-wrap gap-3">
-                        <li class="lead px-2">Greater Vancouver</li>
-                        <li class="lead px-2">Metro Vancouver</li>
+                        <li class="lead px-2">Vancouver</li>
+                        <li class="lead px-2">West Vancouver</li>
                         <li class="lead px-2">North Shore</li>
                         <li class="lead px-2">Downtown</li>
+                        <li class="lead px-2">Greater Vancouver</li>
+                        <li class="lead px-2">Metro Vancouver</li>
+                        <li class="lead px-2">Coquitlam</li>
                         <li class="lead px-2">Sea to Sky</li>
                         <li class="lead px-2">Tri-Cities</li>
                         <li class="lead px-2">Fraser Valley</li>
