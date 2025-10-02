@@ -14,12 +14,14 @@
                 <div class="col-12 col-lg-6 col-xl-5">
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage.jpeg') }}"
                         alt="{{ __('Water Damage 1-1') }}">
-                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                            <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
-                        </div>
-                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 80px; object-fit: contain;">
-                        </div>
+                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                        <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo"
+                            style="height: 80px; object-fit: contain;">
+                    </div>
+                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+                        <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo"
+                            style="height: 80px; object-fit: contain;">
+                    </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
@@ -80,16 +82,16 @@
 
 
 
-                 <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3">
 
 
-                    <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted" >
+                    <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted">
 
                 </div>
                 <div class="col-md-8 mb-3">
                     <h2 class="mt-3 fs-2 fw-bolder section-title-h1"> {{ __('Water Damage 1-60') }}</h2>
                     <p class="lead ">
-                     {{ __('Water Damage 1-61') }}
+                        {{ __('Water Damage 1-61') }}
                     </p>
 
                     <div class="text-center mt-3">
@@ -130,6 +132,17 @@
                     </div>
                 </div>
 
+
+                <div class="col-md-12">
+                    <div class="mt-3">
+                        <h2 class="mt-5 fs-2 fw-bolder section-title-h1">{{__('waterDamage 1-68')}}</h2>
+                        <p>
+                            {{__('watedamage 1-69')}}
+                        </p>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -140,7 +153,8 @@
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}" alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
+                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}"
+                        alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
 
                 </div>
                 <div class="col-md-7 mb-3">
