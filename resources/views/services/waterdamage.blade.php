@@ -142,7 +142,21 @@
 
                     </div>
                 </div>
+                <div class="row">
 
+                    <div class="col-md-4 my-3">
+                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver.jpg') }}" alt="Emergency water extraction in a Vancouver home after heavy rain">
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver2.jpg') }}" alt="Technician using a moisture meter for wall leak detection in West Vancouver">
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver3.jpg') }}" alt="West Vancouver technician checking water damaged drywall with a moisture meter">
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
