@@ -135,9 +135,9 @@
 
                 <div class="col-md-12">
                     <div class="mt-3">
-                        <h2 class="mt-5 fs-2 fw-bolder section-title-h1">{{__('waterDamage 1-68')}}</h2>
+                        <h2 class="mt-5 fs-2 fw-bolder section-title-h1">{{ __('waterDamage 1-68') }}</h2>
                         <p>
-                            {{__('watedamage 1-69')}}
+                            {{ __('watedamage 1-69') }}
                         </p>
 
                     </div>
@@ -145,15 +145,18 @@
                 <div class="row">
 
                     <div class="col-md-4 my-3">
-                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver.jpg') }}" alt="Emergency water extraction in a Vancouver home after heavy rain">
+                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver.jpg') }}"
+                            alt="Emergency water extraction in a Vancouver home after heavy rain">
                     </div>
 
                     <div class="col-md-4 my-3">
-                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver2.jpg') }}" alt="Technician using a moisture meter for wall leak detection in West Vancouver">
+                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver2.jpg') }}"
+                            alt="Technician using a moisture meter for wall leak detection in West Vancouver">
                     </div>
 
                     <div class="col-md-4 my-3">
-                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver3.jpg') }}" alt="West Vancouver technician checking water damaged drywall with a moisture meter">
+                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver3.jpg') }}"
+                            alt="West Vancouver technician checking water damaged drywall with a moisture meter">
                     </div>
 
                 </div>
@@ -162,9 +165,41 @@
     </section>
 
 
+
     <section class="py-3 py-md-5  ">
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
+
+
+
+                <div class="col-md-7 mb-4 pb-4">
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        {{ __('Water Damage 1-70') }}
+                    </h2>
+                    <p>{!! __('Water Damage 1-71') !!}</p>
+
+                    <ul>
+                        <li>{{ __('Water Damage 1-72') }}</li>
+                        <li>{{ __('Water Damage 1-73') }}</li>
+                        <li>{{ __('Water Damage 1-74') }}</li>
+                        <li>{{ __('Water Damage 1-75') }}</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-5 mb-4 pb-4">
+
+                    <img class="img-fluid rounded " loading="lazy"
+                        src="{{ asset('img/water-damage-restoration-vancouver-equipment.jpg') }}"
+                        alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
+
+                </div>
+
+
+
+
+
+
+
                 <div class="col-md-5 mb-3">
 
                     <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}"
