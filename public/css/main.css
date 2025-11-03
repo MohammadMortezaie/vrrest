@@ -334,6 +334,12 @@ section,
     font-weight: 700;
 }
 
+.hero .welcome h1 small {
+    color: var(--contrast-color);
+    margin-top: 0;
+    font-size: 32px;
+    font-weight: 600;
+}
 .hero .welcome p {
     color: color-mix(in srgb, var(--contrast-color), transparent 20%);
     font-size: 24px;
@@ -414,6 +420,9 @@ section,
 
     .hero .welcome h1 {
         font-size: 25px !important;
+    }
+    .hero .welcome h1 small {
+        font-size: 18px !important;
     }
     .hero .welcome p {
         font-size: 17px ;
