@@ -16,7 +16,7 @@
         <div class="container position-relative">
             <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
                 <h1>{{ __('WE ARE PLUS RESTORATION') }}
-                    <br><small>Vancouver Water Damage Restoration and Mold Remediation</small>
+                    <br><small>{{ __('h1-small') }}</small>
                 </h1>
                 <p>{{ __('Focused on') }}
                     <span id="ityped"></span>
