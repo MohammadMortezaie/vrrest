@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-{!! seo($SEOData) !!}
+    {!! seo($SEOData) !!}
     <link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendors/glightbox/css/glightbox.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
@@ -159,7 +159,8 @@
 
 
                 <div class="swiper-slide">
-                    <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
+                    <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}"
+                        class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -175,7 +176,8 @@
 
 
                 <div class="swiper-slide">
-                    <a href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}" class="text-decoration-none">
+                    <a href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}"
+                        class="text-decoration-none">
                         <div class="card text-center border-0" style="width: 180px; margin: 0 auto">
                             <div class="card-body">
                                 <div class="card-card-avatar  ">
@@ -264,8 +266,8 @@
                         <li>
                             <i class="bi bi-coin"></i>
                             <div>
-                                <p class="txt-def pt-2">   {{ __('welcome 1-7') }}
-                                    <strong class="txt-vr" style="font-weight: 800">  {{ __('welcome 1-8') }}
+                                <p class="txt-def pt-2"> {{ __('welcome 1-7') }}
+                                    <strong class="txt-vr" style="font-weight: 800"> {{ __('welcome 1-8') }}
                                     </strong> {{ __('welcome 1-9') }}
                                 </p>
                             </div>
@@ -274,7 +276,8 @@
                             <i class="bi bi-award"></i>
                             <div>
                                 <p class="txt-def pt-2">{{ __('welcome 1-10') }}
-                                     <strong class="txt-vr" style="font-weight: 800"> {{ __('welcome 1-11') }}</strong> {{ __('welcome 1-12') }}
+                                    <strong class="txt-vr" style="font-weight: 800"> {{ __('welcome 1-11') }}</strong>
+                                    {{ __('welcome 1-12') }}
                                 </p>
                             </div>
                         </li>
@@ -456,11 +459,177 @@
 
             <div class="row gy-4">
 
+
+
+                <div class="col-lg-7 mt-0 content ">
+
+                    <div class="section-title">
+                        <h2>{{ __('All-in-One Restoration Company') }} </h2>
+                    </div>
+                    <p class="fs-7">
+                        {{ __('home p-1') }}
+
+                    </p>
+
+
+
+
+                    <div class="container my-1">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">{{ __('home h2-1') }}</h2>
+                            <p class="text-muted mb-0"> {{ __('home p-2') }}</p>
+                        </div>
+
+                    <p class="text-center mt-3">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                            style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            📞 Call +1 604-800-3900
+                        </a>
+                    </p>
+                    
+                        <div class="row g-4 justify-content-center">
+                            <!-- Step 1 -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card h-100 text-center border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="rounded-circle bg-danger bg-opacity-10 d-inline-flex justify-content-center align-items-center mb-3"
+                                            style="width:70px;height:70px;">
+                                            <i class="bi bi-telephone-fill text-danger fs-3"></i>
+                                        </div>
+                                        <h5 class="fw-semibold">{{ __('home p-3') }}</h5>
+                                        <p class="text-muted mb-0">{{ __('home p-4') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card h-100 text-center border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="rounded-circle bg-warning bg-opacity-10 d-inline-flex justify-content-center align-items-center mb-3"
+                                            style="width:70px;height:70px;">
+                                            <i class="bi bi-shield-fill-check text-warning fs-3"></i>
+                                        </div>
+                                        <h5 class="fw-semibold">{{ __('home p-5') }}</h5>
+                                        <p class="text-muted mb-0">{{ __('home p-6') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card h-100 text-center border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="rounded-circle bg-success bg-opacity-10 d-inline-flex justify-content-center align-items-center mb-3"
+                                            style="width:70px;height:70px;">
+                                            <i class="bi bi-house-check-fill text-success fs-3"></i>
+                                        </div>
+                                        <h5 class="fw-semibold">{{ __('home p-7') }}</h5>
+                                        <p class="text-muted mb-0">{{ __('home p-8') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="col-lg-5 position-relative align-self-start">
+                    <img src="{{ asset('img/water-damage-vr.jpeg') }}" class="img-fluid" style="max-height: 600px"
+                        alt="Team of VR Restoration In Vancouver Canada Expert in Restoration and Cleaning Services">
+                </div>
+
+
+                <div class="col-md-12">
+
+                    <div class="container my-4">
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <!-- Vancouver -->
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Vancouver</h6>
+                                </div>
+                            </div>
+
+                            <!-- West Vancouver -->
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">West Vancouver</h6>
+                                </div>
+                            </div>
+
+                            <!-- North Vancouver -->
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">North Vancouver</h6>
+                                </div>
+                            </div>
+
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Couqitlam</h6>
+                                </div>
+                            </div>
+
+                            <!-- Burnaby -->
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Burnaby</h6>
+                                </div>
+                            </div>
+
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Richmond</h6>
+                                </div>
+                            </div>
+
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Port Couqitlam</h6>
+                                </div>
+                            </div>
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Surrey</h6>
+                                </div>
+                            </div>
+
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">New Westminster</h6>
+                                </div>
+                            </div>
+
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Abbostfrod</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="section-title">
                     <h2>{{ __('About Us') }} </h2>
                 </div>
 
-                <div class="col-lg-7 mt-0 content " >
+                <div class="col-lg-7 mt-0 content ">
 
                     <p class="fs-6 txt-def">{{ __('welcome 1-16') }}
 
@@ -477,11 +646,13 @@
                         </li>
                     </ul>
                     <div class="send">
-                        <a href="{{ route('about', ['lang' => app()->getLocale()]) }}" class="px-btn theme"><span>{{ __('Read More') }}</span> <i class="arrow"></i></a href="{{ route('about', ['lang' => app()->getLocale()]) }}">
+                        <a href="{{ route('about', ['lang' => app()->getLocale()]) }}"
+                            class="px-btn theme"><span>{{ __('Read More') }}</span> <i class="arrow"></i></a
+                            href="{{ route('about', ['lang' => app()->getLocale()]) }}">
                     </div>
                 </div>
 
-                <div class="col-lg-5 position-relative align-self-start" >
+                <div class="col-lg-5 position-relative align-self-start">
                     <img src="{{ asset('img/about.jpeg') }}" class="img-fluid" style="max-height: 400px"
                         alt="Team of VR Restoration In Vancouver Canada Expert in Restoration and Cleaning Services">
                 </div>
@@ -544,16 +715,16 @@
                       }'>
                         <div class="swiper-wrapper ">
                             @foreach ($blog as $b)
-
                                 <div class="swiper-slide my-3 ">
                                     <div class="card border-0 shadow-sm">
                                         <div class="card-body">
-                                            <h5 class="card-title txt-vr">{{$b->title}}</h5>
+                                            <h5 class="card-title txt-vr">{{ $b->title }}</h5>
                                             <hr>
                                             <p class="card-text">
-                                                {{$b->subtitle}}
+                                                {{ $b->subtitle }}
                                             </p>
-                                            <a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $b->id,'slug'=> $b->slug]) }}" class="text-decoration-none text-black">{{__("Read More")}}
+                                            <a href="{{ route('blog.post', ['lang' => app()->getLocale(), 'blog' => $b->id, 'slug' => $b->slug]) }}"
+                                                class="text-decoration-none text-black">{{ __('Read More') }}
                                                 <i class="bi bi-chevron-double-right"></i>
                                             </a>
                                         </div>
@@ -567,9 +738,6 @@
 
 
     </section><!-- /Recommended For You -->
-
-
-
 @endsection
 
 
@@ -581,21 +749,21 @@
     <script src="https://unpkg.com/ityped@1.0.3/dist/index.min.js"></script>
     <script src="{{ asset('js/front.js') }}"></script>
 
-    @if(app()->getLocale() == 'zh')
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6687237f9d7f358570d73344/1i1vu5aug';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
+    @if (app()->getLocale() == 'zh')
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {},
+                Tawk_LoadStart = new Date();
+            (function() {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/6687237f9d7f358570d73344/1i1vu5aug';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
     @endif
 @endsection

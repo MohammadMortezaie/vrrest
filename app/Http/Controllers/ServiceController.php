@@ -22,9 +22,9 @@ class ServiceController extends Controller
 
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'We Are Restoration Company - All Restoration Services',
-            description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Fire Damage Repair, Mold Remediation and more. CALL 604-800-3900. Our Vancouver branch is ready to assist you.',
-            image: asset('img/hero-bg3.jpeg'), // Example image path
+            title: 'Top Restoration Company in Vancouver BC | VR Restoration',
+            description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Mold Remediation and more. CALL 604-800-3900. Our Vancouver branch is ready to assist you.',
+            image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()
                 ->add(
                     fn(SEOData $SEOData) => [
@@ -91,7 +91,7 @@ class ServiceController extends Controller
         $seoDataZh = new SEOData(
             title: '我们是恢复公司 - 所有恢复服务',
             description: '紧急服务和恢复。24/7水损恢复、火灾修复、霉菌治理等。请拨打604-800-3900。我们的温哥华分部随时为您提供帮助。',
-            image: asset('img/hero-bg3.jpeg'), // Example image path
+            image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()
                 ->add(
                     fn(SEOData $SEOData) => [
