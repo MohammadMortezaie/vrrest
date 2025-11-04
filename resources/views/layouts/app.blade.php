@@ -410,11 +410,11 @@
 
     <script src="{{ asset('js/main.js') }}"></script>
 
-    @if (app()->getLocale() == 'en')
+
         <a href="tel:6048003900" class="call-button">
             <i class="bi bi-telephone-fill"></i>
         </a>
-    @endif
+
 
 </body>
 
