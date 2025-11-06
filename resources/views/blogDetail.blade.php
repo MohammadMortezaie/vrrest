@@ -105,13 +105,13 @@
                             </div>
                         </form>
 
-
+{{--
                         @foreach ($blog->comments as $cm)
                             <div class="flex-shrink-1 bg-light rounded py-2 px-3 my-3">
                                 <div class="font-weight-bold mb-1">{{ $cm->name }}</div>
                                 {{ $cm->comment }}
                             </div>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
                 <div class="col-lg-4 m-15px-tb blog-aside">
