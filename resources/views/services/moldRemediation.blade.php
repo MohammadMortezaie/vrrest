@@ -227,7 +227,7 @@
                         {{ __('Mold 1-50') }}
                     </h2>
 
-                    <p class="lead txt-def"> {{ __('Mold 1-51') }}
+                    <p class=" txt-def"> {{ __('Mold 1-51') }}
 
                     </p>
                     <div class="row py-3">
@@ -235,7 +235,7 @@
                         <div class="col-md-7 ">
                             <h3 class="h4 section-title-h1"> {{ __('Mold 1-52') }} </h3>
                             <hr>
-                            <p class="lead txt-def ">{{ __('Mold 1-53') }}
+                            <p class=" txt-def ">{{ __('Mold 1-53') }}
 
                             </p>
                         </div>
@@ -252,7 +252,7 @@
 
                             </h3>
                             <hr>
-                            <p class="lead txt-def">{{ __('Mold 1-55') }}
+                            <p class=" txt-def">{{ __('Mold 1-55') }}
 
                             </p>
                         </div>
@@ -260,13 +260,14 @@
 
                     <h3 class="h4 section-title-h1"> {{ __('Mold 1-56') }}</h3>
                     <hr>
-                    <p class="lead txt-def">
+                    <p class=" txt-def">
                         {{ __('Mold 1-57') }}
 
                     </p>
-                    <p class="lead txt-def">
+                    <p class=" txt-def">
                         {{ __('Mold 1-58') }}
 
+                        <ul>
                         <li>
                             {{ __('Mold 1-59') }}
 
