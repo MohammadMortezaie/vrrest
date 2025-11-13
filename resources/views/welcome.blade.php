@@ -627,6 +627,19 @@
                                 </div>
                             </div>
 
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Langley</h6>
+                                </div>
+                            </div>
+
+                            <div class="card text-center" style="width: 160px;">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-2 text-danger"></i>
+                                    <h6 class="mt-2 mb-0">Maple Ridge</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
