@@ -306,19 +306,19 @@
 
                     </h2>
 
-                    <p class="lead txt-def">{{ __('Mold 1-11') }}
+                    <p class=" txt-def">{{ __('Mold 1-11') }}
 
 
                     </p>
-                    <a class="lead txt-def txt-vr" href="#">{{ __('Mold 1-10') }} </a><br>
-                    <a class="lead txt-def txt-vr" href="#">{{ __('Mold 1-12') }}</a><br>
-                    <a class="lead txt-def txt-vr" href="#">{{ __('Mold 1-13') }}</a>
+                    <a class=" txt-def txt-vr" href="#">{{ __('Mold 1-10') }} </a><br>
+                    <a class=" txt-def txt-vr" href="#">{{ __('Mold 1-12') }}</a><br>
+                    <a class=" txt-def txt-vr" href="#">{{ __('Mold 1-13') }}</a>
                 </div>
                 <div class="col-md-12 pt-4">
-                    <p class="lead txt-def">{{ __('Mold 1-14') }}
+                    <p class=" txt-def">{{ __('Mold 1-14') }}
 
                     </p>
-                    <p class="lead txt-def">{{ __('Mold 1-15') }}
+                    <p class=" txt-def">{{ __('Mold 1-15') }}
 
                     </p>
                 </div>
