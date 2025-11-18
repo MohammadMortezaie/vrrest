@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="col-md-6 mt-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/waterdamage-van-front.jpeg') }}"
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage-livingroom.jpeg') }}"
                         alt="Water Damage Restoration Vancouver Fix issue immediately after flood in bc">
 
                 </div>
@@ -144,17 +144,12 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-md-4 my-3">
-                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver.jpg') }}"
-                            alt="Emergency water extraction in a Vancouver home after heavy rain">
-                    </div>
-
-                    <div class="col-md-4 my-3">
+                    <div class="col-md-6 my-3">
                         <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver2.jpg') }}"
                             alt="Technician using a moisture meter for wall leak detection in West Vancouver">
                     </div>
 
-                    <div class="col-md-4 my-3">
+                    <div class="col-md-6 my-3">
                         <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver3.jpg') }}"
                             alt="West Vancouver technician checking water damaged drywall with a moisture meter">
                     </div>
@@ -202,7 +197,7 @@
 
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-2.jpeg') }}"
+                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-restoration-bath.jpeg') }}"
                         alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
 
                 </div>
@@ -316,7 +311,7 @@
                 </div>
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage2.jpeg') }}"
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage -vancouver.jpg') }}"
                         alt="Water damage restoration in Vancouver services">
                 </div>
 
