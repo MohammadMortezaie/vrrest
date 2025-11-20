@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="col-md-6 mt-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage-livingroom.jpeg') }}"
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damagelivingroom.jpeg') }}"
                         alt="Water Damage Restoration Vancouver Fix issue immediately after flood in bc">
 
                 </div>
@@ -197,7 +197,7 @@
 
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-restoration-bath.jpeg') }}"
+                    <img class="img-fluid rounded " loading="lazy" src="{{ asset('img/water-damage-restorationbath.jpeg') }}"
                         alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
 
                 </div>
@@ -311,7 +311,7 @@
                 </div>
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage -vancouver.jpg') }}"
+                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage-vancouver.jpg') }}"
                         alt="Water damage restoration in Vancouver services">
                 </div>
 
