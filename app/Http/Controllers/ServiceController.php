@@ -377,7 +377,7 @@ class ServiceController extends Controller
 
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'Water Damage Restoration in Vancouver | VR Restoration',
+            title: 'Water Damage Restoration in Vancouver 24/7 Call Now',
             description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 604-800-3900 for immediate assistance in Vancouver',
             image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()->add(
