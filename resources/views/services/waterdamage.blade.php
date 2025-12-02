@@ -8,34 +8,60 @@
 @endsection
 
 @section('content')
-    <section class="py-3 py-md-5">
+    <section class="py-md-5 d-flex ">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+            <div class="row gy-4 align-items-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage.jpeg') }}"
-                        alt="{{ __('Water Damage 1-1') }}">
-                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                        <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo"
-                            style="height: 80px; object-fit: contain;">
+                    <div class="rounded-4 overflow-hidden shadow-sm">
+                        <img class="img-fluid w-100 h-100 object-fit-cover" loading="lazy"
+                            src="{{ asset('img/water-damage.jpeg') }}" alt="{{ __('Water Damage 1-1') }}">
                     </div>
                     <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                        <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo"
-                            style="height: 80px; object-fit: contain;">
+                        <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
+                        <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 80px; object-fit: contain;">
                     </div>
                 </div>
+
                 <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h1 class="fs-1 fw-bolder">{{ __('Water Damage 1-1') }} </h1>
-                            <hr>
-                            <p class="lead  ">
-                                {{ __('Water Damage 1-2') }}
-                            </p>
-                            <p class="lead mb-5 ">
-                                {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
-                                {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
-                                        class="btn btn-warning  fw-bolder">+1 604-800-3900</a></strong>
-                            </p>
+                    <div class="p-2 p-md-3">
+                        <div class="d-inline-flex align-items-center bg-warning text-dark fw-semibold px-3 py-2 rounded-pill mb-3">
+                            {{ __('Water Damage 1-3') }}
+                        </div>
+                        <h1 class="fs-1 fw-bolder mb-3">{{ __('Water Damage 1-1') }}</h1>
+                        <p class="lead mb-3">
+                            {{ __('Water Damage 1-2') }}
+                        </p>
+                        <p class="lead fw-semibold mb-4">
+                            {{ __('Water Damage 1-2-2') }} <span class="text-warning"> {{ __('Water Damage 1-2-3') }}</span>.
+                            {{ __('Water Damage 1-2-4') }}
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6 d-flex align-items-start gap-2">
+                                <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
+                                <p class="mb-0 text-muted">{{ __('Water Damage 1-63') }}</p>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-start gap-2">
+                                <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
+                                <p class="mb-0 text-muted">{{ __('Water Damage 1-64') }}</p>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-start gap-2">
+                                <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
+                                <p class="mb-0 text-muted">{{ __('Water Damage 1-65') }}</p>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-start gap-2">
+                                <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
+                                <p class="mb-0 text-muted">{{ __('Water Damage 1-66') }}</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
+                            <a href="tel:+16048003900" class="btn btn-warning btn-lg px-4 fw-bold shadow-sm text-dark">
+                                📞 +1 604-800-3900
+                            </a>
+                            <div class="text-muted">
+                                {{ __('Water Damage Types CTA Button') }}
+                            </div>
                         </div>
                     </div>
                 </div>
