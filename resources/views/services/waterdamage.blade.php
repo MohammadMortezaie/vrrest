@@ -32,26 +32,26 @@
                             {{ __('Water Damage 1-2') }}
                         </p>
                         <p class="lead fw-semibold mb-4">
-                            {{ __('Water Damage 1-2-2') }} <span class="text-warning"> {{ __('Water Damage 1-2-3') }}</span>.
-                            {{ __('Water Damage 1-2-4') }}
+                            {{ __('Water Damage 1-2-2') }} <span class="text-warning"> {{ __('Water Damage Hero CTA Number') }}</span>.
+                            {{ __('Water Damage Hero CTA') }}
                         </p>
 
                         <div class="row g-3 mb-4">
                             <div class="col-sm-6 d-flex align-items-start gap-2">
                                 <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
-                                <p class="mb-0 text-muted">{{ __('Water Damage 1-63') }}</p>
+                                <p class="mb-0 text-muted">{{ __('Water Damage Hero Bullet 1') }}</p>
                             </div>
                             <div class="col-sm-6 d-flex align-items-start gap-2">
                                 <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
-                                <p class="mb-0 text-muted">{{ __('Water Damage 1-64') }}</p>
+                                <p class="mb-0 text-muted">{{ __('Water Damage Hero Bullet 2') }}</p>
                             </div>
                             <div class="col-sm-6 d-flex align-items-start gap-2">
                                 <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
-                                <p class="mb-0 text-muted">{{ __('Water Damage 1-65') }}</p>
+                                <p class="mb-0 text-muted">{{ __('Water Damage Hero Bullet 3') }}</p>
                             </div>
                             <div class="col-sm-6 d-flex align-items-start gap-2">
                                 <span class="badge bg-warning-subtle text-dark mt-1">✓</span>
-                                <p class="mb-0 text-muted">{{ __('Water Damage 1-66') }}</p>
+                                <p class="mb-0 text-muted">{{ __('Water Damage Hero Bullet 4') }}</p>
                             </div>
                         </div>
 
