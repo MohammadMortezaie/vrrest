@@ -32,7 +32,7 @@
                             {{ __('Water Damage 1-2') }}
                         </p>
                         <p class="lead fw-semibold mb-4">
-                            {{ __('Water Damage 1-2-2') }} <span class="text-warning"> {{ __('Water Damage Hero CTA Number') }}</span>.
+                            {{ __('Water Damage 1-2-2') }} <a href="tel:+16048003900" class="text-warning"> {{ __('Water Damage Hero CTA Number') }}</a>.
                             {{ __('Water Damage Hero CTA') }}
                         </p>
 
