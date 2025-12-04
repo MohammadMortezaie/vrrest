@@ -190,7 +190,7 @@
                         {{ __('Mold Process Badge') }}
                     </div>
                     <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Process Title') }}</h2>
-                    <p class="lead txt-def mb-3">{{ __('Mold Process Lead') }}</p>
+                    <p class="lead mb-3">{{ __('Mold Process Lead') }}</p>
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
                             <div class="p-3 bg-white rounded-4 shadow-sm h-100">
@@ -217,7 +217,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="lead txt-def mt-4 mb-2">{{ __('Mold Process Note') }}</p>
+                    <p class="lead  mt-4 mb-2">{{ __('Mold Process Note') }}</p>
                     <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
                         📞 Call Now: +1 604-800-3900
                     </a>
@@ -233,7 +233,7 @@
                 <span class="text-secondary">{{ __('Mold SEO Badge 2') }}</span>
             </div>
             <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Title') }}</h2>
-            <p class="lead txt-def mb-4">{{ __('Mold SEO Intro') }}</p>
+            <p class="lead  mb-4">{{ __('Mold SEO Intro') }}</p>
 
             <div class="row g-3">
                 <div class="col-12 col-md-6 col-lg-4">
@@ -351,8 +351,8 @@
                         <span class="text-secondary">{{ __('Mold 1-50-badge2') }}</span>
                     </div>
                     <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold 1-50') }}</h2>
-                    <p class="lead txt-def mb-3">{{ __('Mold 1-51') }}</p>
-                    <p class="txt-def mb-4">{{ __('Mold 1-58') }}</p>
+                    <p class="lead  mb-3">{{ __('Mold 1-51') }}</p>
+                    <p class=" mb-4">{{ __('Mold 1-58') }}</p>
                     <div class="row g-3">
                         <div class="col-12 col-md-4">
                             <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
@@ -396,10 +396,10 @@
                 <div class="col-lg-7">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100">
                         <h3 class="h4 section-title-h1 mb-2">{{ __('Mold 1-54') }}</h3>
-                        <p class="txt-def mb-3">{{ __('Mold 1-55') }}</p>
+                        <p class=" mb-3">{{ __('Mold 1-55') }}</p>
                         <h4 class="h5 fw-bold mb-2">{{ __('Mold 1-56') }}</h4>
-                        <p class="txt-def mb-3">{{ __('Mold 1-57') }}</p>
-                        <ul class="txt-def ps-3 mb-0">
+                        <p class=" mb-3">{{ __('Mold 1-57') }}</p>
+                        <ul class=" ps-3 mb-0">
                             <li>{{ __('Mold 1-59') }}</li>
                             <li>{{ __('Mold 1-60') }}</li>
                             <li>{{ __('Mold 1-61') }}</li>
@@ -409,7 +409,7 @@
                 <div class="col-lg-5">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100">
                         <div class="fw-bold text-uppercase text-warning mb-2">Mold Remediation Vancouver</div>
-                        <p class="txt-def mb-3">{{ __('Mold 1-58') }}</p>
+                        <p class=" mb-3">{{ __('Mold 1-58') }}</p>
                         <div class="d-flex gap-2 flex-wrap small text-muted">
                             <span class="badge bg-light text-dark border">{{ __('Mold 1-52') }}</span>
                             <span class="badge bg-light text-dark border">{{ __('Mold 1-54') }}</span>
@@ -437,14 +437,14 @@
                 </div>
                 <div class="col-md-7">
                     <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold 1-10') }}</h2>
-                    <p class="lead txt-def mb-3">{{ __('Mold 1-11') }}</p>
+                    <p class="lead  mb-3">{{ __('Mold 1-11') }}</p>
                     <div class="d-flex flex-wrap gap-2 mb-3">
                         <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-12') }}</a>
                         <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-13') }}</a>
                         <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-68') }}</a>
                     </div>
-                    <p class="txt-def mb-2">{{ __('Mold 1-14') }}</p>
-                    <p class="txt-def mb-0">{{ __('Mold 1-15') }}</p>
+                    <p class=" mb-2">{{ __('Mold 1-14') }}</p>
+                    <p class=" mb-0">{{ __('Mold 1-15') }}</p>
                     <div class="text-muted small mt-3">{{ __('Mold 1-69') }}</div>
                 </div>
             </div>
