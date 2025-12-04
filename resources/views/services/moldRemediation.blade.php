@@ -5,325 +5,449 @@
 @endsection
 
 @section('content')
-    <section class="py-3 py-md-5">
+    <section class="py-5" style="background: radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.16), transparent 35%), radial-gradient(circle at 80% 10%, rgba(13, 110, 253, 0.12), transparent 30%), #f8fafc;">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold.jpeg') }}"
-                        alt="Professional mold remediation and restoration service in Vancouver BC home">
-                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                            <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
-                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
-                        </div>
-                </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h1 class="fs-1 fw-bolder">{{ __('Mold 1-1') }} </h1>
-                            <hr>
-
-                            <p class="lead ">
-
-                                {{ __('Mold 1-2') }}
-                            </p>
-                            <p class="lead mb-5 ">
-                                {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
-                                {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
-                                        class="btn btn-warning  fw-bolder">+1 604-800-3900</a></strong>
-                            </p>
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-lg-6 order-lg-2">
+                    <div class="position-relative shadow rounded-4 overflow-hidden bg-white">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/mold.jpeg') }}"
+                            alt="Mold remediation Vancouver team restoring a residential property">
+                        <div class="position-absolute top-0 end-0 m-3 bg-dark text-white px-3 py-2 rounded-pill small fw-semibold">
+                            24/7 Emergency Mold Help
                         </div>
                     </div>
+                    <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center align-items-center">
+                        <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA certified mold remediation Vancouver" style="height: 80px; object-fit: contain;">
+                        <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC certified mold remediation experts" style="height: 90px; object-fit: contain;">
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-3 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-12 mb-3">
-
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('Mold 1-3-1') }}
-                    </h2>
-                    <p class="lead">
-                        {{ __('Mold 1-3-2') }}
-                    </p>
-
-
-
-
-
-                    <div class="row mb-3 pb-3">
-                        <div class="col-12 col-lg-6 col-xl-5">
-
-                            <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold-refrigerator.jpg') }}"
-                                alt="Mold growth inside a refrigerator in a Vancouver BC home requiring professional removal">
-
+                <div class="col-12 col-lg-6 order-lg-1 text-dark">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold mb-3">
+                        <span class="text-uppercase" style="letter-spacing: 0.08em;">{{ __('Mold Hero Badge 1') }}</span>
+                        <span class="badge bg-dark text-warning">{{ __('Mold Hero Badge 2') }}</span>
+                    </div>
+                    <h1 class="fs-1 fw-bolder mb-3">{{ __('Mold Hero Title') }}</h1>
+                    <p class="lead mb-3">{{ __('Mold Hero Lead 1') }}</p>
+                    <p class="mb-4">{{ __('Mold Hero Lead 2') }}</p>
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+                            📞 {{ __('Mold 1-66') }}
+                        </a>
+                        <div class="text-muted small">
+                            {{ __('Mold Hero CTA Note') }}
                         </div>
-                        <div class="col-12 col-lg-6 col-xl-7">
-                            <div class="justify-content-xl-center">
-
-
-                                <div class="text-center mt-3">
-
-                                    <p>
-                                        {{ __('Mold 1-3-5') }} <strong> {{ __('Mold 1-3-1') }} </strong>
-                                        {{ __('Mold 1-3-6') }}
-                                    </p>
-                                    <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }}
-                                    </strong>
-                                    <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
-                                        style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                                        📞 Call Now: +1 604-800-3900
-                                    </a>
-                                    <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }} </p>
-
-                                </div>
-
-
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="p-3 rounded-4 bg-white text-dark h-100 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold Hero Card 1 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Hero Card 1 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded-4 bg-white text-dark h-100 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold Hero Card 2 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Hero Card 2 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3 rounded-4 bg-white text-dark shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold Hero Card 3 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Hero Card 3 Text') }}</div>
                             </div>
                         </div>
                     </div>
-
-
-
-                    <h3 class="fs-3 fw-bolder section-title-h1">{{ __('Mold 1-3-3') }}</h3>
-                    <p class="lead">
-                        {{ __('Mold 1-3-4') }}
-                    </p>
-
-
-
-                    <div class="row">
-
-                        <div class="col-md-6 mb-3">
-
-                            <h2 class="fs-2 fw-bolder section-title-h1">
-                                {{ __('Mold 1-3') }}
-                            </h2>
-
-                            <p class="lead"> {{ __('Mold 1-4') }}
-
-                                <br>
-                                {{ __('Mold 1-5') }}
-                            </p>
-
-                        </div>
-
-
-                        <div class="col-md-6  d-flex flex-column gap-3   align-items-center ">
-
-                            <img  src="{{ asset('img/googleg.png') }}" alt="Google garanted certification">
-
-
-                                    <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
-                                        style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                                        📞 Call Now: +1 604-800-3900
-                                    </a>
-
-
-                        </div>
-
-                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row">
 
-                    <div class="col-md-6 my-3">
-                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/X725gdW8nm48gtp2Ko5uKh4IV4FxBhakF5jLT4w7.jpg" alt="Before and after professional mold removal service in a Vancouver BC home basement">
+    <section class="py-4 py-md-5 bg-vr-second">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-12 col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                        <span class="text-warning">{{ __('Mold Block2 Badge 1') }}</span>
+                        <span class="text-secondary">{{ __('Mold Block2 Badge 2') }}</span>
                     </div>
-
-                    <div class="col-md-6 my-3">
-                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/0edMscVZ1fslkgJKQ0U2lIaqiCB4sf22kNPyaQuC.jpg" alt="Severe black mold infestation on interior wall in Burnaby BC requiring expert remediation">
+                    <h2 class="fs-2 fw-bolder mb-3">{{ __('Mold Block2 Title') }}</h2>
+                    <p class="lead mb-3">{{ __('Mold Block2 Lead 1') }}</p>
+                    <p class="mb-4">{{ __('Mold Block2 Lead 2') }}</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold Block2 Feature 1 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Block2 Feature 1 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold Block2 Feature 2 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Block2 Feature 2 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold Block2 Feature 3 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Block2 Feature 3 Text') }}</div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-md-6 my-3">
-                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/jVRdp1R67F6HFk6oaXP7lyuWQxhdT3hAgAfJDRzl.jpg" alt="Certified mold removal and cleanup in a Surrey BC residential bathroom">
-                    </div>
-
-                    <div class="col-md-6 my-3">
-                        <img class="img-fluid rounded" src="https://vrrestoration.ca/storage/uploads/O1xy2uqf9wcYNCfJzTxSVYFjVKxqcBmF7RBxK6tq.jpg" alt="Professional mold remediation team working in a Vancouver BC home">
-                    </div>
-                </div>
-
-                <div class="col-md-12 my-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('About 1-9-1') }}
-                    </h2>
-                    <hr>
-
-                    <h3 class="fs-4 fw-bold">
-                        {{ __('Mold 1-46-1') }}
-                    </h3>
-                    <p>
-                        {{ __('Mold 1-46-2') }}
-                    </p>
-
-
-                    <div class="d-flex flex-wrap gap-2 pb-3">
-                        <a href="https://vrrestoration.ca/en/vancouver/mold-remediation-in-vancouver"
-                            class="btn btn-warning btn-sm">
-                            {{ __('Mold 1-46-3') }}
+                    <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+                            📞 Call Now: +1 604-800-3900
                         </a>
+                        <div class="text-muted small">
+                            {{ __('Mold Block2 Service Note') }}
+                        </div>
                     </div>
-                    <ul class="txt-vr d-flex flex-wrap gap-3">
-                        <li class="lead px-2">Greater Vancouver</li>
-                        <li class="lead px-2">Metro Vancouver</li>
-                        <li class="lead px-2">North Shore</li>
-                        <li class="lead px-2">Downtown</li>
-                        <li class="lead px-2">Sea to Sky</li>
-                        <li class="lead px-2">Tri-Cities</li>
-                        <li class="lead px-2">Fraser Valley</li>
-                        <li class="lead px-2">Howe Sound</li>
-                    </ul>
-
                 </div>
+                <div class="col-12 col-lg-5">
+                    <div class="bg-white rounded-4 shadow-lg overflow-hidden">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/mold-refrigerator.jpg') }}"
+                            alt="Mold remediation Vancouver removing mold inside a residential refrigerator">
+                        <div class="p-3 d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold">Fridge Mold Removal</span>
+                            <span class="badge bg-warning text-dark">Same-Day Fix</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 mt-3 align-items-center justify-content-center">
+                        <img src="{{ asset('img/googleg.png') }}" alt="Google Guaranteed for mold remediation Vancouver" style="height: 140px; object-fit: contain;">
+                        <span class="text-muted">{{ __('Mold Block2 Rating Note') }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-4">
+                <div class="col-12 col-md-4">
+                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold mb-1">Transparent Reporting</div>
+                        <div class="small text-muted">{{ __('Mold Block2 Assurance 1') }}</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold mb-1">Insurance Friendly</div>
+                        <div class="small text-muted">{{ __('Mold Block2 Assurance 2') }}</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold mb-1">People & Pet Safe</div>
+                        <div class="small text-muted">{{ __('Mold Block2 Assurance 3') }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 g-3">
+                <div class="col-md-6">
+                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/X725gdW8nm48gtp2Ko5uKh4IV4FxBhakF5jLT4w7.jpg" alt="Before and after mold remediation in a Vancouver basement">
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/0edMscVZ1fslkgJKQ0U2lIaqiCB4sf22kNPyaQuC.jpg" alt="Severe black mold removal in Burnaby interior wall">
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/jVRdp1R67F6HFk6oaXP7lyuWQxhdT3hAgAfJDRzl.jpg" alt="Certified mold cleanup in a Surrey bathroom">
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/O1xy2uqf9wcYNCfJzTxSVYFjVKxqcBmF7RBxK6tq.jpg" alt="Professional mold remediation crew in a Vancouver home">
+                </div>
+            </div>
+
+            <div class="col-12 mt-5">
+                <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Mold About Title') }}</h2>
+                <hr>
+                <h3 class="fs-4 fw-bold">{{ __('Mold About Subtitle') }}</h3>
+                <p class=" mb-2">{{ __('Mold About Body 1') }}</p>
+                <p class=" mb-3">{{ __('Mold About Body 2') }}</p>
+                <p class="text-muted small mb-3">{{ __('Mold About SEO Line') }}</p>
+                <ul class="txt-vr d-flex flex-wrap gap-3">
+                    <li class="lead px-2">Greater Vancouver</li>
+                    <li class="lead px-2">Metro Vancouver</li>
+                    <li class="lead px-2">North Shore</li>
+                    <li class="lead px-2">Downtown</li>
+                    <li class="lead px-2">Sea to Sky</li>
+                    <li class="lead px-2">Tri-Cities</li>
+                    <li class="lead px-2">Fraser Valley</li>
+                    <li class="lead px-2">Howe Sound</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="py-3 py-md-5  ">
+    <section class="py-4 py-md-5">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
+            <div class="row gy-4 align-items-center">
                 <div class="col-md-5">
-
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/moldtype.jpeg') }}"
-                        alt="Mold Remediation Restoration in BC">
+                    <div class="rounded-4 shadow-lg overflow-hidden">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/moldtype.jpeg') }}"
+                            alt="Types of mold identified during Vancouver remediation assessment">
+                    </div>
                 </div>
                 <div class="col-md-7">
-
-
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('Mold 1-6') }}
-                    </h2>
-
-                    <p class="lead txt-def"> {{ __('Mold 1-7') }}
-
-                    </p>
-                </div>
-                <div class="col-md-12 pt-5">
-
-                    <p class="lead txt-def"> {{ __('Mold 1-8') }}
-                    </p>
-
-                    <p class="lead txt-def"> {{ __('Mold 1-9') }}
-
-                    </p>
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                        {{ __('Mold Process Badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Process Title') }}</h2>
+                    <p class="lead txt-def mb-3">{{ __('Mold Process Lead') }}</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-1">{{ __('Mold Process Step1 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Process Step1 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-1">{{ __('Mold Process Step2 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Process Step2 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-1">{{ __('Mold Process Step3 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Process Step3 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-1">{{ __('Mold Process Step4 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold Process Step4 Text') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="lead txt-def mt-4 mb-2">{{ __('Mold Process Note') }}</p>
+                    <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+                        📞 Call Now: +1 604-800-3900
+                    </a>
                 </div>
             </div>
-
         </div>
     </section>
 
-
-    <section class="py-3 py-md-5  bg-vr-second">
+    <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                <span class="text-warning">{{ __('Mold SEO Badge 1') }}</span>
+                <span class="text-secondary">{{ __('Mold SEO Badge 2') }}</span>
+            </div>
+            <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Title') }}</h2>
+            <p class="lead txt-def mb-4">{{ __('Mold SEO Intro') }}</p>
 
-                <div class="col-md-12 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('Mold 1-50') }}
-                    </h2>
-
-                    <p class=" txt-def"> {{ __('Mold 1-51') }}
-
-                    </p>
-                    <div class="row py-3">
-
-                        <div class="col-md-7 ">
-                            <h3 class="h4 section-title-h1"> {{ __('Mold 1-52') }} </h3>
-                            <hr>
-                            <p class=" txt-def ">{{ __('Mold 1-53') }}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-5 pb-3">
-
-                            <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/Fogging.jpeg') }}"
-                                alt="fogging Restoration in vancouver">
-
-                        </div>
-
-                        <div class="col-md-12 pt-4">
-                            <h3 class="h4 section-title-h1">{{ __('Mold 1-54') }}
-
-                            </h3>
-                            <hr>
-                            <p class=" txt-def">{{ __('Mold 1-55') }}
-
-                            </p>
-                        </div>
-                    </div>
-
-                    <h3 class="h4 section-title-h1"> {{ __('Mold 1-56') }}</h3>
-                    <hr>
-                    <p class=" txt-def">
-                        {{ __('Mold 1-57') }}
-
-                    </p>
-                    <p class=" txt-def">
-                        {{ __('Mold 1-58') }}
-
-                        <ul>
-                        <li>
-                            {{ __('Mold 1-59') }}
-
-                        </li>
-                        <li>
-                            {{ __('Mold 1-60') }}
-
-                        </li>
-                        <li>
-                            {{ __('Mold 1-61') }}
-
-
-                        </li>
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold mb-2">{{ __('Mold SEO Causes Title') }}</div>
+                        <p class="small text-muted mb-2">{{ __('Mold SEO Causes Text') }}</p>
+                        <ul class="small text-muted ps-3 mb-0">
+                            <li>{{ __('Mold SEO Cause 1') }}</li>
+                            <li>{{ __('Mold SEO Cause 2') }}</li>
+                            <li>{{ __('Mold SEO Cause 3') }}</li>
+                            <li>{{ __('Mold SEO Cause 4') }}</li>
                         </ul>
-                    </p>
+                    </div>
                 </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold mb-2">{{ __('Mold SEO Signs Title') }}</div>
+                        <p class="small text-muted mb-2">{{ __('Mold SEO Signs Text') }}</p>
+                        <ul class="small text-muted ps-3 mb-0">
+                            <li>{{ __('Mold SEO Sign 1') }}</li>
+                            <li>{{ __('Mold SEO Sign 2') }}</li>
+                            <li>{{ __('Mold SEO Sign 3') }}</li>
+                            <li>{{ __('Mold SEO Sign 4') }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold mb-2">{{ __('Mold SEO Types Title') }}</div>
+                        <p class="small text-muted mb-2">{{ __('Mold SEO Types Text') }}</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 1') }}</span>
+                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 2') }}</span>
+                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 3') }}</span>
+                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 4') }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
+            <div class="row g-3 mt-3">
+                <div class="col-12 col-lg-8">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-warning text-dark text-uppercase">{{ __('Mold Process Badge') }}</span>
+                            <span class="small text-muted">{{ __('Mold SEO Process Note') }}</span>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">{{ __('Mold SEO Process Title') }}</h3>
+                        <div class="row g-2">
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('Mold Process Step1 Title') }}</div>
+                                    <div class="small text-muted">{{ __('Mold Process Step1 Text') }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('Mold Process Step2 Title') }}</div>
+                                    <div class="small text-muted">{{ __('Mold Process Step2 Text') }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('Mold Process Step3 Title') }}</div>
+                                    <div class="small text-muted">{{ __('Mold Process Step3 Text') }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('Mold Process Step4 Title') }}</div>
+                                    <div class="small text-muted">{{ __('Mold Process Step4 Text') }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="small text-muted mt-3 mb-0">{{ __('Mold Process Note') }}</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 d-flex flex-column gap-3">
+                        <div>
+                            <div class="fw-bold mb-1">{{ __('Mold SEO Free Title') }}</div>
+                            <p class="small text-muted mb-0">{{ __('Mold SEO Free Text') }}</p>
+                        </div>
+                        <div>
+                            <div class="fw-bold mb-1">{{ __('Mold SEO Insurance Title') }}</div>
+                            <p class="small text-muted mb-0">{{ __('Mold SEO Insurance Text') }}</p>
+                        </div>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3 w-100" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+                            📞 {{ __('Mold 1-66') }}
+                        </a>
+                        <div>
+                            <div class="fw-bold mb-2">{{ __('Mold SEO Locations Title') }}</div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-light text-dark border">Vancouver</span>
+                                <span class="badge bg-light text-dark border">Burnaby</span>
+                                <span class="badge bg-light text-dark border">Richmond</span>
+                                <span class="badge bg-light text-dark border">North Shore</span>
+                                <span class="badge bg-light text-dark border">Tri-Cities</span>
+                                <span class="badge bg-light text-dark border">Fraser Valley</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
-    <section class="py-3 py-md-5  ">
+    <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-5">
-
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/mold3.jpeg') }}"
-                        alt="Mold Remediation Restoration In Vancouver">
+            <div class="row gy-4 align-items-center">
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                        <span class="text-warning">{{ __('Mold 1-50-badge1') }}</span>
+                        <span class="text-secondary">{{ __('Mold 1-50-badge2') }}</span>
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold 1-50') }}</h2>
+                    <p class="lead txt-def mb-3">{{ __('Mold 1-51') }}</p>
+                    <p class="txt-def mb-4">{{ __('Mold 1-58') }}</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold 1-52') }}</div>
+                                <div class="small text-muted">{{ __('Mold 1-53') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold 1-62') }}</div>
+                                <div class="small text-muted">{{ __('Mold 1-63') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
+                                <div class="fw-bold mb-1">{{ __('Mold 1-64') }}</div>
+                                <div class="small text-muted">{{ __('Mold 1-65') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+                            📞 {{ __('Mold 1-66') }}
+                        </a>
+                        <div class="text-muted small">{{ __('Mold 1-67') }}</div>
+                    </div>
                 </div>
-                <div class="col-md-7">
-
-
-                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Mold 1-10') }}
-
-                    </h2>
-
-                    <p class=" txt-def">{{ __('Mold 1-11') }}
-
-
-                    </p>
-                    <a class=" txt-def txt-vr" href="#">{{ __('Mold 1-10') }} </a><br>
-                    <a class=" txt-def txt-vr" href="#">{{ __('Mold 1-12') }}</a><br>
-                    <a class=" txt-def txt-vr" href="#">{{ __('Mold 1-13') }}</a>
-                </div>
-                <div class="col-md-12 pt-4">
-                    <p class=" txt-def">{{ __('Mold 1-14') }}
-
-                    </p>
-                    <p class=" txt-def">{{ __('Mold 1-15') }}
-
-                    </p>
+                <div class="col-lg-5">
+                    <div class="bg-white rounded-4 shadow-lg overflow-hidden">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/Fogging.jpeg') }}"
+                            alt="Fogging used during mold remediation Vancouver to neutralize spores">
+                        <div class="p-3 d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold">{{ __('Mold 1-54') }}</span>
+                            <span class="badge bg-warning text-dark">HEPA + Fogging</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="row g-4 mt-4">
+                <div class="col-lg-7">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <h3 class="h4 section-title-h1 mb-2">{{ __('Mold 1-54') }}</h3>
+                        <p class="txt-def mb-3">{{ __('Mold 1-55') }}</p>
+                        <h4 class="h5 fw-bold mb-2">{{ __('Mold 1-56') }}</h4>
+                        <p class="txt-def mb-3">{{ __('Mold 1-57') }}</p>
+                        <ul class="txt-def ps-3 mb-0">
+                            <li>{{ __('Mold 1-59') }}</li>
+                            <li>{{ __('Mold 1-60') }}</li>
+                            <li>{{ __('Mold 1-61') }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="fw-bold text-uppercase text-warning mb-2">Mold Remediation Vancouver</div>
+                        <p class="txt-def mb-3">{{ __('Mold 1-58') }}</p>
+                        <div class="d-flex gap-2 flex-wrap small text-muted">
+                            <span class="badge bg-light text-dark border">{{ __('Mold 1-52') }}</span>
+                            <span class="badge bg-light text-dark border">{{ __('Mold 1-54') }}</span>
+                            <span class="badge bg-light text-dark border">HEPA + Drying</span>
+                            <span class="badge bg-light text-dark border">Odor Control</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-md-5">
+                    <div class="rounded-4 shadow-lg overflow-hidden position-relative">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/mold3.jpeg') }}"
+                            alt="Common mold growth areas addressed during mold remediation Vancouver">
+                        <div class="position-absolute top-0 start-0 m-3 bg-warning text-dark px-3 py-2 rounded-pill small fw-semibold">
+                            {{ __('Mold 1-10-badge') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold 1-10') }}</h2>
+                    <p class="lead txt-def mb-3">{{ __('Mold 1-11') }}</p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-12') }}</a>
+                        <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-13') }}</a>
+                        <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-68') }}</a>
+                    </div>
+                    <p class="txt-def mb-2">{{ __('Mold 1-14') }}</p>
+                    <p class="txt-def mb-0">{{ __('Mold 1-15') }}</p>
+                    <div class="text-muted small mt-3">{{ __('Mold 1-69') }}</div>
+                </div>
+            </div>
         </div>
     </section>
 

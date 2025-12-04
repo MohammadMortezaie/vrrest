@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <section class="py-md-5 d-flex ">
+    <section class="py-md-5 d-flex " style="background: radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.16), transparent 35%), radial-gradient(circle at 80% 10%, rgba(13, 110, 253, 0.12), transparent 30%), #f8fafc;">
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-12 col-lg-6 col-xl-5">
