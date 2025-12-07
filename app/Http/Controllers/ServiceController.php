@@ -22,7 +22,7 @@ class ServiceController extends Controller
 
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'Top Restoration Company in Vancouver BC | VR Restoration',
+            title: 'Water Damage, Mold Restoration Vancouver BC | VR Restoration',
             description: 'Emergency Services and Restoration. 24/7 Water Damage Restoration, Mold Remediation and more. CALL 604-800-3900. Our Vancouver branch is ready to assist you.',
             image: asset('img/water-damage.jpeg'), // Example image path
             schema: SchemaCollection::make()
