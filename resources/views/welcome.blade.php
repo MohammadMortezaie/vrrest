@@ -25,7 +25,6 @@
         </div><!-- End  Content-->
     </section>
 
-
     <!-- /Categories Section -->
     <section id="clients" class="clients section my-3 container">
 
@@ -645,6 +644,9 @@
                 </div>
 
 
+
+
+
                 <div class="section-title">
                     <h2>{{ __('About Us') }} </h2>
                 </div>
@@ -684,6 +686,73 @@
         </div>
 
     </section><!-- /About Section -->
+
+<!-- Water Damage Emergency Section -->
+    <section class="py-5" style="background: radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.2), transparent 30%), radial-gradient(circle at 80% 0%, rgba(13, 110, 253, 0.15), transparent 25%), #0b172a;">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="position-relative rounded-4 overflow-hidden shadow-lg">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/water-damage-restoration-vancouver-equipment.jpg') }}"
+                            alt="{{ __('home water image alt') }}">
+                        <div class="position-absolute top-0 end-0 m-3 bg-dark text-white px-3 py-2 rounded-pill small fw-semibold">
+                            {{ __('home water badge') }}
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 m-3 bg-white bg-opacity-90 text-dark px-3 py-2 rounded-3 shadow-sm d-flex align-items-center gap-2">
+                            <i class="bi bi-clock-history text-warning"></i>
+                            <span class="small fw-semibold">{{ __('home water stat 1') }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 text-white">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold mb-3 shadow-sm">
+                        <i class="bi bi-droplet-half"></i>
+                        <span class="text-uppercase" style="letter-spacing: 0.08em;">{{ __('home water eyebrow') }}</span>
+                    </div>
+                    <h2 class="fw-bolder mb-3">{{ __('home water title') }}</h2>
+                    <p class="lead mb-3">{{ __('home water lead') }}</p>
+                    <p class="text-light text-opacity-75 mb-4">{{ __('home water sublead') }}</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 rounded-4 bg-white text-dark shadow-sm h-100">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-lightning-charge-fill text-warning"></i>
+                                    <div class="fw-bold">{{ __('home water feature1 title') }}</div>
+                                </div>
+                                <div class="small text-muted">{{ __('home water feature1 text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 rounded-4 bg-white text-dark shadow-sm h-100">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-headset text-warning"></i>
+                                    <div class="fw-bold">{{ __('home water feature2 title') }}</div>
+                                </div>
+                                <div class="small text-muted">{{ __('home water feature2 text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-3 rounded-4 bg-white text-dark shadow-sm h-100">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-journal-check text-warning"></i>
+                                    <div class="fw-bold">{{ __('home water feature3 title') }}</div>
+                                </div>
+                                <div class="small text-muted">{{ __('home water feature3 text') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                            style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+                            📞 {{ __('home water cta') }}
+                        </a>
+                        <div class="text-light text-opacity-75 small">{{ __('home water note') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 
