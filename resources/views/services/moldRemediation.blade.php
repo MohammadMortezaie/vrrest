@@ -342,6 +342,76 @@
     </section>
 
 
+    <section class="py-4 py-md-5" style="background: radial-gradient(circle at 20% 20%, rgba(255, 193, 7, 0.12), transparent 45%), radial-gradient(circle at 80% 0%, rgba(13, 110, 253, 0.12), transparent 35%), #ffffff;">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-lg-5">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark text-white text-uppercase fw-semibold small shadow-sm mb-3">
+                        <span>{{ __('Mold SEO Services Badge 1') }}</span>
+                        <span class="badge bg-warning text-dark">{{ __('Mold SEO Services Badge 2') }}</span>
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Services Title') }}</h2>
+                    <p class="lead mb-3">{{ __('Mold SEO Services Lead') }}</p>
+                    <p class="mb-4">{{ __('Mold SEO Services SubLead') }}</p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 1') }}</span>
+                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 2') }}</span>
+                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 3') }}</span>
+                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 4') }}</span>
+                    </div>
+                    <div class="p-3 p-md-4 bg-white rounded-4 shadow-sm">
+                        <div class="fw-bold mb-1">{{ __('Mold SEO Services Note Title') }}</div>
+                        <p class="small text-muted mb-3">{{ __('Mold SEO Services Note Text') }}</p>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2" style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.2);">
+                            📞 {{ __('Mold 1-66') }}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 1 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Service Card 1 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 2 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Service Card 2 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 3 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Service Card 3 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 4 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Service Card 4 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 5 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Service Card 5 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 6 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Service Card 6 Text') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
             <div class="row gy-4 align-items-center">
@@ -415,6 +485,63 @@
                             <span class="badge bg-light text-dark border">{{ __('Mold 1-54') }}</span>
                             <span class="badge bg-light text-dark border">HEPA + Drying</span>
                             <span class="badge bg-light text-dark border">Odor Control</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-4 py-md-5" style="background: linear-gradient(140deg, rgba(13, 110, 253, 0.08), rgba(255, 193, 7, 0.08));">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                            {{ __('Mold SEO Timeline Badge') }}
+                        </div>
+                        <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Timeline Title') }}</h2>
+                        <p class="lead mb-4">{{ __('Mold SEO Timeline Lead') }}</p>
+                        <div class="d-grid gap-3">
+                            <div class="p-3 rounded-4 bg-light">
+                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 1 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 1 Text') }}</div>
+                            </div>
+                            <div class="p-3 rounded-4 bg-light">
+                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 2 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 2 Text') }}</div>
+                            </div>
+                            <div class="p-3 rounded-4 bg-light">
+                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 3 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 3 Text') }}</div>
+                            </div>
+                            <div class="p-3 rounded-4 bg-light">
+                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 4 Title') }}</div>
+                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 4 Text') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 d-flex flex-column">
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark text-white text-uppercase fw-semibold small mb-3">
+                            {{ __('Mold SEO Cost Badge') }}
+                        </div>
+                        <h3 class="h4 fw-bold mb-2">{{ __('Mold SEO Cost Title') }}</h3>
+                        <p class="small text-muted mb-3">{{ __('Mold SEO Cost Lead') }}</p>
+                        <ul class="small text-muted ps-3 mb-4">
+                            <li>{{ __('Mold SEO Cost Factor 1') }}</li>
+                            <li>{{ __('Mold SEO Cost Factor 2') }}</li>
+                            <li>{{ __('Mold SEO Cost Factor 3') }}</li>
+                            <li>{{ __('Mold SEO Cost Factor 4') }}</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <div class="fw-bold mb-1">{{ __('Mold SEO Estimate Title') }}</div>
+                            <p class="small text-muted mb-3">{{ __('Mold SEO Estimate Text') }}</p>
+                            <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2" style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.2);">
+                                📞 {{ __('Mold 1-66') }}
+                            </a>
                         </div>
                     </div>
                 </div>
