@@ -693,7 +693,7 @@
             <div class="row align-items-center g-4">
                 <div class="col-lg-6 order-lg-2">
                     <div class="position-relative rounded-4 overflow-hidden shadow-lg">
-                        <img class="img-fluid" loading="lazy" src="{{ asset('img/water-damage-restoration-vancouver-equipment.jpg') }}"
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/water-damage-equipment-vancouver.jpeg') }}"
                             alt="{{ __('home water image alt') }}">
                         <div class="position-absolute top-0 end-0 m-3 bg-dark text-white px-3 py-2 rounded-pill small fw-semibold">
                             {{ __('home water badge') }}
