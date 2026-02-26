@@ -492,251 +492,462 @@ class ServiceController extends Controller
     }
     public function commercialServices()
     {
-        $locale = app()->getLocale(); // Get the current locale
+        $locale = app()->getLocale();
 
-        // Define SEO data for English
+        $pageEnUrl = 'https://vrrestoration.ca/en/commercial-services';
+        $pageZhUrl = 'https://vrrestoration.ca/zh/commercial-services';
+
+        $commercialSchemaEn = SchemaCollection::make()
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Service',
+                    'name' => 'Commercial Restoration Services in Vancouver',
+                    'serviceType' => 'Commercial restoration services',
+                    'description' => '24/7 emergency commercial restoration in Vancouver including water damage, fire damage, mold remediation, specialty cleaning, and reconstruction support.',
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
+                        'telephone' => '+1 604-800-3900',
+                        'url' => $pageEnUrl,
+                    ],
+                    'areaServed' => ['Vancouver', 'Burnaby', 'Richmond', 'Surrey', 'Coquitlam', 'North Vancouver', 'West Vancouver', 'New Westminster'],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What types of commercial properties do you restore?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We restore offices, retail stores, restaurants, warehouses, strata properties, healthcare clinics, and mixed-use buildings.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How fast can your team respond to a commercial emergency?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Our emergency crews are available 24/7 with priority dispatch across Metro Vancouver to start stabilization as quickly as possible.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Can you work after hours to reduce business interruption?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. We can schedule evening, overnight, and phased work plans to minimize operational downtime whenever feasible.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Do you help with insurance documentation and adjuster communication?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. We provide organized photos, scope notes, moisture logs, and project updates to support smoother claim handling.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How do you reduce downtime during commercial restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We use rapid mobilization, clear phase planning, and direct stakeholder coordination so critical areas reopen sooner.',
+                            ],
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => $pageEnUrl,
+                    'image' => asset('img/commercial.jpeg'),
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ],
+            );
+
+        $commercialSchemaZh = SchemaCollection::make()
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Service',
+                    'name' => '温哥华商业修复服务',
+                    'serviceType' => '商业修复服务',
+                    'description' => '提供温哥华 24/7 商业紧急修复服务，涵盖水损、火损、霉菌治理、专业清洁与重建支持。',
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
+                        'telephone' => '+1 604-800-3900',
+                        'url' => $pageZhUrl,
+                    ],
+                    'areaServed' => ['温哥华', '本拿比', '列治文', '素里', '高贵林', '北温哥华', '西温哥华', '新西敏'],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们可修复哪些类型的商业物业？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们服务办公楼、零售门店、餐饮空间、仓储设施、分层物业、医疗诊所和混合用途建筑。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '商业紧急事件多久可以到场？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们 24/7 待命，在大温地区优先派工，尽快启动现场稳定与止损。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '可以安排夜间施工以减少停业吗？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '可以。我们可根据现场条件安排夜间、分区或分阶段施工，尽量降低运营影响。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们会协助保险资料与理算沟通吗？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '会。我们提供完整照片、工程记录、含水率数据和阶段更新，支持理赔流程更顺畅。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们如何在修复过程中降低停工时间？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们通过快速派工、清晰分阶段计划和多方协同，让关键区域更早恢复使用。',
+                            ],
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => $pageZhUrl,
+                    'image' => asset('img/commercial.jpeg'),
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ],
+            );
+
         $seoDataEn = new SEOData(
-            title: 'Commercial Restoration Services | VR Plus Restoration',
-            description: 'We offers expert commercial restoration services including fire, flood, and mold damage repairs. Call 604-800-3900 for 24/7 assistance.',
+            title: 'Commercial Restoration Services Vancouver | 24/7 Emergency Response',
+            description: 'Commercial restoration services in Vancouver for water, fire, and mold damage. 24/7 emergency response, business continuity planning, and insurance-ready documentation.',
             image: asset('img/commercial.jpeg'),
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What types of commercial properties do you handle for restoration?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We handle a wide range of commercial properties, including small businesses, industrial complexes, and office buildings. Our team is equipped to manage projects of any size or complexity.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How quickly can you respond to a commercial restoration emergency?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Our team operates 24/7, including day and night shifts, and even on holidays. We prioritize rapid response to ensure that your business can resume normal operations as quickly as possible.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What techniques do you use for commercial restoration?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We utilize advanced technology and industry-leading techniques to tackle even the most challenging restoration tasks. Our goal is to minimize downtime and reduce the overall impact on your business.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'Do you offer services to prevent future damage to commercial properties?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Yes, in addition to our restoration services, we provide proactive solutions such as risk assessments, preventative maintenance, and emergency response planning to help safeguard your property against future damage.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How do you ensure minimal disruption to my business during restoration?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We implement continuous work shifts and employ efficient restoration practices to minimize downtime. Our team works diligently to restore your property while reducing the impact on your business operations.',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
-                        ],
-                    ],
-                ],
-            ),
-            tags: ['commercial restoration', 'fire damage repair', 'flood damage restoration', 'mold remediation', 'Vancouver commercial services'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/commercial-services')],
+            schema: $commercialSchemaEn,
+            tags: [
+                'commercial restoration Vancouver',
+                'commercial water damage restoration',
+                'commercial mold remediation',
+                'commercial fire damage cleanup',
+                '24/7 emergency restoration',
+            ],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
+            ],
         );
 
-        // Define SEO data for Chinese
         $seoDataZh = new SEOData(
-            title: '商业恢复服务 | VR Plus Restoration',
-            description: '我们提供专业的商业恢复服务，包括火灾、洪水和霉菌损害修复。我们的经验丰富的团队确保尽量减少对您业务运营的干扰。请拨打 604-800-3900 获取温哥华的 24/7 支持',
+            title: '温哥华商业修复服务 | 24/7 紧急响应',
+            description: '提供温哥华商业修复服务，涵盖水损、火损与霉菌治理。24/7 紧急响应，配合业务连续性与保险理赔文档。',
             image: asset('img/commercial.jpeg'),
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们处理哪些类型的商业物业恢复？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们处理各种商业物业，包括小型企业、工业综合体和办公楼。我们的团队能够管理任何规模或复杂性的项目。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们可以多快响应商业恢复紧急情况？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们的团队全天候运行，包括日夜班，甚至在假期也能工作。我们优先考虑快速响应，以确保您的业务能够尽快恢复正常运营。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们使用什么技术进行商业恢复？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们利用先进的技术和行业领先的技术来处理即使是最具挑战性的恢复任务。我们的目标是尽量减少停机时间，减少对您业务的整体影响。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们是否提供预防未来商业物业损害的服务？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '是的，除了我们的恢复服务，我们还提供前瞻性解决方案，如风险评估、预防性维护和应急响应规划，以帮助保护您的物业免受未来损害。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们如何确保在恢复过程中对我的业务造成最小干扰？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们实施持续工作班次，并采用高效的恢复实践以尽量减少停机时间。我们的团队努力恢复您的物业，同时减少对您业务运营的影响。',
-                            ],
-                        ],
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
-                        ],
-                    ],
-                ],
-            ),
-            tags: ['商业恢复', '火灾修复', '洪水恢复', '霉菌修复', '温哥华商业服务'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/commercial-services')],
+            schema: $commercialSchemaZh,
+            tags: [
+                '温哥华商业修复',
+                '商业水损修复',
+                '商业霉菌治理',
+                '商业火灾清理',
+                '24/7 紧急修复',
+            ],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
+            ],
         );
 
-        // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('services.commercialServices', compact('SEOData'));
     }
     public function residentialServices()
     {
-        $locale = app()->getLocale(); // Get the current locale
+        $locale = app()->getLocale();
 
-        // Define SEO data for English
-        $seoDataEn = new SEOData(
-            title: 'VR Plus Restoration - Expert Residential Services',
-            description: 'We provide top-notch residential restoration services. Our skilled team offers 24/7 emergency response. Call 604-800-3900 for immediate assistance',
-            image: asset('img/residential.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
+        $pageEnUrl = 'https://vrrestoration.ca/en/residential-services';
+        $pageZhUrl = 'https://vrrestoration.ca/zh/residential-services';
+
+        $residentialSchemaEn = SchemaCollection::make()
+            ->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What types of residential restoration services do you offer?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We offer a variety of residential restoration services, including flood damage repair, fire damage restoration, mold remediation, and asbestos removal. Our services are available 24/7 to ensure you get the help you need when you need it.',
-                            ],
-                        ],
-                    ],
-                ],
-            ),
-            tags: ['residential services', 'restoration services', '24/7 emergency response', 'flood damage repair', 'fire damage restoration', 'mold remediation', 'asbestos removal'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/residential-services')],
-        );
-
-        // Define SEO data for Chinese
-        $seoDataZh = new SEOData(
-            title: 'VR Plus Restoration - 专业住宅服务',
-            description: '我们提供一流的住宅修复服务。我们的专业团队提供全天候紧急响应服务。如需即时帮助，请拨打604-800-3900',
-            image: asset('img/residential.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '你们提供哪些类型的住宅修复服务？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '我们提供各种住宅修复服务，包括洪水损害修复、火灾损害修复、霉菌去除和石棉清除。我们的服务全天候提供，确保您在需要时能得到帮助。',
-                            ],
-                        ],
+                    '@type' => 'Service',
+                    'name' => 'Residential Restoration Services in Vancouver',
+                    'serviceType' => 'Residential restoration services',
+                    'description' => '24/7 emergency residential restoration in Vancouver including water damage, fire damage, mold remediation, cleaning, and reconstruction.',
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
                         'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
+                        'url' => $pageEnUrl,
+                    ],
+                    'areaServed' => ['Vancouver', 'Burnaby', 'Richmond', 'Surrey', 'Coquitlam', 'North Vancouver', 'West Vancouver', 'New Westminster'],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What residential restoration services do you provide?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We provide water damage restoration, fire and smoke cleanup, mold remediation, specialty cleaning, and reconstruction for homes and multi-unit properties.',
+                            ],
                         ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How quickly can you respond to a home emergency?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Our teams are available 24/7 with priority dispatch across Metro Vancouver to begin emergency stabilization as fast as possible.',
+                            ],
                         ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Can you help with insurance paperwork and adjuster communication?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. We support homeowners with documentation, damage records, and clear updates to help streamline the claim process.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Do you provide both mitigation and reconstruction?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. We coordinate mitigation, cleanup, repairs, and reconstruction under one residential restoration plan.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How do you reduce disruption for families during restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'We use phased work zones, daily progress updates, and safety-first protocols to keep your household informed and protected.',
                             ],
                         ],
                     ],
                 ],
-            ),
-            tags: ['住宅服务', '修复服务', '24/7 紧急响应', '洪水损害修复', '火灾损害修复', '霉菌去除', '石棉清除'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/residential-services')],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => $pageEnUrl,
+                    'image' => asset('img/residential.jpeg'),
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ],
+            );
+
+        $residentialSchemaZh = SchemaCollection::make()
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Service',
+                    'name' => '温哥华住宅修复服务',
+                    'serviceType' => '住宅修复服务',
+                    'description' => '提供温哥华 24/7 住宅紧急修复服务，涵盖水损、火损、霉菌治理、深度清洁与重建支持。',
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
+                        'telephone' => '+1 604-800-3900',
+                        'url' => $pageZhUrl,
+                    ],
+                    'areaServed' => ['温哥华', '本拿比', '列治文', '素里', '高贵林', '北温哥华', '西温哥华', '新西敏'],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们提供哪些住宅修复服务？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们提供住宅水损修复、火灾与烟熏清理、霉菌治理、专业清洁，以及受损区域重建服务。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '家庭紧急事件可以多快到场？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们 24/7 待命，在大温地区优先派工，尽快启动现场应急稳定与止损。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们会协助保险资料和理算沟通吗？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '会。我们帮助业主整理损害记录、文档和阶段更新，配合理赔流程更顺畅。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们可以同时做止损和重建吗？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '可以。我们可在同一住宅修复计划中统筹止损、清理、维修和重建。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们如何降低施工对家庭生活的影响？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们采用分区分阶段作业、每日进度沟通和安全优先流程，尽量减少家庭干扰。',
+                            ],
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => $pageZhUrl,
+                    'image' => asset('img/residential.jpeg'),
+                    'telephone' => '+1 604-800-3900',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ],
+            );
+
+        $seoDataEn = new SEOData(
+            title: 'Residential Restoration Services Vancouver | 24/7 Emergency Response',
+            description: 'Residential restoration services in Vancouver for water, fire, and mold damage. 24/7 emergency response, insurance support, and complete home recovery.',
+            image: asset('img/residential.jpeg'),
+            schema: $residentialSchemaEn,
+            tags: [
+                'residential restoration Vancouver',
+                'home water damage restoration',
+                'residential mold remediation',
+                'fire damage cleanup for homes',
+                '24/7 emergency restoration',
+            ],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
+            ],
         );
 
-        // Choose SEO data based on locale
+        $seoDataZh = new SEOData(
+            title: '温哥华住宅修复服务 | 24/7 紧急响应',
+            description: '提供温哥华住宅修复服务，涵盖水损、火损与霉菌治理。24/7 紧急响应，含保险协作与完整修复支持。',
+            image: asset('img/residential.jpeg'),
+            schema: $residentialSchemaZh,
+            tags: [
+                '温哥华住宅修复',
+                '家庭水损修复',
+                '住宅霉菌治理',
+                '住宅火灾清理',
+                '24/7 紧急修复',
+            ],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
+            ],
+        );
+
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('services.residentialServices', compact('SEOData'));

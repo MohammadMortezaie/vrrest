@@ -1,99 +1,654 @@
 @extends('layouts.app')
 
 @section('header')
-{!! seo($SEOData) !!}
+    {!! seo($SEOData) !!}
+    @php
+        $commercialServiceSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Service',
+            'name' => __('commercialheading'),
+            'serviceType' => __('commercialschema_servicetype'),
+            'description' => __('commercialschema_servicedescription'),
+            'provider' => [
+                '@type' => 'LocalBusiness',
+                'name' => 'VR PLUS Restoration',
+                'telephone' => '+1-604-800-3900',
+                'url' => route('commercialServices', ['lang' => app()->getLocale()]),
+            ],
+            'areaServed' => [
+                'Vancouver',
+                'Burnaby',
+                'Richmond',
+                'Surrey',
+                'Coquitlam',
+                'North Vancouver',
+                'West Vancouver',
+                'New Westminster',
+            ],
+            'offers' => [
+                '@type' => 'Offer',
+                'description' => __('commercialschema_offerdescription'),
+                'availability' => 'https://schema.org/InStock',
+                'priceCurrency' => 'CAD',
+            ],
+        ];
+
+        $commercialFaqSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name' => __('commercialfaqquestion1'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('commercialfaqanswer1'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('commercialfaqquestion2'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('commercialfaqanswer2'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('commercialfaqquestion3'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('commercialfaqanswer3'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('commercialfaqquestion4'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('commercialfaqanswer4'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('commercialfaqquestion5'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('commercialfaqanswer5'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('commercialfaqquestion6'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('commercialfaqanswer6'),
+                    ],
+                ],
+            ],
+        ];
+    @endphp
+
+    <script type="application/ld+json">
+        {!! json_encode($commercialServiceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    <script type="application/ld+json">
+        {!! json_encode($commercialFaqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+
+    <style>
+        .commercial-hero {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.18), transparent 34%),
+                radial-gradient(circle at 85% 10%, rgba(13, 110, 253, 0.16), transparent 30%),
+                #f8fafc;
+        }
+
+        .commercial-card {
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .commercial-floating-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(33, 37, 41, 0.9);
+            color: #fff;
+            border-radius: 999px;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .commercial-pill {
+            background: #212529;
+            color: #fff;
+            border-radius: 999px;
+            padding: 0.5rem 0.95rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .commercial-soft-card {
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 12px 32px rgba(33, 37, 41, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .commercial-soft-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(33, 37, 41, 0.14);
+        }
+
+        .commercial-step-number {
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #212529;
+            color: #ffc107;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .commercial-cta {
+            background: linear-gradient(135deg, rgba(33, 37, 41, 0.97), rgba(13, 110, 253, 0.9));
+            color: #fff;
+            border-radius: 1.25rem;
+        }
+
+        .commercial-area-badge {
+            background: #fff;
+            border: 1px solid rgba(33, 37, 41, 0.12);
+            color: #212529;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .commercial-gallery-img {
+            border-radius: 1rem;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 220px;
+            box-shadow: 0 10px 28px rgba(33, 37, 41, 0.12);
+        }
+
+        .commercial-related-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(33, 37, 41, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .commercial-related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(33, 37, 41, 0.2);
+        }
+
+        .commercial-related-media {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+    </style>
 @endsection
 
 @section('content')
-    <section class="py-3 py-md-5">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/commercial.jpeg') }}"
-                        alt="{{ __('commercialimgalt') }}">
-                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                            <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
-                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
-                        </div>
-                </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h1 class="fs-1 fw-bolder">{{ __('commercialheading') }}</h1>
-                            <hr>
-                            <p class="lead mb-5 ">
-                                {{ __('commercialdescription') }}
-                            </p>
-                        </div>
-                        <div class="text-center mt-3">
-                            <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
-                            <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
-                                style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                                📞 Call Now: +1 604-800-3900
-                            </a>
-                            <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }} </p>
-                        </div>
+    @php
+        $tr = function (string $key): string {
+            $value = __($key);
+            if ($value !== $key) {
+                return $value;
+            }
 
+            $fallback = __($key, [], 'en');
+            if ($fallback !== $key) {
+                return $fallback;
+            }
+
+            return \Illuminate\Support\Str::of($key)->replace('_', ' ')->title()->toString();
+        };
+
+        $serviceCards = [
+            [
+                'icon' => 'bi-droplet-half',
+                'title' => $tr('commercialservice1_title'),
+                'text' => $tr('commercialservice1_text'),
+                'link' => route('waterdamage', ['lang' => app()->getLocale()]),
+            ],
+            [
+                'icon' => 'bi-fire',
+                'title' => $tr('commercialservice2_title'),
+                'text' => $tr('commercialservice2_text'),
+                'link' => route('fireDamage', ['lang' => app()->getLocale()]),
+            ],
+            [
+                'icon' => 'bi-shield-check',
+                'title' => $tr('commercialservice3_title'),
+                'text' => $tr('commercialservice3_text'),
+                'link' => route('moldRemediation', ['lang' => app()->getLocale()]),
+            ],
+            [
+                'icon' => 'bi-building-gear',
+                'title' => $tr('commercialservice4_title'),
+                'text' => $tr('commercialservice4_text'),
+                'link' => route('construction', ['lang' => app()->getLocale()]),
+            ],
+            [
+                'icon' => 'bi-stars',
+                'title' => $tr('commercialservice5_title'),
+                'text' => $tr('commercialservice5_text'),
+                'link' => route('specialtyCleaning', ['lang' => app()->getLocale()]),
+            ],
+            [
+                'icon' => 'bi-brush',
+                'title' => $tr('commercialservice6_title'),
+                'text' => $tr('commercialservice6_text'),
+                'link' => route('generalCleaning', ['lang' => app()->getLocale()]),
+            ],
+        ];
+
+        $industries = [
+            $tr('commercialindustry1'),
+            $tr('commercialindustry2'),
+            $tr('commercialindustry3'),
+            $tr('commercialindustry4'),
+            $tr('commercialindustry5'),
+            $tr('commercialindustry6'),
+        ];
+
+        $processSteps = [
+            ['title' => $tr('commercialprocess_step1_title'), 'text' => $tr('commercialprocess_step1_text')],
+            ['title' => $tr('commercialprocess_step2_title'), 'text' => $tr('commercialprocess_step2_text')],
+            ['title' => $tr('commercialprocess_step3_title'), 'text' => $tr('commercialprocess_step3_text')],
+            ['title' => $tr('commercialprocess_step4_title'), 'text' => $tr('commercialprocess_step4_text')],
+            ['title' => $tr('commercialprocess_step5_title'), 'text' => $tr('commercialprocess_step5_text')],
+        ];
+    @endphp
+
+    <section class="py-5 commercial-hero">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-lg-6 order-lg-2">
+                    <div class="commercial-card shadow-lg">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/commercial.jpeg') }}"
+                            alt="{{ __('commercialimgalt') }}">
+                        <div class="commercial-floating-badge">{{ $tr('commercialhero_badge1') }}</div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center align-items-center">
+                        <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
+                        <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
+                        <img src="{{ asset('img/googleg.png') }}" alt="Google Guaranteed" style="height: 68px; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 order-lg-1">
+                    <div class="commercial-pill d-inline-flex align-items-center gap-2 mb-3">
+                        <span>{{ $tr('commercialhero_badge2') }}</span>
+                        <span class="badge bg-warning text-dark">{{ $tr('commercialhero_badge3') }}</span>
+                    </div>
+                    <h1 class="display-6 fw-bolder mb-3">{{ $tr('commercialheading') }}</h1>
+                    <p class="lead mb-3">{{ $tr('commercialdescription') }}</p>
+                    <p class="mb-4">{{ $tr('commercialhero_subdescription') }}</p>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-12 col-sm-6">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <div class="fw-bold mb-1">{{ $tr('commercialhero_feature1_title') }}</div>
+                                <div class="small text-muted">{{ $tr('commercialhero_feature1_text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <div class="fw-bold mb-1">{{ $tr('commercialhero_feature2_title') }}</div>
+                                <div class="small text-muted">{{ $tr('commercialhero_feature2_text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <div class="fw-bold mb-1">{{ $tr('commercialhero_feature3_title') }}</div>
+                                <div class="small text-muted">{{ $tr('commercialhero_feature3_text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <div class="fw-bold mb-1">{{ $tr('commercialhero_feature4_title') }}</div>
+                                <div class="small text-muted">{{ $tr('commercialhero_feature4_text') }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                            style="border-radius: 14px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);">
+                            {{ $tr('commercialhero_cta_button') }}
+                        </a>
+                        <div class="small text-muted">{{ $tr('commercialhero_cta_note') }}</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-3 py-md-5 bg-vr-second">
+    <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-12 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('commercialexpertiseheading') }}
-                    </h2>
-                    <p class="lead txt-def">
-                        {{ __('commercialexpertisedescription') }}
-                    </p>
+            <div class="row g-3 align-items-center">
+                <div class="col-12 col-lg-4">
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-2">{{ $tr('commercialtrust_title') }}</h2>
+                    <p class="mb-0">{{ $tr('commercialtrust_lead') }}</p>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="commercial-soft-card p-3 h-100">
+                        <div class="fw-bold mb-1">{{ $tr('commercialtrust_stat1_title') }}</div>
+                        <div class="small text-muted">{{ $tr('commercialtrust_stat1_text') }}</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="commercial-soft-card p-3 h-100">
+                        <div class="fw-bold mb-1">{{ $tr('commercialtrust_stat2_title') }}</div>
+                        <div class="small text-muted">{{ $tr('commercialtrust_stat2_text') }}</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="commercial-soft-card p-3 h-100">
+                        <div class="fw-bold mb-1">{{ $tr('commercialtrust_stat3_title') }}</div>
+                        <div class="small text-muted">{{ $tr('commercialtrust_stat3_text') }}</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="commercial-soft-card p-3 h-100">
+                        <div class="fw-bold mb-1">{{ $tr('commercialtrust_stat4_title') }}</div>
+                        <div class="small text-muted">{{ $tr('commercialtrust_stat4_text') }}</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-3 py-md-5  ">
+    <section class="py-5">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-7 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('commercialminimizingdowntimeheading') }}
-                    </h2>
-                    <p class="txt-def">
-                        {{ __('commercialminimizingdowntimedescription1') }}
-                    </p>
-                    <p class="txt-def">
-                        {{ __('commercialminimizingdowntimedescription2') }}
-                    </p>
+            <div class="row g-4 align-items-center mb-4">
+                <div class="col-12 col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                        {{ __('commercialservices_section_badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('commercialservices_section_title') }}</h2>
+                    <p class="lead mb-3">{{ __('commercialservices_section_lead') }}</p>
+                    <p class="mb-0">{{ __('commercialservices_section_sublead') }}</p>
                 </div>
-                <div class="col-md-5 mb-3">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/commercial2.jpeg') }}"
-                        alt="{{ __('commercialimg2alt') }}">
+                <div class="col-12 col-lg-5">
+                    <div class="commercial-card shadow-lg">
+                        <img class="img-fluid" loading="lazy" src="{{ asset('img/commercial2.jpeg') }}"
+                            alt="{{ __('commercialimg2alt') }}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                @foreach ($serviceCards as $service)
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <a href="{{ $service['link'] }}" class="text-decoration-none text-dark">
+                            <div class="commercial-soft-card p-4 h-100">
+                                <div class="d-flex align-items-start gap-3">
+                                    <span class="fs-4 text-warning"><i class="bi {{ $service['icon'] }}"></i></span>
+                                    <div>
+                                        <h3 class="h5 fw-bold mb-2">{{ $service['title'] }}</h3>
+                                        <p class="small text-muted mb-0">{{ $service['text'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="mt-4">
+                <div class="small text-uppercase fw-semibold text-muted mb-2">{{ __('commercialservices_related_links') }}</div>
+                <div class="d-flex flex-wrap gap-2">
+                    <a class="badge bg-light text-dark border text-decoration-none px-3 py-2"
+                        href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{ __('commercialservices_link_water') }}</a>
+                    <a class="badge bg-light text-dark border text-decoration-none px-3 py-2"
+                        href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">{{ __('commercialservices_link_fire') }}</a>
+                    <a class="badge bg-light text-dark border text-decoration-none px-3 py-2"
+                        href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">{{ __('commercialservices_link_mold') }}</a>
+                    <a class="badge bg-light text-dark border text-decoration-none px-3 py-2"
+                        href="{{ route('construction', ['lang' => app()->getLocale()]) }}">{{ __('commercialservices_link_construction') }}</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-3 py-md-5  bg-vr-second">
+    <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-12 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('commercialsolutionsheading') }}
-                    </h2>
-                    <p class="txt-def">
-                        {{ __('commercialsolutionsdescription') }}
-                    </p>
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                {{ __('commercialindustries_badge') }}
+            </div>
+            <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('commercialindustries_title') }}</h2>
+            <p class="lead mb-4">{{ __('commercialindustries_lead') }}</p>
+
+            <div class="row g-3">
+                @foreach ($industries as $industry)
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="commercial-soft-card p-3 h-100">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-building-check text-warning"></i>
+                                <div class="fw-semibold">{{ $industry }}</div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <p class="small text-muted mt-3 mb-0">{{ __('commercialindustry_note') }}</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark text-white fw-semibold small mb-3">
+                        {{ __('commercialprocess_badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('commercialprocess_title') }}</h2>
+                    <p class="lead mb-4">{{ __('commercialprocess_lead') }}</p>
+                    <div class="d-grid gap-3">
+                        @foreach ($processSteps as $index => $step)
+                            <div class="commercial-soft-card p-3">
+                                <div class="d-flex gap-3 align-items-start">
+                                    <span class="commercial-step-number">{{ $index + 1 }}</span>
+                                    <div>
+                                        <h3 class="h6 fw-bold mb-1">{{ $step['title'] }}</h3>
+                                        <p class="small text-muted mb-0">{{ $step['text'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <p class="small text-muted mt-3 mb-0">{{ __('commercialprocess_note') }}</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="commercial-soft-card p-4 h-100">
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                            {{ __('commercialcontinuity_badge') }}
+                        </div>
+                        <h2 class="fs-3 fw-bolder section-title-h1 mb-3">{{ __('commercialcontinuity_title') }}</h2>
+                        <p class="mb-3">{{ __('commercialcontinuity_lead') }}</p>
+                        <ul class="small ps-3 mb-4">
+                            <li>{{ __('commercialcontinuity_item1') }}</li>
+                            <li>{{ __('commercialcontinuity_item2') }}</li>
+                            <li>{{ __('commercialcontinuity_item3') }}</li>
+                            <li>{{ __('commercialcontinuity_item4') }}</li>
+                            <li>{{ __('commercialcontinuity_item5') }}</li>
+                        </ul>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-4">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('commercialcontinuity_box1_title') }}</div>
+                                    <div class="small text-muted">{{ __('commercialcontinuity_box1_text') }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('commercialcontinuity_box2_title') }}</div>
+                                    <div class="small text-muted">{{ __('commercialcontinuity_box2_text') }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('commercialcontinuity_box3_title') }}</div>
+                                    <div class="small text-muted">{{ __('commercialcontinuity_box3_text') }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5 bg-vr-second">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-lg-8">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                        {{ __('commercialcoverage_badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('commercialcoverage_title') }}</h2>
+                    <p class="lead mb-3">{{ __('commercialcoverage_lead') }}</p>
+                    <p class="mb-3">{{ __('commercialcoverage_text1') }}</p>
+                    <p class="mb-0">{{ __('commercialcoverage_text2') }}</p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="commercial-soft-card p-4 h-100">
+                        <h3 class="h5 fw-bold mb-3">{{ __('commercialcoverage_area_title') }}</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area1') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area2') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area3') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area4') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area5') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area6') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area7') }}</span>
+                            <span class="commercial-area-badge"><i class="bi bi-geo-alt-fill text-warning"></i>{{ __('commercialcoverage_area8') }}</span>
+                        </div>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2 mt-4 w-100"
+                            style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);">
+                            {{ __('commercialcoverage_cta') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                {{ $tr('commercialgallery_badge') }}
+            </div>
+            <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ $tr('commercialgallery_title') }}</h2>
+            <p class="lead mb-4">{{ $tr('commercialgallery_lead') }}</p>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img class="commercial-gallery-img" loading="lazy" src="{{ asset('img/water-damage-vancouver.jpg') }}"
+                        alt="{{ $tr('commercialgallery_alt1') }}">
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img class="commercial-gallery-img" loading="lazy" src="{{ asset('img/fire-damage.jpeg') }}"
+                        alt="{{ $tr('commercialgallery_alt2') }}">
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img class="commercial-gallery-img" loading="lazy" src="{{ asset('img/mold.jpeg') }}"
+                        alt="{{ $tr('commercialgallery_alt3') }}">
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img class="commercial-gallery-img" loading="lazy" src="{{ asset('img/water-damage-restoration-vancouver-equipment.jpg') }}"
+                        alt="{{ $tr('commercialgallery_alt4') }}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5 bg-vr-second">
+        <div class="container">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                {{ $tr('commercialrelated_badge') }}
+            </div>
+            <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ $tr('commercialrelated_title') }}</h2>
+            <p class="lead mb-4">{{ $tr('commercialrelated_lead') }}</p>
+
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="commercial-related-card h-100">
+                        <img class="commercial-related-media" loading="lazy" decoding="async" src="{{ asset('img/water-damage2.jpeg') }}"
+                            alt="{{ $tr('commercialrelated_water_alt') }}">
+                        <div class="p-4">
+                            <h3 class="h4 fw-bold mb-2">{{ $tr('commercialrelated_water_title') }}</h3>
+                            <p class="small text-muted mb-3">{{ $tr('commercialrelated_water_text') }}</p>
+                            <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}"
+                                class="btn btn-warning fw-bold text-uppercase px-4 py-2">
+                                {{ $tr('commercialrelated_water_button') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="commercial-related-card h-100">
+                        <img class="commercial-related-media" loading="lazy" decoding="async" src="{{ asset('img/mold3.jpeg') }}"
+                            alt="{{ $tr('commercialrelated_mold_alt') }}">
+                        <div class="p-4">
+                            <h3 class="h4 fw-bold mb-2">{{ $tr('commercialrelated_mold_title') }}</h3>
+                            <p class="small text-muted mb-3">{{ $tr('commercialrelated_mold_text') }}</p>
+                            <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}"
+                                class="btn btn-warning fw-bold text-uppercase px-4 py-2">
+                                {{ $tr('commercialrelated_mold_button') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="commercial-cta p-4 p-md-5 shadow-lg">
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-lg-8">
+                        <h2 class="fs-2 fw-bolder mb-2">{{ $tr('commercialfinal_title') }}</h2>
+                        <p class="lead mb-2">{{ $tr('commercialfinal_text') }}</p>
+                        <p class="small mb-0 opacity-75">{{ $tr('commercialfinal_note') }}</p>
+                    </div>
+                    <div class="col-12 col-lg-4 text-lg-end">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3"
+                            style="border-radius: 14px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);">
+                            {{ $tr('commercialfinal_button') }}
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Faq Section -->
-    <section id="faq" class="faq  ">
+    <section id="faq" class="faq py-3 py-md-5">
         <div class="container">
             <div class="col-md-12 mb-3">
                 <h2 class="fs-2 fw-bolder">
@@ -141,6 +696,14 @@
                             <h3>{{ __('commercialfaqquestion5') }}</h3>
                             <div class="faq-content">
                                 <p>{{ __('commercialfaqanswer5') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="700">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('commercialfaqquestion6') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('commercialfaqanswer6') }}</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
