@@ -8,6 +8,11 @@
 @endsection
 
 @section('content')
+    @php
+        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
+        $googleReviewCount = 33;
+    @endphp
+
     <section class="py-md-5 d-flex " style="background: radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.16), transparent 35%), radial-gradient(circle at 80% 10%, rgba(13, 110, 253, 0.12), transparent 30%), #f8fafc;">
         <div class="container">
             <div class="row gy-4 align-items-center">
@@ -435,6 +440,24 @@
                                         {{ __('Mold 1-3-8') }}
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="border rounded-4 p-4 bg-light text-center text-md-start">
+                                <div class="small text-uppercase fw-semibold text-warning mb-2">
+                                    {{ __('Water Damage Review Eyebrow') }}
+                                </div>
+                                <h3 class="h5 fw-bold mb-2">{{ __('Water Damage Review Title') }}</h3>
+                                <p class="text-muted mb-2">{{ __('Water Damage Review Text') }}</p>
+                                <p class="fw-semibold mb-3">
+                                    <span class="text-warning">★★★★★</span>
+                                    <span class="ms-1">{{ __('Water Damage Review Meta', ['count' => $googleReviewCount]) }}</span>
+                                </p>
+                                <a href="{{ $googleReviewUrl }}" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-outline-dark fw-semibold text-uppercase px-4 py-2">
+                                    {{ __('Water Damage Review CTA') }}
+                                </a>
                             </div>
                         </div>
                     </div>

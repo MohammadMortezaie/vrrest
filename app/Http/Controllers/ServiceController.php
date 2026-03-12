@@ -373,122 +373,313 @@ class ServiceController extends Controller
     // services
     public function waterdamage()
     {
-        $locale = app()->getLocale(); // Get the current locale
+        $locale = app()->getLocale();
 
-        // Define SEO data for English
+        $pageEnUrl = 'https://vrrestoration.ca/en/water-damage';
+        $pageZhUrl = 'https://vrrestoration.ca/zh/water-damage';
+        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
+        $aggregateRating = [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '5.0',
+            'reviewCount' => '33',
+            'bestRating' => '5',
+            'worstRating' => '1',
+        ];
+        $areaServedEn = [
+            'Vancouver',
+            'Burnaby',
+            'Coquitlam',
+            'Chilliwack',
+            'Abbotsford',
+            'Richmond',
+            'Surrey',
+            'Langley',
+            'North Vancouver',
+            'West Vancouver',
+            'Maple Ridge',
+            'Mission',
+            'Hope',
+            'Fraser Valley',
+            'Lower Mainland',
+            'BC',
+        ];
+        $areaServedZh = ['温哥华', '本拿比', '高贵林', '奇利瓦克', '阿伯茨福德', '列治文', '素里', '兰里', '北温哥华', '西温哥华', '枫树岭', '米逊', '霍普', '菲沙河谷', '大温地区', '卑诗省'];
+
+        $waterSchemaEn = SchemaCollection::make()
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Service',
+                    'name' => 'Water Damage Restoration in Vancouver',
+                    'serviceType' => 'Water damage restoration services',
+                    'description' => '24/7 emergency water damage restoration in Vancouver with extraction, structural drying, cleanup, and repair coordination.',
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
+                        'telephone' => '+1 604-800-3900',
+                        'url' => $pageEnUrl,
+                        'sameAs' => [$googleReviewUrl],
+                    ],
+                    'areaServed' => $areaServedEn,
+                    'offers' => [
+                        '@type' => 'Offer',
+                        'availability' => 'https://schema.org/InStock',
+                        'priceCurrency' => 'CAD',
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What Is Water Damage Restoration, and Why Is It Urgent?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Water damage restoration is the process of cleaning, drying, and repairing your property after it has been affected by water damage. This can include water removal, damage assessment, and repairs to restore your property to its pre-damage condition.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How Quickly Should Water Damage Be Addressed in Vancouver?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Water damage should be addressed as soon as possible to prevent further damage and mold growth. Quick action helps to minimize the extent of the damage and reduce restoration costs.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What types of equipment are used in water damage restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Our water damage restoration experts use advanced equipment such as infrared cameras, moisture meters, powerful pumps, extraction units, and industrial-grade dehumidifiers to effectively dry and restore your property.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Can water-damaged materials be restored, or do they need to be replaced?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Many water-damaged materials can be restored if addressed quickly and properly. Our specialists will assess the damage and determine whether materials can be salvaged or need to be removed and replaced.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Does VR PLUS assist with insurance claims for water damage restoration?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes, VR PLUS helps manage the necessary paperwork and assists with the insurance claims process. We work closely with your insurance company to ensure a smooth and hassle-free claims experience.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What certifications do your water damage restoration specialists have?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Our specialists are highly trained and hold IICRC certification in water restoration. This certification ensures they have the expertise and knowledge to effectively handle water damage restoration.',
+                            ],
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => $pageEnUrl,
+                    'image' => asset('img/water-damage.jpeg'),
+                    'telephone' => '+1 604-800-3900',
+                    'sameAs' => [$googleReviewUrl],
+                    'aggregateRating' => $aggregateRating,
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => $areaServedEn,
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => [
+                                'https://schema.org/Monday',
+                                'https://schema.org/Tuesday',
+                                'https://schema.org/Wednesday',
+                                'https://schema.org/Thursday',
+                                'https://schema.org/Friday',
+                                'https://schema.org/Saturday',
+                                'https://schema.org/Sunday',
+                            ],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ],
+            );
+
+        $waterSchemaZh = SchemaCollection::make()
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Service',
+                    'name' => '温哥华水损修复服务',
+                    'serviceType' => '水损修复服务',
+                    'description' => '温哥华 24/7 水损紧急修复服务，涵盖抽水、结构干燥、清理与修复协调。',
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
+                        'telephone' => '+1 604-800-3900',
+                        'url' => $pageZhUrl,
+                        'sameAs' => [$googleReviewUrl],
+                    ],
+                    'areaServed' => $areaServedZh,
+                    'offers' => [
+                        '@type' => 'Offer',
+                        'availability' => 'https://schema.org/InStock',
+                        'priceCurrency' => 'CAD',
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => '什么是水损害修复？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '水损害修复是指在您的财产受到水损害后进行清洁、干燥和修复的过程。这可能包括水去除、损害评估和修复，以恢复您的财产到其损害前的状态。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '水损害应该多快处理？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '水损害应尽快处理，以防止进一步损害和霉菌生长。迅速行动有助于将损害程度降到最低，并减少修复成本。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '在水损害修复中使用了哪些设备？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们的水损害修复专家使用先进的设备，如红外摄像机、湿度计、强力泵、抽水设备和工业级除湿机，有效地干燥和修复您的财产。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '水损害的材料能修复还是需要更换？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '如果及时正确处理，许多受水损害的材料可以修复。我们的专家将评估损害情况，确定材料是否可以挽救或需要移除和更换。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'VR +是否协助处理水损害修复的保险索赔？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '是的，VR +会帮助处理必要的文件，并协助处理保险索赔过程。我们与您的保险公司紧密合作，确保顺利和无忧的索赔体验。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '您的水损害修复专家有哪些认证？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '我们的专家受过高度培训，拥有IICRC水修复认证。这一认证确保他们具备有效处理水损害修复的专业知识和技能。',
+                            ],
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => $pageZhUrl,
+                    'image' => asset('img/water-damage.jpeg'),
+                    'telephone' => '+1 604-800-3900',
+                    'sameAs' => [$googleReviewUrl],
+                    'aggregateRating' => $aggregateRating,
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '636 Clyde Ave Suite 7',
+                        'addressLocality' => 'West Vancouver',
+                        'addressRegion' => 'BC',
+                        'postalCode' => 'V7T 1E1',
+                        'addressCountry' => 'CA',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 49.3252,
+                        'longitude' => -123.1595,
+                    ],
+                    'areaServed' => $areaServedZh,
+                    'openingHoursSpecification' => [
+                        [
+                            '@type' => 'OpeningHoursSpecification',
+                            'dayOfWeek' => [
+                                'https://schema.org/Monday',
+                                'https://schema.org/Tuesday',
+                                'https://schema.org/Wednesday',
+                                'https://schema.org/Thursday',
+                                'https://schema.org/Friday',
+                                'https://schema.org/Saturday',
+                                'https://schema.org/Sunday',
+                            ],
+                            'opens' => '00:00',
+                            'closes' => '23:59',
+                        ],
+                    ],
+                ],
+            );
+
         $seoDataEn = new SEOData(
             title: 'Water Damage Restoration in Vancouver 24/7 Call Now',
             description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 604-800-3900 for immediate assistance in Vancouver',
-            image: asset('img/water-damage.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How quickly should water damage be addressed?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Water damage should be addressed within 24-48 hours to prevent further damage and mold growth. Quick action helps to minimize the extent of the damage and reduce restoration costs.',
-                            ],
-                        ],
-                    ],
-                    'telephone' => '+1 604-800-3900',
-                    'address' => [
-                        '@type' => 'PostalAddress',
-                        'streetAddress' => '636 Clyde Ave Suite 7',
-                        'addressLocality' => 'West Vancouver',
-                        'addressRegion' => 'BC',
-                        'postalCode' => 'V7T 1E1',
-                        'addressCountry' => 'CA',
-                    ],
-                    'geo' => [
-                        '@type' => 'GeoCoordinates',
-                        'latitude' => 49.3252,
-                        'longitude' => -123.1595,
-                    ],
-                    'areaServed' => [
-                        'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley',
-                        'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
-                    ],
-                    'openingHoursSpecification' => [
-                        '@type' => 'OpeningHoursSpecification',
-                        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                        'opens' => '00:00',
-                        'closes' => '23:59',
-                    ],
-                ]
-            ),
+            image: asset('img/water-damage.jpeg'),
+            schema: $waterSchemaEn,
             tags: ['water damage restoration', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
             alternates: [
-                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage'),
-                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage'),
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
             ],
         );
 
-        // Define SEO data for Chinese
         $seoDataZh = new SEOData(
             title: '水损恢复服务',
             description: '24/7水损恢复服务 - 水灾修复：紧急响应水损、地下室积水等问题。请拨打604-800-3900以获取在温哥华的即时帮助。',
-            image: asset('img/water-damage.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '水损应尽快处理吗？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '水损应在24-48小时内处理，以防止进一步的损害和霉菌生长。快速行动有助于减少损害程度和降低恢复成本。',
-                            ],
-                        ],
-                    ],
-                    'telephone' => '+1 604-800-3900',
-                    'address' => [
-                        '@type' => 'PostalAddress',
-                        'streetAddress' => '636 Clyde Ave Suite 7',
-                        'addressLocality' => 'West Vancouver',
-                        'addressRegion' => 'BC',
-                        'postalCode' => 'V7T 1E1',
-                        'addressCountry' => 'CA',
-                    ],
-                    'geo' => [
-                        '@type' => 'GeoCoordinates',
-                        'latitude' => 49.3252,
-                        'longitude' => -123.1595,
-                    ],
-                    'areaServed' => [
-                        'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley',
-                        'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
-                    ],
-                    'openingHoursSpecification' => [
-                        '@type' => 'OpeningHoursSpecification',
-                        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                        'opens' => '00:00',
-                        'closes' => '23:59',
-                    ],
-                ]
-            ),
+            image: asset('img/water-damage.jpeg'),
+            schema: $waterSchemaZh,
             tags: ['水损恢复', '紧急水提取', '地下室修复', '温哥华水损服务'],
             alternates: [
-                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/water-damage'),
-                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/water-damage'),
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
             ],
         );
 
-        // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        $blog = Post::activePosts(false, 5); // Fetch recent blog posts
+        $blog = Post::activePosts(false, 5);
         return view('services.waterdamage', [
             'SEOData' => $SEOData,
             'blog' => $blog,
         ]);
-
-
     }
     public function commercialServices()
     {
