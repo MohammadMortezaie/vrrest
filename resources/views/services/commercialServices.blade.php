@@ -2,99 +2,6 @@
 
 @section('header')
     {!! seo($SEOData) !!}
-    @php
-        $commercialServiceSchema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'Service',
-            'name' => __('commercialheading'),
-            'serviceType' => __('commercialschema_servicetype'),
-            'description' => __('commercialschema_servicedescription'),
-            'provider' => [
-                '@type' => 'LocalBusiness',
-                'name' => 'VR PLUS Restoration',
-                'telephone' => '+1-604-800-3900',
-                'url' => route('commercialServices', ['lang' => app()->getLocale()]),
-            ],
-            'areaServed' => [
-                'Vancouver',
-                'Burnaby',
-                'Richmond',
-                'Surrey',
-                'Coquitlam',
-                'North Vancouver',
-                'West Vancouver',
-                'New Westminster',
-            ],
-            'offers' => [
-                '@type' => 'Offer',
-                'description' => __('commercialschema_offerdescription'),
-                'availability' => 'https://schema.org/InStock',
-                'priceCurrency' => 'CAD',
-            ],
-        ];
-
-        $commercialFaqSchema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'FAQPage',
-            'mainEntity' => [
-                [
-                    '@type' => 'Question',
-                    'name' => __('commercialfaqquestion1'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('commercialfaqanswer1'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('commercialfaqquestion2'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('commercialfaqanswer2'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('commercialfaqquestion3'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('commercialfaqanswer3'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('commercialfaqquestion4'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('commercialfaqanswer4'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('commercialfaqquestion5'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('commercialfaqanswer5'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('commercialfaqquestion6'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('commercialfaqanswer6'),
-                    ],
-                ],
-            ],
-        ];
-    @endphp
-
-    <script type="application/ld+json">
-        {!! json_encode($commercialServiceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-    </script>
-    <script type="application/ld+json">
-        {!! json_encode($commercialFaqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-    </script>
 
     <style>
         .commercial-hero {
@@ -281,6 +188,9 @@
             ['title' => $tr('commercialprocess_step4_title'), 'text' => $tr('commercialprocess_step4_text')],
             ['title' => $tr('commercialprocess_step5_title'), 'text' => $tr('commercialprocess_step5_text')],
         ];
+
+        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
+        $googleReviewCount = 33;
     @endphp
 
     <section class="py-5 commercial-hero">
@@ -550,6 +460,88 @@
                         <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2 mt-4 w-100"
                             style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);">
                             {{ __('commercialcoverage_cta') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark text-white fw-semibold small mb-3">
+                        Metro Vancouver Local SEO
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">Commercial Restoration Near You in Metro Vancouver</h2>
+                    <p class="lead mb-3">
+                        If you are searching for a commercial restoration company in Vancouver, Burnaby, Richmond, Surrey,
+                        Coquitlam, North Vancouver, West Vancouver, or New Westminster, our team is ready 24/7.
+                    </p>
+                    <p class="mb-3">
+                        We support offices, retail units, restaurants, strata properties, warehouses, and mixed-use buildings
+                        with fast emergency mitigation, cleanup, and reconstruction planning.
+                    </p>
+                    <p class="mb-4">
+                        Every project is scoped for business continuity, safety compliance, and faster reopening timelines,
+                        with insurance-ready records for adjusters and property stakeholders.
+                    </p>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <h3 class="h6 fw-bold mb-2">Commercial Water Damage Restoration in Vancouver and Burnaby</h3>
+                                <p class="small text-muted mb-0">
+                                    Rapid extraction, structural drying, and moisture mapping for burst pipes, roof leaks, and
+                                    sprinkler failures in active commercial spaces.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <h3 class="h6 fw-bold mb-2">Commercial Fire and Smoke Cleanup in Richmond and Surrey</h3>
+                                <p class="small text-muted mb-0">
+                                    Detailed soot cleanup, odor control, and phased restoration planning designed to reduce
+                                    shutdown time for local businesses.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="commercial-soft-card p-3 h-100">
+                                <h3 class="h6 fw-bold mb-2">Commercial Mold Remediation in Coquitlam and North Shore Properties</h3>
+                                <p class="small text-muted mb-0">
+                                    Containment-first workflows, HEPA cleaning, and source correction support for offices,
+                                    healthcare facilities, strata buildings, and industrial units.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="commercial-soft-card p-4 h-100">
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                            Google Reputation
+                        </div>
+                        <h3 class="fs-4 fw-bolder mb-3">Trusted by Local Businesses Across Metro Vancouver</h3>
+                        <p class="mb-3">
+                            VR PLUS Restoration currently has <strong>{{ $googleReviewCount }} five-star Google reviews</strong>
+                            from property owners, managers, and commercial clients across the region.
+                        </p>
+                        <ul class="small ps-3 mb-4">
+                            <li>5.0-star reputation for emergency response and restoration quality.</li>
+                            <li>Verified local feedback from business and facility stakeholders.</li>
+                            <li>Consistent praise for communication, professionalism, and speed.</li>
+                        </ul>
+                        <a href="{{ $googleReviewUrl }}" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-warning fw-bolder text-uppercase px-4 py-3 w-100 mb-3"
+                            style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);">
+                            Read {{ $googleReviewCount }} Google Reviews
+                        </a>
+                        <a href="tel:+16048003900" class="btn btn-outline-dark fw-bolder text-uppercase px-4 py-3 w-100"
+                            style="border-radius: 12px;">
+                            Talk to Commercial Team
                         </a>
                     </div>
                 </div>

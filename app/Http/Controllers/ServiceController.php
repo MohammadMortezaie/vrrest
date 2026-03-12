@@ -496,6 +496,14 @@ class ServiceController extends Controller
 
         $pageEnUrl = 'https://vrrestoration.ca/en/commercial-services';
         $pageZhUrl = 'https://vrrestoration.ca/zh/commercial-services';
+        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
+        $aggregateRating = [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '5.0',
+            'reviewCount' => '33',
+            'bestRating' => '5',
+            'worstRating' => '1',
+        ];
 
         $commercialSchemaEn = SchemaCollection::make()
             ->add(
@@ -510,6 +518,7 @@ class ServiceController extends Controller
                         'name' => 'VR PLUS Restoration',
                         'telephone' => '+1 604-800-3900',
                         'url' => $pageEnUrl,
+                        'sameAs' => [$googleReviewUrl],
                     ],
                     'areaServed' => ['Vancouver', 'Burnaby', 'Richmond', 'Surrey', 'Coquitlam', 'North Vancouver', 'West Vancouver', 'New Westminster'],
                 ],
@@ -553,6 +562,14 @@ class ServiceController extends Controller
                         ],
                         [
                             '@type' => 'Question',
+                            'name' => 'Which commercial restoration services can be combined in one project?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Projects often combine mitigation, specialty cleaning, mold control, repairs, and reconstruction under one coordinated plan.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
                             'name' => 'How do you reduce downtime during commercial restoration?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
@@ -570,6 +587,8 @@ class ServiceController extends Controller
                     'url' => $pageEnUrl,
                     'image' => asset('img/commercial.jpeg'),
                     'telephone' => '+1 604-800-3900',
+                    'sameAs' => [$googleReviewUrl],
+                    'aggregateRating' => $aggregateRating,
                     'address' => [
                         '@type' => 'PostalAddress',
                         'streetAddress' => '636 Clyde Ave Suite 7',
@@ -581,7 +600,15 @@ class ServiceController extends Controller
                     'openingHoursSpecification' => [
                         [
                             '@type' => 'OpeningHoursSpecification',
-                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            'dayOfWeek' => [
+                                'https://schema.org/Monday',
+                                'https://schema.org/Tuesday',
+                                'https://schema.org/Wednesday',
+                                'https://schema.org/Thursday',
+                                'https://schema.org/Friday',
+                                'https://schema.org/Saturday',
+                                'https://schema.org/Sunday',
+                            ],
                             'opens' => '00:00',
                             'closes' => '23:59',
                         ],
@@ -602,6 +629,7 @@ class ServiceController extends Controller
                         'name' => 'VR PLUS Restoration',
                         'telephone' => '+1 604-800-3900',
                         'url' => $pageZhUrl,
+                        'sameAs' => [$googleReviewUrl],
                     ],
                     'areaServed' => ['温哥华', '本拿比', '列治文', '素里', '高贵林', '北温哥华', '西温哥华', '新西敏'],
                 ],
@@ -645,6 +673,14 @@ class ServiceController extends Controller
                         ],
                         [
                             '@type' => 'Question',
+                            'name' => '一个项目里可以组合哪些商业修复服务？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '通常可组合止损、专业清洁、霉菌控制、修复和重建，由同一团队统一管理。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
                             'name' => '你们如何在修复过程中降低停工时间？',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
@@ -662,6 +698,8 @@ class ServiceController extends Controller
                     'url' => $pageZhUrl,
                     'image' => asset('img/commercial.jpeg'),
                     'telephone' => '+1 604-800-3900',
+                    'sameAs' => [$googleReviewUrl],
+                    'aggregateRating' => $aggregateRating,
                     'address' => [
                         '@type' => 'PostalAddress',
                         'streetAddress' => '636 Clyde Ave Suite 7',
@@ -673,7 +711,15 @@ class ServiceController extends Controller
                     'openingHoursSpecification' => [
                         [
                             '@type' => 'OpeningHoursSpecification',
-                            'dayOfWeek' => ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                            'dayOfWeek' => [
+                                'https://schema.org/Monday',
+                                'https://schema.org/Tuesday',
+                                'https://schema.org/Wednesday',
+                                'https://schema.org/Thursday',
+                                'https://schema.org/Friday',
+                                'https://schema.org/Saturday',
+                                'https://schema.org/Sunday',
+                            ],
                             'opens' => '00:00',
                             'closes' => '23:59',
                         ],
