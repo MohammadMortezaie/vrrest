@@ -75,6 +75,11 @@
     </section>
 
 
+    @include('partials.contact-form', [
+        'source' => __('Contact Form Source Water'),
+        'title' => __('Contact Form Water Title'),
+        'subtitle' => __('Contact Form Water Subtitle'),
+    ])
 
     <section class="py-3 py-md-5 bg-vr-second">
         <div class="container">

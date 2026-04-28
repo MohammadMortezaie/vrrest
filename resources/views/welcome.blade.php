@@ -756,6 +756,12 @@
 
 
 
+    @include('partials.contact-form', [
+        'source' => __('Contact Form Source Home'),
+        'title' => __('Contact Form Home Title'),
+        'subtitle' => __('Contact Form Home Subtitle'),
+    ])
+
     <!-- Recommended For You -->
     <section id="about" class="about section">
 

@@ -12,7 +12,7 @@ return [
     /**
      * Use this setting to specify the site name that will be used in OpenGraph tags.
      */
-    'site_name' => "WE ARE PLUS RESTORATION",
+    'site_name' => "VR PLUS RESTORATION",
 
     /**
      * Use this setting to specify the path to the sitemap of your website. This exact path will outputted, so
@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => secure_url('/favicon.ico'),
+    'favicon' => ecure_url('/favicon.ico'),
 
     'title' => [
         /**

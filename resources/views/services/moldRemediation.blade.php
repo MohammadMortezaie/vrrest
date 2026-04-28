@@ -2,6 +2,130 @@
 
 @section('header')
     {!! seo($SEOData) !!}
+    @php
+        $moldServiceSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Service',
+            'name' => __('Mold Extra Schema Service Name'),
+            'serviceType' => __('Mold Extra Schema Service Type'),
+            'description' => __('Mold Extra Schema Service Description'),
+            'provider' => [
+                '@type' => 'LocalBusiness',
+                'name' => 'VR PLUS Restoration',
+                'telephone' => '+1-604-800-3900',
+                'url' => route('moldRemediation', ['lang' => app()->getLocale()]),
+                'image' => asset('img/mold.jpeg'),
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => '636 Clyde Ave Suite 7',
+                    'addressLocality' => 'West Vancouver',
+                    'addressRegion' => 'BC',
+                    'postalCode' => 'V7T 1E1',
+                    'addressCountry' => 'CA',
+                ],
+            ],
+            'areaServed' => [
+                __('Mold Extra Location Downtown'),
+                __('Mold Extra Location Kitsilano'),
+                __('Mold Extra Location Mount Pleasant'),
+                __('Mold Extra Location East Vancouver'),
+                __('Mold Extra Location Point Grey'),
+                __('Mold Extra Location North Vancouver'),
+                __('Mold Extra Location West Vancouver'),
+                __('Mold Extra Location Burnaby'),
+                __('Mold Extra Location Richmond'),
+                __('Mold Extra Location New Westminster'),
+                __('Mold Extra Location Coquitlam'),
+                __('Mold Extra Location Surrey'),
+            ],
+            'availableChannel' => [
+                '@type' => 'ServiceChannel',
+                'servicePhone' => '+1-604-800-3900',
+                'availableLanguage' => ['English', 'Chinese'],
+            ],
+            'offers' => [
+                '@type' => 'Offer',
+                'availability' => 'https://schema.org/InStock',
+                'priceCurrency' => 'CAD',
+                'description' => __('Mold Extra Schema Offer Description'),
+            ],
+        ];
+
+        $moldFaqSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name' => __('Mold Extra FAQ 1 Question'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('Mold Extra FAQ 1 Answer'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('Mold Extra FAQ 2 Question'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('Mold Extra FAQ 2 Answer'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('Mold Extra FAQ 3 Question'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('Mold Extra FAQ 3 Answer'),
+                    ],
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => __('Mold Extra FAQ 4 Question'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => __('Mold Extra FAQ 4 Answer'),
+                    ],
+                ],
+            ],
+        ];
+    @endphp
+
+    <script type="application/ld+json">
+        {!! json_encode($moldServiceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    <script type="application/ld+json">
+        {!! json_encode($moldFaqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+
+    <style>
+        .mold-seo-card {
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(33, 37, 41, 0.08);
+            height: 100%;
+        }
+
+        .mold-seo-stat {
+            border-radius: 0.9rem;
+            background: #212529;
+            color: #fff;
+            padding: 1rem;
+            height: 100%;
+        }
+
+        .mold-location-pill {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(33, 37, 41, 0.12);
+            background: #fff;
+            border-radius: 999px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
+            color: #212529;
+            text-decoration: none;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -62,6 +186,12 @@
         </div>
     </section>
 
+
+    @include('partials.contact-form', [
+        'source' => __('Contact Form Source Mold'),
+        'title' => __('Contact Form Mold Title'),
+        'subtitle' => __('Contact Form Mold Subtitle'),
+    ])
 
     <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
@@ -333,6 +463,135 @@
                                 <span class="badge bg-light text-dark border">North Shore</span>
                                 <span class="badge bg-light text-dark border">Tri-Cities</span>
                                 <span class="badge bg-light text-dark border">Fraser Valley</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
+                        {{ __('Mold Extra Badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Extra Title') }}</h2>
+                    <p class="lead mb-3">{{ __('Mold Extra Lead') }}</p>
+                    <p class="mb-3">{{ __('Mold Extra Body 1') }}</p>
+                    <p class="mb-0">{{ __('Mold Extra Body 2') }}</p>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="mold-seo-stat">
+                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 1 Value') }}</div>
+                                <div class="small">{{ __('Mold Extra Stat 1 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mold-seo-stat">
+                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 2 Value') }}</div>
+                                <div class="small">{{ __('Mold Extra Stat 2 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mold-seo-stat">
+                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 3 Value') }}</div>
+                                <div class="small">{{ __('Mold Extra Stat 3 Text') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mold-seo-stat">
+                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 4 Value') }}</div>
+                                <div class="small">{{ __('Mold Extra Stat 4 Text') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mold-seo-card p-4 mt-3">
+                        <h3 class="h5 fw-bold mb-2">{{ __('Mold Extra CTA Title') }}</h3>
+                        <p class="small text-muted mb-3">{{ __('Mold Extra CTA Text') }}</p>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2" style="border-radius: 12px;">
+                            {{ __('Mold Extra CTA Button') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="mold-seo-card p-4">
+                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 1 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 1 Text') }}</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="mold-seo-card p-4">
+                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 2 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 2 Text') }}</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="mold-seo-card p-4">
+                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 3 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 3 Text') }}</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="mold-seo-card p-4">
+                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 4 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 4 Text') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5 bg-vr-second">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-lg-5">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
+                        {{ __('Mold Extra Local Badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Extra Local Title') }}</h2>
+                    <p class="lead mb-3">{{ __('Mold Extra Local Lead') }}</p>
+                    <p class="mb-0">{{ __('Mold Extra Local Body') }}</p>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <div class="mold-seo-card p-4">
+                        <h3 class="h5 fw-bold mb-3">{{ __('Mold Extra Areas Title') }}</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Downtown') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Kitsilano') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Mount Pleasant') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location East Vancouver') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Point Grey') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location South Vancouver') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location West End') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location False Creek') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location North Vancouver') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location West Vancouver') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Burnaby') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Richmond') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location New Westminster') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Coquitlam') }}</span>
+                            <span class="mold-location-pill">{{ __('Mold Extra Location Surrey') }}</span>
+                        </div>
+                        <div class="row g-3 mt-3">
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('Mold Extra Sources Title') }}</div>
+                                    <p class="small text-muted mb-0">{{ __('Mold Extra Sources Text') }}</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <div class="fw-bold mb-1">{{ __('Mold Extra Hides Title') }}</div>
+                                    <p class="small text-muted mb-0">{{ __('Mold Extra Hides Text') }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -687,7 +946,6 @@
     </section>
 
 
-
     <!-- Faq Section -->
     <section id="faq" class="faq  ">
 
@@ -822,6 +1080,42 @@
                                 <p>{{ __('Mold 1-49') }}
 
                                 </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Mold Extra FAQ 1 Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Mold Extra FAQ 1 Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Mold Extra FAQ 2 Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Mold Extra FAQ 2 Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Mold Extra FAQ 3 Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Mold Extra FAQ 3 Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Mold Extra FAQ 4 Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Mold Extra FAQ 4 Answer') }}</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->

@@ -78,6 +78,7 @@ Route::group([
 
     Route::get('/about', [ServiceController::class, 'about'])->name('about');
     Route::get('/contact-us', [ServiceController::class, 'contact'])->name('contact');
+    Route::post('/contact-submit', [ServiceController::class, 'submitContactForm'])->name('contact.submit');
     Route::get('/our-team', [ServiceController::class, 'team'])->name('team');
     Route::get('/career', [ServiceController::class, 'career'])->name('careers');
 
@@ -99,4 +100,3 @@ Route::group([
     // Route::get('/industries-serviced-up', [ServiceController::class, 'industriesServiced'])->name('industriesServiced');
 
 });
-

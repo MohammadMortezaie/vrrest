@@ -6,11 +6,16 @@ use App\Models\LocalService;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use RalphJSmit\Laravel\SEO\SchemaCollection;
 use RalphJSmit\Laravel\SEO\Support\AlternateTag;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+use Throwable;
 
 class ServiceController extends Controller
 {
@@ -281,6 +286,91 @@ class ServiceController extends Controller
 
         return view('contact', compact('SEOData'));
     }
+
+    public function submitContactForm(Request $request)
+    {
+        $redirectUrl = rtrim($request->input('page_url', url()->previous()), '#') . '#contact-form-section';
+
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:120'],
+            'email' => ['required', 'email', 'max:190'],
+            'phone' => ['required', 'string', 'max:40'],
+            'message' => ['required', 'string', 'max:3000'],
+            'source' => ['nullable', 'string', 'max:120'],
+            'page_url' => ['nullable', 'url', 'max:500'],
+            'website' => ['nullable', 'size:0'],
+            'g-recaptcha-response' => ['required', 'string'],
+            'recaptcha_action' => ['required', 'string', 'in:contact_form'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect($redirectUrl)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $validated = $validator->validated();
+
+        try {
+            $recaptchaResponse = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+                'secret' => config('services.recaptcha.secret_key'),
+                'response' => $validated['g-recaptcha-response'],
+                'remoteip' => $request->ip(),
+            ]);
+        } catch (Throwable $exception) {
+            Log::error('Contact form reCAPTCHA verification failed', [
+                'message' => $exception->getMessage(),
+                'source' => $validated['source'] ?? null,
+                'email' => $validated['email'] ?? null,
+            ]);
+
+            return redirect($redirectUrl)
+                ->withInput()
+                ->with('contact_error', __('Contact Form Recaptcha Error'));
+        }
+
+        $recaptchaPassed = $recaptchaResponse->json('success')
+            && $recaptchaResponse->json('action') === $validated['recaptcha_action']
+            && (float) $recaptchaResponse->json('score', 0) >= 0.5;
+
+        if (!$recaptchaPassed) {
+            return redirect($redirectUrl)
+                ->withInput()
+                ->with('contact_error', __('Contact Form Recaptcha Error'));
+        }
+
+        $to = env('CONTACT_EMAIL', 'admin@vrrestoration.ca');
+        $cc = env('CC_EMAIL');
+        $from = env('CONTACT_FROM_EMAIL', config('mail.from.address'));
+
+        try {
+            Mail::send('emails.contact-form', ['data' => $validated], function ($mail) use ($validated, $to, $cc, $from) {
+                $mail->from($from, 'VR PLUS Website');
+                $mail->replyTo($validated['email'], $validated['name']);
+                $mail->to($to);
+
+                if (!empty($cc)) {
+                    $mail->cc($cc);
+                }
+
+                $source = $validated['source'] ?? 'Website';
+                $mail->subject('New website contact form submission - ' . $source);
+            });
+        } catch (Throwable $exception) {
+            Log::error('Contact form email failed', [
+                'message' => $exception->getMessage(),
+                'source' => $validated['source'] ?? null,
+                'email' => $validated['email'] ?? null,
+            ]);
+
+            return redirect($redirectUrl)
+                ->withInput()
+                ->with('contact_error', __('Contact Form Error'));
+        }
+
+        return redirect($redirectUrl)->with('contact_success', __('Contact Form Success'));
+    }
+
     public function team()
     {
         $locale = app()->getLocale();
@@ -1521,57 +1611,10 @@ $seoDataZh = new SEOData(
 
         // Define SEO data for English
         $seoDataEn = new SEOData(
-            title: 'Mold Remediation in Vancouver 24/7 Call Now | 604-800-3900',
-            description: '24/7 Mold Remediation Services Prompt removal and prevention of mold in residential and commercial properties. Call 604-800-3900 for immediate assistance in Vancouver.',
+            title: 'Mold Remediation Vancouver | 24/7 Mold Removal | VR PLUS',
+            description: 'Certified mold remediation in Vancouver for homes, condos, strata and commercial properties. 24/7 black mold removal, HEPA containment, drying and insurance-ready reports. Call 604-800-3900.',
             image: asset('img/mold.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What causes mold growth?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'Mold growth is caused by high humidity or water damage. Mold spores can enter a property through windows, doors, HVAC systems, or even on pets and clothing. They flourish in moist environments and can become a serious problem if not addressed quickly.',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => 'How can I prevent mold growth?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'To prevent mold growth, maintain relative humidity levels in your home, fix any leaks or water damage promptly, and ensure proper ventilation. Regular inspections can help identify potential issues before they become serious.',
-                            ],
-                        ],
-                    ],
-                    'telephone' => '+1 604-800-3900',
-                    'address' => [
-                        '@type' => 'PostalAddress',
-                        'streetAddress' => '636 Clyde Ave Suite 7',
-                        'addressLocality' => 'West Vancouver',
-                        'addressRegion' => 'BC',
-                        'postalCode' => 'V7T 1E1',
-                        'addressCountry' => 'CA',
-                    ],
-                    'geo' => [
-                        '@type' => 'GeoCoordinates',
-                        'latitude' => 49.3252,
-                        'longitude' => -123.1595,
-                    ],
-                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                    'openingHoursSpecification' => [
-                        [
-                            '@type' => 'OpeningHoursSpecification',
-                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                            'opens' => '00:00',
-                            'closes' => '23:59',
-                        ],
-                    ],
-                ]
-            ),
-            tags: ['mold remediation', 'mold removal', 'water damage', 'humidity control', 'Vancouver mold services'],
+            tags: ['mold remediation Vancouver', 'mold removal Vancouver', 'black mold removal Vancouver', 'mold inspection Vancouver', 'Vancouver mold services'],
             alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation')],
         );
 
@@ -1580,53 +1623,6 @@ $seoDataZh = new SEOData(
             title: '霉菌修复服务',
             description: '专业霉菌修复服务：处理因水损或高湿度引起的霉菌问题。我们处理住宅和商业物业。请拨打604-800-3900以获取在温哥华的即时帮助。',
             image: asset('img/mold.jpeg'), // Example image path
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => '霉菌生长的原因是什么？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '霉菌生长是由高湿度或水损引起的。霉菌孢子可以通过窗户、门、HVAC系统，甚至宠物和衣物进入物业。它们在潮湿的环境中繁殖，如果不及时处理，可能会成为严重的问题。',
-                            ],
-                        ],
-                        [
-                            '@type' => 'Question',
-                            'name' => '如何预防霉菌生长？',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => '要防止霉菌生长，保持家庭中的相对湿度，及时修复任何泄漏或水损，并确保良好的通风。定期检查可以帮助及早发现潜在问题。',
-                            ],
-                        ],
-                    ],
-                    'telephone' => '+1 604-800-3900',
-                    'address' => [
-                        '@type' => 'PostalAddress',
-                        'streetAddress' => '636 Clyde Ave Suite 7',
-                        'addressLocality' => 'West Vancouver',
-                        'addressRegion' => 'BC',
-                        'postalCode' => 'V7T 1E1',
-                        'addressCountry' => 'CA',
-                    ],
-                    'geo' => [
-                        '@type' => 'GeoCoordinates',
-                        'latitude' => 49.3252,
-                        'longitude' => -123.1595,
-                    ],
-                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                    'openingHoursSpecification' => [
-                        [
-                            '@type' => 'OpeningHoursSpecification',
-                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                            'opens' => '00:00',
-                            'closes' => '23:59',
-                        ],
-                    ],
-                ]
-            ),
             tags: ['霉菌修复', '霉菌去除', '水损', '湿度控制', '温哥华霉菌服务'],
             alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation')],
         );
