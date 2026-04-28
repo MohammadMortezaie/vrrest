@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => ecure_url('/favicon.ico',
+    'favicon' => ecure_url('/favicon.ico'),
 
     'title' => [
         /**
