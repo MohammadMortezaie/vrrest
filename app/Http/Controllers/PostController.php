@@ -107,7 +107,7 @@ class PostController extends Controller
                 'subtitle' => 'required|string|max:255',
                 'keywords' => 'required|string|max:255',
                 'post_category_id' => 'required|integer|exists:post_categories,id',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
                 'content' => 'required|string',
                 'status' => 'required|boolean',
             ]);
