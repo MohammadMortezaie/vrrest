@@ -6,6 +6,7 @@
 ## Primary Service Pages
 - [Home](https://vrrestoration.ca/en): brand overview
 - [Water Damage Restoration](https://vrrestoration.ca/en/water-damage): “water damage restoration”
+- [Seismic Retrofit Plan for Single Family Homes](https://vrrestoration.ca/en/seismic-retrofit-plan-single-family): “seismic retrofit plan single family homes”
 - [Mold Remediation](https://vrrestoration.ca/en/mold-remediation): “mold remediation service”
 - [Fire Damage Restoration](https://vrrestoration.ca/en/fire-damage): “fire damage restoration”
 - [Construction & Reconstruction](https://vrrestoration.ca/en/construction): “post-damage reconstruction”

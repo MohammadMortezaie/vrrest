@@ -36,6 +36,11 @@
 
             </url>
     <url>
+        <loc>http://127.0.0.1:8000/en/seismic-retrofit-plan-single-family</loc>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
+
+            </url>
+    <url>
         <loc>http://127.0.0.1:8000/en/commercial-services</loc>
         <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
@@ -102,6 +107,11 @@
             </url>
     <url>
         <loc>http://127.0.0.1:8000/zh/water-damage</loc>
+        <lastmod>2024-11-25T00:00:00+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/zh/seismic-retrofit-plan-single-family</loc>
         <lastmod>2024-11-25T00:00:00+00:00</lastmod>
 
             </url>

@@ -27,6 +27,10 @@ Route::get('/water-damage', function () {
     return redirect('/' . config('app.fallback_locale').'/water-damage', 301);
 });
 
+Route::get('/seismic-retrofit-plan-single-family', function () {
+    return redirect('/' . config('app.fallback_locale').'/seismic-retrofit-plan-single-family', 301);
+});
+
 Route::get('/specialty-cleaning', function () {
     return redirect('/' . config('app.fallback_locale').'/specialty-cleaning', 301);
 });
@@ -86,6 +90,7 @@ Route::group([
 
     //services
     Route::get('/water-damage', [ServiceController::class, 'waterdamage'])->name('waterdamage');
+    Route::get('/seismic-retrofit-plan-single-family', [ServiceController::class, 'seismicRetrofitPlanSingleFamily'])->name('seismicRetrofitPlanSingleFamily');
     Route::get('/commercial-services', [ServiceController::class, 'commercialServices'])->name('commercialServices');
     Route::get('/residential-services', [ServiceController::class, 'residentialServices'])->name('residentialServices');
     Route::get('/construction', [ServiceController::class, 'construction'])->name('construction');

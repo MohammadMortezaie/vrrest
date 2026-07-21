@@ -433,6 +433,15 @@
                 </div>
                 <div class="col-12 col-lg-3 mb-3">
                     <div class="icon-text">
+                        <a href="{{ route('seismicRetrofitPlanSingleFamily', ['lang' => app()->getLocale()]) }}">
+                            <img style="max-width: 80px" src="{{ asset('img/template7.png') }}"
+                                alt="{{ __('seismic_nav') }}">
+                            <span class="ms-2 fs-6 text">{{ __('seismic_nav') }}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 mb-3">
+                    <div class="icon-text">
                         <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}">
                             <img style="max-width: 80px" src="{{ asset('img/template6.png') }}"
                                 alt="{{ __('construction') }}">

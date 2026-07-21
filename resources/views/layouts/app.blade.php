@@ -107,6 +107,9 @@
                                                 href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{ __('waterDamage') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
+                                                href="{{ route('seismicRetrofitPlanSingleFamily', ['lang' => app()->getLocale()]) }}">{{ __('seismic_nav') }}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
                                                 href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">{{ __('fireDamage') }}</a>
                                         </li>
                                         <li><a class="dropdown-item"
@@ -318,6 +321,10 @@
                             <p>
                                 <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}"
                                     class="text-white">{{ __('waterDamage') }}</a>
+                            </p>
+                            <p>
+                                <a href="{{ route('seismicRetrofitPlanSingleFamily', ['lang' => app()->getLocale()]) }}"
+                                    class="text-white">{{ __('seismic_nav') }}</a>
                             </p>
                             <p>
                                 <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}"

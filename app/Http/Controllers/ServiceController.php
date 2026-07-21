@@ -771,6 +771,99 @@ class ServiceController extends Controller
             'blog' => $blog,
         ]);
     }
+
+    public function seismicRetrofitPlanSingleFamily()
+    {
+        $locale = app()->getLocale();
+
+        $pageEnUrl = 'https://vrrestoration.ca/en/seismic-retrofit-plan-single-family';
+        $pageZhUrl = 'https://vrrestoration.ca/zh/seismic-retrofit-plan-single-family';
+        $heroImage = asset('img/seismic-retrofit-plan-hero.jpeg');
+        $areaServedEn = ['British Columbia', 'Vancouver', 'Burnaby', 'Richmond', 'Surrey', 'Coquitlam', 'North Vancouver', 'West Vancouver', 'Lower Mainland'];
+        $areaServedZh = ['卑诗省', '温哥华', '本拿比', '列治文', '素里', '高贵林', '北温哥华', '西温哥华', '大温地区'];
+
+        $faqEntities = collect(range(1, 8))->map(fn($i) => [
+            '@type' => 'Question',
+            'name' => __('seismic_faq_question_' . $i),
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => __('seismic_faq_answer_' . $i),
+            ],
+        ])->values()->all();
+
+        $schema = SchemaCollection::make()
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'Service',
+                    'name' => __('seismic_title'),
+                    'serviceType' => __('seismic_schema_service_type'),
+                    'description' => __('seismic_meta_description'),
+                    'provider' => [
+                        '@type' => 'LocalBusiness',
+                        'name' => 'VR PLUS Restoration',
+                        'telephone' => '+1 604-800-3900',
+                        'url' => $locale === 'zh' ? $pageZhUrl : $pageEnUrl,
+                    ],
+                    'areaServed' => $locale === 'zh' ? $areaServedZh : $areaServedEn,
+                    'offers' => [
+                        '@type' => 'Offer',
+                        'availability' => 'https://schema.org/InStock',
+                        'priceCurrency' => 'CAD',
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => $faqEntities,
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'BreadcrumbList',
+                    'itemListElement' => [
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 1,
+                            'name' => __('Home'),
+                            'item' => route('home2', ['lang' => app()->getLocale()]),
+                        ],
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 2,
+                            'name' => __('Services'),
+                            'item' => route('home2', ['lang' => app()->getLocale()]) . '#services',
+                        ],
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 3,
+                            'name' => __('seismic_title'),
+                            'item' => route('seismicRetrofitPlanSingleFamily', ['lang' => app()->getLocale()]),
+                        ],
+                    ],
+                ],
+            );
+
+        $SEOData = new SEOData(
+            title: __('seismic_seo_title'),
+            description: __('seismic_meta_description'),
+            image: $heroImage,
+            schema: $schema,
+            tags: ['seismic retrofit plan', 'single family home retrofit', 'structural engineering BC', 'permit-ready drawings'],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
+            ],
+        );
+
+        return view('services.seismicRetrofitPlanSingleFamily', [
+            'SEOData' => $SEOData,
+        ]);
+    }
+
     public function commercialServices()
     {
         $locale = app()->getLocale();
@@ -2027,6 +2120,7 @@ $seoDataZh = new SEOData(
             ->add(Url::create('/en/our-team')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/career')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/water-damage')->setLastModificationDate(Carbon::yesterday()))
+            ->add(Url::create('/en/seismic-retrofit-plan-single-family')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/commercial-services')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/residential-services')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/en/construction')->setLastModificationDate(Carbon::yesterday()))
@@ -2042,6 +2136,7 @@ $seoDataZh = new SEOData(
             ->add(Url::create('/zh/our-team')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/career')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/water-damage')->setLastModificationDate(Carbon::yesterday()))
+            ->add(Url::create('/zh/seismic-retrofit-plan-single-family')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/commercial-services')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/residential-services')->setLastModificationDate(Carbon::yesterday()))
             ->add(Url::create('/zh/construction')->setLastModificationDate(Carbon::yesterday()))
