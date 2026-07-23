@@ -5,6 +5,7 @@
 
 
     <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
+    <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"UjY3iNHaot5pnvK66tLLbm",debug:true});</script>
 @endsection
 
 @section('content')
