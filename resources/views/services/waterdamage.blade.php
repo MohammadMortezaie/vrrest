@@ -623,6 +623,102 @@
 
                 </div>
 
+                <div class="row g-4 mt-4">
+                    <div class="col-md-12">
+                        <p class="text-uppercase small fw-semibold text-warning mb-1">
+                            {{ __('Water Damage Restoration Scope Eyebrow') }}
+                        </p>
+                        <h2 class="fs-2 fw-bolder section-title-h1">
+                            {{ __('Water Damage Restoration Scope Title') }}
+                        </h2>
+                        <p class="lead text-muted">
+                            {{ __('Water Damage Restoration Scope Intro') }}
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold">{{ __('Water Damage Restoration Scope 1 Title') }}</h3>
+                                <p class="text-muted mb-0">{{ __('Water Damage Restoration Scope 1 Text') }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold">{{ __('Water Damage Restoration Scope 2 Title') }}</h3>
+                                <p class="text-muted mb-0">{{ __('Water Damage Restoration Scope 2 Text') }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold">{{ __('Water Damage Restoration Scope 3 Title') }}</h3>
+                                <p class="text-muted mb-0">{{ __('Water Damage Restoration Scope 3 Text') }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold">{{ __('Water Damage Restoration Scope 4 Title') }}</h3>
+                                <p class="text-muted mb-0">{{ __('Water Damage Restoration Scope 4 Text') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 align-items-center mt-5">
+                    <div class="col-lg-5">
+                        <img class="img-fluid rounded-4 shadow-sm" loading="lazy"
+                            src="{{ asset('img/water-damage-equipment-vancouver.jpeg') }}"
+                            alt="{{ __('Water Damage Restoration Insurance Alt') }}">
+                    </div>
+
+                    <div class="col-lg-7">
+                        <p class="text-uppercase small fw-semibold text-warning mb-1">
+                            {{ __('Water Damage Restoration Insurance Eyebrow') }}
+                        </p>
+                        <h2 class="fs-2 fw-bolder section-title-h1">
+                            {{ __('Water Damage Restoration Insurance Title') }}
+                        </h2>
+                        <p class="text-muted">
+                            {{ __('Water Damage Restoration Insurance Intro') }}
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="bg-white rounded-4 shadow-sm p-3 h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Water Damage Restoration Insurance 1 Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Water Damage Restoration Insurance 1 Text') }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-white rounded-4 shadow-sm p-3 h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Water Damage Restoration Insurance 2 Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Water Damage Restoration Insurance 2 Text') }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-white rounded-4 shadow-sm p-3 h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Water Damage Restoration Insurance 3 Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Water Damage Restoration Insurance 3 Text') }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-white rounded-4 shadow-sm p-3 h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Water Damage Restoration Insurance 4 Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Water Damage Restoration Insurance 4 Text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
 
             </div>

@@ -502,15 +502,33 @@ class ServiceController extends Controller
                     '@type' => 'Service',
                     'name' => 'Water Damage Restoration in Vancouver',
                     'serviceType' => 'Water damage restoration services',
-                    'description' => '24/7 emergency water damage restoration in Vancouver with extraction, structural drying, cleanup, and repair coordination.',
+                    'description' => '24/7 emergency water damage restoration in Vancouver with water extraction, structural drying, moisture detection, cleanup, insurance documentation, and repair coordination.',
                     'provider' => [
                         '@type' => 'LocalBusiness',
                         'name' => 'VR PLUS Restoration',
                         'telephone' => '+1 604-800-3900',
                         'url' => $pageEnUrl,
+                        'image' => asset('img/water-damage.jpeg'),
                         'sameAs' => [$googleReviewUrl],
                     ],
                     'areaServed' => $areaServedEn,
+                    'serviceOutput' => 'A dried, cleaned, documented, and repair-ready property after water damage.',
+                    'audience' => [
+                        ['@type' => 'Audience', 'audienceType' => 'Homeowners'],
+                        ['@type' => 'Audience', 'audienceType' => 'Property managers'],
+                        ['@type' => 'Audience', 'audienceType' => 'Commercial property owners'],
+                    ],
+                    'hasOfferCatalog' => [
+                        '@type' => 'OfferCatalog',
+                        'name' => 'Water Damage Restoration Services',
+                        'itemListElement' => [
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Emergency water extraction']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Structural drying and dehumidification']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Moisture mapping and leak detection']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Sewage cleanup and sanitizing']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Water damage repair and rebuild coordination']],
+                        ],
+                    ],
                     'offers' => [
                         '@type' => 'Offer',
                         'availability' => 'https://schema.org/InStock',
@@ -577,6 +595,26 @@ class ServiceController extends Controller
             ->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
+                    '@type' => 'BreadcrumbList',
+                    'itemListElement' => [
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 1,
+                            'name' => 'Home',
+                            'item' => 'https://vrrestoration.ca/en',
+                        ],
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 2,
+                            'name' => 'Water Damage Restoration',
+                            'item' => $pageEnUrl,
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
                     '@type' => 'LocalBusiness',
                     'name' => 'VR PLUS Restoration',
                     'url' => $pageEnUrl,
@@ -624,15 +662,33 @@ class ServiceController extends Controller
                     '@type' => 'Service',
                     'name' => '温哥华水损修复服务',
                     'serviceType' => '水损修复服务',
-                    'description' => '温哥华 24/7 水损紧急修复服务，涵盖抽水、结构干燥、清理与修复协调。',
+                    'description' => '温哥华 24/7 水损紧急修复服务，涵盖抽水、结构干燥、湿度检测、清理、保险文件与修复协调。',
                     'provider' => [
                         '@type' => 'LocalBusiness',
                         'name' => 'VR PLUS Restoration',
                         'telephone' => '+1 604-800-3900',
                         'url' => $pageZhUrl,
+                        'image' => asset('img/water-damage.jpeg'),
                         'sameAs' => [$googleReviewUrl],
                     ],
                     'areaServed' => $areaServedZh,
+                    'serviceOutput' => '水灾后完成干燥、清洁、记录并可进入维修阶段的物业。',
+                    'audience' => [
+                        ['@type' => 'Audience', 'audienceType' => '业主'],
+                        ['@type' => 'Audience', 'audienceType' => '物业经理'],
+                        ['@type' => 'Audience', 'audienceType' => '商业物业业主'],
+                    ],
+                    'hasOfferCatalog' => [
+                        '@type' => 'OfferCatalog',
+                        'name' => '水灾修复服务',
+                        'itemListElement' => [
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '紧急抽水']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '结构干燥和除湿']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '湿度测绘和漏水检测']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '污水清理和消毒']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '水损维修和重建协调']],
+                        ],
+                    ],
                     'offers' => [
                         '@type' => 'Offer',
                         'availability' => 'https://schema.org/InStock',
@@ -699,6 +755,26 @@ class ServiceController extends Controller
             ->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
+                    '@type' => 'BreadcrumbList',
+                    'itemListElement' => [
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 1,
+                            'name' => '首页',
+                            'item' => 'https://vrrestoration.ca/zh',
+                        ],
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 2,
+                            'name' => '水灾修复',
+                            'item' => $pageZhUrl,
+                        ],
+                    ],
+                ],
+            )
+            ->add(
+                fn(SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
                     '@type' => 'LocalBusiness',
                     'name' => 'VR PLUS Restoration',
                     'url' => $pageZhUrl,
@@ -740,11 +816,11 @@ class ServiceController extends Controller
             );
 
         $seoDataEn = new SEOData(
-            title: 'Water Damage Restoration in Vancouver 24/7 Call Now',
-            description: '24/7 Water Damage Restoration Services Emergency response for water damage, flooded basements, and more. Call 604-800-3900 for immediate assistance in Vancouver',
+            title: 'Water Damage Restoration Vancouver | 24/7 Emergency Service',
+            description: '24/7 water damage restoration in Vancouver for floods, leaks, burst pipes, sewage backups, drying, repairs, and insurance documentation. Call 604-800-3900.',
             image: asset('img/water-damage.jpeg'),
             schema: $waterSchemaEn,
-            tags: ['water damage restoration', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
+            tags: ['water damage restoration', 'water damage restoration Vancouver', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
             alternates: [
                 new AlternateTag(hreflang: 'en', href: $pageEnUrl),
                 new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
@@ -752,11 +828,11 @@ class ServiceController extends Controller
         );
 
         $seoDataZh = new SEOData(
-            title: '水损恢复服务',
-            description: '24/7水损恢复服务 - 水灾修复：紧急响应水损、地下室积水等问题。请拨打604-800-3900以获取在温哥华的即时帮助。',
+            title: '温哥华水灾修复服务 | 24/7 紧急响应',
+            description: '温哥华 24/7 水灾修复服务，处理洪水、漏水、爆管、污水倒灌、干燥、维修和保险文件。请拨打 604-800-3900。',
             image: asset('img/water-damage.jpeg'),
             schema: $waterSchemaZh,
-            tags: ['水损恢复', '紧急水提取', '地下室修复', '温哥华水损服务'],
+            tags: ['水损恢复', '温哥华水灾修复', '紧急水提取', '地下室修复', '温哥华水损服务'],
             alternates: [
                 new AlternateTag(hreflang: 'en', href: $pageEnUrl),
                 new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
