@@ -27,7 +27,11 @@
                 <div class="col-lg-8 m-15px-tb">
                     <article class="article">
                         <div class="article-title">
-                            <h6><a href="https://vrrestoration.ca/en/blog"> Blog </a>/ {{ $blog->category->name_en }}</a></h6>
+                            <nav aria-label="breadcrumb" class="mb-2">
+                                <a href="https://vrrestoration.ca/en/blog">Blog</a>
+                                <span aria-hidden="true"> / </span>
+                                <span>{{ $blog->category->name_en }}</span>
+                            </nav>
                             <h1 class="h2 fw-bold">{{ $blog->title }}</h1>
                             <span>Updated at: {{ $blog->updated_at }}</span>
                             <span>Published at: {{ $blog->created_at }}</span>
