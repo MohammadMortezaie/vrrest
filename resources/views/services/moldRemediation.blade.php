@@ -194,6 +194,8 @@
         'subtitle' => __('Contact Form Mold Subtitle'),
     ])
 
+    @include('partials.ai-trust-links')
+
     <section class="py-4 py-md-5 bg-vr-second">
         <div class="container">
             <div class="row gy-4 align-items-center">

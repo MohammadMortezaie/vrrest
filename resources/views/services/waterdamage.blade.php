@@ -82,6 +82,8 @@
         'subtitle' => __('Contact Form Water Subtitle'),
     ])
 
+    @include('partials.ai-trust-links')
+
     <section class="py-3 py-md-5 bg-vr-second">
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
@@ -325,7 +327,6 @@
                 </div>
 
 
-
 <div class="col-12">
     <div class="bg-white rounded-4 shadow-sm p-4 p-md-5">
         <div class="row g-4 align-items-center">
@@ -408,7 +409,6 @@
         </div>
     </div>
 </div>
-
 
 
                 <div class="row align-items-center my-4">
