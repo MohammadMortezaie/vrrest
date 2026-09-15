@@ -6,6 +6,179 @@
 
     <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
     <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"UjY3iNHaot5pnvK66tLLbm",debug:true});</script>
+    <style>
+        .vr-project-gallery {
+            background: #ffffff;
+            border: 1px solid rgba(33, 37, 41, 0.08);
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 12px 30px rgba(33, 37, 41, 0.08);
+        }
+
+        .vr-project-gallery-main {
+            border-radius: 0.9rem;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .vr-project-gallery-figure {
+            position: relative;
+            margin: 0;
+            aspect-ratio: 16 / 9;
+            min-height: 320px;
+        }
+
+        .vr-project-gallery-figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .vr-project-gallery-main .swiper-slide-active img {
+            animation: vrGalleryImageIn 5s ease-out both;
+        }
+
+        .vr-project-gallery-caption {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 3rem 1.25rem 1.25rem;
+            color: #fff;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+        }
+
+        .vr-project-gallery-nav {
+            position: absolute;
+            top: 50%;
+            z-index: 5;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #111;
+            background: rgba(249, 181, 0, 0.95);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+            transform: translateY(-50%);
+        }
+
+        .vr-project-gallery-prev {
+            left: 1rem;
+        }
+
+        .vr-project-gallery-next {
+            right: 1rem;
+        }
+
+        .vr-project-gallery-pagination {
+            position: static;
+            margin-top: 0.75rem;
+        }
+
+        .vr-project-gallery-pagination .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #212529;
+            opacity: 0.25;
+        }
+
+        .vr-project-gallery-pagination .swiper-pagination-bullet-active {
+            background: var(--accent-color);
+            opacity: 1;
+        }
+
+        .vr-project-gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .vr-gallery-thumb {
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+            opacity: 0.72;
+            transition: border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .vr-gallery-thumb img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .vr-gallery-thumb.is-active,
+        .vr-gallery-thumb:hover,
+        .vr-gallery-thumb:focus-visible {
+            border-color: var(--accent-color);
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        @keyframes vrGalleryImageIn {
+            from {
+                opacity: 0.92;
+                transform: scale(1.035);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .vr-project-gallery-figure {
+                min-height: 260px;
+            }
+
+            .vr-project-gallery-thumbs {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 575px) {
+            .vr-project-gallery {
+                padding: 0.75rem;
+            }
+
+            .vr-project-gallery-figure {
+                aspect-ratio: 4 / 5;
+                min-height: 300px;
+            }
+
+            .vr-project-gallery-thumbs {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 0.25rem;
+                scroll-snap-type: x proximity;
+            }
+
+            .vr-gallery-thumb {
+                flex: 0 0 88px;
+                scroll-snap-align: start;
+            }
+
+            .vr-project-gallery-nav {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .vr-project-gallery-main .swiper-slide-active img,
+            .vr-gallery-thumb {
+                animation: none;
+                transition: none;
+            }
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -170,16 +343,82 @@
                     </div>
                 </div>
 
-                <div class="row g-3">
-                    @foreach ($waterDamageProjectImages as $image)
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <img class="img-fluid rounded-4 shadow-sm w-100 h-100 object-fit-cover"
-                                src="{{ asset($image['src']) }}"
-                                alt="{{ $image['alt'] }}"
-                                loading="lazy"
-                                style="aspect-ratio: 4 / 3;">
+                <div class="vr-project-gallery" id="water-damage-project-gallery">
+                    <div class="swiper vr-project-gallery-main"
+                        data-swiper-config='{
+                            "loop": true,
+                            "speed": 850,
+                            "effect": "fade",
+                            "fadeEffect": {
+                                "crossFade": true
+                            },
+                            "autoplay": {
+                                "delay": 4500,
+                                "disableOnInteraction": false
+                            },
+                            "keyboard": {
+                                "enabled": true
+                            },
+                            "grabCursor": true,
+                            "lazyPreloadPrevNext": 2,
+                            "pagination": {
+                                "el": ".vr-project-gallery-pagination",
+                                "clickable": true
+                            },
+                            "navigation": {
+                                "nextEl": ".vr-project-gallery-next",
+                                "prevEl": ".vr-project-gallery-prev"
+                            }
+                        }'>
+                        <div class="swiper-wrapper">
+                            @foreach ($waterDamageProjectImages as $image)
+                                <div class="swiper-slide">
+                                    <figure class="vr-project-gallery-figure">
+                                        <img
+                                            src="{{ asset($image['src']) }}"
+                                            alt="{{ $image['alt'] }}"
+                                            loading="{{ $loop->first ? 'eager' : 'lazy' }}"
+                                            decoding="async"
+                                        >
+                                        <figcaption class="vr-project-gallery-caption">
+                                            <span class="badge bg-warning text-dark fw-semibold mb-2">
+                                                Project photo {{ $loop->iteration }} of {{ count($waterDamageProjectImages) }}
+                                            </span>
+                                            <p class="mb-0 fw-semibold">{{ $image['alt'] }}</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
+
+                        <button class="vr-project-gallery-nav vr-project-gallery-prev" type="button" aria-label="Previous water damage project photo">
+                            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="vr-project-gallery-nav vr-project-gallery-next" type="button" aria-label="Next water damage project photo">
+                            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="vr-project-gallery-pagination swiper-pagination" aria-label="Water damage project photo pagination"></div>
+
+                    <div class="vr-project-gallery-thumbs" aria-label="Choose a water damage project photo">
+                        @foreach ($waterDamageProjectImages as $image)
+                            <button
+                                class="vr-gallery-thumb {{ $loop->first ? 'is-active' : '' }}"
+                                type="button"
+                                data-gallery-target="water-damage-project-gallery"
+                                data-slide-index="{{ $loop->index }}"
+                                aria-label="Show water damage project photo {{ $loop->iteration }}"
+                            >
+                                <img
+                                    src="{{ asset($image['src']) }}"
+                                    alt="{{ $image['alt'] }}"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </button>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
@@ -1479,9 +1718,52 @@
         function initSwiper() {
             document.querySelectorAll('.swiper').forEach(function(swiper) {
                 let config = JSON.parse(swiper.getAttribute('data-swiper-config'));
-                new Swiper(swiper, config);
+                let instance = new Swiper(swiper, config);
+
+                if (swiper.classList.contains('vr-project-gallery-main')) {
+                    initWaterDamageGallery(swiper, instance);
+                }
             });
         }
+
+        function initWaterDamageGallery(swiperElement, swiperInstance) {
+            const gallery = swiperElement.closest('.vr-project-gallery');
+
+            if (!gallery) {
+                return;
+            }
+
+            const thumbs = gallery.querySelectorAll('.vr-gallery-thumb');
+
+            const setActiveThumb = function(index) {
+                thumbs.forEach(function(thumb) {
+                    thumb.classList.toggle('is-active', Number(thumb.dataset.slideIndex) === index);
+                });
+            };
+
+            thumbs.forEach(function(thumb) {
+                thumb.addEventListener('click', function() {
+                    const targetIndex = Number(thumb.dataset.slideIndex);
+
+                    if (Number.isNaN(targetIndex)) {
+                        return;
+                    }
+
+                    if (typeof swiperInstance.slideToLoop === 'function') {
+                        swiperInstance.slideToLoop(targetIndex);
+                    } else {
+                        swiperInstance.slideTo(targetIndex);
+                    }
+
+                    setActiveThumb(targetIndex);
+                });
+            });
+
+            swiperInstance.on('slideChange', function() {
+                setActiveThumb(swiperInstance.realIndex ?? swiperInstance.activeIndex);
+            });
+        }
+
         window.addEventListener('load', initSwiper);
     </script>
 @endsection
