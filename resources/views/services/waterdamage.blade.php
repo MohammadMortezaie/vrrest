@@ -143,14 +143,6 @@
             }
         }
 
-        @media (min-width: 992px) {
-            .vr-project-gallery-figure {
-                aspect-ratio: auto;
-                height: 420px;
-                min-height: 0;
-                max-height: 420px;
-            }
-        }
 
         @media (max-width: 575px) {
             .vr-project-gallery {
