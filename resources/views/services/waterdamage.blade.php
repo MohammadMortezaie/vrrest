@@ -442,30 +442,21 @@
         <div class="row g-4 align-items-center">
             <!-- Image -->
             <div class="col-lg-5">
-              <div class="d-flex flex-column gap-3">
-                    <!-- Main image -->
-                    <div>
-                        <img
-                            src="{{ asset('img/water-damage/vancouver-water-damage-moisture-containment.webp') }}"
-                            alt="Moisture containment setup for water damage restoration in Vancouver"
-                            class="img-fluid rounded-4 w-100"
-                            style="object-fit: cover;"
-                            loading="lazy"
-                        >
-                    </div>
-
-                    <!-- Second supporting image -->
-                    <div>
-                        <img
-                            src="{{ asset('img/water-damage/vancouver-water-damage-industrial-dehumidifier.webp') }}"
-                            alt="Industrial dehumidifier used for structural drying in Vancouver"
-                            class="img-fluid rounded-4 w-100"
-                            style="object-fit: cover;"
-                            loading="lazy"
-                        >
-                    </div>
-                </div>
-
+                <figure class="position-relative overflow-hidden rounded-4 shadow-sm mb-0">
+                    <img
+                        src="{{ asset('img/water-damage/vancouver-water-damage-moisture-containment.webp') }}"
+                        alt="Moisture containment setup for water damage restoration in Vancouver"
+                        class="img-fluid w-100"
+                        style="aspect-ratio: 4 / 5; object-fit: cover; object-position: center;"
+                        loading="lazy"
+                    >
+                    <figcaption class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 py-3 text-white"
+                        style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));">
+                        <span class="badge bg-warning text-dark fw-semibold">
+                            Vancouver structural drying project
+                        </span>
+                    </figcaption>
+                </figure>
             </div>
 
             <!-- Text -->
