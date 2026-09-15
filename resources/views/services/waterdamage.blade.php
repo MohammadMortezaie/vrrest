@@ -20,7 +20,7 @@
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="rounded-4 overflow-hidden shadow-sm">
                         <img class="img-fluid w-100 h-100 object-fit-cover" loading="lazy"
-                            src="{{ asset('img/water-damage.jpeg') }}" alt="{{ __('Water Damage 1-1') }}">
+                            src="{{ asset('img/water-damage.jpeg') }}" alt="Water damage restoration Vancouver emergency drying equipment">
                     </div>
                     <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
                         <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
@@ -63,7 +63,7 @@
 
                         <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
                             <a href="tel:+16048003900" class="btn btn-warning btn-lg px-4 fw-bold shadow-sm text-dark">
-                                📞 +1 604-800-3900
+                                Call +1 604-800-3900
                             </a>
                             <div class="text-muted">
                                 {{ __('Water Damage Types CTA Button') }}
@@ -74,6 +74,39 @@
             </div>
         </div>
     </section>
+
+    @if (app()->getLocale() === 'en')
+        <section class="py-4 py-md-5 bg-white">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="h-100 border rounded-4 p-4 p-md-5 shadow-sm">
+                            <p class="text-uppercase small fw-semibold text-warning mb-2">Fast local dispatch</p>
+                            <h2 class="fs-2 fw-bolder section-title-h1">24/7 Water Damage Repair Near You</h2>
+                            <p class="text-muted mb-3">
+                                Searching for water damage repair near me usually means something is actively leaking, flooding, or spreading. VR PLUS Restoration dispatches local crews across Metro Vancouver for burst pipes, floods, ceiling leaks, basement water, appliance leaks, and sewage backup emergencies.
+                            </p>
+                            <p class="text-muted mb-0">
+                                Our team arrives with extraction, drying, moisture inspection, and safety equipment so work can begin right away in Vancouver, Burnaby, Surrey, North Vancouver, West Vancouver, Coquitlam, and nearby communities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="h-100 bg-vr-second rounded-4 p-4 p-md-5 shadow-sm">
+                            <p class="text-uppercase small fw-semibold text-warning mb-2">Extraction and drying</p>
+                            <h2 class="fs-2 fw-bolder section-title-h1">Emergency Water Extraction and Structural Drying</h2>
+                            <p class="text-muted mb-3">
+                                For water extraction Vancouver and structural drying Vancouver calls, we remove standing water, map moisture, and place commercial dehumidifiers and air movers to dry wet building materials quickly and correctly.
+                            </p>
+                            <p class="text-muted mb-0">
+                                Thermal imaging, moisture meters, daily monitoring, and final drying verification help confirm hidden cavities, subfloors, drywall, and framing are ready for repair.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
 
 
     @include('partials.contact-form', [
@@ -93,7 +126,7 @@
                     <div class="position-relative rounded-4 overflow-hidden shadow-sm h-100">
                         <img class="img-fluid w-100 h-100 object-fit-cover" loading="lazy"
                             src="{{ asset('img/water-damage-vr.jpeg') }}"
-                            alt="Water Damage Restoration Vancouver - VR Plus Restoration">
+                            alt="Vancouver water extraction and structural drying technician">
 
                         <div class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 py-2"
                             style="background: linear-gradient( to top, rgba(0,0,0,0.65), rgba(0,0,0,0) );">
@@ -337,7 +370,7 @@
                     <div>
                         <img
                             src="https://vrrestoration.ca/storage/uploads/tEXGP8Eq74pnGLvjntnh4sv81t2PKBrQmQRQ8Id5.jpg"
-                            alt="Ceiling leak and early signs of water damage in a Vancouver home"
+                            alt="Moisture meter inspection for water damage repair"
                             class="img-fluid rounded-4 w-100"
                             style="object-fit: cover;"
                             loading="lazy"
@@ -348,7 +381,7 @@
                     <div>
                         <img
                             src="https://vrrestoration.ca/storage/uploads/fMRNAGtDLSgEtiIrakZB8oJpTobB6gGVeSbsjsxq.jpg"
-                            alt="Water damage drying equipment used in a Vancouver home"
+                            alt="Water damage restoration Vancouver emergency drying equipment"
                             class="img-fluid rounded-4 w-100"
                             style="object-fit: cover;"
                             loading="lazy"
@@ -510,12 +543,12 @@
 
                     <div class="col-md-6 my-3">
                         <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver2.jpg') }}"
-                            alt="Technician using a moisture meter for wall leak detection in West Vancouver">
+                            alt="Moisture meter inspection for water damage repair">
                     </div>
 
                     <div class="col-md-6 my-3">
                         <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver3.jpg') }}"
-                            alt="West Vancouver technician checking water damaged drywall with a moisture meter">
+                            alt="Vancouver water extraction and structural drying technician">
                     </div>
 
                 </div>
@@ -604,6 +637,30 @@
                                     </div>
                                 </div>
                             </div>
+
+                            @if (app()->getLocale() === 'en')
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 shadow-sm border-0">
+                                        <div class="card-body">
+                                            <h3 class="h5 fw-bold mb-2">Ceiling and Wall Water Damage</h3>
+                                            <p class="card-text text-muted mb-0">
+                                                Stains, bubbling paint, sagging drywall, and wet insulation can hide moisture behind finished surfaces. We trace the source, open only what is needed, dry cavities, and prepare walls or ceilings for repair.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 shadow-sm border-0">
+                                        <div class="card-body">
+                                            <h3 class="h5 fw-bold mb-2">Hardwood and Floor Water Damage</h3>
+                                            <p class="card-text text-muted mb-0">
+                                                Wet hardwood, laminate, carpet, and subfloors need quick extraction and controlled drying. Our technicians check moisture below the surface to reduce cupping, swelling, odors, and mold risk.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
 
                         <!-- Optional CTA under the grid -->
@@ -675,7 +732,7 @@
 
                 <div class="row g-4 align-items-center mt-5">
                     <div class="col-lg-5">
-                        <img class="img-fluid rounded-4 shadow-sm" loading="lazy"
+                    <img class="img-fluid rounded-4 shadow-sm" loading="lazy"
                             src="{{ asset('img/water-damage-equipment-vancouver.jpeg') }}"
                             alt="{{ __('Water Damage Restoration Insurance Alt') }}">
                     </div>
@@ -751,7 +808,7 @@
 
                     <img class="img-fluid rounded " loading="lazy"
                         src="{{ asset('img/water-damage-restoration-vancouver-equipment.jpg') }}"
-                        alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
+                        alt="Basement flood cleanup in Vancouver">
 
                 </div>
 
@@ -765,7 +822,7 @@
 
                     <img class="img-fluid rounded " loading="lazy"
                         src="{{ asset('img/water-damage-restorationbath.jpeg') }}"
-                        alt="Water Damage Restoration Vancouver in basement after flood emegency situation">
+                        alt="Water damage restoration Vancouver emergency drying equipment">
 
                 </div>
                 <div class="col-md-7 mb-3">
@@ -879,7 +936,7 @@
                 <div class="col-md-5 mb-3">
 
                     <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage-vancouver.jpg') }}"
-                        alt="Water damage restoration in Vancouver services">
+                        alt="Basement flood cleanup in Vancouver">
                 </div>
 
                 <div class="collapse" id="collapseVrRestoration">
@@ -1024,38 +1081,87 @@
 
                 <div class="col-md-12 my-3">
                     <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('About 1-9') }}
+                        @if (app()->getLocale() === 'en')
+                            Water Damage Restoration Across Metro Vancouver
+                        @else
+                            {{ __('About 1-9') }}
+                        @endif
                     </h2>
                     <hr>
 
-                    <h3 class="fs-4 fw-bold">
-                        {{ __('Water Damage 1-46-1') }}
-                    </h3>
-                    <p>
-                        {{ __('Water Damage 1-46-2') }}
-                    </p>
+                    @if (app()->getLocale() === 'en')
+                        <p class="lead text-muted">
+                            VR PLUS Restoration provides fast local water damage restoration across Vancouver and Metro Vancouver, with emergency water extraction, structural drying, flood cleanup, documentation, and repair planning for homes, strata buildings, and businesses.
+                        </p>
+
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="h-100 bg-white rounded-4 shadow-sm p-4">
+                                    <h3 class="h5 fw-bold">
+                                        <a href="/en/burnaby/water-damage-restoration" class="text-decoration-none">
+                                            Burnaby water damage restoration
+                                        </a>
+                                    </h3>
+                                    <p class="text-muted mb-0">Emergency support for condo leaks, basement floods, appliance failures, and strata water losses in Burnaby.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="h-100 bg-white rounded-4 shadow-sm p-4">
+                                    <h3 class="h5 fw-bold">
+                                        <a href="/en/surrey/water-damage-restoration-surrey" class="text-decoration-none">
+                                            Surrey water damage restoration
+                                        </a>
+                                    </h3>
+                                    <p class="text-muted mb-0">Water removal, drying, cleanup, and insurance-ready reporting for Surrey homes and commercial properties.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="h-100 bg-white rounded-4 shadow-sm p-4">
+                                    <h3 class="h5 fw-bold">
+                                        <a href="/en/new-westminster/new-westminster-water-damage-restoration" class="text-decoration-none">
+                                            New Westminster water damage restoration
+                                        </a>
+                                    </h3>
+                                    <p class="text-muted mb-0">Fast help for older buildings, river-area moisture issues, burst pipes, ceiling leaks, and flooded suites.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mt-4 mb-0 text-muted">
+                            We also dispatch to Coquitlam, North Vancouver, West Vancouver, Richmond, Langley, Delta, and other Metro Vancouver communities for urgent water restoration and flood cleanup.
+                        </p>
+                    @else
+                        <h3 class="fs-4 fw-bold">
+                            {{ __('Water Damage 1-46-1') }}
+                        </h3>
+                        <p>
+                            {{ __('Water Damage 1-46-2') }}
+                        </p>
+                    @endif
 
 
-                    <div class="d-flex flex-wrap gap-2 pb-3">
-                        <a href="https://vrrestoration.ca/en/blog/9/what-number-to-call-for-water-damage-in-vancouver"
-                            class="btn btn-warning btn-sm">
+                    @if (app()->getLocale() !== 'en')
+                        <div class="d-flex flex-wrap gap-2 pb-3">
+                            <a href="https://vrrestoration.ca/en/blog/9/what-number-to-call-for-water-damage-in-vancouver"
+                                class="btn btn-warning btn-sm">
 
-                            {{ __('Water Damage 1-46-3') }}
-                        </a>
-                    </div>
-                    <ul class="txt-vr d-flex flex-wrap gap-3">
-                        <li class="lead px-2">Vancouver</li>
-                        <li class="lead px-2">West Vancouver</li>
-                        <li class="lead px-2">North Shore</li>
-                        <li class="lead px-2">Downtown</li>
-                        <li class="lead px-2">Greater Vancouver</li>
-                        <li class="lead px-2">Metro Vancouver</li>
-                        <li class="lead px-2">Coquitlam</li>
-                        <li class="lead px-2">Sea to Sky</li>
-                        <li class="lead px-2">Tri-Cities</li>
-                        <li class="lead px-2">Fraser Valley</li>
-                        <li class="lead px-2">Howe Sound</li>
-                    </ul>
+                                {{ __('Water Damage 1-46-3') }}
+                            </a>
+                        </div>
+                        <ul class="txt-vr d-flex flex-wrap gap-3">
+                            <li class="lead px-2">Vancouver</li>
+                            <li class="lead px-2">West Vancouver</li>
+                            <li class="lead px-2">North Shore</li>
+                            <li class="lead px-2">Downtown</li>
+                            <li class="lead px-2">Greater Vancouver</li>
+                            <li class="lead px-2">Metro Vancouver</li>
+                            <li class="lead px-2">Coquitlam</li>
+                            <li class="lead px-2">Sea to Sky</li>
+                            <li class="lead px-2">Tri-Cities</li>
+                            <li class="lead px-2">Fraser Valley</li>
+                            <li class="lead px-2">Howe Sound</li>
+                        </ul>
+                    @endif
 
                 </div>
             </div>
@@ -1105,9 +1211,7 @@
 
                         <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
                             <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>
-                                <p>{{ __('Water Damage 1-52') }}
-                            </h3>
+                            <h3>{{ __('Water Damage 1-52') }}</h3>
                             <div class="faq-content">
                                 <p>{{ __('Water Damage 1-53') }}
                                 </p>
@@ -1146,6 +1250,26 @@
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
+                        @if (app()->getLocale() === 'en')
+                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="650">
+                                <i class="faq-icon bi bi-question-circle"></i>
+                                <h3>Do you repair walls, floors, and ceilings after drying?</h3>
+                                <div class="faq-content">
+                                    <p>Yes. After extraction and structural drying are complete, we can coordinate repairs for drywall, ceilings, flooring, trim, insulation, cabinets, and other affected finishes.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div>
+
+                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="700">
+                                <i class="faq-icon bi bi-question-circle"></i>
+                                <h3>Do you serve Burnaby, Surrey, Coquitlam, North Vancouver, and West Vancouver?</h3>
+                                <div class="faq-content">
+                                    <p>Yes. VR PLUS Restoration serves Vancouver, Burnaby, Surrey, Coquitlam, North Vancouver, West Vancouver, New Westminster, and the wider Metro Vancouver area.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div>
+                        @endif
+
                     </div>
 
                 </div>
@@ -1164,8 +1288,44 @@
             <div class="row gy-4">
 
                 <div class="section-title">
-                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Recommended For You') }} </h2>
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        @if (app()->getLocale() === 'en')
+                            Related Water Damage Guides
+                        @else
+                            {{ __('Recommended For You') }}
+                        @endif
+                    </h2>
                 </div>
+
+                @if (app()->getLocale() === 'en')
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-lg">
+                            <a class="d-block h-100 border rounded-4 p-3 text-decoration-none text-dark bg-white shadow-sm" href="/en/blog/14/emergency-water-restoration-in-burnaby-bc-247-response">
+                                Emergency water restoration in Burnaby
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg">
+                            <a class="d-block h-100 border rounded-4 p-3 text-decoration-none text-dark bg-white shadow-sm" href="/en/blog/15/flooded-basement-solutions-what-to-do-and-who-to-call">
+                                Flooded basement cleanup guide
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg">
+                            <a class="d-block h-100 border rounded-4 p-3 text-decoration-none text-dark bg-white shadow-sm" href="/en/blog/29/how-long-does-water-damage-restoration-take-in-vancouver-bc">
+                                Water damage restoration timeline in Vancouver
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg">
+                            <a class="d-block h-100 border rounded-4 p-3 text-decoration-none text-dark bg-white shadow-sm" href="/en/blog/22/what-to-do-if-you-have-water-damage-in-your-walls">
+                                Water damage in walls: what to do
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg">
+                            <a class="d-block h-100 border rounded-4 p-3 text-decoration-none text-dark bg-white shadow-sm" href="/en/blog/148/water-coming-up-basement-floor">
+                                Water coming up through basement floor
+                            </a>
+                        </div>
+                    </div>
+                @endif
 
 
                 <div class="container">

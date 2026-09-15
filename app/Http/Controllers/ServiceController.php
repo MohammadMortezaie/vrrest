@@ -478,18 +478,14 @@ class ServiceController extends Controller
         $areaServedEn = [
             'Vancouver',
             'Burnaby',
-            'Coquitlam',
-            'Chilliwack',
-            'Abbotsford',
-            'Richmond',
             'Surrey',
-            'Langley',
             'North Vancouver',
             'West Vancouver',
-            'Maple Ridge',
-            'Mission',
-            'Hope',
-            'Fraser Valley',
+            'Coquitlam',
+            'New Westminster',
+            'Metro Vancouver',
+            'Richmond',
+            'Langley',
             'Lower Mainland',
             'BC',
         ];
@@ -500,9 +496,14 @@ class ServiceController extends Controller
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'Service',
-                    'name' => 'Water Damage Restoration in Vancouver',
-                    'serviceType' => 'Water damage restoration services',
-                    'description' => '24/7 emergency water damage restoration in Vancouver with water extraction, structural drying, moisture detection, cleanup, insurance documentation, and repair coordination.',
+                    'name' => 'Water Damage Restoration Vancouver',
+                    'serviceType' => [
+                        'Water damage restoration',
+                        'Emergency water extraction',
+                        'Structural drying',
+                        'Flood cleanup',
+                    ],
+                    'description' => '24/7 water damage restoration in Vancouver with emergency water extraction, structural drying, moisture mapping, mold prevention, insurance documentation, and repair coordination.',
                     'provider' => [
                         '@type' => 'LocalBusiness',
                         'name' => 'VR PLUS Restoration',
@@ -525,6 +526,7 @@ class ServiceController extends Controller
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Emergency water extraction']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Structural drying and dehumidification']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Moisture mapping and leak detection']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Basement flood cleanup']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Sewage cleanup and sanitizing']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Water damage repair and rebuild coordination']],
                         ],
@@ -543,50 +545,66 @@ class ServiceController extends Controller
                     'mainEntity' => [
                         [
                             '@type' => 'Question',
-                            'name' => 'What Is Water Damage Restoration, and Why Is It Urgent?',
+                            'name' => 'What should I do first after water damage?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Water damage restoration is the process of cleaning, drying, and repairing your property after it has been affected by water damage. This can include water removal, damage assessment, and repairs to restore your property to its pre-damage condition.',
+                                'text' => 'If it is safe, stop the water source, avoid electrical hazards, move valuables out of wet areas, and call an emergency water damage restoration company. VR PLUS can inspect, extract water, document the damage, and start drying.',
                             ],
                         ],
                         [
                             '@type' => 'Question',
-                            'name' => 'How Quickly Should Water Damage Be Addressed in Vancouver?',
+                            'name' => 'How fast can you arrive in Vancouver?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Water damage should be addressed as soon as possible to prevent further damage and mold growth. Quick action helps to minimize the extent of the damage and reduce restoration costs.',
+                                'text' => 'We provide 24/7 response across Vancouver and Metro Vancouver. Arrival time depends on traffic and crew availability, but we prioritize active leaks, flooding, sewage backup, and safety risks.',
                             ],
                         ],
                         [
                             '@type' => 'Question',
-                            'name' => 'What types of equipment are used in water damage restoration?',
+                            'name' => 'Do you provide emergency water extraction?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Our water damage restoration experts use advanced equipment such as infrared cameras, moisture meters, powerful pumps, extraction units, and industrial-grade dehumidifiers to effectively dry and restore your property.',
+                                'text' => 'Yes. We provide emergency water extraction for basements, condos, houses, commercial spaces, crawl spaces, kitchens, bathrooms, and flooded suites using pumps, extractors, and wet-vac equipment.',
                             ],
                         ],
                         [
                             '@type' => 'Question',
-                            'name' => 'Can water-damaged materials be restored, or do they need to be replaced?',
+                            'name' => 'Does insurance cover water damage restoration?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Many water-damaged materials can be restored if addressed quickly and properly. Our specialists will assess the damage and determine whether materials can be salvaged or need to be removed and replaced.',
+                                'text' => 'Coverage depends on the cause of loss and your policy. Sudden events such as burst pipes or appliance failures may be covered, while long-term leaks may not be. We provide photos, moisture readings, and itemized documentation for your claim.',
                             ],
                         ],
                         [
                             '@type' => 'Question',
-                            'name' => 'Does VR PLUS assist with insurance claims for water damage restoration?',
+                            'name' => 'How long does structural drying take?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Yes, VR PLUS helps manage the necessary paperwork and assists with the insurance claims process. We work closely with your insurance company to ensure a smooth and hassle-free claims experience.',
+                                'text' => 'Most structural drying projects take several days, depending on the amount of water, affected materials, humidity, and how quickly extraction begins. We monitor moisture and verify dry goals before repair work starts.',
                             ],
                         ],
                         [
                             '@type' => 'Question',
-                            'name' => 'What certifications do your water damage restoration specialists have?',
+                            'name' => 'Can water damage cause mold?',
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
-                                'text' => 'Our specialists are highly trained and hold IICRC certification in water restoration. This certification ensures they have the expertise and knowledge to effectively handle water damage restoration.',
+                                'text' => 'Yes. Mold can begin growing when wet materials stay damp, especially behind walls, under floors, and in poorly ventilated spaces. Fast extraction, dehumidification, and moisture monitoring reduce the risk.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Do you repair walls, floors, and ceilings after drying?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. After extraction and structural drying are complete, we can coordinate repairs for drywall, ceilings, flooring, trim, insulation, cabinets, and other affected finishes.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Do you serve Burnaby, Surrey, Coquitlam, North Vancouver, and West Vancouver?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. VR PLUS Restoration serves Vancouver, Burnaby, Surrey, Coquitlam, North Vancouver, West Vancouver, New Westminster, and the wider Metro Vancouver area.',
                             ],
                         ],
                     ],
@@ -615,11 +633,17 @@ class ServiceController extends Controller
             ->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
-                    '@type' => 'LocalBusiness',
+                    '@type' => 'HomeAndConstructionBusiness',
                     'name' => 'VR PLUS Restoration',
                     'url' => $pageEnUrl,
                     'image' => asset('img/water-damage.jpeg'),
                     'telephone' => '+1 604-800-3900',
+                    'serviceType' => [
+                        'Water damage restoration',
+                        'Emergency water extraction',
+                        'Structural drying',
+                        'Flood cleanup',
+                    ],
                     'sameAs' => [$googleReviewUrl],
                     'aggregateRating' => $aggregateRating,
                     'address' => [
@@ -816,8 +840,8 @@ class ServiceController extends Controller
             );
 
         $seoDataEn = new SEOData(
-            title: 'Water Damage Restoration Vancouver | 24/7 Emergency Service',
-            description: '24/7 water damage restoration in Vancouver for floods, leaks, burst pipes, sewage backups, drying, repairs, and insurance documentation. Call 604-800-3900.',
+            title: 'Water Damage Restoration Vancouver | 24/7 Emergency Repair',
+            description: '24/7 water damage restoration in Vancouver. Emergency extraction, drying, mold prevention, IICRC-certified technicians, free inspection & insurance help.',
             image: asset('img/water-damage.jpeg'),
             schema: $waterSchemaEn,
             tags: ['water damage restoration', 'water damage restoration Vancouver', 'emergency water extraction', 'flooded basement repair', 'Vancouver water damage services'],
