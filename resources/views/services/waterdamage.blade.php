@@ -12,6 +12,56 @@
     @php
         $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
         $googleReviewCount = 33;
+        $waterDamageProjectImages = [
+            [
+                'src' => 'img/water-damage/vancouver-water-damage-drying-equipment-living-room.webp',
+                'alt' => 'Water damage restoration Vancouver drying equipment in a living room',
+            ],
+            [
+                'src' => 'img/water-damage/vancouver-water-damage-floor-drying-fans.webp',
+                'alt' => 'Vancouver water damage floor drying fans after water extraction',
+            ],
+            [
+                'src' => 'img/water-damage/vancouver-water-damage-exposed-subfloor-drying.webp',
+                'alt' => 'Exposed subfloor drying during water damage repair in Vancouver',
+            ],
+            [
+                'src' => 'img/water-damage/vancouver-water-damage-moisture-containment.webp',
+                'alt' => 'Moisture containment setup for water damage restoration in Vancouver',
+            ],
+            [
+                'src' => 'img/water-damage/vancouver-water-damage-industrial-dehumidifier.webp',
+                'alt' => 'Industrial dehumidifier used for structural drying in Vancouver',
+            ],
+            [
+                'src' => 'img/water-damage/vancouver-water-extraction-damaged-flooring.webp',
+                'alt' => 'Water extraction and damaged flooring removal in Vancouver',
+            ],
+            [
+                'src' => 'img/water-damage/structural-drying-equipment-vancouver-home.webp',
+                'alt' => 'Structural drying equipment in a Vancouver home after water damage',
+            ],
+            [
+                'src' => 'img/water-damage/basement-water-damage-cleanup-vancouver.webp',
+                'alt' => 'Basement water damage cleanup in Vancouver with drying equipment',
+            ],
+            [
+                'src' => 'img/water-damage/water-damage-repair-floor-removal-vancouver.webp',
+                'alt' => 'Water damage repair and floor removal in a Vancouver property',
+            ],
+            [
+                'src' => 'img/water-damage/emergency-water-damage-drying-vancouver.webp',
+                'alt' => 'Emergency water damage drying equipment in Vancouver',
+            ],
+            [
+                'src' => 'img/water-damage/water-damage-restoration-project-vancouver.webp',
+                'alt' => 'Water damage restoration project in Vancouver after a leak',
+            ],
+            [
+                'src' => 'img/water-damage/vancouver-water-restoration-equipment-project.webp',
+                'alt' => 'Vancouver water restoration equipment project for structural drying',
+            ],
+        ];
     @endphp
 
     <section class="py-md-5 d-flex " style="background: radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.16), transparent 35%), radial-gradient(circle at 80% 10%, rgba(13, 110, 253, 0.12), transparent 30%), #f8fafc;">
@@ -20,7 +70,8 @@
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="rounded-4 overflow-hidden shadow-sm">
                         <img class="img-fluid w-100 h-100 object-fit-cover" loading="lazy"
-                            src="{{ asset('img/water-damage.jpeg') }}" alt="Water damage restoration Vancouver emergency drying equipment">
+                            src="{{ asset('img/water-damage/vancouver-water-damage-drying-equipment-living-room.webp') }}"
+                            alt="Water damage restoration Vancouver drying equipment in a living room">
                     </div>
                     <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
                         <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
@@ -106,6 +157,37 @@
                 </div>
             </div>
         </section>
+
+        <section class="py-4 py-md-5 bg-vr-second">
+            <div class="container">
+                <div class="row g-4 align-items-end mb-3">
+                    <div class="col-lg-8">
+                        <p class="text-uppercase small fw-semibold text-warning mb-2">Real project photos</p>
+                        <h2 class="fs-2 fw-bolder section-title-h1">Recent Vancouver Water Damage Restoration Project</h2>
+                        <p class="text-muted mb-0">
+                            These photos show professional water extraction, exposed flooring, containment, dehumidifiers, and structural drying equipment from a recent water damage project handled by VR PLUS Restoration.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bold text-dark px-4">
+                            Call +1 604-800-3900
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    @foreach ($waterDamageProjectImages as $image)
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <img class="img-fluid rounded-4 shadow-sm w-100 h-100 object-fit-cover"
+                                src="{{ asset($image['src']) }}"
+                                alt="{{ $image['alt'] }}"
+                                loading="lazy"
+                                style="aspect-ratio: 4 / 3;">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
     @endif
 
 
@@ -125,8 +207,8 @@
                     <!-- Image card with overlay label -->
                     <div class="position-relative rounded-4 overflow-hidden shadow-sm h-100">
                         <img class="img-fluid w-100 h-100 object-fit-cover" loading="lazy"
-                            src="{{ asset('img/water-damage-vr.jpeg') }}"
-                            alt="Vancouver water extraction and structural drying technician">
+                            src="{{ asset('img/water-damage/vancouver-water-damage-floor-drying-fans.webp') }}"
+                            alt="Vancouver water damage floor drying fans after water extraction">
 
                         <div class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 py-2"
                             style="background: linear-gradient( to top, rgba(0,0,0,0.65), rgba(0,0,0,0) );">
@@ -369,8 +451,8 @@
                     <!-- Main image -->
                     <div>
                         <img
-                            src="https://vrrestoration.ca/storage/uploads/tEXGP8Eq74pnGLvjntnh4sv81t2PKBrQmQRQ8Id5.jpg"
-                            alt="Moisture meter inspection for water damage repair"
+                            src="{{ asset('img/water-damage/vancouver-water-damage-moisture-containment.webp') }}"
+                            alt="Moisture containment setup for water damage restoration in Vancouver"
                             class="img-fluid rounded-4 w-100"
                             style="object-fit: cover;"
                             loading="lazy"
@@ -380,8 +462,8 @@
                     <!-- Second supporting image -->
                     <div>
                         <img
-                            src="https://vrrestoration.ca/storage/uploads/fMRNAGtDLSgEtiIrakZB8oJpTobB6gGVeSbsjsxq.jpg"
-                            alt="Water damage restoration Vancouver emergency drying equipment"
+                            src="{{ asset('img/water-damage/vancouver-water-damage-industrial-dehumidifier.webp') }}"
+                            alt="Industrial dehumidifier used for structural drying in Vancouver"
                             class="img-fluid rounded-4 w-100"
                             style="object-fit: cover;"
                             loading="lazy"
@@ -513,8 +595,9 @@
                 </div>
 
                 <div class="col-md-6 mt-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damagelivingroom.jpeg') }}"
-                        alt="Water Damage Restoration Vancouver Fix issue immediately after flood in bc">
+                    <img class="img-fluid rounded" loading="lazy"
+                        src="{{ asset('img/water-damage/vancouver-water-restoration-equipment-project.webp') }}"
+                        alt="Vancouver water restoration equipment project for structural drying">
 
                 </div>
 
@@ -542,13 +625,15 @@
                 <div class="row">
 
                     <div class="col-md-6 my-3">
-                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver2.jpg') }}"
-                            alt="Moisture meter inspection for water damage repair">
+                        <img class="img-fluid rounded" loading="lazy"
+                            src="{{ asset('img/water-damage/structural-drying-equipment-vancouver-home.webp') }}"
+                            alt="Structural drying equipment in a Vancouver home after water damage">
                     </div>
 
                     <div class="col-md-6 my-3">
-                        <img class="img-fluid rounded" src="{{ asset('img/water-damage -vancouver3.jpg') }}"
-                            alt="Vancouver water extraction and structural drying technician">
+                        <img class="img-fluid rounded" loading="lazy"
+                            src="{{ asset('img/water-damage/vancouver-water-extraction-damaged-flooring.webp') }}"
+                            alt="Water extraction and damaged flooring removal in Vancouver">
                     </div>
 
                 </div>
@@ -732,9 +817,9 @@
 
                 <div class="row g-4 align-items-center mt-5">
                     <div class="col-lg-5">
-                    <img class="img-fluid rounded-4 shadow-sm" loading="lazy"
-                            src="{{ asset('img/water-damage-equipment-vancouver.jpeg') }}"
-                            alt="{{ __('Water Damage Restoration Insurance Alt') }}">
+                        <img class="img-fluid rounded-4 shadow-sm" loading="lazy"
+                            src="{{ asset('img/water-damage/vancouver-water-damage-exposed-subfloor-drying.webp') }}"
+                            alt="Exposed subfloor drying during water damage repair in Vancouver">
                     </div>
 
                     <div class="col-lg-7">
@@ -807,8 +892,8 @@
                 <div class="col-md-5 mb-4 pb-4">
 
                     <img class="img-fluid rounded " loading="lazy"
-                        src="{{ asset('img/water-damage-restoration-vancouver-equipment.jpg') }}"
-                        alt="Basement flood cleanup in Vancouver">
+                        src="{{ asset('img/water-damage/basement-water-damage-cleanup-vancouver.webp') }}"
+                        alt="Basement water damage cleanup in Vancouver with drying equipment">
 
                 </div>
 
@@ -821,8 +906,8 @@
                 <div class="col-md-5 mb-3">
 
                     <img class="img-fluid rounded " loading="lazy"
-                        src="{{ asset('img/water-damage-restorationbath.jpeg') }}"
-                        alt="Water damage restoration Vancouver emergency drying equipment">
+                        src="{{ asset('img/water-damage/emergency-water-damage-drying-vancouver.webp') }}"
+                        alt="Emergency water damage drying equipment in Vancouver">
 
                 </div>
                 <div class="col-md-7 mb-3">
@@ -935,8 +1020,9 @@
                 </div>
                 <div class="col-md-5 mb-3">
 
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/water-damage-vancouver.jpg') }}"
-                        alt="Basement flood cleanup in Vancouver">
+                    <img class="img-fluid rounded" loading="lazy"
+                        src="{{ asset('img/water-damage/water-damage-restoration-project-vancouver.webp') }}"
+                        alt="Water damage restoration project in Vancouver after a leak">
                 </div>
 
                 <div class="collapse" id="collapseVrRestoration">
