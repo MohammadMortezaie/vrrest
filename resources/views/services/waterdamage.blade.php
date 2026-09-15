@@ -30,10 +30,6 @@
                 'alt' => 'Moisture containment setup for water damage restoration in Vancouver',
             ],
             [
-                'src' => 'img/water-damage/vancouver-water-damage-industrial-dehumidifier.webp',
-                'alt' => 'Industrial dehumidifier used for structural drying in Vancouver',
-            ],
-            [
                 'src' => 'img/water-damage/vancouver-water-extraction-damaged-flooring.webp',
                 'alt' => 'Water extraction and damaged flooring removal in Vancouver',
             ],
