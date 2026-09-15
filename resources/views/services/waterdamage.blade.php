@@ -70,8 +70,7 @@
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="rounded-4 overflow-hidden shadow-sm">
                         <img class="img-fluid w-100 h-100 object-fit-cover" loading="lazy"
-                            src="{{ asset('img/water-damage/vancouver-water-damage-drying-equipment-living-room.webp') }}"
-                            alt="Water damage restoration Vancouver drying equipment in a living room">
+                            src="{{ asset('img/water-damage.jpeg') }}" alt="Water damage restoration Vancouver emergency drying equipment">
                     </div>
                     <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
                         <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
