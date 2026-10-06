@@ -3,6 +3,13 @@
 use RalphJSmit\Laravel\SEO\Models\SEO;
 
 return [
+    /*
+     * Public origin used for canonical URLs, hreflang links and sitemap entries.
+     * Keeping this independent of the request host prevents localhost or proxy
+     * hostnames from leaking into search-engine metadata.
+     */
+    'site_url' => env('SEO_SITE_URL', 'https://vrrestoration.ca'),
+
     /**
      * The SEO model. You can use this setting to override the model used by the package.
      * Make sure to always extend the old model, so that you'll not lose functionality during upgrades.

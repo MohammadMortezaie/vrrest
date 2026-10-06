@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\LocalService;
 use App\Models\Post;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -161,7 +160,7 @@ class ServiceController extends Controller
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        $blog = Post::activePosts(false, 5); // Fetch recent blog posts
+        $blog = Post::activePostsForLocale($locale, false, 5); // Fetch recent blog posts
 
         return view('welcome', [
             'SEOData' => $SEOData,
@@ -865,7 +864,7 @@ class ServiceController extends Controller
 
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        $blog = Post::activePosts(false, 5);
+        $blog = Post::activePostsForLocale($locale, false, 5);
         return view('services.waterdamage', [
             'SEOData' => $SEOData,
             'blog' => $blog,
@@ -2210,49 +2209,107 @@ $seoDataZh = new SEOData(
     {
         return view('services.industriesServiced');
     }
-    public function sitemap()
+    public function sitemap(): Sitemap
     {
-        $sitemap = Sitemap::create()
-            ->add(Url::create('/en')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/blog')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/about')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/contact-us')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/our-team')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/career')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/water-damage')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/seismic-retrofit-plan-single-family')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/commercial-services')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/residential-services')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/construction')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/fire-damage')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/general-cleaning')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/mold-remediation')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/en/specialty-cleaning')->setLastModificationDate(Carbon::yesterday()))
+        $siteUrl = rtrim(config('seo.site_url'), '/');
+        $sitemap = Sitemap::create();
+        $localizedPaths = [
+            '',
+            '/about',
+            '/contact-us',
+            '/our-team',
+            '/career',
+            '/water-damage',
+            '/seismic-retrofit-plan-single-family',
+            '/commercial-services',
+            '/residential-services',
+            '/construction',
+            '/fire-damage',
+            '/general-cleaning',
+            '/mold-remediation',
+            '/specialty-cleaning',
+            '/local-services',
+        ];
 
-            ->add(Url::create('/zh')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/blog')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/about')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/contact-us')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/our-team')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/career')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/water-damage')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/seismic-retrofit-plan-single-family')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/commercial-services')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/residential-services')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/construction')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/fire-damage')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/general-cleaning')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/mold-remediation')->setLastModificationDate(Carbon::yesterday()))
-            ->add(Url::create('/zh/specialty-cleaning')->setLastModificationDate(Carbon::yesterday()));
+        foreach ($localizedPaths as $path) {
+            $englishUrl = $siteUrl.'/en'.$path;
+            $chineseUrl = $siteUrl.'/zh'.$path;
 
-        LocalService::all()->each(function (LocalService $localS) use ($sitemap) {
-            $sitemap->add(Url::create('/en/' . $localS->city . '/' . $localS->slug)->setLastModificationDate($localS->updated_at));
-            $sitemap->add(Url::create('/zh/' . $localS->city . '/' . $localS->slug)->setLastModificationDate($localS->updated_at));
+            $sitemap
+                ->add(Url::create($englishUrl)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->addAlternate($englishUrl, 'en')
+                    ->addAlternate($chineseUrl, 'zh')
+                    ->addAlternate($englishUrl, 'x-default'))
+                ->add(Url::create($chineseUrl)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->addAlternate($englishUrl, 'en')
+                    ->addAlternate($chineseUrl, 'zh')
+                    ->addAlternate($englishUrl, 'x-default'));
+        }
+
+        $posts = Post::query()->active()->latest('updated_at')->get();
+        $hasChinesePosts = $posts->contains(fn (Post $post) => $post->locale() === 'zh');
+        $englishBlogUrl = $siteUrl.'/en/blog';
+        $chineseBlogUrl = $siteUrl.'/zh/blog';
+        $englishBlogTag = Url::create($englishBlogUrl)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+            ->addAlternate($englishBlogUrl, 'en')
+            ->addAlternate($englishBlogUrl, 'x-default');
+
+        if ($hasChinesePosts) {
+            $englishBlogTag->addAlternate($chineseBlogUrl, 'zh');
+        }
+
+        $sitemap->add($englishBlogTag);
+
+        if ($hasChinesePosts) {
+            $sitemap->add(Url::create($chineseBlogUrl)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->addAlternate($englishBlogUrl, 'en')
+                ->addAlternate($chineseBlogUrl, 'zh')
+                ->addAlternate($englishBlogUrl, 'x-default'));
+        }
+
+        LocalService::query()->where('is_active', true)->each(function (LocalService $localService) use ($sitemap, $siteUrl) {
+            $englishUrl = $siteUrl.'/en/'.$localService->city.'/'.$localService->slug;
+            $chineseUrl = $siteUrl.'/zh/'.$localService->city.'/'.$localService->slug;
+
+            $sitemap
+                ->add(Url::create($englishUrl)
+                    ->setLastModificationDate($localService->updated_at)
+                    ->addAlternate($englishUrl, 'en')
+                    ->addAlternate($chineseUrl, 'zh')
+                    ->addAlternate($englishUrl, 'x-default'))
+                ->add(Url::create($chineseUrl)
+                    ->setLastModificationDate($localService->updated_at)
+                    ->addAlternate($englishUrl, 'en')
+                    ->addAlternate($chineseUrl, 'zh')
+                    ->addAlternate($englishUrl, 'x-default'));
         });
 
-        Post::all()->each(function (Post $post) use ($sitemap) {
-            $sitemap->add(Url::create('/en/blog/' . $post->id . '/' . $post->slug)->setLastModificationDate($post->updated_at));
+        $posts->each(function (Post $post) use ($sitemap, $siteUrl) {
+            $locale = $post->locale();
+
+            if (! $locale) {
+                return;
+            }
+
+            $url = $siteUrl.'/'.$locale.'/blog/'.$post->id.'/'.$post->slug;
+            $tag = Url::create($url)
+                ->setLastModificationDate($post->updated_at)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY);
+
+            if ($post->image) {
+                $image = str_starts_with($post->image, 'http')
+                    ? $post->image
+                    : $siteUrl.'/'.ltrim($post->image, '/');
+                $tag->addImage($image, $post->title, '', $post->title);
+            }
+
+            $sitemap->add($tag);
         });
-        $sitemap->writeToFile(public_path('sitemap.xml'));
+
+        return $sitemap;
     }
 }

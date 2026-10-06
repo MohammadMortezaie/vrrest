@@ -71,6 +71,7 @@ Route::post('/comment/{blog}', [CommentController::class, 'store'])->name('blog.
 
 // sitemap
 Route::get('/sitemap', [ServiceController::class, 'sitemap']);
+Route::get('/sitemap.xml', [ServiceController::class, 'sitemap'])->name('sitemap');
 
 Route::group([
     'prefix' => '{lang}',

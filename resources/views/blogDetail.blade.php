@@ -33,8 +33,8 @@
                                 <span>{{ $blog->category->name_en }}</span>
                             </nav>
                             <h1 class="h2 fw-bold">{{ $blog->title }}</h1>
-                            <span>Updated at: {{ $blog->updated_at }}</span>
-                            <span>Published at: {{ $blog->created_at }}</span>
+                            <span>Updated at: <time datetime="{{ $blog->updated_at->toIso8601String() }}">{{ $blog->updated_at->translatedFormat('F j, Y') }}</time></span>
+                            <span>Published at: <time datetime="{{ $blog->created_at->toIso8601String() }}">{{ $blog->created_at->translatedFormat('F j, Y') }}</time></span>
                             <hr>
                         </div>
                         @if ($blog->image)

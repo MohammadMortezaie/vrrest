@@ -14,6 +14,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertRedirect('/'.config('app.fallback_locale'));
+        $response->assertStatus(301);
     }
 }
