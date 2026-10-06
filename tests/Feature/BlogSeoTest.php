@@ -75,6 +75,7 @@ class BlogSeoTest extends TestCase
         $inactive = $this->createPost('en', 'inactive-guide', 'Inactive guide', false);
 
         $response = $this->get('/sitemap.xml');
+        $legacyResponse = $this->get('/sitemap');
 
         $response->assertOk()
             ->assertHeader('content-type', 'text/xml; charset=UTF-8')
@@ -84,6 +85,10 @@ class BlogSeoTest extends TestCase
             ->assertDontSee("https://vrrestoration.ca/en/blog/{$chinese->id}/chinese-guide", false)
             ->assertDontSee($inactive->slug)
             ->assertDontSee('127.0.0.1');
+
+        $legacyResponse->assertOk()
+            ->assertHeader('content-type', 'text/xml; charset=UTF-8');
+        $this->assertSame($response->getContent(), $legacyResponse->getContent());
     }
 
     private function createPost(string $locale, string $slug, string $title, bool $active = true): Post
