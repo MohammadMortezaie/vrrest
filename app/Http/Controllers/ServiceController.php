@@ -527,6 +527,7 @@ class ServiceController extends Controller
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Moisture mapping and leak detection']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Basement flood cleanup']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Sewage cleanup and sanitizing']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Contents protection and pack-out coordination']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Water damage repair and rebuild coordination']],
                         ],
                     ],
@@ -604,6 +605,38 @@ class ServiceController extends Controller
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
                                 'text' => 'Yes. VR PLUS Restoration serves Vancouver, Burnaby, Surrey, Coquitlam, North Vancouver, West Vancouver, New Westminster, and the wider Metro Vancouver area.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'How much does water damage restoration cost in Vancouver?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Cost depends on the water category, affected area, materials, extraction and drying time, contents handling, and repairs. An on-site inspection is the reliable way to define the scope. VR PLUS provides a clear estimate and documentation before approved work proceeds.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'What are Category 1, 2, and 3 water losses?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Category 1 begins with a sanitary water source, Category 2 contains a meaningful level of contamination, and Category 3 is highly contaminated water such as sewage. Conditions can worsen over time, so a technician should assess the source, materials, and safety risks.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Do you handle condo and strata water damage?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Yes. We work on condo and strata losses that may affect multiple suites, ceilings, walls, flooring, or common property. We can coordinate moisture assessment, drying, documentation, and repair planning with owners, property managers, and strata representatives.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Can water-damaged furniture and belongings be saved?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Many items can be saved when they are addressed quickly, but the answer depends on the material, contamination level, and time exposed. We can help separate, document, move, clean, store, and return contents as the project requires.',
                             ],
                         ],
                     ],
@@ -709,6 +742,7 @@ class ServiceController extends Controller
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '结构干燥和除湿']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '湿度测绘和漏水检测']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '污水清理和消毒']],
+                            ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '物品保护与打包搬出协调']],
                             ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => '水损维修和重建协调']],
                         ],
                     ],
@@ -770,6 +804,38 @@ class ServiceController extends Controller
                             'acceptedAnswer' => [
                                 '@type' => 'Answer',
                                 'text' => '我们的专家受过高度培训，拥有IICRC水修复认证。这一认证确保他们具备有效处理水损害修复的专业知识和技能。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '温哥华水灾修复费用是多少？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '费用取决于水质类别、受影响面积和材料、抽水及干燥时间、物品处理和维修需求。上门检查是确定施工范围的可靠方式。VR PLUS 会在获批施工前提供清晰报价和相关记录。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '第 1、2、3 类水灾分别是什么？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '第 1 类来自卫生水源；第 2 类含有一定程度的污染；第 3 类为高度污染水，例如污水。情况会随时间恶化，因此应由技师评估水源、材料和安全风险。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '你们处理公寓和分层物业的水灾吗？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '可以。我们处理可能影响多个单位、天花板、墙体、地板或公共区域的公寓和分层物业水灾，并可与业主、物业经理和分层物业代表协调湿度评估、干燥、记录和维修规划。',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => '受水损的家具和个人物品还能保留吗？',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '若及时处理，许多物品可以修复，但需视材料、污染程度和受潮时间而定。我们可根据项目需要协助分类、记录、搬运、清洁、存放和归还物品。',
                             ],
                         ],
                     ],

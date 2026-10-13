@@ -121,6 +121,15 @@
             transform: translateY(-2px);
         }
 
+        [id^="water-damage-"],
+        #faq {
+            scroll-margin-top: 170px;
+        }
+
+        .vr-cost-figure-image {
+            min-height: 420px;
+        }
+
         @keyframes vrGalleryImageIn {
             from {
                 opacity: 0.92;
@@ -169,6 +178,11 @@
             .vr-project-gallery-nav {
                 width: 38px;
                 height: 38px;
+            }
+
+            .vr-cost-figure-image {
+                min-height: 280px;
+                aspect-ratio: 4 / 3;
             }
         }
 
@@ -294,6 +308,20 @@
             </div>
         </div>
     </section>
+
+    <nav class="border-top border-bottom bg-white py-3" aria-label="{{ __('Water Damage Quick Links Label') }}">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+                <span class="small fw-bold text-uppercase me-1">{{ __('Water Damage Quick Links Label') }}</span>
+                <a class="btn btn-sm btn-outline-dark rounded-pill" href="#water-damage-causes">{{ __('Water Damage Quick Link Causes') }}</a>
+                <a class="btn btn-sm btn-outline-dark rounded-pill" href="#water-damage-types">{{ __('Water Damage Quick Link Types') }}</a>
+                <a class="btn btn-sm btn-outline-dark rounded-pill" href="#water-damage-services">{{ __('Water Damage Quick Link Services') }}</a>
+                <a class="btn btn-sm btn-outline-dark rounded-pill" href="#water-damage-safety-cost">{{ __('Water Damage Quick Link Safety Cost') }}</a>
+                <a class="btn btn-sm btn-outline-dark rounded-pill" href="#water-damage-process">{{ __('Water Damage Quick Link Process') }}</a>
+                <a class="btn btn-sm btn-outline-dark rounded-pill" href="#faq">{{ __('Water Damage Quick Link FAQ') }}</a>
+            </div>
+        </div>
+    </nav>
 
     @if (app()->getLocale() === 'en')
         <section class="py-4 py-md-5 bg-white">
@@ -677,7 +705,7 @@
                 </div>
 
 
-<div class="col-12">
+<div class="col-12" id="water-damage-causes">
     <div class="bg-white rounded-4 shadow-sm p-4 p-md-5">
         <div class="row g-4 align-items-center">
             <!-- Image -->
@@ -848,7 +876,7 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="water-damage-types">
 
                     <div class="col-md-6 my-3">
                         <img class="img-fluid rounded" loading="lazy"
@@ -991,7 +1019,7 @@
 
                 </div>
 
-                <div class="row g-4 mt-4">
+                <div class="row g-4 mt-4" id="water-damage-services">
                     <div class="col-md-12">
                         <p class="text-uppercase small fw-semibold text-warning mb-1">
                             {{ __('Water Damage Restoration Scope Eyebrow') }}
@@ -1089,6 +1117,116 @@
 
 
 
+            </div>
+        </div>
+    </section>
+
+    <section id="water-damage-safety-cost" class="py-4 py-md-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-9 text-center">
+                    <p class="text-uppercase small fw-semibold text-warning mb-2">
+                        {{ __('Water Damage Categories Eyebrow') }}
+                    </p>
+                    <h2 class="fs-2 fw-bolder section-title-h1">
+                        {{ __('Water Damage Categories Title') }}
+                    </h2>
+                    <p class="lead text-muted mb-0">
+                        {{ __('Water Damage Categories Intro') }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="h-100 border border-success-subtle rounded-4 p-4 shadow-sm">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="badge rounded-pill text-bg-success px-3 py-2">{{ __('Water Damage Category 1 Badge') }}</span>
+                            <h3 class="h5 fw-bold mb-0">{{ __('Water Damage Category 1 Title') }}</h3>
+                        </div>
+                        <p class="text-muted mb-0">{{ __('Water Damage Category 1 Text') }}</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="h-100 border border-warning-subtle rounded-4 p-4 shadow-sm">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="badge rounded-pill text-bg-warning px-3 py-2">{{ __('Water Damage Category 2 Badge') }}</span>
+                            <h3 class="h5 fw-bold mb-0">{{ __('Water Damage Category 2 Title') }}</h3>
+                        </div>
+                        <p class="text-muted mb-0">{{ __('Water Damage Category 2 Text') }}</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="h-100 border border-danger-subtle rounded-4 p-4 shadow-sm">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="badge rounded-pill text-bg-danger px-3 py-2">{{ __('Water Damage Category 3 Badge') }}</span>
+                            <h3 class="h5 fw-bold mb-0">{{ __('Water Damage Category 3 Title') }}</h3>
+                        </div>
+                        <p class="text-muted mb-0">{{ __('Water Damage Category 3 Text') }}</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="alert alert-warning d-flex align-items-start gap-3 mt-4 mb-0" role="note">
+                <i class="bi bi-exclamation-triangle-fill fs-4" aria-hidden="true"></i>
+                <div>
+                    <strong class="d-block">{{ __('Water Damage Categories Safety Title') }}</strong>
+                    <span>{{ __('Water Damage Categories Safety Text') }}</span>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch mt-4 mt-lg-5">
+                <div class="col-lg-5">
+                    <figure class="position-relative overflow-hidden rounded-4 shadow-sm h-100 mb-0">
+                        <img
+                            src="{{ asset('img/water-damagelivingroom.jpeg') }}"
+                            alt="{{ __('Water Damage Cost Image Alt') }}"
+                            class="img-fluid w-100 h-100 object-fit-cover vr-cost-figure-image"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <figcaption class="position-absolute bottom-0 start-0 end-0 p-4 text-white"
+                            style="background: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0));">
+                            <span class="fw-semibold">{{ __('Water Damage Cost Image Caption') }}</span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="bg-vr-second rounded-4 p-4 p-md-5 h-100">
+                        <p class="text-uppercase small fw-semibold text-warning mb-2">
+                            {{ __('Water Damage Cost Eyebrow') }}
+                        </p>
+                        <h2 class="fs-2 fw-bolder section-title-h1">
+                            {{ __('Water Damage Cost Title') }}
+                        </h2>
+                        <p class="text-muted">{{ __('Water Damage Cost Intro') }}</p>
+
+                        <div class="row g-3 mb-4">
+                            @foreach (range(1, 6) as $factor)
+                                <div class="col-sm-6">
+                                    <div class="d-flex gap-2 h-100 bg-white rounded-3 p-3 shadow-sm">
+                                        <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
+                                        <span>{{ __("Water Damage Cost Factor {$factor}") }}</span>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="border-top pt-4">
+                            <h3 class="h4 fw-bold">{{ __('Water Damage Contents Title') }}</h3>
+                            <p class="text-muted mb-3">{{ __('Water Damage Contents Text') }}</p>
+                            <ul class="mb-4 ps-3">
+                                <li>{{ __('Water Damage Contents Item 1') }}</li>
+                                <li>{{ __('Water Damage Contents Item 2') }}</li>
+                                <li>{{ __('Water Damage Contents Item 3') }}</li>
+                            </ul>
+                            <a href="tel:+16048003900" class="btn btn-warning fw-bold text-dark px-4">
+                                {{ __('Water Damage Cost CTA') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1281,7 +1419,7 @@
 
 
 
-    <section class="py-3 py-md-5 ">
+    <section id="water-damage-process" class="py-3 py-md-5 ">
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-md-12 mb-3">
@@ -1562,8 +1700,44 @@
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="625">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Water Damage FAQ Cost Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Water Damage FAQ Cost Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div>
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="650">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Water Damage FAQ Category Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Water Damage FAQ Category Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div>
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="675">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Water Damage FAQ Strata Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Water Damage FAQ Strata Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div>
+
+                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="700">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>{{ __('Water Damage FAQ Contents Question') }}</h3>
+                            <div class="faq-content">
+                                <p>{{ __('Water Damage FAQ Contents Answer') }}</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div>
+
                         @if (app()->getLocale() === 'en')
-                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="650">
+                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="725">
                                 <i class="faq-icon bi bi-question-circle"></i>
                                 <h3>Do you repair walls, floors, and ceilings after drying?</h3>
                                 <div class="faq-content">
@@ -1572,7 +1746,7 @@
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div>
 
-                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="700">
+                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="750">
                                 <i class="faq-icon bi bi-question-circle"></i>
                                 <h3>Do you serve Burnaby, Surrey, Coquitlam, North Vancouver, and West Vancouver?</h3>
                                 <div class="faq-content">
