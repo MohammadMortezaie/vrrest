@@ -381,6 +381,13 @@
         </div>
     </section>
 
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['garnik-giloyan', 'nozar-kh', 'calzoner'],
+        'reviewSectionTitle' => __('Google Reviews Residential Title'),
+        'reviewSectionLead' => __('Google Reviews Residential Lead'),
+        'reviewSectionClass' => 'bg-vr-second',
+    ])
+
     <section class="py-5">
         <div class="container">
             <div class="row g-4 align-items-center mb-4">

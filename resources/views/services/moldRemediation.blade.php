@@ -49,45 +49,60 @@
                 'priceCurrency' => 'CAD',
                 'description' => __('Mold Extra Schema Offer Description'),
             ],
+            'hasOfferCatalog' => [
+                '@type' => 'OfferCatalog',
+                'name' => __('Mold Guide Catalog Title'),
+                'itemListElement' => array_map(static fn ($service) => [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => __($service),
+                    ],
+                ], [
+                    'Mold Guide Catalog Service 1',
+                    'Mold Guide Catalog Service 2',
+                    'Mold Guide Catalog Service 3',
+                    'Mold Guide Catalog Service 4',
+                    'Mold Guide Catalog Service 5',
+                ]),
+            ],
         ];
+
+        $moldFaqItems = array_map(static fn ($faq) => [
+            'question' => __($faq[0]),
+            'answer' => __($faq[1]),
+        ], [
+            ['Mold 1-30', 'Mold 1-31'],
+            ['Mold 1-32', 'Mold 1-33'],
+            ['Mold 1-34', 'Mold 1-35'],
+            ['Mold 1-36', 'Mold 1-37'],
+            ['Mold 1-38', 'Mold 1-39'],
+            ['Mold 1-40', 'Mold 1-41'],
+            ['Mold 1-42', 'Mold 1-43'],
+            ['Mold 1-44', 'Mold 1-45'],
+            ['Mold 1-46', 'Mold 1-47'],
+            ['Mold 1-48', 'Mold 1-49'],
+            ['Mold Extra FAQ 1 Question', 'Mold Extra FAQ 1 Answer'],
+            ['Mold Extra FAQ 2 Question', 'Mold Extra FAQ 2 Answer'],
+            ['Mold Extra FAQ 3 Question', 'Mold Extra FAQ 3 Answer'],
+            ['Mold Extra FAQ 4 Question', 'Mold Extra FAQ 4 Answer'],
+            ['Mold Guide FAQ 1 Question', 'Mold Guide FAQ 1 Answer'],
+            ['Mold Guide FAQ 2 Question', 'Mold Guide FAQ 2 Answer'],
+            ['Mold Guide FAQ 3 Question', 'Mold Guide FAQ 3 Answer'],
+            ['Mold Guide FAQ 4 Question', 'Mold Guide FAQ 4 Answer'],
+        ]);
 
         $moldFaqSchema = [
             '@context' => 'https://schema.org',
             '@type' => 'FAQPage',
-            'mainEntity' => [
-                [
-                    '@type' => 'Question',
-                    'name' => __('Mold Extra FAQ 1 Question'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('Mold Extra FAQ 1 Answer'),
-                    ],
+            'mainEntity' => array_map(static fn ($faq) => [
+                '@type' => 'Question',
+                'name' => $faq['question'],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $faq['answer'],
                 ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('Mold Extra FAQ 2 Question'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('Mold Extra FAQ 2 Answer'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('Mold Extra FAQ 3 Question'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('Mold Extra FAQ 3 Answer'),
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => __('Mold Extra FAQ 4 Question'),
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => __('Mold Extra FAQ 4 Answer'),
-                    ],
-                ],
-            ],
+            ], $moldFaqItems),
         ];
     @endphp
 
@@ -124,6 +139,60 @@
             font-size: 0.9rem;
             color: #212529;
             text-decoration: none;
+        }
+
+        .mold-jump-nav {
+            position: sticky;
+            top: 160px;
+            z-index: 1010;
+            border-bottom: 1px solid rgba(33, 37, 41, 0.08);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+        }
+
+        .mold-jump-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0.55rem 1rem;
+            border: 1px solid rgba(33, 37, 41, 0.13);
+            border-radius: 999px;
+            color: #212529;
+            background: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .mold-jump-link:hover,
+        .mold-jump-link:focus {
+            border-color: #ffc107;
+            background: #fff8df;
+            color: #212529;
+        }
+
+        .mold-guide-card {
+            height: 100%;
+            padding: 1.25rem;
+            border: 1px solid rgba(33, 37, 41, 0.1);
+            border-top: 4px solid #ffc107;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(33, 37, 41, 0.07);
+        }
+
+        #mold-causes-signs,
+        #mold-types-testing,
+        #mold-services,
+        #mold-process,
+        #faq {
+            scroll-margin-top: 160px;
+        }
+
+        @media (max-width: 1199px) {
+            .mold-jump-nav {
+                top: 100px;
+            }
         }
     </style>
     <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"UjY3iNHaot5pnvK66tLLbm",debug:true});</script>
@@ -186,6 +255,16 @@
             </div>
         </div>
     </section>
+
+    <nav class="mold-jump-nav py-3" aria-label="{{ __('Mold Guide Navigation Label') }}">
+        <div class="container d-flex gap-2 overflow-auto">
+            <a class="mold-jump-link" href="#mold-causes-signs">{{ __('Mold Guide Nav Causes') }}</a>
+            <a class="mold-jump-link" href="#mold-types-testing">{{ __('Mold Guide Nav Types') }}</a>
+            <a class="mold-jump-link" href="#mold-services">{{ __('Mold Guide Nav Services') }}</a>
+            <a class="mold-jump-link" href="#mold-process">{{ __('Mold Guide Nav Process') }}</a>
+            <a class="mold-jump-link" href="#faq">{{ __('Mold Guide Nav FAQ') }}</a>
+        </div>
+    </nav>
 
 
     @include('partials.contact-form', [
@@ -359,7 +438,7 @@
         </div>
     </section>
 
-    <section class="py-4 py-md-5 bg-vr-second">
+    <section id="mold-causes-signs" class="py-4 py-md-5 bg-vr-second">
         <div class="container">
             <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
                 <span class="text-warning">{{ __('Mold SEO Badge 1') }}</span>
@@ -604,7 +683,99 @@
     </section>
 
 
-    <section class="py-4 py-md-5" style="background: radial-gradient(circle at 20% 20%, rgba(255, 193, 7, 0.12), transparent 45%), radial-gradient(circle at 80% 0%, rgba(13, 110, 253, 0.12), transparent 35%), #ffffff;">
+    <section id="mold-types-testing" class="py-4 py-md-5" style="background: linear-gradient(145deg, #f8fafc 0%, #ffffff 55%, #fff8df 100%);">
+        <div class="container">
+            <div class="row g-4 align-items-end mb-4">
+                <div class="col-12 col-lg-8">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark text-uppercase fw-semibold small mb-3">
+                        {{ __('Mold Guide Types Badge') }}
+                    </div>
+                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Guide Types Title') }}</h2>
+                    <p class="lead mb-2">{{ __('Mold Guide Types Lead') }}</p>
+                    <p class="text-muted mb-0">{{ __('Mold Guide Types Note') }}</p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="p-3 rounded-4 bg-dark text-white">
+                        <div class="small text-warning fw-bold text-uppercase mb-1">{{ __('Mold Guide Moisture Label') }}</div>
+                        <p class="small mb-2">{{ __('Mold Guide Moisture Text') }}</p>
+                        <a class="small text-warning fw-semibold" href="https://www.canada.ca/en/health-canada/services/publications/healthy-living/addressing-moisture-mould-your-home.html" target="_blank" rel="noopener noreferrer">
+                            {{ __('Mold Guide Health Canada Link') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-5">
+                <div class="col-12 col-md-4">
+                    <article class="mold-guide-card">
+                        <div class="small text-warning fw-bold mb-2">01</div>
+                        <h3 class="h5 fw-bold">{{ __('Mold Guide Type 1 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Guide Type 1 Text') }}</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="mold-guide-card">
+                        <div class="small text-warning fw-bold mb-2">02</div>
+                        <h3 class="h5 fw-bold">{{ __('Mold Guide Type 2 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Guide Type 2 Text') }}</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="mold-guide-card">
+                        <div class="small text-warning fw-bold mb-2">03</div>
+                        <h3 class="h5 fw-bold">{{ __('Mold Guide Type 3 Title') }}</h3>
+                        <p class="small text-muted mb-0">{{ __('Mold Guide Type 3 Text') }}</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-lg-8">
+                    <div class="p-4 p-lg-5 bg-white rounded-4 shadow-sm h-100">
+                        <h2 class="h3 fw-bolder mb-2">{{ __('Mold Guide Decision Title') }}</h2>
+                        <p class="text-muted mb-4">{{ __('Mold Guide Decision Lead') }}</p>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-4">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Mold Guide Inspection Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Mold Guide Inspection Text') }}</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Mold Guide Testing Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Mold Guide Testing Text') }}</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="p-3 rounded-4 bg-light h-100">
+                                    <h3 class="h6 fw-bold mb-2">{{ __('Mold Guide Remediation Title') }}</h3>
+                                    <p class="small text-muted mb-0">{{ __('Mold Guide Remediation Text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <aside class="p-4 bg-dark text-white rounded-4 shadow-sm h-100 d-flex flex-column">
+                        <div class="small text-warning fw-bold text-uppercase mb-2">{{ __('Mold Guide DIY Badge') }}</div>
+                        <h2 class="h4 fw-bold mb-3">{{ __('Mold Guide DIY Title') }}</h2>
+                        <p class="small mb-3">{{ __('Mold Guide DIY Text') }}</p>
+                        <ul class="small ps-3 mb-4">
+                            <li>{{ __('Mold Guide DIY Signal 1') }}</li>
+                            <li>{{ __('Mold Guide DIY Signal 2') }}</li>
+                            <li>{{ __('Mold Guide DIY Signal 3') }}</li>
+                            <li>{{ __('Mold Guide DIY Signal 4') }}</li>
+                        </ul>
+                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder mt-auto">{{ __('Mold Guide DIY CTA') }}</a>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="mold-services" class="py-4 py-md-5" style="background: radial-gradient(circle at 20% 20%, rgba(255, 193, 7, 0.12), transparent 45%), radial-gradient(circle at 80% 0%, rgba(13, 110, 253, 0.12), transparent 35%), #ffffff;">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-12 col-lg-5">
@@ -672,6 +843,13 @@
             </div>
         </div>
     </section>
+
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['vancity-barbershop', 'k-c'],
+        'reviewSectionTitle' => __('Google Reviews Mold Title'),
+        'reviewSectionLead' => __('Google Reviews Mold Lead'),
+        'reviewSectionClass' => 'bg-vr-second',
+    ])
 
 
     <section class="py-4 py-md-5 bg-vr-second">
@@ -843,7 +1021,7 @@
 
 
 
-    <section class="py-3 py-md-5 bg-vr-second">
+    <section id="mold-process" class="py-3 py-md-5 bg-vr-second">
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 ">
                 <div class="col-md-12 mb-3">
@@ -1122,6 +1300,17 @@
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
+
+                        @foreach (array_slice($moldFaqItems, 14) as $faq)
+                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
+                                <i class="faq-icon bi bi-question-circle"></i>
+                                <h3>{{ $faq['question'] }}</h3>
+                                <div class="faq-content">
+                                    <p>{{ $faq['answer'] }}</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+                        @endforeach
 
 
 

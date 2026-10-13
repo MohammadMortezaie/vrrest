@@ -189,8 +189,6 @@
             ['title' => $tr('commercialprocess_step5_title'), 'text' => $tr('commercialprocess_step5_text')],
         ];
 
-        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
-        $googleReviewCount = 33;
     @endphp
 
     <section class="py-5 commercial-hero">
@@ -522,23 +520,18 @@
                 <div class="col-12 col-lg-5">
                     <div class="commercial-soft-card p-4 h-100">
                         <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
-                            Google Reputation
+                            24/7 Commercial Response
                         </div>
-                        <h3 class="fs-4 fw-bolder mb-3">Trusted by Local Businesses Across Metro Vancouver</h3>
+                        <h3 class="fs-4 fw-bolder mb-3">Keep Your Property and Operations Moving</h3>
                         <p class="mb-3">
-                            VR PLUS Restoration currently has <strong>{{ $googleReviewCount }} five-star Google reviews</strong>
-                            from property owners, managers, and commercial clients across the region.
+                            Our restoration team coordinates containment, cleanup, drying, and repairs around your
+                            operating hours to reduce disruption for staff, tenants, and customers.
                         </p>
                         <ul class="small ps-3 mb-4">
-                            <li>5.0-star reputation for emergency response and restoration quality.</li>
-                            <li>Verified local feedback from business and facility stakeholders.</li>
-                            <li>Consistent praise for communication, professionalism, and speed.</li>
+                            <li>Rapid stabilization for water, mold, fire, and property damage.</li>
+                            <li>Flexible scheduling for offices, retail, strata, and industrial sites.</li>
+                            <li>Clear documentation for owners, managers, and insurance adjusters.</li>
                         </ul>
-                        <a href="{{ $googleReviewUrl }}" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-warning fw-bolder text-uppercase px-4 py-3 w-100 mb-3"
-                            style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);">
-                            Read {{ $googleReviewCount }} Google Reviews
-                        </a>
                         <a href="tel:+16048003900" class="btn btn-outline-dark fw-bolder text-uppercase px-4 py-3 w-100"
                             style="border-radius: 12px;">
                             Talk to Commercial Team
@@ -548,6 +541,13 @@
             </div>
         </div>
     </section>
+
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['vancity-barbershop', 'bobbidi-boo-cleaning'],
+        'reviewSectionTitle' => __('Google Reviews Commercial Title'),
+        'reviewSectionLead' => __('Google Reviews Commercial Lead'),
+        'reviewSectionClass' => 'bg-vr-second',
+    ])
 
     <section class="py-4 py-md-5">
         <div class="container">

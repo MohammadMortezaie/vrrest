@@ -198,8 +198,6 @@
 
 @section('content')
     @php
-        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
-        $googleReviewCount = 33;
         $waterDamageProjectImages = [
             [
                 'src' => 'img/water-damage/vancouver-water-damage-drying-equipment-living-room.webp',
@@ -818,23 +816,6 @@
                             </div>
                         </div>
 
-                        <div class="mt-3">
-                            <div class="border rounded-4 p-4 bg-light text-center text-md-start">
-                                <div class="small text-uppercase fw-semibold text-warning mb-2">
-                                    {{ __('Water Damage Review Eyebrow') }}
-                                </div>
-                                <h3 class="h5 fw-bold mb-2">{{ __('Water Damage Review Title') }}</h3>
-                                <p class="text-muted mb-2">{{ __('Water Damage Review Text') }}</p>
-                                <p class="fw-semibold mb-3">
-                                    <span class="text-warning">★★★★★</span>
-                                    <span class="ms-1">{{ __('Water Damage Review Meta', ['count' => $googleReviewCount]) }}</span>
-                                </p>
-                                <a href="{{ $googleReviewUrl }}" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-outline-dark fw-semibold text-uppercase px-4 py-2">
-                                    {{ __('Water Damage Review CTA') }}
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1230,6 +1211,13 @@
             </div>
         </div>
     </section>
+
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['garnik-giloyan', 'nozar-kh', 'calzoner'],
+        'reviewSectionTitle' => __('Google Reviews Water Title'),
+        'reviewSectionLead' => __('Google Reviews Water Lead'),
+        'reviewSectionClass' => 'bg-vr-second',
+    ])
 
 
 

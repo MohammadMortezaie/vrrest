@@ -460,6 +460,13 @@
 
     </section><!-- /Services We Provide -->
 
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['garnik-giloyan', 'vancity-barbershop', 'm-a'],
+        'reviewSectionTitle' => __('Google Reviews Home Title'),
+        'reviewSectionLead' => __('Google Reviews Home Lead'),
+        'reviewSectionClass' => 'bg-vr-second',
+    ])
+
 
 
     <!-- About Section -->
