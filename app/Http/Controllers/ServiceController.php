@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FormSubmission;
 use App\Models\LocalService;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -338,9 +339,28 @@ class ServiceController extends Controller
                 ->with('contact_error', __('Contact Form Recaptcha Error'));
         }
 
-        $to = env('CONTACT_EMAIL', 'admin@vrrestoration.ca');
-        $cc = env('CC_EMAIL');
-        $from = env('CONTACT_FROM_EMAIL', config('mail.from.address'));
+        try {
+            $submission = FormSubmission::create([
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'phone' => $validated['phone'],
+                'message' => $validated['message'],
+                'source' => $validated['source'] ?? null,
+                'page_url' => $validated['page_url'] ?? null,
+                'locale' => app()->getLocale(),
+                'email_status' => 'pending',
+            ]);
+        } catch (Throwable $exception) {
+            report($exception);
+
+            return redirect($redirectUrl)->withInput()
+                ->with('contact_error', __('Contact Form Error'));
+        }
+
+        $to = config('services.contact.to');
+        $cc = config('services.contact.cc');
+        $from = config('services.contact.from') ?: config('mail.from.address');
+        $emailStatus = 'sent';
 
         try {
             Mail::send('emails.contact-form', ['data' => $validated], function ($mail) use ($validated, $to, $cc, $from) {
@@ -356,15 +376,21 @@ class ServiceController extends Controller
                 $mail->subject('New website contact form submission - ' . $source);
             });
         } catch (Throwable $exception) {
+            $emailStatus = 'failed';
             Log::error('Contact form email failed', [
+                'submission_id' => $submission->id,
                 'message' => $exception->getMessage(),
-                'source' => $validated['source'] ?? null,
-                'email' => $validated['email'] ?? null,
             ]);
+        }
 
-            return redirect($redirectUrl)
-                ->withInput()
-                ->with('contact_error', __('Contact Form Error'));
+        // The message is already saved, even if notification or status tracking fails.
+        try {
+            $submission->update([
+                'email_status' => $emailStatus,
+                'email_sent_at' => $emailStatus === 'sent' ? now() : null,
+            ]);
+        } catch (Throwable $exception) {
+            report($exception);
         }
 
         return redirect($redirectUrl)->with('contact_success', __('Contact Form Success'));

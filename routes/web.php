@@ -43,6 +43,9 @@ Route::group(['prefix' => 'vr'], function () {
 
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+        Route::get('/form-submissions', [App\Http\Controllers\FormSubmissionController::class, 'index'])->name('form-submissions.index');
+        Route::get('/form-submissions/{submission}', [App\Http\Controllers\FormSubmissionController::class, 'show'])->whereNumber('submission')->name('form-submissions.show');
+
         Route::post('/postcategory/all', [PostCategoryController::class, 'all']);
         Route::resource('postcategory', PostCategoryController::class);
 

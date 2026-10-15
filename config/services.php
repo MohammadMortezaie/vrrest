@@ -35,6 +35,12 @@ return [
         ],
     ],
 
+    'contact' => [
+        'to' => env('CONTACT_EMAIL', 'admin@vrrestoration.ca'),
+        'cc' => env('CC_EMAIL'),
+        'from' => env('CONTACT_FROM_EMAIL', env('MAIL_FROM_ADDRESS')),
+    ],
+
     'recaptcha' => [
         'site_key' => env('RECAPTCHA_SITE_KEY'),
         'secret_key' => env('RECAPTCHA_SECRET_KEY'),

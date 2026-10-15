@@ -202,6 +202,7 @@
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                                         @if (Auth::user()->is_admin)
+                                            <a class="dropdown-item" href="{{ route('form-submissions.index') }}">Form Submissions</a>
                                             <a class="dropdown-item" href="{{ route('adminuser.index') }}">
                                                 {{ __('Users') }}
                                             </a>
