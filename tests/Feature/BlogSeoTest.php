@@ -91,6 +91,35 @@ class BlogSeoTest extends TestCase
         $this->assertSame($response->getContent(), $legacyResponse->getContent());
     }
 
+    public function test_sitemap_tracks_publication_edits_slug_changes_and_unpublishing(): void
+    {
+        $this->get('/sitemap.xml')->assertOk()->assertDontSee('original-guide');
+        $this->travelTo(now()->startOfSecond());
+        $post = $this->createPost('en', 'original-guide', 'Original guide');
+        $oldUrl = "https://vrrestoration.ca/en/blog/{$post->id}/original-guide";
+        $this->get('/sitemap.xml')->assertOk()->assertSee($oldUrl, false);
+
+        $this->travel(1)->days();
+        $post->update(['title' => 'Updated guide', 'content' => '<p>Updated advice.</p>']);
+        $this->get('/sitemap.xml')->assertOk()
+            ->assertSee($post->updated_at->toAtomString(), false)
+            ->assertSee('Updated guide');
+
+        $post->update(['slug' => 'updated-guide']);
+        $newUrl = "https://vrrestoration.ca/en/blog/{$post->id}/updated-guide";
+        $this->get('/sitemap.xml')->assertOk()
+            ->assertSee($newUrl, false)->assertDontSee($oldUrl, false);
+        $this->get("/en/blog/{$post->id}/original-guide")
+            ->assertStatus(301)->assertRedirect($newUrl);
+        $this->get("/en/blog/{$post->id}/updated-guide")->assertOk()
+            ->assertSee('rel="canonical" href="'.$newUrl.'"', false);
+
+        $post->update(['is_active' => false]);
+        $this->get('/sitemap.xml')->assertOk()->assertDontSee($newUrl, false);
+        $this->get("/en/blog/{$post->id}/updated-guide")->assertNotFound();
+        $this->travelBack();
+    }
+
     private function createPost(string $locale, string $slug, string $title, bool $active = true): Post
     {
         $user = User::factory()->create();
