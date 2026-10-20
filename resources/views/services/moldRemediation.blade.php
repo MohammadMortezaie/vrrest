@@ -113,1214 +113,157 @@
         {!! json_encode($moldFaqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
     </script>
 
-    <style>
-        .mold-seo-card {
-            border-radius: 1rem;
-            background: #fff;
-            box-shadow: 0 12px 30px rgba(33, 37, 41, 0.08);
-            height: 100%;
-        }
-
-        .mold-seo-stat {
-            border-radius: 0.9rem;
-            background: #212529;
-            color: #fff;
-            padding: 1rem;
-            height: 100%;
-        }
-
-        .mold-location-pill {
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid rgba(33, 37, 41, 0.12);
-            background: #fff;
-            border-radius: 999px;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.9rem;
-            color: #212529;
-            text-decoration: none;
-        }
-
-        .mold-jump-nav {
-            position: sticky;
-            top: 160px;
-            z-index: 1010;
-            border-bottom: 1px solid rgba(33, 37, 41, 0.08);
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-        }
-
-        .mold-jump-link {
-            display: inline-flex;
-            align-items: center;
-            min-height: 42px;
-            padding: 0.55rem 1rem;
-            border: 1px solid rgba(33, 37, 41, 0.13);
-            border-radius: 999px;
-            color: #212529;
-            background: #fff;
-            font-weight: 600;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .mold-jump-link:hover,
-        .mold-jump-link:focus {
-            border-color: #ffc107;
-            background: #fff8df;
-            color: #212529;
-        }
-
-        .mold-guide-card {
-            height: 100%;
-            padding: 1.25rem;
-            border: 1px solid rgba(33, 37, 41, 0.1);
-            border-top: 4px solid #ffc107;
-            border-radius: 1rem;
-            background: #fff;
-            box-shadow: 0 12px 30px rgba(33, 37, 41, 0.07);
-        }
-
-        #mold-causes-signs,
-        #mold-types-testing,
-        #mold-services,
-        #mold-process,
-        #faq {
-            scroll-margin-top: 160px;
-        }
-
-        @media (max-width: 1199px) {
-            .mold-jump-nav {
-                top: 100px;
-            }
-        }
-    </style>
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org', '@type' => 'BreadcrumbList',
+            'itemListElement' => [
+                ['@type' => 'ListItem', 'position' => 1, 'name' => __('Home'), 'item' => 'https://vrrestoration.ca/'.app()->getLocale()],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => __('moldRemediation'), 'item' => 'https://vrrestoration.ca/'.app()->getLocale().'/mold-remediation'],
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    <link rel="stylesheet" href="{{ asset('css/restoration-service.css') }}">
     <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"UjY3iNHaot5pnvK66tLLbm",debug:true});</script>
 @endsection
 
 @section('content')
-    <section class="py-5" style="background: radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.16), transparent 35%), radial-gradient(circle at 80% 10%, rgba(13, 110, 253, 0.12), transparent 30%), #f8fafc;">
+    @php
+        $projectImages = [
+            ['src' => 'img/mold-remediation/mold-wall-cleaning.jpg', 'alt' => __('MD Photo Cleaning')],
+            ['src' => 'img/mold-remediation/mold-containment.jpg', 'alt' => __('MD Photo Containment')],
+            ['src' => 'img/mold-remediation/mold-on-attic-sheathing.jpg', 'alt' => __('MD Photo Attic')],
+            ['src' => 'img/mold-remediation/mold-on-interior-wall.jpg', 'alt' => __('MD Photo Wall')],
+            ['src' => 'img/mold-refrigerator.jpg', 'alt' => __('MD Photo Fridge')],
+        ];
+    @endphp
+<div class="restoration-service-page mold-remediation-page">
+    <section class="wd-hero">
         <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-12 col-lg-6 order-lg-2">
-                    <div class="position-relative shadow rounded-4 overflow-hidden bg-white">
-                        <img class="img-fluid" loading="lazy" src="{{ asset('img/mold.jpeg') }}"
-                            alt="Mold remediation Vancouver team restoring a residential property">
-                        <div class="position-absolute top-0 end-0 m-3 bg-dark text-white px-3 py-2 rounded-pill small fw-semibold">
-                            24/7 Emergency Mold Help
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center align-items-center">
-                        <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA certified mold remediation Vancouver" style="height: 80px; object-fit: contain;">
-                        <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC certified mold remediation experts" style="height: 90px; object-fit: contain;">
-                    </div>
+            <nav class="wd-breadcrumb" aria-label="{{ __('WD Breadcrumb') }}"><a href="{{ route('home2', ['lang' => app()->getLocale()]) }}">{{ __('Home') }}</a><span aria-hidden="true">/</span><span>{{ __('moldRemediation') }}</span></nav>
+            <div class="wd-hero-grid">
+                <div class="wd-hero-copy">
+                    <p class="wd-eyebrow"><span class="wd-status-dot" aria-hidden="true"></span>{{ __('WD Emergency') }}</p>
+                    <h1>{{ __('Mold Hero Title') }}</h1>
+                    <p class="wd-hero-lead">{{ __('MD Hero Intro') }}</p>
+                    <div class="wd-actions"><a href="tel:+16048003900" class="wd-button wd-button-primary"><i class="bi bi-telephone" aria-hidden="true"></i>{{ __('WD Call') }} 604-800-3900</a><a href="#contact-form-section" class="wd-text-link">{{ __('Mold Guide DIY CTA') }} <span aria-hidden="true">↗</span></a></div>
+                    <p class="wd-hero-note">{{ __('WD Hero Note') }}</p>
                 </div>
-                <div class="col-12 col-lg-6 order-lg-1 text-dark">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold mb-3">
-                        <span class="text-uppercase" style="letter-spacing: 0.08em;">{{ __('Mold Hero Badge 1') }}</span>
-                        <span class="badge bg-dark text-warning">{{ __('Mold Hero Badge 2') }}</span>
-                    </div>
-                    <h1 class="fs-1 fw-bolder mb-3">{{ __('Mold Hero Title') }}</h1>
-                    <p class="lead mb-3">{{ __('Mold Hero Lead 1') }}</p>
-                    <p class="mb-4">{{ __('Mold Hero Lead 2') }}</p>
-                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
-                            📞 {{ __('Mold 1-66') }}
-                        </a>
-                        <div class="text-muted small">
-                            {{ __('Mold Hero CTA Note') }}
-                        </div>
-                    </div>
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="p-3 rounded-4 bg-white text-dark h-100 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold Hero Card 1 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Hero Card 1 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="p-3 rounded-4 bg-white text-dark h-100 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold Hero Card 2 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Hero Card 2 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="p-3 rounded-4 bg-white text-dark shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold Hero Card 3 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Hero Card 3 Text') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <figure class="wd-hero-image">
+                    <img src="{{ asset($projectImages[0]['src']) }}" alt="{{ $projectImages[0]['alt'] }}" width="1920" height="1080" loading="eager" fetchpriority="high">
+                    <figcaption><span class="wd-photo-label">{{ __('MD Photo Label') }}</span><strong>{{ __('MD Photo Title') }}</strong><span>{{ __('MD Photo Detail') }}</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
+    @include('partials.restoration-credentials')
+    <nav class="wd-jumpnav" aria-label="{{ __('Mold Guide Navigation Label') }}"><div class="container">
+        <span>{{ __('Water Damage Quick Links Label') }}</span>
+        <a href="#mold-services">{{ __('Mold Guide Nav Services') }}</a>
+        <a href="#mold-process">{{ __('Mold Guide Nav Process') }}</a>
+        <a href="#mold-gallery">{{ __('MD Photos') }}</a>
+        <a href="#mold-cost-timeline">{{ __('MD Cost Time') }}</a>
+        <a href="#mold-causes-signs">{{ __('Mold Guide Nav Causes') }}</a>
+        <a href="#mold-types-testing">{{ __('Mold Guide Nav Types') }}</a>
+        <a href="#faq">{{ __('Mold Guide Nav FAQ') }}</a>
+    </div></nav>
 
-    <nav class="mold-jump-nav py-3" aria-label="{{ __('Mold Guide Navigation Label') }}">
-        <div class="container d-flex gap-2 overflow-auto">
-            <a class="mold-jump-link" href="#mold-causes-signs">{{ __('Mold Guide Nav Causes') }}</a>
-            <a class="mold-jump-link" href="#mold-types-testing">{{ __('Mold Guide Nav Types') }}</a>
-            <a class="mold-jump-link" href="#mold-services">{{ __('Mold Guide Nav Services') }}</a>
-            <a class="mold-jump-link" href="#mold-process">{{ __('Mold Guide Nav Process') }}</a>
-            <a class="mold-jump-link" href="#faq">{{ __('Mold Guide Nav FAQ') }}</a>
+    <section class="wd-section wd-intro" id="mold-assessment">
+        <div class="container">
+            <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('WD First Things First') }}</p><h2>{{ __('Mold Guide Decision Title') }}</h2></div><p>{{ __('Mold Guide Decision Lead') }}</p></div>
+            <div class="wd-three-columns">@foreach(['Inspection', 'Testing', 'Remediation'] as $step)<article><h3>{{ __('Mold Guide '.$step.' Title') }}</h3><p>{{ __('Mold Guide '.$step.' Text') }}</p></article>@endforeach</div>
+            <details class="wd-disclosure md-diy"><summary><h3>{{ __('Mold Guide DIY Title') }}</h3></summary><p>{{ __('Mold Guide DIY Text') }}</p><ul class="wd-checklist">@foreach(range(1,4) as $item)<li>{{ __('Mold Guide DIY Signal '.$item) }}</li>@endforeach</ul><a class="wd-text-link" href="https://www.canada.ca/en/health-canada/services/publications/healthy-living/addressing-moisture-mould-your-home.html">{{ __('Mold Guide Health Canada Link') }}</a></details>
         </div>
-    </nav>
+    </section>
 
+    <section class="wd-section wd-soft" id="mold-services"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('Mold SEO Services Badge 2') }}</p><h2>{{ __('Mold SEO Services Title') }}</h2></div><p>{{ __('Mold SEO Services Lead') }}</p></div>
+        <div class="wd-reasons">@foreach(range(1,6) as $service)<article><span class="wd-mini-number">0{{ $service }}</span><h3>{{ __('Mold SEO Service Card '.$service.' Title') }}</h3><p>{{ __('Mold SEO Service Card '.$service.' Text') }}</p></article>@endforeach</div>
+        @include('partials.restoration-contact-cta', ['message' => __('MD Services Help'), 'buttonLabel' => __('Mold Guide DIY CTA')])
+    </div></section>
 
+    <section class="wd-section" id="mold-process"><div class="container wd-process-grid">
+        <div class="wd-section-intro"><p class="wd-eyebrow">{{ __('WD What Happens Next') }}</p><h2>{{ __('Mold 1-16') }}</h2><p>{{ __('MD Process Intro') }}</p><a class="wd-text-link" href="#contact-form-section">{{ __('Mold Guide DIY CTA') }} <span aria-hidden="true">↗</span></a></div>
+        <ol class="wd-process-list">
+            @foreach(range(17,27,2) as $step)<li><span class="wd-step-number">0{{ $loop->iteration }}</span><details @if($loop->first) open @endif><summary><h3>{{ __('Mold 1-'.$step) }}</h3></summary><p>{{ __('Mold 1-'.($step+1)) }}</p></details></li>@endforeach
+            <li><span class="wd-step-number">07</span><details><summary><h3>{{ __('MD Drying Step') }}</h3></summary><p>{{ __('Mold Process Step4 Text') }}</p></details></li>
+            <li><span class="wd-step-number">08</span><details><summary><h3>{{ __('Restoration') }}</h3></summary><p>{{ __('Mold 1-29') }}</p></details></li>
+        </ol>
+    </div></section>
+
+    <section class="wd-section wd-dark" id="mold-gallery"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('MD Photo Label') }}</p><h2>{{ __('MD Gallery Title') }}</h2></div><p>{{ __('MD Gallery Intro') }}</p></div>
+        @include('partials.restoration-gallery', ['projectImages' => $projectImages])
+        @include('partials.restoration-contact-cta', ['message' => __('MD Gallery Help'), 'buttonLabel' => __('Mold Guide DIY CTA')])
+    </div></section>
+
+    <section class="wd-section" id="mold-team"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('Mold About Title') }}</p><h2>{{ __('Mold About Subtitle') }}</h2></div><p>{{ __('Mold About Body 1') }}</p></div>
+        <div class="wd-three-columns">@foreach(range(1,3) as $item)<article><h3>{{ __('Mold Hero Card '.$item.' Title') }}</h3><p>{{ __('Mold Hero Card '.$item.' Text') }}</p></article>@endforeach</div>
+        <p class="md-team-note">{{ __('Mold About Body 2') }}</p>
+    </div></section>
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['vancity-barbershop', 'k-c'],
+        'reviewSectionTitle' => __('Google Reviews Mold Title'),
+        'reviewSectionLead' => __('Google Reviews Mold Lead'),
+        'reviewSectionClass' => 'wd-soft',
+    ])
+
+    <section class="wd-section" id="mold-cost-timeline"><div class="container">
+        <div class="wd-split">
+            <div><p class="wd-eyebrow">{{ __('Mold SEO Cost Badge') }}</p><h2>{{ __('Mold SEO Cost Title') }}</h2><p>{{ __('Mold SEO Cost Lead') }}</p><ul class="wd-checklist">@foreach(range(1,4) as $item)<li>{{ __('Mold SEO Cost Factor '.$item) }}</li>@endforeach</ul><h3>{{ __('Mold SEO Estimate Title') }}</h3><p>{{ __('Mold SEO Estimate Text') }}</p><a href="#contact-form-section" class="wd-button wd-button-primary">{{ __('Mold Guide DIY CTA') }} <span aria-hidden="true">↓</span></a></div>
+            <div class="md-timeline"><p class="wd-eyebrow">{{ __('Mold SEO Timeline Badge') }}</p><h2>{{ __('Mold SEO Timeline Title') }}</h2><p>{{ __('MD Timeline Note') }}</p><ol class="md-timeline-list">@foreach(range(1,4) as $item)<li><h3>{{ __('Mold SEO Timeline Step '.$item.' Title') }}</h3><p>{{ __('Mold SEO Timeline Step '.$item.' Text') }}</p></li>@endforeach</ol></div>
+        </div>
+        <div class="wd-insurance"><div><p class="wd-eyebrow">{{ __('Mold SEO Insurance Title') }}</p><h2>{{ __('MD Insurance Title') }}</h2><p>{{ __('MD Insurance Text') }}</p></div><ul class="wd-checklist">@foreach(range(1,3) as $item)<li>{{ __('Mold Block2 Assurance '.$item) }}</li>@endforeach</ul></div>
+    </div></section>
+
+    <section class="wd-section wd-soft" id="mold-causes-signs"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('Mold Guide Nav Causes') }}</p><h2>{{ __('Mold SEO Title') }}</h2></div><p>{{ __('Mold SEO Intro') }}</p></div>
+        <div class="wd-causes-grid"><figure class="wd-section-photo"><img src="{{ asset($projectImages[2]['src']) }}" alt="{{ $projectImages[2]['alt'] }}" width="1920" height="1080" loading="lazy" decoding="async"></figure><div><h3>{{ __('Mold SEO Causes Title') }}</h3><p>{{ __('Mold SEO Causes Text') }}</p><ul class="wd-list">@foreach(range(1,4) as $item)<li>{{ __('Mold SEO Cause '.$item) }}</li>@endforeach</ul></div><div><h3>{{ __('Mold SEO Signs Title') }}</h3><p>{{ __('Mold SEO Signs Text') }}</p><ul class="wd-list">@foreach(range(1,4) as $item)<li>{{ __('Mold SEO Sign '.$item) }}</li>@endforeach</ul></div></div>
+        <div class="wd-equipment"><h2>{{ __('Mold 1-10') }}</h2><p class="wd-measure">{{ __('Mold 1-11') }}</p><p class="wd-measure">{{ __('Mold Extra Hides Text') }}</p><ul class="wd-equipment-list">@foreach(['Mold 1-12','Mold 1-13','Mold 1-68','Mold Extra Sources Text'] as $item)<li><i class="bi bi-check2" aria-hidden="true"></i>{{ __($item) }}</li>@endforeach</ul></div>
+        @include('partials.restoration-contact-cta', ['message' => __('MD Signs Help'), 'buttonLabel' => __('Mold Guide DIY CTA')])
+    </div></section>
+
+    <section class="wd-section" id="mold-types-testing"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('Mold Guide Types Badge') }}</p><h2>{{ __('Mold Guide Types Title') }}</h2></div><p>{{ __('Mold Guide Types Lead') }}</p></div>
+        <div class="wd-safety-note"><i class="bi bi-info-circle" aria-hidden="true"></i><p>{{ __('Mold Guide Types Note') }}</p></div>
+        <div class="wd-three-columns">@foreach(range(1,3) as $type)<article><h3>{{ __('Mold Guide Type '.$type.' Title') }}</h3><p>{{ __('Mold Guide Type '.$type.' Text') }}</p></article>@endforeach</div>
+        <p class="md-team-note"><strong>{{ __('Mold Guide Moisture Label') }}.</strong> {{ __('Mold Guide Moisture Text') }}</p>
+        <a class="wd-text-link" href="https://www.canada.ca/en/health-canada/services/publications/healthy-living/addressing-moisture-mould-your-home.html">{{ __('Mold Guide Health Canada Link') }}</a>
+        <div class="wd-equipment"><p class="wd-eyebrow">{{ __('Mold 1-50-badge2') }}</p><h2>{{ __('Mold 1-50') }}</h2><p class="wd-measure">{{ __('MD Fogging Intro') }}</p>
+            <details class="wd-disclosure"><summary><h3>{{ __('Mold 1-54') }}</h3></summary><p>{{ __('Mold 1-55') }}</p><ul class="wd-checklist">@foreach(range(59,61) as $item)<li>{{ __('Mold 1-'.$item) }}</li>@endforeach</ul></details>
+        </div>
+    </div></section>
+
+    <section class="wd-section wd-soft" id="mold-service-areas"><div class="container wd-intro-grid">
+        <div><p class="wd-eyebrow">{{ __('MD Local Label') }}</p><h2>{{ __('Mold Extra Local Title') }}</h2><p>{{ __('Mold Extra Local Lead') }}</p><p>{{ __('Mold Extra Local Body') }}</p></div>
+        <div><h3>{{ __('Mold Extra Areas Title') }}</h3><ul class="md-area-list">@foreach(['Downtown','Kitsilano','Mount Pleasant','East Vancouver','Point Grey','South Vancouver','West End','False Creek','North Vancouver','West Vancouver','Burnaby','Richmond','New Westminster','Coquitlam','Surrey'] as $area)<li>{{ __('Mold Extra Location '.$area) }}</li>@endforeach</ul><p class="wd-small">{{ __('Mold About SEO Line') }}</p></div>
+    </div></section>
+
+    <section class="wd-section" id="faq"><div class="container wd-faq-grid">
+        <div><p class="wd-eyebrow">{{ __('WD Clear Answers') }}</p><h2>{{ __('Frequently Asked Questions') }}</h2><p>{{ __('MD FAQ Intro') }}</p><a href="#contact-form-section" class="wd-text-link">{{ __('Mold Guide DIY CTA') }} <span aria-hidden="true">↓</span></a></div>
+        <div class="wd-faq-list">@foreach($moldFaqItems as $faq)<details class="wd-disclosure" @if($loop->first) open @endif><summary><h3>{{ $faq['question'] }}</h3></summary><p>{{ $faq['answer'] }}</p></details>@endforeach</div>
+    </div></section>
     @include('partials.contact-form', [
         'source' => __('Contact Form Source Mold'),
         'title' => __('Contact Form Mold Title'),
         'subtitle' => __('Contact Form Mold Subtitle'),
     ])
-
+    <section class="wd-section" id="mold-guides">
+        <div class="container">
+            <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('WD Knowledge') }}</p><h2>{{ __('MD Related Guides') }}</h2></div><a href="{{ route('blog', ['lang' => app()->getLocale()]) }}" class="wd-text-link">{{ __('Blog') }} <span aria-hidden="true">↗</span></a></div>
+            @if(app()->getLocale() === 'zh')<p class="wd-small">{{ __('Selected Guides English Note') }}</p>@endif
+            <div class="wd-guide-links">
+                <a href="/en/blog/72/bc-homeowners-need-to-know-insurance" hreflang="en" lang="en">What BC Homeowners Need to Know About Mold Coverage in Their Insurance Policy <span aria-hidden="true">↗</span></a>
+                <a href="/en/blog/69/mold-removal-canada-costs-insurance" hreflang="en" lang="en">Mold Removal in Canada: Costs, Insurance, and Permanent Solutions <span aria-hidden="true">↗</span></a>
+                <a href="/en/blog/27/10-warning-signs-of-mold-toxicity-in-canada" hreflang="en" lang="en">10 Warning Signs of Mold Toxicity in canada <span aria-hidden="true">↗</span></a>
+                <a href="/en/blog/131/how-remove-small-mold-yourself-home" hreflang="en" lang="en">How to Remove Small Mold Yourself Safely at Home <span aria-hidden="true">↗</span></a>
+                <a href="/en/blog/135/mold-around-toilet-bathroom-ceiling" hreflang="en" lang="en">How to Get Rid of Mold Around the Toilet and Bathroom Ceiling <span aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </section>
     @include('partials.ai-trust-links')
-
-    <section class="py-4 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row gy-4 align-items-center">
-                <div class="col-12 col-lg-7">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
-                        <span class="text-warning">{{ __('Mold Block2 Badge 1') }}</span>
-                        <span class="text-secondary">{{ __('Mold Block2 Badge 2') }}</span>
-                    </div>
-                    <h2 class="fs-2 fw-bolder mb-3">{{ __('Mold Block2 Title') }}</h2>
-                    <p class="lead mb-3">{{ __('Mold Block2 Lead 1') }}</p>
-                    <p class="mb-4">{{ __('Mold Block2 Lead 2') }}</p>
-                    <div class="row g-3">
-                        <div class="col-12 col-md-4">
-                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold Block2 Feature 1 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Block2 Feature 1 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold Block2 Feature 2 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Block2 Feature 2 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold Block2 Feature 3 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Block2 Feature 3 Text') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-                            📞 Call Now: +1 604-800-3900
-                        </a>
-                        <div class="text-muted small">
-                            {{ __('Mold Block2 Service Note') }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-5">
-                    <div class="bg-white rounded-4 shadow-lg overflow-hidden">
-                        <img class="img-fluid" loading="lazy" src="{{ asset('img/mold-refrigerator.jpg') }}"
-                            alt="Mold remediation Vancouver removing mold inside a residential refrigerator">
-                        <div class="p-3 d-flex justify-content-between align-items-center">
-                            <span class="fw-semibold">Fridge Mold Removal</span>
-                            <span class="badge bg-warning text-dark">Same-Day Fix</span>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-3 mt-3 align-items-center justify-content-center">
-                        <img src="{{ asset('img/googleg.png') }}" alt="Google Guaranteed for mold remediation Vancouver" style="height: 140px; object-fit: contain;">
-                        <span class="text-muted">{{ __('Mold Block2 Rating Note') }}</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-3 mt-4">
-                <div class="col-12 col-md-4">
-                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold mb-1">Transparent Reporting</div>
-                        <div class="small text-muted">{{ __('Mold Block2 Assurance 1') }}</div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold mb-1">Insurance Friendly</div>
-                        <div class="small text-muted">{{ __('Mold Block2 Assurance 2') }}</div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold mb-1">People & Pet Safe</div>
-                        <div class="small text-muted">{{ __('Mold Block2 Assurance 3') }}</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-5 g-3">
-                <div class="col-md-6">
-                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/X725gdW8nm48gtp2Ko5uKh4IV4FxBhakF5jLT4w7.jpg" alt="Before and after mold remediation in a Vancouver basement">
-                </div>
-                <div class="col-md-6">
-                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/0edMscVZ1fslkgJKQ0U2lIaqiCB4sf22kNPyaQuC.jpg" alt="Severe black mold removal in Burnaby interior wall">
-                </div>
-                <div class="col-md-6">
-                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/jVRdp1R67F6HFk6oaXP7lyuWQxhdT3hAgAfJDRzl.jpg" alt="Certified mold cleanup in a Surrey bathroom">
-                </div>
-                <div class="col-md-6">
-                    <img class="img-fluid rounded-4 shadow-sm" src="https://vrrestoration.ca/storage/uploads/O1xy2uqf9wcYNCfJzTxSVYFjVKxqcBmF7RBxK6tq.jpg" alt="Professional mold remediation crew in a Vancouver home">
-                </div>
-            </div>
-
-            <div class="col-12 mt-5">
-                <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Mold About Title') }}</h2>
-                <hr>
-                <h3 class="fs-4 fw-bold">{{ __('Mold About Subtitle') }}</h3>
-                <p class=" mb-2">{{ __('Mold About Body 1') }}</p>
-                <p class=" mb-3">{{ __('Mold About Body 2') }}</p>
-                <p class="text-muted small mb-3">{{ __('Mold About SEO Line') }}</p>
-                <ul class="txt-vr d-flex flex-wrap gap-3">
-                    <li class="lead px-2">Greater Vancouver</li>
-                    <li class="lead px-2">Metro Vancouver</li>
-                    <li class="lead px-2">North Shore</li>
-                    <li class="lead px-2">Downtown</li>
-                    <li class="lead px-2">Sea to Sky</li>
-                    <li class="lead px-2">Tri-Cities</li>
-                    <li class="lead px-2">Fraser Valley</li>
-                    <li class="lead px-2">Howe Sound</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5">
-        <div class="container">
-            <div class="row gy-4 align-items-center">
-                <div class="col-md-5">
-                    <div class="rounded-4 shadow-lg overflow-hidden">
-                        <img class="img-fluid" loading="lazy" src="{{ asset('img/moldtype.jpeg') }}"
-                            alt="Types of mold identified during Vancouver remediation assessment">
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
-                        {{ __('Mold Process Badge') }}
-                    </div>
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Process Title') }}</h2>
-                    <p class="lead mb-3">{{ __('Mold Process Lead') }}</p>
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-1">{{ __('Mold Process Step1 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Process Step1 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-1">{{ __('Mold Process Step2 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Process Step2 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-1">{{ __('Mold Process Step3 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Process Step3 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-1">{{ __('Mold Process Step4 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold Process Step4 Text') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="lead  mt-4 mb-2">{{ __('Mold Process Note') }}</p>
-                    <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-                        📞 Call Now: +1 604-800-3900
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="mold-causes-signs" class="py-4 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
-                <span class="text-warning">{{ __('Mold SEO Badge 1') }}</span>
-                <span class="text-secondary">{{ __('Mold SEO Badge 2') }}</span>
-            </div>
-            <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Title') }}</h2>
-            <p class="lead  mb-4">{{ __('Mold SEO Intro') }}</p>
-
-            <div class="row g-3">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold mb-2">{{ __('Mold SEO Causes Title') }}</div>
-                        <p class="small text-muted mb-2">{{ __('Mold SEO Causes Text') }}</p>
-                        <ul class="small text-muted ps-3 mb-0">
-                            <li>{{ __('Mold SEO Cause 1') }}</li>
-                            <li>{{ __('Mold SEO Cause 2') }}</li>
-                            <li>{{ __('Mold SEO Cause 3') }}</li>
-                            <li>{{ __('Mold SEO Cause 4') }}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold mb-2">{{ __('Mold SEO Signs Title') }}</div>
-                        <p class="small text-muted mb-2">{{ __('Mold SEO Signs Text') }}</p>
-                        <ul class="small text-muted ps-3 mb-0">
-                            <li>{{ __('Mold SEO Sign 1') }}</li>
-                            <li>{{ __('Mold SEO Sign 2') }}</li>
-                            <li>{{ __('Mold SEO Sign 3') }}</li>
-                            <li>{{ __('Mold SEO Sign 4') }}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold mb-2">{{ __('Mold SEO Types Title') }}</div>
-                        <p class="small text-muted mb-2">{{ __('Mold SEO Types Text') }}</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 1') }}</span>
-                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 2') }}</span>
-                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 3') }}</span>
-                            <span class="badge bg-light text-dark border">{{ __('Mold SEO Type 4') }}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-3 mt-3">
-                <div class="col-12 col-lg-8">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <span class="badge bg-warning text-dark text-uppercase">{{ __('Mold Process Badge') }}</span>
-                            <span class="small text-muted">{{ __('Mold SEO Process Note') }}</span>
-                        </div>
-                        <h3 class="h4 fw-bold mb-3">{{ __('Mold SEO Process Title') }}</h3>
-                        <div class="row g-2">
-                            <div class="col-12 col-md-6">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <div class="fw-bold mb-1">{{ __('Mold Process Step1 Title') }}</div>
-                                    <div class="small text-muted">{{ __('Mold Process Step1 Text') }}</div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <div class="fw-bold mb-1">{{ __('Mold Process Step2 Title') }}</div>
-                                    <div class="small text-muted">{{ __('Mold Process Step2 Text') }}</div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <div class="fw-bold mb-1">{{ __('Mold Process Step3 Title') }}</div>
-                                    <div class="small text-muted">{{ __('Mold Process Step3 Text') }}</div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <div class="fw-bold mb-1">{{ __('Mold Process Step4 Title') }}</div>
-                                    <div class="small text-muted">{{ __('Mold Process Step4 Text') }}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="small text-muted mt-3 mb-0">{{ __('Mold Process Note') }}</p>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 d-flex flex-column gap-3">
-                        <div>
-                            <div class="fw-bold mb-1">{{ __('Mold SEO Free Title') }}</div>
-                            <p class="small text-muted mb-0">{{ __('Mold SEO Free Text') }}</p>
-                        </div>
-                        <div>
-                            <div class="fw-bold mb-1">{{ __('Mold SEO Insurance Title') }}</div>
-                            <p class="small text-muted mb-0">{{ __('Mold SEO Insurance Text') }}</p>
-                        </div>
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3 w-100" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-                            📞 {{ __('Mold 1-66') }}
-                        </a>
-                        <div>
-                            <div class="fw-bold mb-2">{{ __('Mold SEO Locations Title') }}</div>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-light text-dark border">Vancouver</span>
-                                <span class="badge bg-light text-dark border">Burnaby</span>
-                                <span class="badge bg-light text-dark border">Richmond</span>
-                                <span class="badge bg-light text-dark border">North Shore</span>
-                                <span class="badge bg-light text-dark border">Tri-Cities</span>
-                                <span class="badge bg-light text-dark border">Fraser Valley</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5">
-        <div class="container">
-            <div class="row g-4 align-items-start">
-                <div class="col-12 col-lg-7">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
-                        {{ __('Mold Extra Badge') }}
-                    </div>
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Extra Title') }}</h2>
-                    <p class="lead mb-3">{{ __('Mold Extra Lead') }}</p>
-                    <p class="mb-3">{{ __('Mold Extra Body 1') }}</p>
-                    <p class="mb-0">{{ __('Mold Extra Body 2') }}</p>
-                </div>
-                <div class="col-12 col-lg-5">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="mold-seo-stat">
-                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 1 Value') }}</div>
-                                <div class="small">{{ __('Mold Extra Stat 1 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mold-seo-stat">
-                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 2 Value') }}</div>
-                                <div class="small">{{ __('Mold Extra Stat 2 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mold-seo-stat">
-                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 3 Value') }}</div>
-                                <div class="small">{{ __('Mold Extra Stat 3 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mold-seo-stat">
-                                <div class="fs-4 fw-bolder text-warning">{{ __('Mold Extra Stat 4 Value') }}</div>
-                                <div class="small">{{ __('Mold Extra Stat 4 Text') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mold-seo-card p-4 mt-3">
-                        <h3 class="h5 fw-bold mb-2">{{ __('Mold Extra CTA Title') }}</h3>
-                        <p class="small text-muted mb-3">{{ __('Mold Extra CTA Text') }}</p>
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2" style="border-radius: 12px;">
-                            {{ __('Mold Extra CTA Button') }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-3 mt-4">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="mold-seo-card p-4">
-                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 1 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 1 Text') }}</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="mold-seo-card p-4">
-                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 2 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 2 Text') }}</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="mold-seo-card p-4">
-                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 3 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 3 Text') }}</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="mold-seo-card p-4">
-                        <h3 class="h6 fw-bold mb-2">{{ __('Mold Extra Card 4 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Extra Card 4 Text') }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-12 col-lg-5">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
-                        {{ __('Mold Extra Local Badge') }}
-                    </div>
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Extra Local Title') }}</h2>
-                    <p class="lead mb-3">{{ __('Mold Extra Local Lead') }}</p>
-                    <p class="mb-0">{{ __('Mold Extra Local Body') }}</p>
-                </div>
-                <div class="col-12 col-lg-7">
-                    <div class="mold-seo-card p-4">
-                        <h3 class="h5 fw-bold mb-3">{{ __('Mold Extra Areas Title') }}</h3>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Downtown') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Kitsilano') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Mount Pleasant') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location East Vancouver') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Point Grey') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location South Vancouver') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location West End') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location False Creek') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location North Vancouver') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location West Vancouver') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Burnaby') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Richmond') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location New Westminster') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Coquitlam') }}</span>
-                            <span class="mold-location-pill">{{ __('Mold Extra Location Surrey') }}</span>
-                        </div>
-                        <div class="row g-3 mt-3">
-                            <div class="col-12 col-md-6">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <div class="fw-bold mb-1">{{ __('Mold Extra Sources Title') }}</div>
-                                    <p class="small text-muted mb-0">{{ __('Mold Extra Sources Text') }}</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <div class="fw-bold mb-1">{{ __('Mold Extra Hides Title') }}</div>
-                                    <p class="small text-muted mb-0">{{ __('Mold Extra Hides Text') }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="mold-types-testing" class="py-4 py-md-5" style="background: linear-gradient(145deg, #f8fafc 0%, #ffffff 55%, #fff8df 100%);">
-        <div class="container">
-            <div class="row g-4 align-items-end mb-4">
-                <div class="col-12 col-lg-8">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark text-uppercase fw-semibold small mb-3">
-                        {{ __('Mold Guide Types Badge') }}
-                    </div>
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold Guide Types Title') }}</h2>
-                    <p class="lead mb-2">{{ __('Mold Guide Types Lead') }}</p>
-                    <p class="text-muted mb-0">{{ __('Mold Guide Types Note') }}</p>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="p-3 rounded-4 bg-dark text-white">
-                        <div class="small text-warning fw-bold text-uppercase mb-1">{{ __('Mold Guide Moisture Label') }}</div>
-                        <p class="small mb-2">{{ __('Mold Guide Moisture Text') }}</p>
-                        <a class="small text-warning fw-semibold" href="https://www.canada.ca/en/health-canada/services/publications/healthy-living/addressing-moisture-mould-your-home.html" target="_blank" rel="noopener noreferrer">
-                            {{ __('Mold Guide Health Canada Link') }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-3 mb-5">
-                <div class="col-12 col-md-4">
-                    <article class="mold-guide-card">
-                        <div class="small text-warning fw-bold mb-2">01</div>
-                        <h3 class="h5 fw-bold">{{ __('Mold Guide Type 1 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Guide Type 1 Text') }}</p>
-                    </article>
-                </div>
-                <div class="col-12 col-md-4">
-                    <article class="mold-guide-card">
-                        <div class="small text-warning fw-bold mb-2">02</div>
-                        <h3 class="h5 fw-bold">{{ __('Mold Guide Type 2 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Guide Type 2 Text') }}</p>
-                    </article>
-                </div>
-                <div class="col-12 col-md-4">
-                    <article class="mold-guide-card">
-                        <div class="small text-warning fw-bold mb-2">03</div>
-                        <h3 class="h5 fw-bold">{{ __('Mold Guide Type 3 Title') }}</h3>
-                        <p class="small text-muted mb-0">{{ __('Mold Guide Type 3 Text') }}</p>
-                    </article>
-                </div>
-            </div>
-
-            <div class="row g-4 align-items-stretch">
-                <div class="col-12 col-lg-8">
-                    <div class="p-4 p-lg-5 bg-white rounded-4 shadow-sm h-100">
-                        <h2 class="h3 fw-bolder mb-2">{{ __('Mold Guide Decision Title') }}</h2>
-                        <p class="text-muted mb-4">{{ __('Mold Guide Decision Lead') }}</p>
-                        <div class="row g-3">
-                            <div class="col-12 col-md-4">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <h3 class="h6 fw-bold mb-2">{{ __('Mold Guide Inspection Title') }}</h3>
-                                    <p class="small text-muted mb-0">{{ __('Mold Guide Inspection Text') }}</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <h3 class="h6 fw-bold mb-2">{{ __('Mold Guide Testing Title') }}</h3>
-                                    <p class="small text-muted mb-0">{{ __('Mold Guide Testing Text') }}</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <div class="p-3 rounded-4 bg-light h-100">
-                                    <h3 class="h6 fw-bold mb-2">{{ __('Mold Guide Remediation Title') }}</h3>
-                                    <p class="small text-muted mb-0">{{ __('Mold Guide Remediation Text') }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <aside class="p-4 bg-dark text-white rounded-4 shadow-sm h-100 d-flex flex-column">
-                        <div class="small text-warning fw-bold text-uppercase mb-2">{{ __('Mold Guide DIY Badge') }}</div>
-                        <h2 class="h4 fw-bold mb-3">{{ __('Mold Guide DIY Title') }}</h2>
-                        <p class="small mb-3">{{ __('Mold Guide DIY Text') }}</p>
-                        <ul class="small ps-3 mb-4">
-                            <li>{{ __('Mold Guide DIY Signal 1') }}</li>
-                            <li>{{ __('Mold Guide DIY Signal 2') }}</li>
-                            <li>{{ __('Mold Guide DIY Signal 3') }}</li>
-                            <li>{{ __('Mold Guide DIY Signal 4') }}</li>
-                        </ul>
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder mt-auto">{{ __('Mold Guide DIY CTA') }}</a>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="mold-services" class="py-4 py-md-5" style="background: radial-gradient(circle at 20% 20%, rgba(255, 193, 7, 0.12), transparent 45%), radial-gradient(circle at 80% 0%, rgba(13, 110, 253, 0.12), transparent 35%), #ffffff;">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-12 col-lg-5">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark text-white text-uppercase fw-semibold small shadow-sm mb-3">
-                        <span>{{ __('Mold SEO Services Badge 1') }}</span>
-                        <span class="badge bg-warning text-dark">{{ __('Mold SEO Services Badge 2') }}</span>
-                    </div>
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Services Title') }}</h2>
-                    <p class="lead mb-3">{{ __('Mold SEO Services Lead') }}</p>
-                    <p class="mb-4">{{ __('Mold SEO Services SubLead') }}</p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 1') }}</span>
-                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 2') }}</span>
-                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 3') }}</span>
-                        <span class="badge bg-light text-dark border">{{ __('Mold SEO Services Tag 4') }}</span>
-                    </div>
-                    <div class="p-3 p-md-4 bg-white rounded-4 shadow-sm">
-                        <div class="fw-bold mb-1">{{ __('Mold SEO Services Note Title') }}</div>
-                        <p class="small text-muted mb-3">{{ __('Mold SEO Services Note Text') }}</p>
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2" style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.2);">
-                            📞 {{ __('Mold 1-66') }}
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-7">
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 1 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Service Card 1 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 2 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Service Card 2 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 3 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Service Card 3 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 4 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Service Card 4 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 5 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Service Card 5 Text') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                                <div class="fw-bold mb-2">{{ __('Mold SEO Service Card 6 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Service Card 6 Text') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    @include('partials.google-reviews', [
-        'reviewKeys' => ['vancity-barbershop', 'k-c'],
-        'reviewSectionTitle' => __('Google Reviews Mold Title'),
-        'reviewSectionLead' => __('Google Reviews Mold Lead'),
-        'reviewSectionClass' => 'bg-vr-second',
-    ])
-
-
-    <section class="py-4 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row gy-4 align-items-center">
-                <div class="col-lg-7">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white text-uppercase fw-semibold small shadow-sm mb-3">
-                        <span class="text-warning">{{ __('Mold 1-50-badge1') }}</span>
-                        <span class="text-secondary">{{ __('Mold 1-50-badge2') }}</span>
-                    </div>
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold 1-50') }}</h2>
-                    <p class="lead  mb-3">{{ __('Mold 1-51') }}</p>
-                    <p class=" mb-4">{{ __('Mold 1-58') }}</p>
-                    <div class="row g-3">
-                        <div class="col-12 col-md-4">
-                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold 1-52') }}</div>
-                                <div class="small text-muted">{{ __('Mold 1-53') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold 1-62') }}</div>
-                                <div class="small text-muted">{{ __('Mold 1-63') }}</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="p-3 h-100 bg-white rounded-4 shadow-sm">
-                                <div class="fw-bold mb-1">{{ __('Mold 1-64') }}</div>
-                                <div class="small text-muted">{{ __('Mold 1-65') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-                            📞 {{ __('Mold 1-66') }}
-                        </a>
-                        <div class="text-muted small">{{ __('Mold 1-67') }}</div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="bg-white rounded-4 shadow-lg overflow-hidden">
-                        <img class="img-fluid" loading="lazy" src="{{ asset('img/Fogging.jpeg') }}"
-                            alt="Fogging used during mold remediation Vancouver to neutralize spores">
-                        <div class="p-3 d-flex justify-content-between align-items-center">
-                            <span class="fw-semibold">{{ __('Mold 1-54') }}</span>
-                            <span class="badge bg-warning text-dark">HEPA + Fogging</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-4 mt-4">
-                <div class="col-lg-7">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <h3 class="h4 section-title-h1 mb-2">{{ __('Mold 1-54') }}</h3>
-                        <p class=" mb-3">{{ __('Mold 1-55') }}</p>
-                        <h4 class="h5 fw-bold mb-2">{{ __('Mold 1-56') }}</h4>
-                        <p class=" mb-3">{{ __('Mold 1-57') }}</p>
-                        <ul class=" ps-3 mb-0">
-                            <li>{{ __('Mold 1-59') }}</li>
-                            <li>{{ __('Mold 1-60') }}</li>
-                            <li>{{ __('Mold 1-61') }}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <div class="fw-bold text-uppercase text-warning mb-2">Mold Remediation Vancouver</div>
-                        <p class=" mb-3">{{ __('Mold 1-58') }}</p>
-                        <div class="d-flex gap-2 flex-wrap small text-muted">
-                            <span class="badge bg-light text-dark border">{{ __('Mold 1-52') }}</span>
-                            <span class="badge bg-light text-dark border">{{ __('Mold 1-54') }}</span>
-                            <span class="badge bg-light text-dark border">HEPA + Drying</span>
-                            <span class="badge bg-light text-dark border">Odor Control</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-4 py-md-5" style="background: linear-gradient(140deg, rgba(13, 110, 253, 0.08), rgba(255, 193, 7, 0.08));">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
-                            {{ __('Mold SEO Timeline Badge') }}
-                        </div>
-                        <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold SEO Timeline Title') }}</h2>
-                        <p class="lead mb-4">{{ __('Mold SEO Timeline Lead') }}</p>
-                        <div class="d-grid gap-3">
-                            <div class="p-3 rounded-4 bg-light">
-                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 1 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 1 Text') }}</div>
-                            </div>
-                            <div class="p-3 rounded-4 bg-light">
-                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 2 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 2 Text') }}</div>
-                            </div>
-                            <div class="p-3 rounded-4 bg-light">
-                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 3 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 3 Text') }}</div>
-                            </div>
-                            <div class="p-3 rounded-4 bg-light">
-                                <div class="fw-bold mb-1">{{ __('Mold SEO Timeline Step 4 Title') }}</div>
-                                <div class="small text-muted">{{ __('Mold SEO Timeline Step 4 Text') }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 d-flex flex-column">
-                        <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark text-white text-uppercase fw-semibold small mb-3">
-                            {{ __('Mold SEO Cost Badge') }}
-                        </div>
-                        <h3 class="h4 fw-bold mb-2">{{ __('Mold SEO Cost Title') }}</h3>
-                        <p class="small text-muted mb-3">{{ __('Mold SEO Cost Lead') }}</p>
-                        <ul class="small text-muted ps-3 mb-4">
-                            <li>{{ __('Mold SEO Cost Factor 1') }}</li>
-                            <li>{{ __('Mold SEO Cost Factor 2') }}</li>
-                            <li>{{ __('Mold SEO Cost Factor 3') }}</li>
-                            <li>{{ __('Mold SEO Cost Factor 4') }}</li>
-                        </ul>
-                        <div class="mt-auto">
-                            <div class="fw-bold mb-1">{{ __('Mold SEO Estimate Title') }}</div>
-                            <p class="small text-muted mb-3">{{ __('Mold SEO Estimate Text') }}</p>
-                            <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-2" style="border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.2);">
-                                📞 {{ __('Mold 1-66') }}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-4 py-md-5">
-        <div class="container">
-            <div class="row gy-4 align-items-center">
-                <div class="col-md-5">
-                    <div class="rounded-4 shadow-lg overflow-hidden position-relative">
-                        <img class="img-fluid" loading="lazy" src="{{ asset('img/mold3.jpeg') }}"
-                            alt="Common mold growth areas addressed during mold remediation Vancouver">
-                        <div class="position-absolute top-0 start-0 m-3 bg-warning text-dark px-3 py-2 rounded-pill small fw-semibold">
-                            {{ __('Mold 1-10-badge') }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ __('Mold 1-10') }}</h2>
-                    <p class="lead  mb-3">{{ __('Mold 1-11') }}</p>
-                    <div class="d-flex flex-wrap gap-2 mb-3">
-                        <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-12') }}</a>
-                        <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-13') }}</a>
-                        <a class="badge bg-light text-dark border text-decoration-none px-3 py-2" href="#">{{ __('Mold 1-68') }}</a>
-                    </div>
-                    <p class=" mb-2">{{ __('Mold 1-14') }}</p>
-                    <p class=" mb-0">{{ __('Mold 1-15') }}</p>
-                    <div class="text-muted small mt-3">{{ __('Mold 1-69') }}</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section id="mold-process" class="py-3 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-12 mb-3">
-                    <h2 class="section-title-h1">{{ __('Mold 1-16') }}
-
-                    </h2>
-                    <hr>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            1){{ __('Mold 1-17') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Mold 1-18') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            2) {{ __('Mold 1-19') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">
-                                {{ __('Mold 1-20') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            3) {{ __('Mold 1-21') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">
-                                {{ __('Mold 1-22') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            4) {{ __('Mold 1-23') }}
-                        </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text"> {{ __('Mold 1-24') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            5) {{ __('Mold 1-25') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Mold 1-26') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            6) {{ __('Mold 1-27') }}</div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Mold 1-28') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            7) {{ __('Restoration') }}</div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Mold 1-29') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq  ">
-
-        <div class="container">
-
-
-            <div class="col-md-12 mb-3">
-                <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Frequently Asked Questions') }}
-
-                </h2>
-                <hr>
-            </div>
-
-            <div class="row ">
-
-                <div class="col-lg-12">
-
-                    <div class="faq-container">
-
-                        <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-30') }} </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-31') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-32') }} </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-33') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-34') }} </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-35') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-36') }} </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-37') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-38') }} </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-39') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-40') }}
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-41') }} </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>
-                                {{ __('Mold 1-42') }}
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-43') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-44') }}
-
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-45') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-46') }}
-
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-47') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold 1-48') }}
-
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold 1-49') }}
-
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold Extra FAQ 1 Question') }}</h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold Extra FAQ 1 Answer') }}</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold Extra FAQ 2 Question') }}</h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold Extra FAQ 2 Answer') }}</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold Extra FAQ 3 Question') }}</h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold Extra FAQ 3 Answer') }}</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Mold Extra FAQ 4 Question') }}</h3>
-                            <div class="faq-content">
-                                <p>{{ __('Mold Extra FAQ 4 Answer') }}</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        @foreach (array_slice($moldFaqItems, 14) as $faq)
-                            <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                                <i class="faq-icon bi bi-question-circle"></i>
-                                <h3>{{ $faq['question'] }}</h3>
-                                <div class="faq-content">
-                                    <p>{{ $faq['answer'] }}</p>
-                                </div>
-                                <i class="faq-toggle bi bi-chevron-right"></i>
-                            </div><!-- End Faq item-->
-                        @endforeach
-
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section><!-- /Faq Section -->
+</div>
+@endsection
+@section('scripts')
+    <script src="{{ asset('js/restoration-service.js') }}" defer></script>
 @endsection

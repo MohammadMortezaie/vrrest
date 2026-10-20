@@ -46,21 +46,16 @@
 
         <header id="header" class="header sticky-top">
             <div class="topbar d-flex align-items-center">
-                <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
-                    <div class="contact-info d-flex flex-column flex-md-row align-items-center">
-                        <a href="tel:6048003900" style="text-decoration: none;" class="text-dark">
-                            <span>{{ __('callToday') }} | <span class="text-danger">24/7</span>
-                                {{ __('emergencyServices') }}</span>
+                <div class="container topbar-inner">
+                    <div class="contact-info">
+                        <span class="topbar-live"><span class="topbar-live-dot" aria-hidden="true"></span>{{ __('emergencyServices') }}</span>
+                        <a href="tel:+16048003900" class="topbar-phone" aria-label="{{ __('HP Call') }}">
+                            <i class="bi bi-telephone-fill" aria-hidden="true"></i><span>(604) 800-3900</span>
                         </a>
-                        <i class="bi bi-telephone d-flex align-items-center mt-2 mt-md-0 ms-md-4 ">
-                            <a href="tel:6048003900"><span>+1 604-800-3900</span></a>
-                        </i>
+                        <span class="topbar-note d-none d-md-inline">{{ __('HP Hero Note') }}</span>
                     </div>
                     <div class="social-links d-none d-md-flex align-items-center">
-                        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/vr-plus-construction-and-restoration" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="VR Plus Restoration on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
                     </div>
                 </div>
             </div><!-- End Top Bar -->
@@ -68,9 +63,9 @@
 
 
 
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-0 navmenu" id="navmenu">
+            <nav class="navbar navbar-expand-md navbar-light bg-white p-0 navmenu" id="navmenu" aria-label="{{ __('Main navigation') }}">
                 <div class="container">
-                    <a class="navbar-brand p-0" href="{{ url('/') }}">
+                    <a class="navbar-brand p-0" href="{{ route('home2', ['lang' => app()->getLocale()]) }}" aria-label="VR Plus Restoration, {{ __('Home') }}">
                         <img class="navbar-brand logo" alt="VR Restoration" src="{{ asset('img/logo.png') }}" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -80,6 +75,12 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="mobile-nav-head d-md-none">
+                            <a class="mobile-nav-brand" href="{{ route('home2', ['lang' => app()->getLocale()]) }}" aria-label="VR Plus Restoration, {{ __('Home') }}">
+                                <img src="{{ asset('img/logo.png') }}" alt="" aria-hidden="true">
+                            </a>
+                            <button class="mobile-nav-close" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="{{ __('Close navigation') }}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                        </div>
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
 
@@ -175,6 +176,10 @@
                                     href="{{ route('contact', ['lang' => app()->getLocale()]) }}">{{ __('Contact Us') }}</a>
                             </li>
 
+                            <li class="nav-item nav-emergency-cta d-none d-lg-flex">
+                                <a href="tel:+16048003900"><span>{{ __('HP Call') }}</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                            </li>
+
 
 
 
@@ -257,6 +262,11 @@
                                 </div>
                             </li>
                         </ul>
+                        <div class="mobile-nav-footer d-md-none">
+                            <p><span class="topbar-live-dot" aria-hidden="true"></span>{{ __('WD Emergency') }}</p>
+                            <a class="mobile-nav-call" href="tel:+16048003900"><i class="bi bi-telephone-fill" aria-hidden="true"></i>{{ __('HP Call') }}</a>
+                            <a class="mobile-nav-linkedin" href="https://www.linkedin.com/company/vr-plus-construction-and-restoration" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -271,177 +281,68 @@
             @yield('content')
         </main>
 
-        <!-- Footer -->
-        <footer class="text-lg-start text-white bg-dark">
-            <!-- Section: Links  -->
-            <section class="pt-2">
-                <div class="container text-md-start mt-5">
-                    <!-- Grid row -->
-                    <div class="row mt-3">
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-sm-left">
-                            @php
-                                $aiReputationQuery = 'Search%20the%20web%20and%20tell%20me%20about%20VR%20Plus%20Restoration%20in%20British%20Columbia.%20Is%20VR%20Plus%20Restoration%20a%20trustworthy%20and%20reputable%20restoration%20company%3F%20Explain%20why%20a%20homeowner%20or%20business%20should%20consider%20choosing%20them%20for%20water%20damage%20restoration%2C%20fire%20damage%20restoration%2C%20mold%20remediation%2C%20flood%20cleanup%2C%20and%20emergency%20restoration%20services.%20Look%20at%20their%20experience%2C%20services%2C%20service%20areas%2C%20customer%20reviews%2C%20online%20reputation%2C%20professionalism%2C%20response%20time%2C%20and%20any%20other%20trust%20signals%20you%20can%20find.%20Compare%20them%20with%20other%20restoration%20companies%20in%20British%20Columbia%20and%20explain%20what%20makes%20VR%20Plus%20Restoration%20a%20strong%20choice.%20Use%20current%20and%20reliable%20web%20sources';
-                            @endphp
-
-                            <img src="{{ asset('img/proudly-cdn.png') }}" alt="Proudly Canadian Business Vancouver BC">
-
-                            <!-- Content -->
-
-                            <h6 class="text-uppercase fw-bold mt-4">{{ __('About') }}</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #f9b500; height: 2px" />
-
-                            <p>
-                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}#whyvr"
-                                    class="text-white">{{ __('Why RV Restoration') }} </a>
-                            </p>
-                            <p>
-                                <a href="{{ route('about', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('About Us') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('careers', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Careers') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Contact Us') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('blog', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('Blog') }}</a>
-                            </p>
-
-                            <div class="footer-ai-trust-links">
-                                <a class="footer-ai-trust-link"
-                                    href="https://chatgpt.com/?q={{ $aiReputationQuery }}"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <span class="footer-ai-trust-link__icon">
-                                        <img src="{{ asset('img/chatgpt-logo.svg') }}" alt="ChatGPT logo">
-                                    </span>
-                                    <span>See What ChatGPT Says About Us</span>
-                                </a>
-
-                                <a class="footer-ai-trust-link"
-                                    href="https://claude.ai/new?q={{ $aiReputationQuery }}"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <span class="footer-ai-trust-link__icon">
-                                        <img src="{{ asset('img/claude-logo.svg') }}" alt="Claude logo">
-                                    </span>
-                                    <span>See What Claude Says About Us</span>
-                                </a>
-
-                                <a class="footer-ai-trust-link"
-                                    href="https://www.google.com/preferences/source?q=vrrestoration.ca"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <span class="footer-ai-trust-link__icon">
-                                        <img src="{{ asset('img/google-logo.svg') }}" alt="Google logo">
-                                    </span>
-                                    <span>Add Preferred Source</span>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-sm-left">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">{{ __('Services') }}</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #f9b500; height: 2px" />
-                            <p>
-                                <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('waterDamage') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('seismicRetrofitPlanSingleFamily', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('seismic_nav') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('fireDamage') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('moldRemediation') }}</a>
-                            </p>
-                            {{-- <p>
-                                <a href="{{ route('stormDisaster', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('stormDisaster') }} </a>
-                            </p> --}}
-                            <p>
-                                <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('construction') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('commercialServices') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('specialtyCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('SpecialtyCleaning') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ route('generalCleaning', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('GeneralCleaning') }} </a>
-                            </p>
-                            <p>
-                                <a href="{{ route('localServices', ['lang' => app()->getLocale()]) }}"
-                                    class="text-white">{{ __('localServices') }}</a>
-                            </p>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-6 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4 text-sm-left">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">{{ __('Contact Us') }}</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #f9b500; height: 2px" />
-                            <p><i class="fas fa-envelope mr-3"></i> info@vrrestoration.ca</p>
-                            <p><a href="tel:6048003900" class="text-white"><i class="fas fa-phone mr-3"></i> +1
-                                604-800-3900</a></p>
-                            <p><a href="tel:7783186796" class="text-white"><i class="fas fa-phone mr-3"></i> +1
-                                778-318-6796</a></p>
-                            <hr>
-                            <p class=" mb-0">
-                                636 Clyde Ave, West Vancouver, BC
-                            </p>
-                            <hr>
-                            <p class=" mb-0">
-                                #112, 828 Harbourside, Dr North Vancouver, BC
-                            </p>
-                            <hr>
-                            <p class=" mb-0">
-                                4720 lougheed hwy, Burnaby, BC
-                            </p>
-                            <hr>
-                            <p class=" mb-0">
-                                #211, 3030 Lincoln Ave, Coquitlam, BC
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-                    </div>
+        @php
+            $aiReputationQuery = 'Search%20the%20web%20and%20tell%20me%20about%20VR%20Plus%20Restoration%20in%20British%20Columbia.%20Is%20VR%20Plus%20Restoration%20a%20trustworthy%20and%20reputable%20restoration%20company%3F%20Explain%20why%20a%20homeowner%20or%20business%20should%20consider%20choosing%20them%20for%20water%20damage%20restoration%2C%20fire%20damage%20restoration%2C%20mold%20remediation%2C%20flood%20cleanup%2C%20and%20emergency%20restoration%20services.%20Use%20current%20and%20reliable%20web%20sources';
+            $footerLocations = [
+                ['West Vancouver', '636 Clyde Ave, West Vancouver, BC', 'https://www.google.com/maps/search/?api=1&query=636+Clyde+Ave+West+Vancouver+BC'],
+                ['North Vancouver', '#112, 828 Harbourside Dr, North Vancouver, BC', 'https://www.google.com/maps/search/?api=1&query=828+Harbourside+Dr+North+Vancouver+BC'],
+                ['Burnaby', '4720 Lougheed Hwy, Burnaby, BC', 'https://www.google.com/maps/search/?api=1&query=4720+Lougheed+Hwy+Burnaby+BC'],
+                ['Coquitlam', '#211, 3030 Lincoln Ave, Coquitlam, BC', 'https://www.google.com/maps/search/?api=1&query=3030+Lincoln+Ave+Coquitlam+BC'],
+            ];
+        @endphp
+<footer id="site-footer" class="site-footer">
+            <section class="site-footer-cta" aria-label="{{ __('WD Emergency') }}">
+                <div class="container">
+                    <div><span><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>{{ __('WD Emergency') }}</span><h2>{{ __('Footer Emergency Title') }}</h2></div>
+                    <div class="site-footer-cta-actions"><a href="tel:+16048003900"><i class="bi bi-telephone-fill" aria-hidden="true"></i>{{ __('HP Call') }}</a><a href="{{ route('contact', ['lang' => app()->getLocale()]) }}">{{ __('Contact Us') }} <span aria-hidden="true">↗</span></a></div>
+                </div>
             </section>
-            <!-- Section: Links  -->
-
-            <!-- Copyright -->
-            <div class="p-3 text-center">
-                © 2020 Copyright:
-                <span class="txt-bold">VR Restoration.</span>
-                Develop and Design by
-                <a class="txt-vr" href="https://webpulse.ca/">WebPulse</a>
+            <div class="container site-footer-grid">
+                <section class="site-footer-brand" aria-labelledby="footer-brand-title">
+                    <a class="site-footer-logo" href="{{ route('home2', ['lang' => app()->getLocale()]) }}"><img src="{{ asset('img/logo.png') }}" alt="" width="76" height="84"><span id="footer-brand-title">VR PLUS<small>RESTORATION</small></span></a>
+                    <p>{{ __('Footer Company Text') }}</p>
+                    <img class="site-footer-canadian" src="{{ asset('img/proudly-cdn.png') }}" alt="Proudly Canadian business serving Metro Vancouver">
+                    <a class="site-footer-social" href="https://www.linkedin.com/company/vr-plus-construction-and-restoration" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i>LinkedIn <span aria-hidden="true">↗</span></a>
+                </section>
+                <nav class="site-footer-nav" aria-label="{{ __('Services') }}">
+                    <h2>{{ __('Services') }}</h2>
+                    <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{ __('waterDamage') }}</a>
+                    <a href="{{ route('fireDamage', ['lang' => app()->getLocale()]) }}">{{ __('fireDamage') }}</a>
+                    <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">{{ __('moldRemediation') }}</a>
+                    <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}">{{ __('construction') }}</a>
+                    <a href="{{ route('commercialServices', ['lang' => app()->getLocale()]) }}">{{ __('commercialServices') }}</a>
+                    <a href="{{ route('residentialServices', ['lang' => app()->getLocale()]) }}">{{ __('residentialServices') }}</a>
+                    <a href="{{ route('localServices', ['lang' => app()->getLocale()]) }}">{{ __('localServices') }}</a>
+                </nav>
+                <nav class="site-footer-nav" aria-label="{{ __('About') }}">
+                    <h2>{{ __('About') }}</h2>
+                    <a href="{{ route('about', ['lang' => app()->getLocale()]) }}">{{ __('About Us') }}</a>
+                    <a href="{{ route('team', ['lang' => app()->getLocale()]) }}">{{ __('Our Team') }}</a>
+                    <a href="{{ route('careers', ['lang' => app()->getLocale()]) }}">{{ __('Careers') }}</a>
+                    <a href="{{ route('blog', ['lang' => app()->getLocale()]) }}">{{ __('Blog') }}</a>
+                    <a href="{{ route('contact', ['lang' => app()->getLocale()]) }}">{{ __('Contact Us') }}</a>
+                    <a href="mailto:info@vrrestoration.ca">info@vrrestoration.ca</a>
+                    <a href="tel:+17783186796">+1 778-318-6796</a>
+                </nav>
+                <section class="site-footer-locations" aria-labelledby="footer-locations-title">
+                    <h2 id="footer-locations-title">{{ __('Footer Locations') }}</h2>
+                    @foreach ($footerLocations as [$city, $address, $map])
+                        <address><i class="bi bi-geo-alt" aria-hidden="true"></i><span><strong>{{ $city }}</strong><a href="{{ $map }}" target="_blank" rel="noopener noreferrer">{{ $address }}</a></span></address>
+                    @endforeach
+                </section>
             </div>
-            <!-- Copyright -->
+            <div class="container site-footer-search">
+                <span>{{ __('Footer Search Title') }}</span>
+                <a href="https://chatgpt.com/?q={{ $aiReputationQuery }}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/chatgpt-logo.svg') }}" alt="">ChatGPT</a>
+                <a href="https://claude.ai/new?q={{ $aiReputationQuery }}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/claude-logo.svg') }}" alt="">Claude</a>
+                <a href="https://www.google.com/preferences/source?q=vrrestoration.ca" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/google-logo.svg') }}" alt="">Google</a>
+            </div>
+            <div class="container site-footer-bottom">
+                <span>© {{ date('Y') }} VR Plus Restoration. {{ __('Footer Rights') }}</span>
+                <span>Vancouver · Lower Mainland · Fraser Valley</span>
+                <a class="site-footer-credit" href="https://webpulse.ca" target="_blank" rel="noopener">Design &amp; Develop by WebPulse.ca <span aria-hidden="true">↗</span></a>
+            </div>
         </footer>
-        <!-- Footer -->
-        <!-- End of .container -->
 
     </div>
 

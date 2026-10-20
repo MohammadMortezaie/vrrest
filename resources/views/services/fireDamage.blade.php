@@ -1,427 +1,152 @@
 @extends('layouts.app')
 
 @section('header')
-{!! seo($SEOData) !!}
+    {!! seo($SEOData) !!}
+    <link rel="stylesheet" href="{{ asset('css/restoration-service.css') }}">
+    @php
+        $fireFaqItems = [];
+        foreach (range(41, 49, 2) as $question) {
+            $fireFaqItems[] = ['question' => __('Fire Damage 1-'.$question), 'answer' => __('Fire Damage 1-'.($question + 1))];
+        }
+        foreach (['Cost', 'Time', 'Odor'] as $question) {
+            $fireFaqItems[] = ['question' => __('FD FAQ '.$question.' Question'), 'answer' => __('FD FAQ '.$question.' Answer')];
+        }
+        $firePageUrl = 'https://vrrestoration.ca/'.app()->getLocale().'/fire-damage';
+        $fireSchemas = [
+            [
+                '@context' => 'https://schema.org', '@type' => 'Service',
+                'name' => trim(__('Fire Damage 1-1')), 'serviceType' => __('FD Service Type'),
+                'description' => __('FD Hero Intro'), 'url' => $firePageUrl,
+                'provider' => ['@type' => 'LocalBusiness', 'name' => 'VR PLUS Restoration', 'url' => 'https://vrrestoration.ca', 'telephone' => '+1-604-800-3900'],
+                'areaServed' => ['Vancouver', 'Greater Vancouver', 'Metro Vancouver', 'North Shore', 'Downtown', 'Sea to Sky', 'Tri-Cities', 'Fraser Valley', 'Howe Sound'],
+            ],
+            [
+                '@context' => 'https://schema.org', '@type' => 'FAQPage',
+                'mainEntity' => array_map(static fn ($faq) => [
+                    '@type' => 'Question', 'name' => $faq['question'],
+                    'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq['answer']],
+                ], $fireFaqItems),
+            ],
+            [
+                '@context' => 'https://schema.org', '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => __('Home'), 'item' => 'https://vrrestoration.ca/'.app()->getLocale()],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => __('fireDamage'), 'item' => $firePageUrl],
+                ],
+            ],
+        ];
+    @endphp
+    @foreach($fireSchemas as $schema)
+        <script type="application/ld+json">{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+    @endforeach
 @endsection
 
 @section('content')
-    <section class="py-3 py-md-5">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{ asset('img/fire-damage.jpeg') }}"
-                        alt="Fire Damage Service">
-                        <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                            <img src="{{ asset('img/VRCALogo.png') }}" alt="VRCA Logo" style="height: 80px; object-fit: contain;">
-                            <img src="{{ asset('img/IICRCLogo.avif') }}" alt="IICRC Logo" style="height: 90px; object-fit: contain;">
-                        </div>
-                </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h1 class="fs-1 fw-bolder">{{ __('Fire Damage 1-1') }}</h1>
-                            <hr>
-                            <p class="lead mb-5 ">{{ __('Fire Damage 1-2') }}
-                            </p>
-
-                            <p class="lead mb-5 ">
-                                {{ __('Water Damage 1-2-2') }} <strong> {{ __('Water Damage 1-2-3') }}</strong>.
-                                {{ __('Water Damage 1-2-4') }} <strong><a href="tel:+16048003900"
-                                        class="btn btn-warning  fw-bolder">+1 604-800-3900</a></strong>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
+    @php
+        $projectImages = [
+            ['src' => 'img/fire-damage.jpeg', 'alt' => __('FD Photo Fire')],
+            ['src' => 'img/water-damage/water-damage-repair-floor-removal-vancouver.webp', 'alt' => __('FD Photo Drying')],
+            ['src' => 'img/construction2.jpeg', 'alt' => __('FD Photo Rebuild')],
+        ];
+    @endphp
+<div class="restoration-service-page fire-damage-page">
+    <section class="wd-hero"><div class="container">
+        <nav class="wd-breadcrumb" aria-label="{{ __('WD Breadcrumb') }}"><a href="{{ route('home2', ['lang' => app()->getLocale()]) }}">{{ __('Home') }}</a><span aria-hidden="true">/</span><span>{{ __('fireDamage') }}</span></nav>
+        <div class="wd-hero-grid">
+            <div class="wd-hero-copy">
+                <p class="wd-eyebrow"><span class="wd-status-dot" aria-hidden="true"></span>{{ __('WD Emergency') }}</p>
+                <h1>{{ __('Fire Damage 1-1') }}</h1>
+                <p class="wd-hero-lead">{{ __('FD Hero Intro') }}</p>
+                <div class="wd-actions"><a href="tel:+16048003900" class="wd-button wd-button-primary"><i class="bi bi-telephone" aria-hidden="true"></i>{{ __('WD Call') }} 604-800-3900</a><a href="#contact-form-section" class="wd-text-link">{{ __('FD Request Help') }} <span aria-hidden="true">↗</span></a></div>
+                <p class="wd-hero-note">{{ __('WD Hero Note') }}</p>
+                <p class="fd-emergency-note">{{ __('FD Emergency Note') }}</p>
             </div>
+            <figure class="wd-hero-image"><img src="{{ asset($projectImages[0]['src']) }}" alt="{{ $projectImages[0]['alt'] }}" width="1200" height="675" loading="eager" fetchpriority="high"><figcaption><span class="wd-photo-label">{{ __('FD Photo Label') }}</span><strong>{{ __('FD Photo Title') }}</strong><span>{{ __('FD Photo Detail') }}</span></figcaption></figure>
         </div>
-    </section>
+    </div></section>
+    @include('partials.restoration-credentials')
+    <nav class="wd-jumpnav" aria-label="{{ __('FD Navigation') }}"><div class="container"><span>{{ __('Water Damage Quick Links Label') }}</span>
+        <a href="#fire-safety">{{ __('FD Safety Label') }}</a><a href="#fire-services">{{ __('Water Damage Quick Link Services') }}</a><a href="#fire-process">{{ __('Water Damage Quick Link Process') }}</a><a href="#fire-gallery">{{ __('MD Photos') }}</a><a href="#fire-cost">{{ __('WD Cost Insurance') }}</a><a href="#faq">{{ __('Water Damage Quick Link FAQ') }}</a>
+    </div></nav>
 
+    <section class="wd-section wd-intro" id="fire-safety"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('FD Safety Label') }}</p><h2>{{ __('Fire Damage 1-41') }}</h2></div><p>{{ __('Fire Damage 1-42') }}</p></div>
+        <div class="wd-three-columns">@foreach(range(1,3) as $item)<article><h3>{{ __('FD Safety '.$item.' Title') }}</h3><p>{{ __('FD Safety '.$item.' Text') }}</p></article>@endforeach</div>
+        <details class="wd-disclosure fd-safety-details"><summary><h3>{{ __('What Not To DO') }}</h3></summary><ul class="wd-checklist">@foreach(range(16,24,2) as $item)<li><strong>{{ __('Fire Damage 1-'.$item) }}</strong> {{ __('Fire Damage 1-'.($item+1)) }}</li>@endforeach</ul></details>
+        <a class="wd-text-link" href="https://www.redcross.ca/blog/2022/1/preparing-to-return-home-after-a-house-fire">{{ __('FD Safety Link') }}</a>
+    </div></section>
 
+    <section class="wd-section wd-soft" id="fire-services"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('FD Service Type') }}</p><h2>{{ __('FD Services Title') }}</h2></div><p>{{ __('Fire Damage 1-4') }}</p></div>
+        <div class="wd-reasons">@foreach(range(1,6) as $item)<article><span class="wd-mini-number">0{{ $item }}</span><h3>{{ __('FD Service '.$item.' Title') }}</h3><p>{{ __('FD Service '.$item.' Text') }}</p></article>@endforeach</div>
+        @include('partials.restoration-contact-cta', ['message' => __('FD Services Help'), 'buttonLabel' => __('FD Request Help')])
+    </div></section>
 
-    <section class="py-3 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-12 mb-3">
+    <section class="wd-section" id="fire-process"><div class="container wd-process-grid">
+        <div class="wd-section-intro"><p class="wd-eyebrow">{{ __('WD What Happens Next') }}</p><h2>{{ __('Fire Damage 1-26') }}</h2><p>{{ __('FD Process Intro') }}</p><a href="#contact-form-section" class="wd-text-link">{{ __('FD Request Help') }} <span aria-hidden="true">↗</span></a></div>
+        <ol class="wd-process-list">
+            @foreach(range(27,37,2) as $step)<li><span class="wd-step-number">0{{ $loop->iteration }}</span><details @if($loop->first) open @endif><summary><h3>{{ __('Fire Damage 1-'.$step) }}</h3></summary><p>{{ __('Fire Damage 1-'.($step+1)) }}</p></details></li>@endforeach
+            <li><span class="wd-step-number">07</span><details><summary><h3>{{ __('Restoration') }}</h3></summary><p>{{ __('Fire Damage 1-39') }}</p></details></li>
+            <li><span class="wd-step-number">08</span><details><summary><h3>{{ __('Water Damage 1-46') }}</h3></summary><p>{{ __('Fire Damage 1-40') }}</p></details></li>
+        </ol>
+    </div></section>
 
+    <section class="wd-section wd-dark" id="fire-gallery"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('FD Photo Label') }}</p><h2>{{ __('FD Gallery Title') }}</h2></div><p>{{ __('FD Gallery Intro') }}</p></div>
+        @include('partials.restoration-gallery', ['projectImages' => $projectImages])
+        @include('partials.restoration-contact-cta', ['message' => __('FD Gallery Help'), 'buttonLabel' => __('FD Request Help')])
+    </div></section>
 
-                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Fire Damage 1-3-1') }}
-                    </h2>
+    <section class="wd-section" id="fire-team"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">VR PLUS RESTORATION</p><h2>{{ __('Fire Damage 1-3-1') }}</h2></div><p>{{ __('Fire Damage 1-2') }}</p></div>
+        <ul class="wd-equipment-list">@foreach(range(2,5) as $item)<li><i class="bi bi-check2" aria-hidden="true"></i>{{ __('Fire Damage 1-3-'.$item) }}</li>@endforeach</ul>
+    </div></section>
+    @include('partials.google-reviews', [
+        'reviewKeys' => ['bobbidi-boo-cleaning', 'm-a'],
+        'reviewSectionTitle' => __('Google Reviews Default Title'),
+        'reviewSectionLead' => __('FD Reviews Intro'),
+        'reviewSectionClass' => 'wd-soft',
+    ])
 
-                    <ul>
-                        <li>
-                            {{ __('Fire Damage 1-3-2') }}
-                        </li>
-
-                        <li>
-                            {{ __('Fire Damage 1-3-3') }}
-                        </li>
-
-                        <li>
-                            {{ __('Fire Damage 1-3-4') }}
-                        </li>
-
-                        <li>
-                            {{ __('Fire Damage 1-3-5') }}
-                        </li>
-                    </ul>
-                    <div class="text-center mt-3">
-                        <strong class="d-block mb-2" style="font-size: 1.2rem;">{{ __('Mold 1-3-7') }} </strong>
-                        <a href="tel:+16048003900" class="btn btn-warning fw-bolder text-uppercase px-4 py-3" style="font-size: 1.0rem; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                            📞 Call Now: +1 604-800-3900
-                        </a>
-                        <p class="mt-2" style="font-size: 0.95rem; color: #555;">{{ __('Mold 1-3-8') }}  </p>
-                    </div>
-
-                    <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
-                        <img src="{{ asset('img/googleg.png') }}" alt="Google Garanted" >
-                    </div>
-
-                    <h2 class="fs-2 fw-bolder section-title-h1">{{ __('Fire Damage 1-3') }}
-                    </h2>
-
-                    <p class="lead">{{ __('Fire Damage 1-4') }}
-                        <br>
-                        <br>{{ __('Fire Damage 1-5') }}
-
-                    </p>
-                </div>
-
-            </div>
+    <section class="wd-section" id="fire-cost"><div class="container">
+        <div class="wd-split">
+            <div><p class="wd-eyebrow">{{ __('FD Cost Label') }}</p><h2>{{ __('FD FAQ Cost Question') }}</h2><p>{{ __('FD FAQ Cost Answer') }}</p><ul class="wd-checklist">@foreach(range(1,4) as $item)<li>{{ __('FD Cost Factor '.$item) }}</li>@endforeach</ul><a href="#contact-form-section" class="wd-button wd-button-primary">{{ __('FD Request Help') }} <span aria-hidden="true">↓</span></a></div>
+            <div class="fd-timeline"><p class="wd-eyebrow">{{ __('FD Time Label') }}</p><h2>{{ __('FD FAQ Time Question') }}</h2><p>{{ __('FD FAQ Time Answer') }}</p><ol class="fd-timeline-list">@foreach(range(1,3) as $item)<li><h3>{{ __('FD Phase '.$item.' Title') }}</h3><p>{{ __('FD Phase '.$item.' Text') }}</p></li>@endforeach</ol></div>
         </div>
-    </section>
+        <div class="wd-insurance"><div><p class="wd-eyebrow">{{ __('WD Cost Insurance') }}</p><h2>{{ __('FD Insurance Title') }}</h2><p>{{ __('FD Insurance Text') }}</p></div><ul class="wd-checklist">@foreach(range(1,3) as $item)<li>{{ __('FD Insurance '.$item) }}</li>@endforeach</ul></div>
+    </div></section>
 
-
-    <section class="py-3 py-md-5  ">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-6 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('What To DO') }}
-                    </h2>
-
-
-                    <ul class="txt-def">
-                        <li>
-                            <strong>{{ __('Fire Damage 1-6') }}
-
-                            </strong>{{ __('Fire Damage 1-7') }}
-
-                        </li>
-
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-8') }}
-
-                            </strong>{{ __('Fire Damage 1-9') }}
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-10') }}
-
-                            </strong>{{ __('Fire Damage 1-11') }}
-
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-12') }}
-
-                            </strong>{{ __('Fire Damage 1-13') }}
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-14') }}
-
-                            </strong>{{ __('Fire Damage 1-15') }}
-
-                        </li>
-
-                    </ul>
-
-                </div>
-                <div class="col-md-6 mb-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                         {{ __('What Not To DO') }}
-                    </h2>
-
-
-                    <ul class="txt-def">
-                        <li>
-                            <strong>{{ __('Fire Damage 1-16') }}
-
-                            </strong>{{ __('Fire Damage 1-17') }}
-
-
-                        </li>
-
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-18') }}
-
-                            </strong>{{ __('Fire Damage 1-19') }}
-
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-20') }}
-
-                            </strong>{{ __('Fire Damage 1-21') }}
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-22') }}
-
-                            </strong>{{ __('Fire Damage 1-23') }}
-
-                        </li>
-
-                        <li>
-                            <strong>{{ __('Fire Damage 1-24') }}
-
-                            </strong>{{ __('Fire Damage 1-25') }}
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-            </div>
+    <section class="wd-section wd-soft" id="fire-smoke-water"><div class="container">
+        <div class="wd-section-heading"><div><p class="wd-eyebrow">{{ __('FD Beyond Flames') }}</p><h2>{{ __('FD Smoke Title') }}</h2></div><p>{{ __('FD Smoke Intro') }}</p></div>
+        <div class="wd-three-columns">
+            <article><h3>{{ __('FD Service 2 Title') }}</h3><p>{{ __('Fire Damage 1-36') }}</p></article>
+            <article><h3>{{ __('FD Service 3 Title') }}</h3><p>{{ __('FD FAQ Odor Answer') }}</p></article>
+            <article><h3>{{ __('FD Service 4 Title') }}</h3><p>{{ __('Fire Damage 1-34') }}</p><a class="wd-text-link" href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{ __('waterDamage') }} <span aria-hidden="true">↗</span></a></article>
         </div>
-    </section>
+        @include('partials.restoration-contact-cta', ['message' => __('FD Smoke Help'), 'buttonLabel' => __('FD Request Help')])
+    </div></section>
 
+    <section class="wd-section" id="fire-service-areas"><div class="container wd-intro-grid"><div><p class="wd-eyebrow">{{ __('MD Local Label') }}</p><h2>{{ __('Fire Damage 1-3-6') }}</h2></div><div><p>{{ __('Fire Damage 1-3-7') }}</p><ul class="fd-area-list">@foreach(['Vancouver','Greater Vancouver','Metro Vancouver','North Shore','Downtown','Sea to Sky','Tri-Cities','Fraser Valley','Howe Sound'] as $area)<li>{{ $area }}</li>@endforeach</ul></div></div></section>
 
+    <section class="wd-section wd-soft" id="faq"><div class="container wd-faq-grid">
+        <div><p class="wd-eyebrow">{{ __('WD Clear Answers') }}</p><h2>{{ __('Frequently Asked Questions') }}</h2><p>{{ __('FD FAQ Intro') }}</p><a href="#contact-form-section" class="wd-text-link">{{ __('FD Request Help') }} <span aria-hidden="true">↓</span></a></div>
+        <div class="wd-faq-list">@foreach($fireFaqItems as $faq)<details class="wd-disclosure" @if($loop->first) open @endif><summary><h3>{{ $faq['question'] }}</h3></summary><p>{{ $faq['answer'] }}</p></details>@endforeach</div>
+    </div></section>
+    @include('partials.contact-form', [
+        'source' => __('Contact Form Source Fire'),
+        'title' => __('Contact Form Fire Title'),
+        'subtitle' => __('Contact Form Fire Subtitle'),
+    ])
+    <section class="wd-section"><div class="container"><p class="wd-eyebrow">{{ __('WD Knowledge') }}</p><h2>{{ __('MD Related Title') }}</h2><div class="wd-guide-links">
+        <a href="{{ route('waterdamage', ['lang' => app()->getLocale()]) }}">{{ __('waterDamage') }} <span aria-hidden="true">↗</span></a>
+        <a href="{{ route('moldRemediation', ['lang' => app()->getLocale()]) }}">{{ __('moldRemediation') }} <span aria-hidden="true">↗</span></a>
+        <a href="{{ route('construction', ['lang' => app()->getLocale()]) }}">{{ __('construction') }} <span aria-hidden="true">↗</span></a>
+        <a href="{{ route('blog', ['lang' => app()->getLocale()]) }}">{{ __('Blog') }} <span aria-hidden="true">↗</span></a>
+    </div></div></section>
+    @include('partials.ai-trust-links')
+</div>
+@endsection
 
-    <section class="py-3 py-md-5 bg-vr-second">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-md-12 mb-3">
-                    <h2 class="section-title-h1">{{ __('Fire Damage 1-26') }}
-
-                    </h2>
-                    <hr>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            1) {{ __('Fire Damage 1-27') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">
-                                {{ __('Fire Damage 1-28') }}
-
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            2) {{ __('Fire Damage 1-29') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Fire Damage 1-30') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            3) {{ __('Fire Damage 1-31') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Fire Damage 1-32') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            4) {{ __('Fire Damage 1-33') }}
-                        </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Fire Damage 1-34') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            5) {{ __('Fire Damage 1-35') }} </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text"> {{ __('Fire Damage 1-36') }}
-                                 </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            6) {{ __('Fire Damage 1-37') }}</div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Fire Damage 1-38') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            7) {{ __('Restoration') }}</div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text">{{ __('Fire Damage 1-39') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 mb-3">
-                    <div class="card  border-2  mb-3 rounded">
-                        <div class="card-header bg-vr text-white fw-bold fs-5">
-                            8) {{ __('Water Damage 1-46') }}
-                        </div>
-                        <div class="card-body card-vr-custom">
-                            <p class="card-text ">
-                                {{ __('Fire Damage 1-40') }}
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-12 my-3">
-                    <h2 class="fs-2 fw-bolder section-title-h1">
-                        {{ __('About 1-9') }}
-                    </h2>
-                    <hr>
-
-                    <h3 class="fs-4 fw-bold">
-                         {{ __('Fire Damage 1-3-6') }}
-                    </h3>
-                    <p>
-                        {{ __('Fire Damage 1-3-7') }}
-                    </p>
-
-                    <ul class="txt-vr d-flex flex-wrap gap-3">
-                        <li class="lead px-2">Vancouver</li>
-                        <li class="lead px-2">Greater Vancouver</li>
-                        <li class="lead px-2">Metro Vancouver</li>
-                        <li class="lead px-2">North Shore</li>
-                        <li class="lead px-2">Downtown</li>
-                        <li class="lead px-2">Sea to Sky</li>
-                        <li class="lead px-2">Tri-Cities</li>
-                        <li class="lead px-2">Fraser Valley</li>
-                        <li class="lead px-2">Howe Sound</li>
-                    </ul>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq  ">
-
-        <div class="container">
-
-
-            <div class="col-md-12 mb-3">
-                <h2 class="fs-2 fw-bolder">
-                    {{ __('Frequently Asked Questions') }}
-
-                </h2>
-                <hr>
-            </div>
-
-            <div class="row ">
-
-                <div class="col-lg-12">
-
-                    <div class="faq-container">
-
-                        <div class="faq-item rounded-3 faq-active" data-aos="fade-up" data-aos-delay="200">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>
-                                {{ __('Fire Damage 1-41') }} </h3>
-                            <div class="faq-content">
-                                <p> {{ __('Fire Damage 1-42') }}</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="300">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Fire Damage 1-43') }}
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Fire Damage 1-44') }}
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="400">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Fire Damage 1-45') }}
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Fire Damage 1-46') }}   </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="500">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Fire Damage 1-47') }}
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Fire Damage 1-48') }} </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item rounded-3" data-aos="fade-up" data-aos-delay="600">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>{{ __('Fire Damage 1-49') }}
-                            </h3>
-                            <div class="faq-content">
-                                <p>{{ __('Fire Damage 1-50') }}  <a href="{{route('waterdamage',['lang' =>  app()->getLocale()])}}" > {{ __('Read More') }}  </a> </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section><!-- /Faq Section -->
+@section('scripts')
+    <script src="{{ asset('js/restoration-service.js') }}" defer></script>
 @endsection

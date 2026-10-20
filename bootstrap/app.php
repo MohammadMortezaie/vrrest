@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\NoIndexAdmin;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -13,7 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'setlocale' => SetLocale::class
+            'setlocale' => SetLocale::class,
+            'noindex.admin' => NoIndexAdmin::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

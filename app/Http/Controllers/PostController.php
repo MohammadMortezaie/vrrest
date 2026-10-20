@@ -16,7 +16,7 @@ class PostController extends Controller
     public function blog(Request $request, string $lang)
     {
         $locale = app()->getLocale();
-        $blog = Post::activePostsForLocale($locale);
+        $blog = Post::activePostsForLocale($locale, true, 6);
 
         // Do not expose a thin translated hub that only repeats English posts.
         if ($locale === 'zh' && $blog->isEmpty()) {
@@ -140,7 +140,14 @@ class PostController extends Controller
             return redirect($canonicalUrl, 301);
         }
 
-        $latest = Post::activePostsForLocale($postLocale, false, 3);
+        $latest = Post::query()
+            ->active()
+            ->forLocale($postLocale)
+            ->where('id', '!=', $blog->getKey())
+            ->with('category')
+            ->latest('created_at')
+            ->take(3)
+            ->get();
         $description = trim(strip_tags($blog->subtitle));
         $image = $blog->image
             ? (str_starts_with($blog->image, 'http') ? $blog->image : $this->siteUrl().'/'.ltrim($blog->image, '/'))

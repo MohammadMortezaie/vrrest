@@ -35,24 +35,14 @@ class ServiceController extends Controller
                     fn(SEOData $SEOData) => [
                         '@context' => 'https://schema.org',
                         '@type' => 'FAQPage',
-                        'mainEntity' => [
-                            [
-                                '@type' => 'Question',
-                                'name' => 'What number should I call for restoration services?',
-                                'acceptedAnswer' => [
-                                    '@type' => 'Answer',
-                                    'text' => 'Call 604-800-3900 for immediate restoration services, including water damage, fire damage, and mold remediation. Our Vancouver branch is ready to assist you 24/7.',
-                                ],
+                        'mainEntity' => array_map(static fn ($number) => [
+                            '@type' => 'Question',
+                            'name' => __('HP FAQ '.$number.' Q', [], 'en'),
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => __('HP FAQ '.$number.' A', [], 'en'),
                             ],
-                            [
-                                '@type' => 'Question',
-                                'name' => 'What types of restoration services do you offer?',
-                                'acceptedAnswer' => [
-                                    '@type' => 'Answer',
-                                    'text' => 'We offer a range of restoration services including water damage restoration, fire damage repair, mold remediation, and storm disaster cleanup. Our experienced team is equipped to handle emergencies and restore your property to its original condition.',
-                                ],
-                            ],
-                        ],
+                        ], [1, 2]),
                     ]
                 )
                 ->add(
@@ -77,6 +67,14 @@ class ServiceController extends Controller
                             'longitude' => -123.1595,
                         ],
                         'url' => 'https://vrrestoration.ca',
+                        'sameAs' => ['https://www.linkedin.com/company/vr-plus-construction-and-restoration'],
+                        'hasMap' => 'https://share.google/r4scdAGmnOKdOX6NW',
+                        'contactPoint' => [
+                            '@type' => 'ContactPoint',
+                            'contactType' => 'emergency restoration service',
+                            'telephone' => '+1-604-800-3900',
+                            'availableLanguage' => ['English', 'Chinese'],
+                        ],
                         'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
                         'openingHoursSpecification' => [
                             [
@@ -89,7 +87,11 @@ class ServiceController extends Controller
                     ]
                 ),
             tags: ['restoration services', 'water damage', 'fire damage', 'mold remediation', 'Vancouver restoration'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh')],
+            canonical_url: 'https://vrrestoration.ca/en',
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh'),
+            ],
         );
 
         // Define SEO data for Chinese
@@ -102,24 +104,14 @@ class ServiceController extends Controller
                     fn(SEOData $SEOData) => [
                         '@context' => 'https://schema.org',
                         '@type' => 'FAQPage',
-                        'mainEntity' => [
-                            [
-                                '@type' => 'Question',
-                                'name' => '我应该拨打哪个号码以获得恢复服务？',
-                                'acceptedAnswer' => [
-                                    '@type' => 'Answer',
-                                    'text' => '请拨打604-800-3900，以获取水损恢复、火灾修复和霉菌治理等紧急恢复服务。我们的温哥华分部随时准备为您提供帮助。',
-                                ],
+                        'mainEntity' => array_map(static fn ($number) => [
+                            '@type' => 'Question',
+                            'name' => __('HP FAQ '.$number.' Q', [], 'zh'),
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => __('HP FAQ '.$number.' A', [], 'zh'),
                             ],
-                            [
-                                '@type' => 'Question',
-                                'name' => '你们提供哪些恢复服务？',
-                                'acceptedAnswer' => [
-                                    '@type' => 'Answer',
-                                    'text' => '我们提供包括水损恢复、火灾修复、霉菌治理和风暴灾难清理在内的各种恢复服务。我们经验丰富的团队能够处理紧急情况并恢复您的财产到原始状态。',
-                                ],
-                            ],
-                        ],
+                        ], [1, 2]),
                     ]
                 )
                 ->add(
@@ -144,11 +136,19 @@ class ServiceController extends Controller
                             'longitude' => -123.1595,
                         ],
                         'url' => 'https://vrrestoration.ca/zh',
+                        'sameAs' => ['https://www.linkedin.com/company/vr-plus-construction-and-restoration'],
+                        'hasMap' => 'https://share.google/r4scdAGmnOKdOX6NW',
+                        'contactPoint' => [
+                            '@type' => 'ContactPoint',
+                            'contactType' => 'emergency restoration service',
+                            'telephone' => '+1-604-800-3900',
+                            'availableLanguage' => ['English', 'Chinese'],
+                        ],
                         'areaServed' => ['温哥华', '本拿比', '高贵林', '奇利瓦克', '阿伯茨福德', '列治文', '素里', '兰里', '北温哥华', '西温哥华', '枫树岭', '米逊', '霍普', '弗雷泽河谷', '低陆平原', '卑诗省'],
                         'openingHoursSpecification' => [
                             [
                                 '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
                                 'opens' => '00:00',
                                 'closes' => '23:59',
                             ],
@@ -156,7 +156,11 @@ class ServiceController extends Controller
                     ]
                 ),
             tags: ['恢复服务', '水损', '火灾损害', '霉菌治理', '温哥华恢复'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en')],
+            canonical_url: 'https://vrrestoration.ca/zh',
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh'),
+            ],
         );
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
@@ -192,7 +196,7 @@ class ServiceController extends Controller
                         'areaServed' => 'CA',
                         'availableLanguage' => 'English',
                     ],
-                    'sameAs' => ['https://www.facebook.com/VRPlusRestoration', 'https://twitter.com/VRPlusRestoration', 'https://www.linkedin.com/company/vrplusrestoration'],
+                    'sameAs' => ['https://www.facebook.com/VRPlusRestoration', 'https://twitter.com/VRPlusRestoration', 'https://www.linkedin.com/company/vr-plus-construction-and-restoration'],
                 ],
             ),
             tags: ['property damage restoration', 'emergency services', 'flood restoration', 'fire damage repair', 'mold remediation', 'asbestos removal', 'Vancouver restoration'],
@@ -218,7 +222,7 @@ class ServiceController extends Controller
                         'areaServed' => 'CA',
                         'availableLanguage' => '中文',
                     ],
-                    'sameAs' => ['https://www.facebook.com/VRPlusRestoration', 'https://twitter.com/VRPlusRestoration', 'https://www.linkedin.com/company/vrplusrestoration'],
+                    'sameAs' => ['https://www.facebook.com/VRPlusRestoration', 'https://twitter.com/VRPlusRestoration', 'https://www.linkedin.com/company/vr-plus-construction-and-restoration'],
                 ],
             ),
             tags: ['财产损害恢复', '紧急服务', '水灾恢复', '火灾修复', '霉菌治理', '石棉去除', '温哥华恢复'],
@@ -239,13 +243,13 @@ class ServiceController extends Controller
         $seoDataEn = new SEOData(
             title: 'Contact VR Plus Restoration',
             description: 'Reach out to VR Plus Restoration for 24/7 emergency services. Call us now at +1-604-800-3900 for immediate assistance with water, fire, mold, and asbestos restoration.',
-            image: asset('img/contactus.jpeg'),
+            image: asset('img/water-damage/emergency-water-damage-drying-vancouver.webp'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'Organization',
                     'name' => 'VR Plus Restoration',
-                    'url' => url('/contact'),
+                    'url' => route('contact', ['lang' => 'en']),
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => 'Customer Service',
@@ -256,19 +260,19 @@ class ServiceController extends Controller
                 ],
             ),
             tags: ['contact VR Plus Restoration', 'emergency services contact', 'restoration services contact'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/contact')],
+            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/contact-us')],
         );
 
         $seoDataZh = new SEOData(
             title: '联系VR+恢复',
             description: '联系VR+恢复，获得24/7紧急服务。立即致电+1-604-800-3900，获取水灾、火灾、霉菌和石棉恢复的紧急帮助。',
-            image: asset('img/contactus.jpeg'),
+            image: asset('img/water-damage/emergency-water-damage-drying-vancouver.webp'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'Organization',
                     'name' => 'VR+恢复',
-                    'url' => url('/contact'),
+                    'url' => route('contact', ['lang' => 'zh']),
                     'contactPoint' => [
                         '@type' => 'ContactPoint',
                         'contactType' => '客户服务',
@@ -279,7 +283,7 @@ class ServiceController extends Controller
                 ],
             ),
             tags: ['联系VR+恢复', '紧急服务联系', '恢复服务联系'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/contact')],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/contact-us')],
         );
 
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
@@ -403,35 +407,51 @@ class ServiceController extends Controller
         $seoDataEn = new SEOData(
             title: 'Meet the VR Plus Restoration Team',
             description: 'Our expert team at VR Plus Restoration is dedicated to providing top-notch restoration services. Meet our specialists who are ready to help you 24/7.',
-            image: asset('img/team.jpeg'),
+            image: asset('img/team/sasan-ghanbari.webp'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'Organization',
                     'name' => 'VR Plus Restoration',
-                    'url' => url('/team'),
+                    'url' => route('team', ['lang' => 'en']),
                     'logo' => asset('android-chrome-192x192.png'),
+                    'employee' => [
+                        ['@type' => 'Person', 'name' => 'Sasan Ghanbari', 'jobTitle' => 'Founder and CEO'],
+                        ['@type' => 'Person', 'name' => 'Saman Ghanbari', 'jobTitle' => 'Restoration and Logistics Manager'],
+                        ['@type' => 'Person', 'name' => 'Milad Mohammadi', 'jobTitle' => 'Construction Department Manager'],
+                        ['@type' => 'Person', 'name' => 'Moe Ghanbari', 'jobTitle' => 'Structural Engineer, P.Eng., M.Sc.'],
+                        ['@type' => 'Person', 'name' => 'Moe Mortezaei', 'jobTitle' => 'IT and Web Developer'],
+                        ['@type' => 'Person', 'name' => 'Nirvana Asadi', 'jobTitle' => 'Project Coordinator'],
+                    ],
                 ],
             ),
             tags: ['VR Plus Restoration team', 'restoration specialists', 'emergency restoration team'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/team')],
+            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/our-team')],
         );
 
         $seoDataZh = new SEOData(
             title: '认识VR+恢复团队',
             description: 'VR+恢复的专家团队致力于提供一流的恢复服务。认识我们的专家，他们随时准备帮助您解决水灾、火灾、霉菌和石棉问题。',
-            image: asset('img/team.jpeg'),
+            image: asset('img/team/sasan-ghanbari.webp'),
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'Organization',
                     'name' => 'VR+恢复',
-                    'url' => url('/team'),
+                    'url' => route('team', ['lang' => 'zh']),
                     'logo' => asset('android-chrome-192x192.png'),
+                    'employee' => [
+                        ['@type' => 'Person', 'name' => 'Sasan Ghanbari', 'jobTitle' => '创始人兼首席执行官'],
+                        ['@type' => 'Person', 'name' => 'Saman Ghanbari', 'jobTitle' => '修复与物流经理'],
+                        ['@type' => 'Person', 'name' => 'Milad Mohammadi', 'jobTitle' => '建筑部门经理'],
+                        ['@type' => 'Person', 'name' => 'Moe Ghanbari', 'jobTitle' => '结构工程师'],
+                        ['@type' => 'Person', 'name' => 'Moe Mortezaei', 'jobTitle' => 'IT 与网页开发人员'],
+                        ['@type' => 'Person', 'name' => 'Nirvana Asadi', 'jobTitle' => '项目协调员'],
+                    ],
                 ],
             ),
             tags: ['VR+恢复团队', '恢复专家', '紧急恢复团队'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/team')],
+            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/our-team')],
         );
 
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
@@ -492,11 +512,11 @@ class ServiceController extends Controller
 
         $pageEnUrl = 'https://vrrestoration.ca/en/water-damage';
         $pageZhUrl = 'https://vrrestoration.ca/zh/water-damage';
-        $googleReviewUrl = 'https://share.google/6qvSbfJtu8MKHNalD';
+        $googleReviewUrl = config('google_reviews.profile_url');
         $aggregateRating = [
             '@type' => 'AggregateRating',
             'ratingValue' => '5.0',
-            'reviewCount' => '33',
+            'reviewCount' => (string) config('google_reviews.review_count'),
             'bestRating' => '5',
             'worstRating' => '1',
         ];
@@ -932,6 +952,8 @@ class ServiceController extends Controller
 
         $seoDataEn = new SEOData(
             title: 'Water Damage Restoration Vancouver | 24/7 Emergency Repair',
+            url: $pageEnUrl,
+            canonical_url: $pageEnUrl,
             description: '24/7 water damage restoration in Vancouver. Emergency extraction, drying, mold prevention, IICRC-certified technicians, free inspection & insurance help.',
             image: asset('img/water-damage.jpeg'),
             schema: $waterSchemaEn,
@@ -944,6 +966,8 @@ class ServiceController extends Controller
 
         $seoDataZh = new SEOData(
             title: '温哥华水灾修复服务 | 24/7 紧急响应',
+            url: $pageZhUrl,
+            canonical_url: $pageZhUrl,
             description: '温哥华 24/7 水灾修复服务，处理洪水、漏水、爆管、污水倒灌、干燥、维修和保险文件。请拨打 604-800-3900。',
             image: asset('img/water-damage.jpeg'),
             schema: $waterSchemaZh,
@@ -956,11 +980,7 @@ class ServiceController extends Controller
 
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
-        $blog = Post::activePostsForLocale($locale, false, 5);
-        return view('services.waterdamage', [
-            'SEOData' => $SEOData,
-            'blog' => $blog,
-        ]);
+        return view('services.waterdamage', compact('SEOData'));
     }
 
     public function seismicRetrofitPlanSingleFamily()
@@ -1565,27 +1585,43 @@ class ServiceController extends Controller
     }
     public function construction()
     {
-        $locale = app()->getLocale(); // Get the current locale
+        $locale = app()->getLocale();
+        $pageUrl = 'https://vrrestoration.ca/'.$locale.'/construction';
+        $pageEnUrl = 'https://vrrestoration.ca/en/construction';
+        $pageZhUrl = 'https://vrrestoration.ca/zh/construction';
+        $schemaLocale = $locale === 'zh' ? 'zh' : 'en';
+        $title = $locale === 'zh'
+            ? '温哥华施工与重建服务 | VR Plus Restoration'
+            : 'Construction and Reconstruction Vancouver | VR Plus';
+        $description = $locale === 'zh'
+            ? 'VR Plus 为大温哥华住宅与商业物业提供施工、损坏重建、翻新、许可证及工种协调服务。立即申请清晰的项目估价。'
+            : 'Construction and reconstruction in Metro Vancouver for homes and businesses. Damage repairs, renovations, permit coordination and clear project estimates.';
+        $faqEntities = array_map(static fn ($number) => [
+            '@type' => 'Question',
+            'name' => __('Construction FAQ '.$number.' Question', [], $schemaLocale),
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => __('Construction FAQ '.$number.' Answer', [], $schemaLocale),
+            ],
+        ], range(1, 6));
 
-        $seoDataEn = new SEOData(
-            title: 'Expert Construction Restoration Services | VR Restoration',
-            description: 'Expert Construction Restoration Services. Our team provides thorough and efficient restoration using advanced techniques. Call us at 604-800-3900.',
-            image: asset('img/construction2.jpeg'),
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        [
-                            '@type' => 'Question',
-                            'name' => 'What construction restoration services do you provide?',
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => 'We provide comprehensive construction restoration services including damage assessment, emergency repairs, and full reconstruction for water, fire, mold, and storm damage.',
-                            ],
-                        ],
-                    ],
-                    'telephone' => '+1 604-800-3900',
+        $schema = SchemaCollection::make()
+            ->add(fn (SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'Service',
+                '@id' => $pageUrl.'#service',
+                'name' => $locale === 'zh' ? '施工与重建服务' : 'Construction and Reconstruction Services',
+                'description' => $description,
+                'url' => $pageUrl,
+                'image' => asset('img/construction/vancouver-reconstruction-framing.webp'),
+                'serviceType' => $locale === 'zh' ? '物业施工与重建' : 'Property construction and reconstruction',
+                'provider' => [
+                    '@type' => 'LocalBusiness',
+                    '@id' => 'https://vrrestoration.ca/#business',
+                    'name' => 'VR Plus Restoration',
+                    'url' => 'https://vrrestoration.ca',
+                    'telephone' => '+1-604-800-3900',
+                    'email' => 'info@vrrestoration.ca',
                     'address' => [
                         '@type' => 'PostalAddress',
                         'streetAddress' => '636 Clyde Ave Suite 7',
@@ -1594,83 +1630,62 @@ class ServiceController extends Controller
                         'postalCode' => 'V7T 1E1',
                         'addressCountry' => 'CA',
                     ],
-                    'geo' => [
-                        '@type' => 'GeoCoordinates',
-                        'latitude' => 49.3252,
-                        'longitude' => -123.1595,
-                    ],
-                    'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                    'openingHoursSpecification' => [
-                        [
-                            '@type' => 'OpeningHoursSpecification',
-                            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                            'opens' => '00:00',
-                            'closes' => '23:59',
-                        ],
-                    ],
-                ]
-            ),
-            tags: ['construction restoration', 'property damage repair', 'reconstruction services', 'Vancouver construction restoration'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/construction')],
-        );
-
-        $seoDataZh = new SEOData(
-            title: '专业建筑恢复服务 | VR Restoration',
-            description: '专业建筑恢复服务。我们的团队使用先进的技术进行全面高效的恢复。请致电 604-800-3900。',
-            image: asset('img/construction2.jpeg'),
-            schema: SchemaCollection::make()->add(
-                fn(SEOData $SEOData) => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'FAQPage',
-                    'mainEntity' => [
-                        'telephone' => '+1 604-800-3900',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'streetAddress' => '636 Clyde Ave Suite 7',
-                            'addressLocality' => 'West Vancouver',
-                            'addressRegion' => 'BC',
-                            'postalCode' => 'V7T 1E1',
-                            'addressCountry' => 'CA',
-                        ],
-                        'geo' => [
-                            '@type' => 'GeoCoordinates',
-                            'latitude' => 49.3252,
-                            'longitude' => -123.1595,
-                        ],
-                        'areaServed' => ['Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'],
-                        'openingHoursSpecification' => [
-                            [
-                                '@type' => 'OpeningHoursSpecification',
-                                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                'opens' => '00:00',
-                                'closes' => '23:59',
-                            ],
-                        ],
-                    ],
+                    'sameAs' => ['https://www.linkedin.com/company/vr-plus-construction-and-restoration'],
                 ],
-            ),
-            tags: ['建筑恢复', '财产损害修复', '重建服务', '温哥华建筑恢复'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/construction')],
-        );
+                'areaServed' => array_map(static fn ($area) => ['@type' => 'City', 'name' => $area], [
+                    'Vancouver', 'West Vancouver', 'North Vancouver', 'Burnaby', 'Coquitlam', 'Richmond', 'Surrey', 'New Westminster',
+                ]),
+            ])
+            ->add(fn (SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => $faqEntities,
+            ])
+            ->add(fn (SEOData $SEOData) => [
+                '@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => $locale === 'zh' ? '首页' : 'Home', 'item' => 'https://vrrestoration.ca/'.$locale],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => $locale === 'zh' ? '施工与重建' : 'Construction and Reconstruction', 'item' => $pageUrl],
+                ],
+            ]);
 
-        // Choose SEO data based on locale
-        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
+        $SEOData = new SEOData(
+            title: $title,
+            description: $description,
+            image: asset('img/construction/vancouver-reconstruction-framing.webp'),
+            url: $pageUrl,
+            canonical_url: $pageUrl,
+            schema: $schema,
+            tags: $locale === 'zh'
+                ? ['温哥华施工', '温哥华重建', '物业损坏维修', '住宅翻新', '大温哥华施工服务']
+                : ['Vancouver construction', 'Vancouver reconstruction', 'property damage repair', 'home renovation', 'Metro Vancouver contractor'],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: $pageEnUrl),
+                new AlternateTag(hreflang: 'zh', href: $pageZhUrl),
+            ],
+        );
 
         return view('services.construction', compact('SEOData'));
     }
     public function fireDamage()
     {
-        $locale = app()->getLocale(); // Get the current locale
-
-        // Define SEO data for English
-        $seoDataEn = new SEOData(
-            title: 'Fire Damage Restoration Services',
-            description: 'Professional fire damage restoration services Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 604-800-3900.',
-            image: asset('img/fire-damage.jpeg'), // Example image path
+        $locale = app()->getLocale();
+        $SEOData = new SEOData(
+            title: $locale === 'zh' ? '火灾损害恢复服务' : 'Fire Damage Restoration Services',
+            description: $locale === 'zh'
+                ? '专业火灾损害恢复服务：立即响应火灾和烟雾损害、结构修复和清理。请拨打604-800-3900，以获取温哥华快速有效的恢复服务。'
+                : 'Professional fire damage restoration services Immediate response to fire and smoke damage, structural repairs, and cleanup. Contact us at 604-800-3900.',
+            image: asset('img/fire-damage.jpeg'),
+            url: 'https://vrrestoration.ca/'.$locale.'/fire-damage',
+            canonical_url: 'https://vrrestoration.ca/'.$locale.'/fire-damage',
             schema: SchemaCollection::make()->add(
                 fn(SEOData $SEOData) => [
                     '@context' => 'https://schema.org',
                     '@type' => 'LocalBusiness',
+                    'name' => 'VR PLUS Restoration',
+                    'url' => 'https://vrrestoration.ca',
+                    'image' => asset('img/fire-damage.jpeg'),
                     'telephone' => '+1 604-800-3900',
                     'address' => [
                         '@type' => 'PostalAddress',
@@ -1698,75 +1713,14 @@ class ServiceController extends Controller
                     ],
                 ]
             ),
-            tags: ['fire damage restoration', 'smoke damage repair', 'structural repair', 'odor removal', 'Vancouver fire damage services'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/fire-damage')],
+            tags: $locale === 'zh'
+                ? ['火灾损害恢复', '烟雾损害修复', '结构修复', '气味去除', '温哥华火灾服务']
+                : ['fire damage restoration', 'smoke damage repair', 'structural repair', 'odor removal', 'Vancouver fire damage services'],
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/fire-damage'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/fire-damage'),
+            ],
         );
-
-       // Define SEO data for Chinese
-$seoDataZh = new SEOData(
-    title: '火灾损害恢复服务',
-    description: '专业火灾损害恢复服务：立即响应火灾和烟雾损害、结构修复和清理。请拨打604-800-3900，以获取温哥华快速有效的恢复服务。',
-    image: asset('img/fire-damage.jpeg'), // Example image path
-    schema: SchemaCollection::make()->add(
-        fn(SEOData $SEOData) => [
-            '@context' => 'https://schema.org',
-            '@type' => 'FAQPage',
-            'mainEntity' => [
-                [
-                    '@type' => 'Question',
-                    'name' => '你们的火灾损害恢复服务包括哪些内容？',
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => '我们的火灾损害恢复服务包括对火灾和烟雾损害的紧急响应、结构修复、气味去除和全面清理。我们致力于尽快有效地恢复您的财产到受损前的状态。',
-                    ],
-                ],
-                [
-                    '@type' => 'Question',
-                    'name' => '你们可以多快响应火灾损害情况？',
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => '我们提供24/7的紧急响应服务，以应对火灾损害情况。我们的团队随时准备部署，开始恢复过程并减少进一步的损害。',
-                    ],
-                ],
-            ],
-        ],
-    )->add(
-        fn(SEOData $SEOData) => [
-            '@context' => 'https://schema.org',
-            '@type' => 'LocalBusiness',
-            'telephone' => '+1 604-800-3900',
-            'address' => [
-                '@type' => 'PostalAddress',
-                'streetAddress' => '636 Clyde Ave Suite 7',
-                'addressLocality' => 'West Vancouver',
-                'addressRegion' => 'BC',
-                'postalCode' => 'V7T 1E1',
-                'addressCountry' => 'CA',
-            ],
-            'geo' => [
-                '@type' => 'GeoCoordinates',
-                'latitude' => 49.3252,
-                'longitude' => -123.1595,
-            ],
-            'areaServed' => [
-                'Vancouver', 'Burnaby', 'Coquitlam', 'Chilliwack', 'Abbotsford', 'Richmond', 'Surrey', 'Langley', 'North Vancouver', 'West Vancouver', 'Maple Ridge', 'Mission', 'Hope', 'Fraser Valley', 'Lower Mainland', 'BC'
-            ],
-            'openingHoursSpecification' => [
-                [
-                    '@type' => 'OpeningHoursSpecification',
-                    'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                    'opens' => '00:00',
-                    'closes' => '23:59',
-                ],
-            ],
-        ]
-    ),
-    tags: ['火灾损害恢复', '烟雾损害修复', '结构修复', '气味去除', '温哥华火灾服务'],
-    alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/fire-damage')],
-);
-
-        // Choose SEO data based on locale
-        $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;
 
         return view('services.fireDamage', compact('SEOData'));
     }
@@ -1899,7 +1853,12 @@ $seoDataZh = new SEOData(
             description: 'Certified mold remediation in Vancouver for homes, condos, strata and commercial properties. 24/7 black mold removal, HEPA containment, drying and insurance-ready reports. Call 604-800-3900.',
             image: asset('img/mold.jpeg'), // Example image path
             tags: ['mold remediation Vancouver', 'mold removal Vancouver', 'black mold removal Vancouver', 'mold inspection Vancouver', 'Vancouver mold services'],
-            alternates: [new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation')],
+            url: 'https://vrrestoration.ca/en/mold-remediation',
+            canonical_url: 'https://vrrestoration.ca/en/mold-remediation',
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation'),
+            ],
         );
 
         // Define SEO data for Chinese
@@ -1908,7 +1867,12 @@ $seoDataZh = new SEOData(
             description: '专业霉菌修复服务：处理因水损或高湿度引起的霉菌问题。我们处理住宅和商业物业。请拨打604-800-3900以获取在温哥华的即时帮助。',
             image: asset('img/mold.jpeg'), // Example image path
             tags: ['霉菌修复', '霉菌去除', '水损', '湿度控制', '温哥华霉菌服务'],
-            alternates: [new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation')],
+            url: 'https://vrrestoration.ca/zh/mold-remediation',
+            canonical_url: 'https://vrrestoration.ca/zh/mold-remediation',
+            alternates: [
+                new AlternateTag(hreflang: 'en', href: 'https://vrrestoration.ca/en/mold-remediation'),
+                new AlternateTag(hreflang: 'zh', href: 'https://vrrestoration.ca/zh/mold-remediation'),
+            ],
         );
         // Choose SEO data based on locale
         $SEOData = $locale === 'zh' ? $seoDataZh : $seoDataEn;

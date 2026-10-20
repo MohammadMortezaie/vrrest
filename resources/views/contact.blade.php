@@ -2,109 +2,62 @@
 
 @section('header')
 {!! seo($SEOData) !!}
+<link rel="stylesheet" href="{{ asset('css/company-pages.css') }}">
 @endsection
 
 @section('content')
-    <section class="py-3 py-md-5">
+<div class="company-page contact-page">
+    <section class="company-hero contact-hero">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy"
-                        src="{{asset('img/contactus.jpeg')}}"
-                        alt="Conatct Us">
+            <div class="company-hero-grid">
+                <div class="company-hero-copy">
+                    <span class="company-kicker"><i class="bi bi-broadcast-pin" aria-hidden="true"></i>{{ __('Contact Emergency Kicker') }}</span>
+                    <h1>{{ __('contactheading') }}</h1>
+                    <p>{{ __('Contact Hero Text') }}</p>
+                    <div class="company-hero-actions">
+                        <a class="company-button company-button-primary" href="tel:+16048003900"><i class="bi bi-telephone-fill" aria-hidden="true"></i>{{ __('HP Call') }}</a>
+                        <a class="company-button company-button-secondary" href="#contact-form-section">{{ __('Contact Send Message') }}<i class="bi bi-arrow-down" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="company-proof-row" aria-label="{{ __('Contact Service Facts') }}">
+                        <span><strong>24/7</strong>{{ __('Contact Availability') }}</span>
+                        <span><strong>4</strong>{{ __('Contact Local Offices') }}</span>
+                        <span><strong>BC</strong>{{ __('Contact Service Area') }}</span>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h2 class="fs-1 fw-bolder">{{ __('contactheading') }}</h2>
-                            <hr>
-                            <p class="mb-5">{{ __('contactdescription') }}</p>
-                            <div class="row gy-4 gy-md-0 gx-xxl-5X">
-                                <div class="col-12 col-md-6">
-                                    <div class="d-flex">
-                                        <div class="me-4 text-primary">
-                                            <i class="bi bi-pin-map text-warning h1"> </i>
-                                        </div>
-                                        <div>
-                                            <h2 class="h4 mb-3">{{ __('contactaddress_heading') }}</h2>
-                                            <p class="text-secondary  mb-0">
-                                                636 Clyde Ave, West Vancouver, BC
-                                            </p><hr>
-                                            <p class="text-secondary  mb-0">
-                                                #112, 828 Harbourside, Dr North Vancouver, BC
-                                            </p><hr>
-                                            <p class="text-secondary  mb-0">
-                                                4720 lougheed hwy, Burnaby, BC
-                                            </p><hr>
-                                            <p class="text-secondary  mb-0">
-                                                #211, 3030 Lincoln Ave, Coquitlam, BC
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="d-flex">
-                                        <div class="me-4 text-primary">
-                                            <i class="bi bi-phone text-warning h1"> </i>
-                                        </div>
-                                        <div>
-                                            <h2 class="h4 mb-3">{{ __('contactcall_heading') }}</h2>
-                                            <a href="tel:+16048003900" class="text-secondary h4 mb-2">
-                                                +1 604-800-3900
-                                            </a>
-                                            <br><br>
-                                            <a href="tel:+17783186796" class="text-secondary h4 mb-2">
-                                                +1 778-318-6796
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                <div class="company-hero-media">
+                    <img src="{{ asset('img/water-damage/emergency-water-damage-drying-vancouver.webp') }}"
+                        alt="{{ __('Contact Hero Image Alt') }}" width="1280" height="960">
+                    <div class="company-media-note">
+                        <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                        <span><strong>{{ __('Contact Fast Response') }}</strong>{{ __('Contact Fast Response Text') }}</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <section class="py-3 py-md-5 bg-vr-second" id="whyvr" >
+    <section class="contact-channels" aria-labelledby="contact-channels-title">
         <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 ">
-                <div class="col-12 col-lg-7">
-                    <h1 class="fs-1 fw-bolder">{{ __('why_chooseheading') }}</h1>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription1') }}
-                    </p>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription2') }}
-                    </p>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription3') }}
-                    </p>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription4') }}
-                    </p>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription5') }}
-                    </p>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription6') }}
-                    </p>
-                    <p class="def-txt text-secondary mb-3">
-                        {{ __('why_choosedescription7') }}
-                    </p>
-                </div>
-
-                <div class="col-12 col-lg-5">
-
-                    <img class="img-fluid rounded" loading="lazy"
-                    src="{{asset('img/contactus2.jpeg')}}"
-                    alt="Conatct Us">
-
-                </div>
+            <div class="company-section-head">
+                <span>{{ __('Contact Direct Kicker') }}</span>
+                <h2 id="contact-channels-title">{{ __('Contact Direct Title') }}</h2>
+            </div>
+            <div class="contact-channel-grid">
+                <a class="contact-channel" href="tel:+16048003900">
+                    <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                    <span><small>{{ __('contactcall_heading') }}</small><strong>604 800 3900</strong></span>
+                    <i class="bi bi-arrow-up-right contact-channel-arrow" aria-hidden="true"></i>
+                </a>
+                <a class="contact-channel" href="mailto:info@vrrestoration.ca">
+                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                    <span><small>{{ __('Contact Email Label') }}</small><strong>info@vrrestoration.ca</strong></span>
+                    <i class="bi bi-arrow-up-right contact-channel-arrow" aria-hidden="true"></i>
+                </a>
+                <a class="contact-channel" href="https://www.linkedin.com/company/vr-plus-construction-and-restoration" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                    <span><small>{{ __('Contact Follow Label') }}</small><strong>VR Plus Restoration</strong></span>
+                    <i class="bi bi-arrow-up-right contact-channel-arrow" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -115,7 +68,35 @@
         'subtitle' => __('Contact Form Contact Subtitle'),
     ])
 
-    <div class="container d-flex align-items-center justify-content-center">
-        <iframe style="width: 100%" src="https://www.google.com/maps/d/u/0/embed?mid=1ZlFqpnfeNxRjioLAHd27DXnR2tVpFD4&ehbc=2E312F"  height="480"></iframe>
-    </div>
+    @php
+        $contactLocations = [
+            ['West Vancouver', '636 Clyde Ave, West Vancouver, BC'],
+            ['North Vancouver', '#112, 828 Harbourside Dr, North Vancouver, BC'],
+            ['Burnaby', '4720 Lougheed Hwy, Burnaby, BC'],
+            ['Coquitlam', '#211, 3030 Lincoln Ave, Coquitlam, BC'],
+        ];
+    @endphp
+    <section class="contact-locations" aria-labelledby="contact-locations-title">
+        <div class="container">
+            <div class="company-section-head company-section-head-light">
+                <span>{{ __('Contact Locations Kicker') }}</span>
+                <h2 id="contact-locations-title">{{ __('Contact Locations Title') }}</h2>
+                <p>{{ __('Contact Locations Text') }}</p>
+            </div>
+            <div class="contact-location-grid">
+                @foreach ($contactLocations as [$city, $address])
+                    <a class="contact-location-card" href="https://share.google/r4scdAGmnOKdOX6NW" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-location-icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></span>
+                        <span><strong>{{ $city }}</strong><small>{{ $address }}</small></span>
+                        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                @endforeach
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ZlFqpnfeNxRjioLAHd27DXnR2tVpFD4&amp;ehbc=2E312F"
+                    title="{{ __('Contact Map Title') }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+</div>
 @endsection

@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (preloader) {
         preloader.remove();
     }
+
+    const mobileNavigation = document.querySelector("#navbarSupportedContent");
+    if (mobileNavigation) {
+        const setNavigationState = (open) => {
+            document.body.classList.toggle("mobile-nav-open", open);
+        };
+        mobileNavigation.addEventListener("show.bs.collapse", () => setNavigationState(true));
+        mobileNavigation.addEventListener("hidden.bs.collapse", () => setNavigationState(false));
+        mobileNavigation.querySelectorAll("a:not(.dropdown-toggle)").forEach((link) => {
+            link.addEventListener("click", () => setNavigationState(false));
+        });
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 768) setNavigationState(false);
+        });
+    }
 });
 
 function shareOnFacebook() {

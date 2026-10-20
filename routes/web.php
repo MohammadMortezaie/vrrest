@@ -35,9 +35,9 @@ Route::get('/specialty-cleaning', function () {
     return redirect('/' . config('app.fallback_locale').'/specialty-cleaning', 301);
 });
 
-Route::group(['prefix' => 'vr'], function () {
+Route::group(['prefix' => 'vr', 'middleware' => ['noindex.admin']], function () {
 
-    Auth::routes();
+    Auth::routes(['register' => false]);
 
     Route::group(['middleware' => ['auth:web']], function () {
 

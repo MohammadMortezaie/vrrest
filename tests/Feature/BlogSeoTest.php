@@ -29,6 +29,9 @@ class BlogSeoTest extends TestCase
             ->assertSee('hreflang="zh" href="https://vrrestoration.ca/zh/blog"', false)
             ->assertSee('"@type":"CollectionPage"', false)
             ->assertSee('"@type":"Blog"', false)
+            ->assertSee('journal-feature-card', false)
+            ->assertSee('class="journal-pagination"', false)
+            ->assertSee('blog-editorial.css', false)
             ->assertSee($english->title)
             ->assertDontSee($chinese->title);
     }
@@ -55,6 +58,9 @@ class BlogSeoTest extends TestCase
             ->assertSee('property="article:modified_time"', false)
             ->assertSee('hreflang="en"', false)
             ->assertSee('"@type":"BlogPosting"', false)
+            ->assertSee('class="article-page"', false)
+            ->assertSee('class="journal-body"', false)
+            ->assertSee('blog-editorial.css', false)
             ->assertSee('https:\/\/vrrestoration.ca\/android-chrome-512x512.png', false)
             ->assertDontSee('an droid-chrome');
     }
