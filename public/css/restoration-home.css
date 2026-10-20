@@ -253,10 +253,10 @@ body:has(.restoration-home) .li-change-lang .dropdown-menu { left: auto; right: 
     .restoration-home .hp-availability > p:not(.hp-status) { margin: 8px 0 0; font-size: 10px; }
     .hp-availability > a { display: none; }
     .hp-hero-brandline { display: none; }
-    .hp-quicklinks { gap: 22px; overflow-x: auto; scrollbar-width: none; padding-top: 16px; padding-bottom: 16px; }
+    .hp-quicklinks { justify-content: center; gap: 16px; overflow-x: visible; scrollbar-width: none; padding-top: 16px; padding-bottom: 16px; }
     .hp-quicklinks a { font-size: 9px; }
     .hp-quicklinks a:last-child { display: none; }
-    .hp-quicklinks a:first-child { margin-right: auto; }
+    .hp-quicklinks a:first-child { margin-right: 0; }
     .restoration-home .hp-services { padding-top: 48px; }
     .hp-step-number { font-size: 36px; }
     .hp-faq details { padding: 20px; }
