@@ -47,9 +47,9 @@
                 </div>
                 <div class="article-hero-media">
                     @if ($blog->image)
-                        <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" fetchpriority="high">
+                        <img class="article-hero-image" src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" fetchpriority="high">
                     @else
-                        <img src="{{ asset('img/hero-bg3.jpeg') }}" alt="{{ $blog->title }}" fetchpriority="high">
+                        <img class="article-hero-image" src="{{ asset('img/hero-bg3.jpeg') }}" alt="{{ $blog->title }}" fetchpriority="high">
                     @endif
                 </div>
             </div>

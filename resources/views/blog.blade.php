@@ -108,13 +108,30 @@
     @endif
 
     @if ($featuredPost)
+        @php
+            $lastPage = max(1, $blog->lastPage());
+            $currentPage = $blog->currentPage();
+
+            if ($lastPage <= 4) {
+                $paginationPages = range(1, $lastPage);
+            } elseif ($currentPage <= 3) {
+                $paginationPages = [1, 2, 3, $lastPage];
+            } elseif ($currentPage >= $lastPage - 2) {
+                $paginationPages = [1, $lastPage - 2, $lastPage - 1, $lastPage];
+            } else {
+                $paginationPages = [1, $currentPage - 1, $currentPage, $lastPage];
+            }
+        @endphp
         <nav class="journal-pagination" id="blog-pagination" aria-label="{{ __('Blog Pagination Label') }}">
             <div class="container">
                 <a class="{{ $blog->onFirstPage() ? 'is-disabled' : '' }}" href="{{ $blog->onFirstPage() ? '#' : $blog->previousPageUrl() }}" @if($blog->onFirstPage()) aria-disabled="true" tabindex="-1" @endif><i class="bi bi-arrow-left" aria-hidden="true"></i>{{ __('Previous') }}</a>
                 <div>
-                    @for ($pageNumber = 1; $pageNumber <= max(1, $blog->lastPage()); $pageNumber++)
+                    @foreach ($paginationPages as $pageNumber)
+                        @if (!$loop->first && $pageNumber > $paginationPages[$loop->index - 1] + 1)
+                            <span class="pagination-ellipsis" aria-hidden="true">&hellip;</span>
+                        @endif
                         <a class="{{ $pageNumber === $blog->currentPage() ? 'is-active' : '' }}" href="{{ $blog->url($pageNumber) }}" @if($pageNumber === $blog->currentPage()) aria-current="page" @endif>{{ str_pad((string) $pageNumber, 2, '0', STR_PAD_LEFT) }}</a>
-                    @endfor
+                    @endforeach
                 </div>
                 <a class="{{ $blog->hasMorePages() ? '' : 'is-disabled' }}" href="{{ $blog->hasMorePages() ? $blog->nextPageUrl() : '#' }}" @if(!$blog->hasMorePages()) aria-disabled="true" tabindex="-1" @endif>{{ __('Next') }}<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>

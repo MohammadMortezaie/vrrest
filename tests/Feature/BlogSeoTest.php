@@ -36,6 +36,46 @@ class BlogSeoTest extends TestCase
             ->assertDontSee($chinese->title);
     }
 
+    public function test_blog_pagination_is_compact_and_keeps_the_last_page_visible(): void
+    {
+        $user = User::factory()->create();
+        $category = PostCategory::create([
+            'name_en' => 'Water Damage',
+            'name_zh' => '水灾修复',
+            'is_active' => true,
+        ]);
+        $timestamp = now();
+        $posts = [];
+
+        for ($index = 1; $index <= 31; $index++) {
+            $posts[] = [
+                'language' => Post::LANGUAGE_ENGLISH,
+                'slug' => 'pagination-guide-'.$index,
+                'post_category_id' => $category->id,
+                'title' => 'Pagination guide '.$index,
+                'subtitle' => 'Practical restoration advice for homeowners.',
+                'keywords' => 'restoration',
+                'content' => '<p>Detailed restoration advice.</p>',
+                'user_id' => $user->id,
+                'image' => '/img/water-damage.jpeg',
+                'is_active' => true,
+                'created_at' => $timestamp,
+                'updated_at' => $timestamp,
+            ];
+        }
+
+        Post::insert($posts);
+
+        $html = $this->get('/en/blog')->assertOk()->getContent();
+        $document = new \DOMDocument();
+        @$document->loadHTML('<?xml encoding="UTF-8">'.$html);
+        $xpath = new \DOMXPath($document);
+
+        $this->assertSame(4, $xpath->query('//*[@id="blog-pagination"]/div/div/a')->length);
+        $this->assertSame(1, $xpath->query('//*[@id="blog-pagination"]//span[contains(@class,"pagination-ellipsis")]')->length);
+        $this->assertSame('06', trim($xpath->evaluate('string((//*[@id="blog-pagination"]/div/div/a)[last()])')));
+    }
+
     public function test_wrong_language_article_url_redirects_to_its_real_canonical(): void
     {
         $post = $this->createPost('en', 'water-damage-guide', 'Water damage guide');
@@ -59,6 +99,7 @@ class BlogSeoTest extends TestCase
             ->assertSee('hreflang="en"', false)
             ->assertSee('"@type":"BlogPosting"', false)
             ->assertSee('class="article-page"', false)
+            ->assertSee('class="article-hero-image"', false)
             ->assertSee('class="journal-body"', false)
             ->assertSee('blog-editorial.css', false)
             ->assertSee('https:\/\/vrrestoration.ca\/android-chrome-512x512.png', false)
