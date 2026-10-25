@@ -21,9 +21,9 @@
                     </div>
                 </div>
                 <div class="team-hero-visual" aria-hidden="true">
-                    <img class="team-hero-main" src="{{ asset('img/team/sasan-ghanbari.webp') }}" alt="">
-                    <img class="team-hero-small team-hero-small-one" src="{{ asset('img/team/saman-ghanbari.webp') }}" alt="">
-                    <img class="team-hero-small team-hero-small-two" src="{{ asset('img/team/milad-mohammadi.webp') }}" alt="">
+                    <img class="team-hero-main" src="{{ asset('img/team/sasan-ghanbari.webp') }}" alt="sasan ghanbari team member">
+                    <img class="team-hero-small team-hero-small-one" src="{{ asset('img/team/saman-ghanbari.webp') }}" alt="saman ghanbari team member">
+                    <img class="team-hero-small team-hero-small-two" src="{{ asset('img/team/moe-ghanbari.webp') }}" alt="moe ghanbari team member">
                     <span class="team-hero-mark"><i class="bi bi-shield-check" aria-hidden="true"></i>{{ __('Team Local Leadership') }}</span>
                 </div>
             </div>
