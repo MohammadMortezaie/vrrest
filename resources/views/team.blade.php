@@ -47,10 +47,6 @@
                     <div class="team-member-copy"><span>02</span><h3>Saman Ghanbari</h3><p>{{ __('Team Role Saman') }}</p></div>
                 </article>
                 <article class="team-member-card">
-                    <div class="team-member-photo"><img src="{{ asset('img/team/milad-mohammadi.webp') }}" alt="Milad Mohammadi, Construction Department Manager" width="300" height="300"></div>
-                    <div class="team-member-copy"><span>03</span><h3>Milad Mohammadi</h3><p>{{ __('Team Role Milad') }}</p></div>
-                </article>
-                <article class="team-member-card">
                     <div class="team-member-photo"><img src="{{ asset('img/team/moe-ghanbari.webp') }}" alt="Moe Ghanbari, Structural Engineer" width="1280" height="1280" loading="lazy"></div>
                     <div class="team-member-copy"><span>04</span><h3>Moe Ghanbari</h3><p>{{ __('Team Role Moe Ghanbari') }}</p></div>
                 </article>
