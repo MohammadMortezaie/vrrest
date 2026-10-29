@@ -132,7 +132,7 @@
                                 <input type="file" class="form-control" name="image" id="image"
                                     placeholder="Upload Image 800*350" aria-describedby="fileHelpId">
                                 @if ($localService->image)
-                                    <img src="{{ $localService->image }}" style="width: 300px" />
+                                    <img src="{{ $localService->image }}" alt="Current local service image preview" style="width: 300px" />
                                 @endif
                             </div>
 

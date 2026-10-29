@@ -259,7 +259,7 @@
                     <div class="swiper-slide">
                         <article class="hp-journal-card">
                             <a class="hp-journal-image" href="{{ $postUrl }}" tabindex="-1" aria-hidden="true">
-                                <img src="{{ $postImage }}" alt="" loading="lazy" decoding="async">
+                                <img src="{{ $postImage }}" alt="{{ $post->title }}" loading="lazy" decoding="async">
                                 <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                             </a>
                             <div class="hp-journal-card-body">

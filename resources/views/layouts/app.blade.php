@@ -66,7 +66,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white p-0 navmenu" id="navmenu" aria-label="{{ __('Main navigation') }}">
                 <div class="container">
                     <a class="navbar-brand p-0" href="{{ route('home2', ['lang' => app()->getLocale()]) }}" aria-label="VR Plus Restoration, {{ __('Home') }}">
-                        <img class="navbar-brand logo" alt="VR Restoration" src="{{ asset('img/logo.png') }}" />
+                        <img class="navbar-brand logo" alt="VR Plus Restoration" src="{{ asset('img/logo.png') }}" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -299,7 +299,7 @@
             </section>
             <div class="container site-footer-grid">
                 <section class="site-footer-brand" aria-labelledby="footer-brand-title">
-                    <a class="site-footer-logo" href="{{ route('home2', ['lang' => app()->getLocale()]) }}"><img src="{{ asset('img/logo.png') }}" alt="" width="76" height="84"><span id="footer-brand-title">VR PLUS<small>RESTORATION</small></span></a>
+                    <a class="site-footer-logo" href="{{ route('home2', ['lang' => app()->getLocale()]) }}"><img src="{{ asset('img/logo.png') }}" alt="" width="76" height="84" aria-hidden="true"><span id="footer-brand-title">VR PLUS<small>RESTORATION</small></span></a>
                     <p>{{ __('Footer Company Text') }}</p>
                     <img class="site-footer-canadian" src="{{ asset('img/proudly-cdn.png') }}" alt="Proudly Canadian business serving Metro Vancouver">
                     <a class="site-footer-social" href="https://www.linkedin.com/company/vr-plus-construction-and-restoration" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i>LinkedIn <span aria-hidden="true">↗</span></a>
@@ -333,9 +333,9 @@
             </div>
             <div class="container site-footer-search">
                 <span>{{ __('Footer Search Title') }}</span>
-                <a href="https://chatgpt.com/?q={{ $aiReputationQuery }}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/chatgpt-logo.svg') }}" alt="">ChatGPT</a>
-                <a href="https://claude.ai/new?q={{ $aiReputationQuery }}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/claude-logo.svg') }}" alt="">Claude</a>
-                <a href="https://www.google.com/preferences/source?q=vrrestoration.ca" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/google-logo.svg') }}" alt="">Google</a>
+                <a href="https://chatgpt.com/?q={{ $aiReputationQuery }}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/chatgpt-logo.svg') }}" alt="" aria-hidden="true">ChatGPT</a>
+                <a href="https://claude.ai/new?q={{ $aiReputationQuery }}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/claude-logo.svg') }}" alt="" aria-hidden="true">Claude</a>
+                <a href="https://www.google.com/preferences/source?q=vrrestoration.ca" target="_blank" rel="noopener noreferrer"><img src="{{ asset('img/google-logo.svg') }}" alt="" aria-hidden="true">Google</a>
             </div>
             <div class="container site-footer-bottom">
                 <span>© {{ date('Y') }} VR Plus Restoration. {{ __('Footer Rights') }}</span>
