@@ -119,7 +119,7 @@
             <div class="row g-4 align-items-end mb-4">
                 <div class="col-12 col-lg-8">
                     <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-warning text-dark fw-semibold small mb-3">
-                        <img src="{{ asset('img/google-logo.svg') }}" alt="" width="20" height="20" aria-hidden="true">
+                        <img src="{{ asset('img/google-logo.svg') }}" alt="Google Reviews logo" width="20" height="20">
                         {{ __('Google Reviews Eyebrow') }}
                     </div>
                     <h2 class="fs-2 fw-bolder section-title-h1 mb-3">{{ $reviewSectionTitle }}</h2>
